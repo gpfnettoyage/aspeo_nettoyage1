@@ -1,98 +1,65 @@
-import Services from '@/components/services/Services';
-import { Metadata } from 'next';
-import { COMPANY } from '@/constants/company';
-import { JsonLdObject, SCHEMA_IDS } from '@/types/jsonld';
-import JsonLdScript from '@/components/common/JsonLdScript';
-import { pageOpenGraph } from '@/utils/seo';
-import { generateFAQSchema } from '@/utils/structured-data';
-import servicesFaqData from '@/data/services-faq.json';
-import { getServices } from '@/lib/services';
+import type { Metadata } from 'next';
+import PageHero from '@/components/site/shared/PageHero';
+import NavyCtaPanel from '@/components/site/shared/NavyCtaPanel';
+import ServicesExplorer from '@/components/site/services/ServicesExplorer';
+import { ButtonLink, Container } from '@/components/site/ui/primitives';
+import JsonLd from '@/components/site/JsonLd';
+import { getCatalog, getPageContent } from '@/lib/site/content';
+import { getSettings } from '@/lib/site/settings';
+import { pageMetadata } from '@/lib/site/seo';
+import { breadcrumb } from '@/lib/site/jsonld';
+import { absoluteUrl, urls } from '@/lib/site/urls';
 
-// Descriptions optimisées pour le SEO (max 60 chars titre, 158 chars description)
-const servicesTitle = 'Services de nettoyage | ASPEO Loire (42) & Rhône (69)';
-const servicesDescription =
-  'Services ASPEO : nettoyage bureaux, logements, fin de chantier, désinfection et remise en état en Loire (42) et Rhône (69). Solutions sur mesure.';
+export async function generateMetadata(): Promise<Metadata> {
+  return pageMetadata('proprete-services');
+}
 
-export const metadata: Metadata = {
-  title: servicesTitle,
-  description: servicesDescription,
-  alternates: {
-    canonical: `${COMPANY.website}/proprete-services`,
-  },
-  openGraph: pageOpenGraph(servicesTitle, servicesDescription, '/proprete-services'),
-};
-
-const PropreteServicesPage = async () => {
-  // Fetch services from database
-  const services = await getServices();
-
-  // Liste des services pour le OfferCatalog
-  const serviceItems = services.map((service, index) => ({
-    '@type': 'ListItem',
-    position: index + 1,
-    item: {
-      '@type': 'Offer',
-      itemOffered: {
-        '@type': 'Service',
-        name: service.title,
-        description: service.descriptions[0],
-        url: `${COMPANY.website}/proprete-services/${service.slug}`,
-      },
-    },
+export default async function ServicesPage() {
+  const [{ c }, catalog, settings] = await Promise.all([getPageContent('proprete-services'), getCatalog(), getSettings()]);
+  const base = settings.company.website;
+  const groups = catalog.categories.map((cat) => ({
+    slug: cat.slug, href: cat.href, label: cat.name, intro: cat.description ?? '', pole: cat.pole,
+    items: cat.services.map((s) => ({ href: s.href, title: s.title, tagline: s.tagline, short: s.short, image: s.image, pole: s.pole })),
   }));
 
-  const serviceSchema = {
-    '@type': 'Service',
-    '@id': `${COMPANY.website}/proprete-services/#service`,
-    name: `Services de nettoyage ${COMPANY.name} Loire (42) & Rhône (69)`,
-    description: metadata.description,
-    serviceType: 'Nettoyage professionnel',
-    provider: {
-      '@id': SCHEMA_IDS.BUSINESS,
-    },
-    areaServed: COMPANY.areaServed,
-    hasOfferCatalog: {
-      '@type': 'OfferCatalog',
-      name: 'Catalogue des services de nettoyage',
-      itemListElement: serviceItems,
-    },
-  };
-
-  const webPageSchema = {
-    '@type': 'CollectionPage',
-    '@id': `${COMPANY.website}/proprete-services/#webpage`,
-    name: 'Services de nettoyage | ASPEO Loire (42) & Rhône (69)',
-    description: metadata.description,
-    url: `${COMPANY.website}/proprete-services`,
-    isPartOf: {
-      '@id': SCHEMA_IDS.WEBSITE,
-    },
-    about: {
-      '@id': SCHEMA_IDS.BUSINESS,
-    },
-  };
-
-  const faqData = generateFAQSchema(servicesFaqData);
-  const faqJsonLd = faqData ? (() => {
-    const { '@context': _context, ...rest } = faqData as { '@context'?: string; [key: string]: unknown };
-    return rest;
-  })() : null;
-
-  const pageSchemas = [
-    webPageSchema,
-    serviceSchema,
-    faqJsonLd,
-  ].filter((item): item is JsonLdObject => Boolean(item));
-
   return (
-    <div className="py-12">
-      <JsonLdScript
-        id="json-ld-services"
-        pageSchemas={pageSchemas}
+    <main>
+      <JsonLd graph={[
+        breadcrumb([{ name: 'Propreté & Services', path: urls.services() }], base),
+        { '@type': 'ItemList', name: 'Prestations ASPEO', itemListElement: catalog.services.map((s, i) => ({ '@type': 'ListItem', position: i + 1, name: s.title, url: absoluteUrl(s.href, base) })) },
+      ]} />
+      <PageHero
+        eyebrow={c.t('hero.eyebrow')}
+        title={c.t('hero.title')}
+        text={c.t('hero.text')}
+        image={c.t('hero.image')}
+        actions={<ButtonLink href="/contact" className="p-[16px_28px] text-[length:.98rem]">Demander un devis</ButtonLink>}
       />
-      <Services services={services} />
-    </div>
-  );
-};
 
-export default PropreteServicesPage;
+      <section className="p-[clamp(72px,10vw,128px)_0_clamp(48px,6vw,72px)] bg-white">
+        <Container className="grid grid-cols-[minmax(min(100%,240px),3fr)_minmax(min(100%,300px),7fr)] gap-[clamp(28px,5vw,80px)] items-start" data-r2="">
+          <div>
+            <span className="block w-[4px] h-[30px] bg-[color:var(--asp-accent)] mb-[14px]" aria-hidden="true" />
+            <p className="text-[length:.98rem] leading-[1.75] text-[color:#42505f] m-[16px_0_0]">{c.t('intro.aside')}</p>
+          </div>
+          <div>
+            <p className="font-heading font-semibold text-[length:clamp(1.25rem,2.2vw,1.7rem)] leading-[1.45] tracking-[-.01em] text-navy m-[0_0_18px]">{c.t('intro.lead')}</p>
+            <p className="text-[length:1.04rem] leading-[1.85] text-[color:#42505f] m-0">{c.t('intro.body')}</p>
+          </div>
+        </Container>
+      </section>
+
+      <section className="p-[clamp(24px,4vw,48px)_0_clamp(72px,10vw,120px)] bg-white">
+        <Container>
+          <ServicesExplorer groups={groups} />
+        </Container>
+      </section>
+
+      <section className="p-[0_0_clamp(72px,10vw,120px)] bg-white">
+        <Container>
+          <NavyCtaPanel eyebrow={c.t('cta.eyebrow')} title={c.t('cta.title')} text={c.t('cta.text')} image={c.t('cta.image')} phone={settings.company.phone} phoneIntl={settings.company.phoneIntl} />
+        </Container>
+      </section>
+    </main>
+  );
+}

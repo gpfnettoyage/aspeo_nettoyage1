@@ -31,6 +31,7 @@ export const PAGE_DEFINITIONS: PageDefinition[] = [
   { key: 'politique-de-confidentialite', title: 'Politique de confidentialité', path: '/politique-de-confidentialite', seoTitle: 'Politique de Confidentialité | ASPEO', seoDesc: 'Comment ASPEO collecte, utilise et protège vos données personnelles transmises via le formulaire de devis, et comment exercer vos droits.' },
   { key: 'conditions-generales-d-utilisation', title: "Conditions générales d'utilisation", path: '/conditions-generales-d-utilisation', seoTitle: "Conditions Générales d'Utilisation | ASPEO", seoDesc: "Conditions générales d'utilisation du site ASPEO : accès au site, responsabilités, liens externes et droit applicable." },
   { key: 'politique-des-cookies', title: 'Politique des cookies', path: '/politique-des-cookies', seoTitle: 'Politique de Cookies | ASPEO', seoDesc: 'Cookies utilisés sur le site ASPEO, finalités, durée de conservation et moyens de gérer vos préférences.' },
+  { key: 'blocs-communs', title: 'Blocs communs', path: '/', seoTitle: '', seoDesc: '', noindex: true },
 ];
 
 export const getPageDefinition = (key: string) => PAGE_DEFINITIONS.find((p) => p.key === key);

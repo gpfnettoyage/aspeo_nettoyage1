@@ -260,6 +260,8 @@ model City {
   insalubreText String?
   practicalText String?
   caseText      String?
+  /// Questions fréquentes propres à la commune [{ question, answer }]
+  faq           Json?
   latitude      Float?
   longitude     Float?
   mapX          Float?

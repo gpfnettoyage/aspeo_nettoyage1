@@ -55,7 +55,9 @@ async function categories() {
     const patch: Prisma.CategoryUpdateInput = {};
     if (!existing.pole) patch.pole = c.pole;
     if (!existing.description) patch.description = c.description;
-    if (!existing.content) patch.content = json(c.content);
+    const current = (existing.content ?? {}) as Record<string, unknown>;
+    const missing = Object.keys(c.content).filter((k) => current[k] === undefined);
+    if (missing.length) patch.content = json({ ...Object.fromEntries(missing.map((k) => [k, (c.content as Record<string, unknown>)[k]])), ...current });
     if (Object.keys(patch).length) await write(`catégorie « ${existing.name} » complétée (${Object.keys(patch).join(', ')})`, () => prisma.category.update({ where: { id: existing.id }, data: patch }));
     else log(`= catégorie « ${existing.name} » déjà complète`);
   }
@@ -65,6 +67,8 @@ async function services() {
   const cats = await prisma.category.findMany();
   const catId = (slug: string | null) => (slug ? cats.find((c) => c.slug === slug)?.id ?? null : null);
   for (const s of data.services) {
+    // Base de développement : fourchettes de prix visibles pour la relecture (à valider avant la production).
+    if (PUBLISH_UNVALIDATED && 'showPricing' in s.content) (s.content as Record<string, unknown>).showPricing = true;
     const existing = await prisma.service.findUnique({ where: { slug: s.slug } });
     if (!existing) {
       const published = s.published && (PUBLISH_UNVALIDATED || !('toWrite' in s.content));

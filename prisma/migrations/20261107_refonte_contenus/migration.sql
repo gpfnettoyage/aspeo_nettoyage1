@@ -38,6 +38,7 @@ CREATE TABLE "City" (
     "insalubreText" TEXT,
     "practicalText" TEXT,
     "caseText" TEXT,
+    "faq" JSONB,
     "latitude" DOUBLE PRECISION,
     "longitude" DOUBLE PRECISION,
     "mapX" DOUBLE PRECISION,

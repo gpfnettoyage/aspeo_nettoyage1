@@ -1,128 +1,97 @@
 import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
-import { generateSEOTitle, truncateMetaDescription, truncateSeoTitle } from '@/utils/seo';
-import Service from '@/components/services/Service';
-import { COMPANY } from '@/constants/company';
-import { generateFAQSchema } from '@/utils/structured-data';
-import { JsonLdObject, SCHEMA_IDS } from '@/types/jsonld';
-import JsonLdScript from '@/components/common/JsonLdScript';
-import { getServiceBySlug, getServices } from '@/lib/services';
+import ServiceView from '@/components/site/services/ServiceView';
+import CategoryView from '@/components/site/services/CategoryView';
+import JsonLd from '@/components/site/JsonLd';
+import { getArticles, getCatalog, getCategory, getPageContent, getService, getTestimonials } from '@/lib/site/content';
+import { getSettings } from '@/lib/site/settings';
+import { buildMetadata } from '@/lib/site/seo';
+import { breadcrumb, faqPage, serviceSchema } from '@/lib/site/jsonld';
+import { redirectOrNotFound } from '@/lib/site/redirects';
+import { normalize } from '@/lib/site/search';
+import { urls } from '@/lib/site/urls';
+import type { ArticleSummary, ServiceDetail } from '@/lib/site/types';
 
-export interface ServicePageProps {
-  params: Promise<{ slug: string }>;
+type Props = { params: Promise<{ slug: string }> };
+
+export async function generateStaticParams() {
+  try {
+    const catalog = await getCatalog();
+    return [...catalog.services.map((s) => ({ slug: s.slug })), ...catalog.categories.map((c) => ({ slug: c.slug }))];
+  } catch {
+    return [];
+  }
 }
 
-export async function generateMetadata(
-  { params }: ServicePageProps
-): Promise<Metadata> {
-  const { slug } = await params;
-  const service = await getServiceBySlug(slug);
-
-  if (!service) {
-    return {
-      title: 'Service non trouvé',
-      description: "Aucun service trouvé pour l'URL donnée",
-    };
-  }
-
-  const serviceUrl = `${COMPANY.website}/proprete-services/${slug}`;
-
-  // Use SEO fields if available, otherwise fallback to service data
-  const seoTitle = truncateSeoTitle(
-    service.seoTitle || generateSEOTitle(service.title)
-  );
-  const seoDescription = truncateMetaDescription(
-    service.seoDesc || service.descriptions[0]
-  );
-
-  // Utiliser les images du service si disponibles, sinon le logo en fallback
-  const ogImages = service.images && service.images.length > 0
-    ? service.images.map((img) => `${COMPANY.website}${img}`)
-    : [`${COMPANY.website}/img/logo/logo.png`];
-
-  return {
-    title: seoTitle,
-    description: seoDescription,
-    alternates: {
-      canonical: `${COMPANY.website}/proprete-services/${slug}`,
-    },
-    openGraph: {
-      title: seoTitle,
-      description: seoDescription,
-      type: 'website',
-      url: serviceUrl,
-      images: ogImages,
-    },
-  };
+/** Titre/description par défaut repris de la fonction applySEO de la maquette. */
+function serviceSeo(s: ServiceDetail) {
+  const title = s.seoTitle || `${s.title.length > 36 ? s.title : `${s.title} — Loire & Rhône`} | ASPEO`;
+  const desc = s.seoDesc || `${(s.short || s.tagline || '').replace(/\.$/, '')}. Loire et Rhône, devis gratuit sous 24h après la visite.`.slice(0, 158);
+  return { title, desc };
 }
 
-const ServicePage = async ({ params }: ServicePageProps) => {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const service = await getServiceBySlug(slug);
+  const service = await getService(slug);
+  if (service) {
+    const { title, desc } = serviceSeo(service);
+    return buildMetadata({ title, description: desc, path: urls.service(slug), image: service.image });
+  }
+  const category = await getCategory(slug);
+  if (category) {
+    return buildMetadata({
+      title: category.seoTitle || `${category.name} | ASPEO`,
+      description: category.seoDesc || category.content.subtitle || category.description || '',
+      path: urls.category(slug),
+      image: category.content.heroImage,
+    });
+  }
+  return { title: 'Page introuvable | ASPEO', robots: { index: false } };
+}
+
+/** Articles liés : mots du titre du service présents dans l'article, sinon les plus récents. */
+function relatedArticles(service: ServiceDetail, articles: ArticleSummary[]) {
+  const words = normalize(service.title).split(/[^a-z0-9]+/).filter((w) => w.length > 4 && !['nettoyage', 'traitement'].includes(w));
+  const scored = articles.map((a) => ({ a, s: words.filter((w) => normalize(`${a.title} ${a.excerpt ?? ''} ${a.category ?? ''}`).includes(w)).length }));
+  return [...scored.filter((x) => x.s > 0).sort((x, y) => y.s - x.s), ...scored.filter((x) => x.s === 0)].slice(0, 2).map((x) => x.a);
+}
+
+export default async function ServiceOrCategoryPage({ params }: Props) {
+  const { slug } = await params;
+  const [service, settings] = await Promise.all([getService(slug), getSettings()]);
+  const base = settings.company.website;
 
   if (!service) {
-    notFound();
+    const category = await getCategory(slug);
+    if (!category) return redirectOrNotFound(urls.service(slug));
+    return (
+      <>
+        <JsonLd graph={[breadcrumb([{ name: 'Propreté & Services', path: urls.services() }, { name: category.name, path: category.href }], base)]} />
+        <CategoryView category={category} />
+      </>
+    );
   }
 
-  // Get related services (excluding current one)
-  const allServices = await getServices();
-  const relatedServices = allServices.filter(s => s.slug !== slug);
-
-  const serviceUrl = `${COMPANY.website}/proprete-services/${slug}`;
-
-  // Image du service
-  const serviceImage = service.images && service.images.length > 0
-    ? service.images.map((img) => `${COMPANY.website}${img}`)
-    : [`${COMPANY.website}/img/logo/logo.png`];
-
-  // Schéma WebPage pour cette page de service
-  const webPageJsonLd = {
-    '@type': 'WebPage',
-    '@id': `${serviceUrl}/#webpage`,
-    name: service.title,
-    description: service.seoDesc || service.descriptions[0],
-    url: serviceUrl,
-    isPartOf: {
-      '@id': SCHEMA_IDS.WEBSITE,
-    },
-  };
-
-  // Schéma Service avec référence au provider via @id
-  const serviceJsonLd = {
-    '@type': 'Service',
-    '@id': `${serviceUrl}/#service`,
-    name: service.title,
-    description: service.seoDesc || service.descriptions[0],
-    serviceType: service.category?.name || 'Nettoyage professionnel',
-    provider: {
-      '@id': SCHEMA_IDS.BUSINESS,
-    },
-    areaServed: COMPANY.areaServed,
-    image: serviceImage,
-    url: serviceUrl,
-  };
-
-  // Schema markup FAQ pour Google (si FAQ présente)
-  const faqData = generateFAQSchema(service.faq || []);
-  // Supprimer le @context du FAQ car il est au niveau @graph
-  const faqJsonLd = faqData ? (() => {
-    const { '@context': _context, ...rest } = faqData as { '@context'?: string; [key: string]: unknown };
-    return rest;
-  })() : null;
-
-  // Préparation des schémas pour JsonLdScript
-  const pageSchemas = [
-    webPageJsonLd,
-    serviceJsonLd,
-    faqJsonLd,
-  ].filter((item): item is JsonLdObject => Boolean(item));
+  const [catalog, articles, testimonials, common] = await Promise.all([getCatalog(), getArticles(), getTestimonials(), getPageContent('blocs-communs')]);
+  const others = catalog.services.filter((s) => s.slug !== slug);
+  const related = [...others.filter((s) => s.categorySlug === service.categorySlug), ...others.filter((s) => s.categorySlug !== service.categorySlug)].slice(0, 4);
+  const author = service.content.testimonialAuthor;
+  const t = author ? testimonials.find((x) => x.author === author) : undefined;
+  const { desc } = serviceSeo(service);
 
   return (
-    <div className="pt-12">
-      <JsonLdScript id="json-ld-service-faq" pageSchemas={pageSchemas} />
-      <Service service={service} relatedServices={relatedServices} />
-    </div>
+    <>
+      <JsonLd graph={[
+        serviceSchema(settings, { title: service.title, description: desc, path: service.href, image: service.image }),
+        ...(service.content.faq?.length ? [faqPage(service.content.faq)] : []),
+        breadcrumb([{ name: 'Propreté & Services', path: urls.services() }, ...(service.categorySlug && service.categoryName ? [{ name: service.categoryName, path: urls.category(service.categorySlug) }] : []), { name: service.title, path: service.href }], base),
+      ]} />
+      <ServiceView
+        service={service}
+        related={related}
+        articles={relatedArticles(service, articles)}
+        testimonial={t ? { quote: t.quote, author: t.author, context: t.context } : null}
+        commitments={common.c.list('commitments').map((x) => ({ t: x.t ?? '', d: x.d ?? '' }))}
+      />
+    </>
   );
-};
-
-export default ServicePage;
+}

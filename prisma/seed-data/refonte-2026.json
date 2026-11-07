@@ -15,6 +15,31 @@
    "displayOrder": 1,
    "description": "Entretien régulier ou ponctuel des bureaux, commerces, sites industriels, hôtels, restaurants et lieux d'événements.",
    "content": {
+    "kicker": "Nettoyage Professionnel",
+    "headline": "Nettoyage Professionnel : Tertiaire, Commercial, Industriel, Hôtellerie & Événementiel",
+    "subtitle": "Bureaux, sièges sociaux, surfaces commerciales, bases de vie, fin de chantier : un entretien régulier et fiable, adapté à votre activité.",
+    "listTitle": "Nos prestations professionnelles",
+    "heroImage": "https://gerrrw8pnhgmo9jz.public.blob.vercel-storage.com/services/nettoyage-de-bureaux-sieges-sociaux/equipe-aspeo-nettoyage-tertiaire-stfoylargentiere-1774252402514-924eee13.webp",
+    "intro": "Nettoyage tertiaire de bureaux et sièges sociaux, surfaces commerciales, sites industriels, établissements d'hôtellerie et de restauration, et nettoyage événementiel avant, pendant et après vos manifestations : ASPEO accompagne les entreprises, commerces, industriels et organisateurs de la Plaine du Forez, des Monts du Lyonnais et du Roannais avec un entretien régulier, fiable et sur-mesure, adapté à chaque secteur d'activité. Chaque prestation est cadrée par un devis clair sous 24h après la visite, un planning calé sur vos horaires d'exploitation et un interlocuteur unique qui suit votre contrat dans la durée. Fréquence hebdomadaire, quotidienne ou ponctuelle, produits écolabel et probiotiques, équipes formées et encadrées : ASPEO s'impose comme le prestataire de nettoyage professionnel de référence à Saint-Étienne, Roanne, Montbrison, Feurs et dans tout le secteur.",
+    "editorial": {
+     "title": "Hygiène et propreté en environnement de travail, un enjeu fondamental",
+     "text": "L'hygiène et la propreté en entreprise sont un fondamental du bien-être au travail pour 98 % des salariés (étude IPSOS sur les Français et l'hygiène en entreprise).",
+     "subtitle1": "La propreté en entreprise, source de bien-être et levier de performance",
+     "text1": "L'hygiène et la propreté permettent d'offrir un espace de travail propice à l'efficacité :",
+     "bullets": [
+      "93 % des salariés sont plus motivés dans un espace propre et bien rangé.",
+      "Pour 94 % des salariés, la propreté participe au maintien d'une bonne ambiance de travail."
+     ],
+     "subtitle2": "L'hygiène et l'entretien des locaux, un rôle clé dans la prévention des risques",
+     "text2": "La propreté et l'hygiène sont des enjeux prioritaires pour la santé des collaborateurs et des visiteurs. Des mesures d'hygiène préventives bien menées limitent la transmission de maladies et l'absentéisme, pour un plus grand confort au quotidien.",
+     "text3": "C'est pourquoi, en tant qu'entreprise de nettoyage, ASPEO fait évoluer sans cesse ses prestations pour répondre aux dernières exigences en matière d'hygiène et de propreté professionnelle.",
+     "statLabel": "Pour",
+     "statValue": "94%",
+     "statStrong": "des salariés français,",
+     "statText": "la propreté est un fondamental du bien-être au travail.",
+     "statNote": "Source : étude IPSOS 2018"
+    },
+    "methodImage": "https://gerrrw8pnhgmo9jz.public.blob.vercel-storage.com/services/general/aspeo-equipes-1774184227905.webp",
     "method": {
      "title": "Un contrat pensé pour votre activité",
      "intro": "De la visite technique au premier passage, nous mettons en place un entretien fiable et sans surprise :",
@@ -30,7 +55,8 @@
     "cta": {
      "title": "Besoin d'un entretien professionnel fiable pour vos locaux ? Discutons de votre contrat.",
      "text": "Bureaux, tertiaire, bases de vie ou fin de chantier : ASPEO met en place un entretien régulier, adapté à votre activité et à vos horaires, avec un interlocuteur dédié et un devis clair sous 24h après la visite."
-    }
+    },
+    "separateColumn": false
    }
   },
   {
@@ -41,6 +67,14 @@
    "displayOrder": 2,
    "description": "Vitrerie, panneaux solaires, nettoyage de livraison de chantier et entretien des bases de vie.",
    "content": {
+    "kicker": "Nettoyage Professionnel",
+    "headline": "Vitres, Panneaux Solaires, Fin de Chantier & Bases de Vie",
+    "subtitle": "Lavage de vitres, panneaux photovoltaïques, fin de chantier et bases de vie : du matériel adapté à chaque configuration, sur devis clair sous 24h après la visite.",
+    "listTitle": "Nos prestations extérieur & chantier",
+    "heroImage": "https://gerrrw8pnhgmo9jz.public.blob.vercel-storage.com/services/nettoyage-de-fin-de-chantier/nettoyage-fin-de-chantier-42-aspeo-avant-apres-1774274431620-76dad0cc.webp",
+    "intro": "Lavage de vitres, nettoyage de panneaux photovoltaïques, nettoyage de fin de chantier avant livraison et entretien de bases de vie de chantier ou d'infrastructures routières : ASPEO couvre l'ensemble des besoins d'entretien extérieur et de chantier en Plaine du Forez, dans les Monts du Lyonnais et le Roannais, avec du matériel adapté à chaque configuration (hauteur, accès, emprise) et des équipes habilitées aux contraintes de chaque site.",
+    "editorial": null,
+    "methodImage": "https://gerrrw8pnhgmo9jz.public.blob.vercel-storage.com/services/general/aspeo-equipes-1774184227905.webp",
     "method": {
      "title": "Une intervention planifiée et sans surprise",
      "intro": "Vitrerie, panneaux solaires, fin de chantier ou base de vie : chaque prestation suit un déroulé précis, calé sur vos contraintes d'accès :",
@@ -56,7 +90,8 @@
     "cta": {
      "title": "Vitres, panneaux solaires, fin de chantier ou base de vie à planifier ? Demandez votre devis.",
      "text": "ASPEO intervient avec le matériel et la méthode adaptés à chaque support, sur devis clair sous 24h après la visite et avec un interlocuteur unique du premier contact à la restitution."
-    }
+    },
+    "separateColumn": false
    }
   },
   {
@@ -67,6 +102,31 @@
    "displayOrder": 3,
    "description": "Interventions délicates dans des logements très encombrés ou dégradés, menées avec discrétion et sans jugement.",
    "content": {
+    "kicker": "Interventions Spécialisées",
+    "headline": "Nettoyage Syndrome de Diogène & Logements Insalubres",
+    "subtitle": "Syndrome de Diogène, logement insalubre : nos équipes interviennent avec discrétion et respect, sans jugement.",
+    "listTitle": "Nos interventions spécialisées",
+    "heroImage": "https://gerrrw8pnhgmo9jz.public.blob.vercel-storage.com/services/nettoyage-syndrome-de-diogene/syndrome-diogene-nettoyage-extreme-avant-apres-aspeo-loire42-1774277305530-c590e694.webp",
+    "intro": "Le syndrome de Diogène et les logements insalubres demandent une approche différente d'un nettoyage classique : au-delà du nettoyage technique, ils exigent du tact, de la discrétion et un accompagnement respectueux des personnes concernées, en lien avec les familles, syndics ou services sociaux.",
+    "editorial": {
+     "title": "Des situations qui exigent un savoir-faire spécifique",
+     "text": "Une insalubrité avancée ou une situation d'accumulation ne se traitent pas comme un entretien courant. Chaque intervention demande un diagnostic précis, des équipements de protection adaptés et un protocole de décontamination rigoureux.",
+     "subtitle1": "Une expertise construite autour des situations extrêmes",
+     "text1": "ASPEO intervient de Saint-Étienne à Lyon en passant par tout le Forez, pour des situations que le nettoyage courant ne peut pas traiter :",
+     "bullets": [
+      "Nos équipes établissent un diagnostic précis avant toute intervention, avec un devis clair sous 24h après la visite.",
+      "Chaque intervention suit un protocole de décontamination rigoureux, avec des équipements de protection adaptés."
+     ],
+     "subtitle2": "Une méthode qui garantit un résultat sain et durable",
+     "text2": "De la désinfection complète d'un logement à la remise en état après une situation d'accumulation, nos équipes formées appliquent des protocoles précis et des produits professionnels certifiés, avec tact et discrétion.",
+     "text3": "",
+     "statLabel": "Devis clair sous",
+     "statValue": "24h",
+     "statStrong": "après diagnostic,",
+     "statText": "pour une intervention adaptée à votre situation.",
+     "statNote": "Interventions spécialisées et respectueuses"
+    },
+    "methodImage": "https://gerrrw8pnhgmo9jz.public.blob.vercel-storage.com/services/general/aspeo-equipes-1774184227905.webp",
     "method": {
      "title": "Une intervention avec tact et respect",
      "intro": "Chaque situation est différente. Voici comment nous procédons, dans le respect de la personne concernée et de son entourage :",
@@ -82,7 +142,8 @@
     "cta": {
      "title": "Une situation de syndrome de Diogène ou de logement insalubre à traiter ? Nous intervenons avec discrétion, astreinte joignable 7j/7.",
      "text": "Ces situations demandent du tact autant que du savoir-faire technique. ASPEO accompagne particuliers, familles et bailleurs avec une équipe formée, équipée et respectueuse des personnes concernées."
-    }
+    },
+    "separateColumn": false
    }
   },
   {
@@ -91,8 +152,16 @@
    "name": "Services Annexes",
    "pole": "specialise",
    "displayOrder": 4,
-   "description": "Remise en état, traitement des odeurs, de l'humidité et des moisissures, débarras et nettoyage extérieur.",
+   "description": "Remise en état, traitement des odeurs et nettoyage extérieur.",
    "content": {
+    "kicker": "Autres Services",
+    "headline": "Remise en État, Odeurs et Extérieurs",
+    "subtitle": "Remise en état, traitement des odeurs, nettoyage extérieur : le reste de vos besoins de propreté.",
+    "listTitle": "Nos autres services",
+    "heroImage": "https://gerrrw8pnhgmo9jz.public.blob.vercel-storage.com/services/nettoyage-de-fin-de-chantier/portrait-ingenieurs-pendant-heures-travail-chantier-1774184278385.webp",
+    "intro": "Remise en état, traitement des odeurs, nettoyage extérieur : ces prestations complètent nos interventions principales pour couvrir l'ensemble des besoins liés à un logement ou un local, du diagnostic initial à la restitution des lieux.",
+    "editorial": null,
+    "methodImage": "https://gerrrw8pnhgmo9jz.public.blob.vercel-storage.com/services/general/aspeo-equipes-1774184227905.webp",
     "method": {
      "title": "Une prestation sur-mesure",
      "intro": "Du diagnostic à la remise en état, nous adaptons chaque intervention à votre besoin réel :",
@@ -106,9 +175,10 @@
      "calloutText": "Si le résultat ne correspond pas à ce qui était convenu, nous revenons corriger l'intervention sans frais supplémentaire."
     },
     "cta": {
-     "title": "Un besoin de propreté à traiter — odeurs, vitres, débarras ou extérieurs ? Parlons-en.",
+     "title": "Un besoin de propreté à traiter — odeurs, remise en état ou extérieurs ? Parlons-en.",
      "text": "ASPEO adapte chaque intervention à votre besoin réel, avec un diagnostic précis, un devis clair sous 24h après la visite et une équipe formée pour un résultat durable."
-    }
+    },
+    "separateColumn": true
    }
   }
  ],
@@ -215,6 +285,101 @@
       "answer": "Oui. Pour nettoyage de logements insalubres, nous fournissons tous les éléments utiles à votre dossier (rapport, photos, factures détaillées) pour faciliter votre prise en charge."
      }
     ],
+    "spaces": [],
+    "sectors": [],
+    "approach": [
+     {
+      "title": "Nous intervenons en équipe équipée",
+      "text": "Nos techniciens sont protégés et formés pour traiter un environnement à risque sanitaire réel."
+     },
+     {
+      "title": "Nous traitons les surfaces, pas seulement l'air",
+      "text": "Chaque matériau contaminé est nettoyé et désinfecté, pas simplement aéré."
+     },
+     {
+      "title": "Nous évaluons précisément l'ampleur nécessaire",
+      "text": "Un diagnostic complet évite tout traitement partiel qui laisserait des foyers de contamination."
+     }
+    ],
+    "process": [
+     {
+      "step": 1,
+      "title": "Premier contact",
+      "description": "Échange avec le bailleur, syndic ou mandataire pour comprendre la situation.",
+      "duration": "30 min"
+     },
+     {
+      "step": 2,
+      "title": "Visite d'évaluation",
+      "description": "Diagnostic sur site de l'ampleur de l'insalubrité et des risques sanitaires.",
+      "duration": "1h"
+     },
+     {
+      "step": 3,
+      "title": "Devis détaillé",
+      "description": "Établissement d'un devis précisant le périmètre d'intervention.",
+      "duration": "24h"
+     },
+     {
+      "step": 4,
+      "title": "Nettoyage et décontamination",
+      "description": "Évacuation des déchets, traitement de l'humidité et décontamination des surfaces.",
+      "duration": "Variable"
+     },
+     {
+      "step": 5,
+      "title": "Remise en état finale",
+      "description": "Nettoyage complet pour restituer un logement sain et habitable.",
+      "duration": "Variable"
+     }
+    ],
+    "plus": [
+     {
+      "title": "Réactivité",
+      "text": "Une équipe capable d'intervenir rapidement, y compris en urgence, sur l'ensemble de la Loire et du Rhône."
+     },
+     {
+      "title": "Discrétion",
+      "text": "Des interventions menées avec tact, sans jugement, dans le respect des personnes et de leur intimité."
+     },
+     {
+      "title": "Traçabilité",
+      "text": "Un compte-rendu détaillé de chaque intervention, utile pour votre dossier d'assurance ou vos démarches administratives."
+     }
+    ],
+    "guarantees": [
+     "Assurance RC Pro couvrant l'ensemble de nos interventions",
+     "Personnel équipé de protections conformes aux normes",
+     "Discrétion et respect des occupants",
+     "Devis gratuit et transparent sous 24h",
+     "Intervention rapide en cas de situation urgente",
+     "Respect des normes de décontamination en vigueur"
+    ],
+    "pricingTiers": [
+     {
+      "name": "Léger",
+      "min": 700,
+      "max": 1400,
+      "unit": "",
+      "text": "Studio ou petite pièce à assainir, encombrement modéré."
+     },
+     {
+      "name": "Standard",
+      "min": 1400,
+      "max": 3200,
+      "unit": "",
+      "text": "Appartement ou maison nécessitant débarras, désinfection et traitement de l'humidité."
+     },
+     {
+      "name": "Important",
+      "min": 3200,
+      "max": 7500,
+      "unit": "",
+      "text": "Logement fortement dégradé, nuisibles ou insalubrité avancée sur plusieurs pièces."
+     }
+    ],
+    "priceNote": "Fourchettes indicatives, hors dossier spécifique. Un devis précis est établi après diagnostic.",
+    "showPricing": false,
     "subServices": [
      {
       "name": "Diagnostic d'insalubrité",
@@ -275,46 +440,6 @@
        "Restitution d'un espace sain et habitable"
       ]
      }
-    ],
-    "process": [
-     {
-      "step": 1,
-      "title": "Premier contact",
-      "description": "Échange avec le bailleur, syndic ou mandataire pour comprendre la situation.",
-      "duration": "30 min"
-     },
-     {
-      "step": 2,
-      "title": "Visite d'évaluation",
-      "description": "Diagnostic sur site de l'ampleur de l'insalubrité et des risques sanitaires.",
-      "duration": "1h"
-     },
-     {
-      "step": 3,
-      "title": "Devis détaillé",
-      "description": "Établissement d'un devis précisant le périmètre d'intervention.",
-      "duration": "24h"
-     },
-     {
-      "step": 4,
-      "title": "Nettoyage et décontamination",
-      "description": "Évacuation des déchets, traitement de l'humidité et décontamination des surfaces.",
-      "duration": "Variable"
-     },
-     {
-      "step": 5,
-      "title": "Remise en état finale",
-      "description": "Nettoyage complet pour restituer un logement sain et habitable.",
-      "duration": "Variable"
-     }
-    ],
-    "guarantees": [
-     "Assurance RC Pro couvrant l'ensemble de nos interventions",
-     "Personnel équipé de protections conformes aux normes",
-     "Discrétion et respect des occupants",
-     "Devis gratuit et transparent sous 24h",
-     "Intervention rapide en cas de situation urgente",
-     "Respect des normes de décontamination en vigueur"
     ],
     "applicationSectors": [
      "Bailleurs sociaux",
@@ -438,6 +563,100 @@
       "answer": "Oui. Pour nettoyage syndrome de diogène, nous fournissons tous les éléments utiles à votre dossier (rapport, photos, factures détaillées) pour faciliter votre prise en charge."
      }
     ],
+    "spaces": [],
+    "sectors": [],
+    "approach": [
+     {
+      "title": "Nous intervenons avec tact et sans jugement",
+      "text": "Le rythme de la personne concernée est respecté, en lien avec les familles ou les services sociaux."
+     },
+     {
+      "title": "Nous accompagnons, pas seulement nettoyons",
+      "text": "Chaque étape est expliquée et menée avec la considération que ces situations exigent."
+     },
+     {
+      "title": "Nous traitons les nuisibles en complément",
+      "text": "Nous coordonnons si besoin avec un professionnel de la désinsectisation pour un résultat durable."
+     }
+    ],
+    "process": [
+     {
+      "step": 1,
+      "title": "Visite discrète et devis",
+      "description": "Évaluation du volume, de l'état du logement et des contraintes, en toute confidentialité.",
+      "duration": "1h"
+     },
+     {
+      "step": 2,
+      "title": "Organisation de l'intervention",
+      "description": "Planification avec la famille, le tuteur ou le bailleur, et préparation des moyens d'évacuation.",
+      "duration": "24-72h"
+     },
+     {
+      "step": 3,
+      "title": "Tri et débarras",
+      "description": "Vidage complet avec mise de côté systématique des documents et objets de valeur.",
+      "duration": "1-3 jours"
+     },
+     {
+      "step": 4,
+      "title": "Nettoyage et désinfection",
+      "description": "Remise en état sanitaire complète du logement, sols, murs et sanitaires.",
+      "duration": "1-2 jours"
+     },
+     {
+      "step": 5,
+      "title": "Contrôle final et restitution",
+      "description": "Visite de fin d'intervention avec le demandeur et remise d'un logement sain.",
+      "duration": "30 min"
+     }
+    ],
+    "plus": [
+     {
+      "title": "Réactivité",
+      "text": "Une équipe capable d'intervenir rapidement, y compris en urgence, sur l'ensemble de la Loire et du Rhône."
+     },
+     {
+      "title": "Discrétion",
+      "text": "Des interventions menées avec tact, sans jugement, dans le respect des personnes et de leur intimité."
+     },
+     {
+      "title": "Traçabilité",
+      "text": "Un compte-rendu détaillé de chaque intervention, utile pour votre dossier d'assurance ou vos démarches administratives."
+     }
+    ],
+    "guarantees": [
+     "Confidentialité et discrétion absolues",
+     "Restitution systématique des objets de valeur retrouvés",
+     "Évacuation des déchets en filières agréées",
+     "Désinfection aux produits professionnels certifiés",
+     "Assurance RC Pro couvrant l'ensemble de nos interventions"
+    ],
+    "pricingTiers": [
+     {
+      "name": "Léger",
+      "min": 900,
+      "max": 1800,
+      "unit": "",
+      "text": "Accumulation récente, une à deux pièces concernées."
+     },
+     {
+      "name": "Standard",
+      "min": 1800,
+      "max": 3800,
+      "unit": "",
+      "text": "Logement entier à débarrasser et désinfecter, situation installée depuis plusieurs mois."
+     },
+     {
+      "name": "Important",
+      "min": 3800,
+      "max": 8500,
+      "unit": "",
+      "text": "Accumulation extrême sur l'ensemble du logement, intervention lourde sur plusieurs jours."
+     }
+    ],
+    "priceNote": "Fourchettes indicatives, hors dossier spécifique. Un devis précis est établi après diagnostic.",
+    "showPricing": false,
     "subServices": [
      {
       "name": "Débarras complet du logement",
@@ -485,45 +704,6 @@
        "Traitement contre les nuisibles si nécessaire"
       ]
      }
-    ],
-    "process": [
-     {
-      "step": 1,
-      "title": "Visite discrète et devis",
-      "description": "Évaluation du volume, de l'état du logement et des contraintes, en toute confidentialité.",
-      "duration": "1h"
-     },
-     {
-      "step": 2,
-      "title": "Organisation de l'intervention",
-      "description": "Planification avec la famille, le tuteur ou le bailleur, et préparation des moyens d'évacuation.",
-      "duration": "24-72h"
-     },
-     {
-      "step": 3,
-      "title": "Tri et débarras",
-      "description": "Vidage complet avec mise de côté systématique des documents et objets de valeur.",
-      "duration": "1-3 jours"
-     },
-     {
-      "step": 4,
-      "title": "Nettoyage et désinfection",
-      "description": "Remise en état sanitaire complète du logement, sols, murs et sanitaires.",
-      "duration": "1-2 jours"
-     },
-     {
-      "step": 5,
-      "title": "Contrôle final et restitution",
-      "description": "Visite de fin d'intervention avec le demandeur et remise d'un logement sain.",
-      "duration": "30 min"
-     }
-    ],
-    "guarantees": [
-     "Confidentialité et discrétion absolues",
-     "Restitution systématique des objets de valeur retrouvés",
-     "Évacuation des déchets en filières agréées",
-     "Désinfection aux produits professionnels certifiés",
-     "Assurance RC Pro couvrant l'ensemble de nos interventions"
     ],
     "applicationSectors": [
      "Familles et proches",
@@ -644,6 +824,80 @@
       "answer": "Oui. Pour remise en état, nous fournissons tous les éléments utiles à votre dossier (rapport, photos, factures détaillées) pour faciliter votre prise en charge."
      }
     ],
+    "spaces": [],
+    "sectors": [],
+    "approach": [],
+    "process": [
+     {
+      "title": "Diagnostic sur site",
+      "text": "Évaluation de la situation, des risques et du périmètre exact de l’intervention.",
+      "duration": "30-60 min"
+     },
+     {
+      "title": "Sécurisation & préparation",
+      "text": "Mise en sécurité des lieux et préparation du matériel adapté à la situation.",
+      "duration": "Variable"
+     },
+     {
+      "title": "Intervention",
+      "text": "Nous évaluons l'état des lieux, définissons les surfaces et éléments à traiter puis procédons au nettoyage approfondi, à la désinfection et à la remise en état des sols, murs et équipements, en coordination avec les autres corps de métier si des travaux sont prévus en parallèle.",
+      "duration": "Selon ampleur"
+     },
+     {
+      "title": "Contrôle final",
+      "text": "Vérification de la qualité du résultat et remise d’un compte-rendu détaillé.",
+      "duration": "15-30 min"
+     }
+    ],
+    "plus": [
+     {
+      "title": "Réactivité",
+      "text": "Une équipe capable d'intervenir rapidement, y compris en urgence, sur l'ensemble de la Loire et du Rhône."
+     },
+     {
+      "title": "Discrétion",
+      "text": "Des interventions menées avec tact, sans jugement, dans le respect des personnes et de leur intimité."
+     },
+     {
+      "title": "Traçabilité",
+      "text": "Un compte-rendu détaillé de chaque intervention, utile pour votre dossier d'assurance ou vos démarches administratives."
+     }
+    ],
+    "guarantees": [
+     "Devis gratuit sous 24h après la visite, adapté aux spécificités de votre besoin",
+     "Assurance Responsabilité Civile Professionnelle couvrant chaque intervention",
+     "Personnel formé aux règles de sécurité et titulaire des habilitations requises",
+     "Respect des protocoles et cahiers des charges de chaque client",
+     "Réactivité pour les interventions urgentes, y compris en horaires décalés",
+     "Gestion des déchets selon les filières réglementaires en vigueur",
+     "Coordination directe avec vos interlocuteurs et responsables sécurité",
+     "Compte-rendu d'intervention transmis à chaque passage"
+    ],
+    "pricingTiers": [
+     {
+      "name": "Léger",
+      "min": 500,
+      "max": 1000,
+      "unit": "",
+      "text": "Rafraîchissement ponctuel avant relocation ou vente."
+     },
+     {
+      "name": "Standard",
+      "min": 1000,
+      "max": 2200,
+      "unit": "",
+      "text": "Remise en état complète d'un logement après travaux ou départ de locataire."
+     },
+     {
+      "name": "Important",
+      "min": 2200,
+      "max": 4800,
+      "unit": "",
+      "text": "Remise à neuf complète après chantier lourd ou dégradation importante."
+     }
+    ],
+    "priceNote": "Fourchettes indicatives, hors dossier spécifique. Un devis précis est établi après diagnostic.",
+    "showPricing": false,
     "subServices": []
    }
   },
@@ -749,6 +1003,93 @@
       "answer": "Oui. Pour traitement des odeurs, nous fournissons tous les éléments utiles à votre dossier (rapport, photos, factures détaillées) pour faciliter votre prise en charge."
      }
     ],
+    "spaces": [],
+    "sectors": [],
+    "approach": [
+     {
+      "title": "Nous identifions la source exacte de l'odeur",
+      "text": "Un diagnostic précis évite de traiter uniquement les symptômes sans s'attaquer à la cause incrustée dans les matériaux."
+     },
+     {
+      "title": "Nous traitons en profondeur, pas en surface",
+      "text": "Ozonation ou brumisation neutralisent l'odeur dans les textiles, boiseries et cloisons, là où un spray ne fait que la masquer."
+     },
+     {
+      "title": "Nous contrôlons le résultat avant de clôturer",
+      "text": "Aucune intervention n'est considérée terminée tant que l'odeur n'a pas totalement disparu, y compris à distance."
+     }
+    ],
+    "process": [
+     {
+      "title": "Diagnostic sur site",
+      "text": "Évaluation de la situation, des risques et du périmètre exact de l’intervention.",
+      "duration": "30-60 min"
+     },
+     {
+      "title": "Sécurisation & préparation",
+      "text": "Mise en sécurité des lieux et préparation du matériel adapté à la situation.",
+      "duration": "Variable"
+     },
+     {
+      "title": "Intervention",
+      "text": "Nous identifions la source de l'odeur puis appliquons un traitement adapté : neutralisation chimique ciblée, traitement par ozone ou générateur de brouillard sec selon la nature et l'ampleur de la contamination olfactive.",
+      "duration": "Selon ampleur"
+     },
+     {
+      "title": "Contrôle final",
+      "text": "Vérification de la qualité du résultat et remise d’un compte-rendu détaillé.",
+      "duration": "15-30 min"
+     }
+    ],
+    "plus": [
+     {
+      "title": "Réactivité",
+      "text": "Une équipe capable d'intervenir rapidement, y compris en urgence, sur l'ensemble de la Loire et du Rhône."
+     },
+     {
+      "title": "Discrétion",
+      "text": "Des interventions menées avec tact, sans jugement, dans le respect des personnes et de leur intimité."
+     },
+     {
+      "title": "Traçabilité",
+      "text": "Un compte-rendu détaillé de chaque intervention, utile pour votre dossier d'assurance ou vos démarches administratives."
+     }
+    ],
+    "guarantees": [
+     "Devis gratuit sous 24h après la visite, adapté aux spécificités de votre besoin",
+     "Assurance Responsabilité Civile Professionnelle couvrant chaque intervention",
+     "Personnel formé aux règles de sécurité et titulaire des habilitations requises",
+     "Respect des protocoles et cahiers des charges de chaque client",
+     "Réactivité pour les interventions urgentes, y compris en horaires décalés",
+     "Gestion des déchets selon les filières réglementaires en vigueur",
+     "Coordination directe avec vos interlocuteurs et responsables sécurité",
+     "Compte-rendu d'intervention transmis à chaque passage"
+    ],
+    "pricingTiers": [
+     {
+      "name": "Léger",
+      "min": 180,
+      "max": 350,
+      "unit": "",
+      "text": "Odeur légère et localisée, traitement en une séance."
+     },
+     {
+      "name": "Standard",
+      "min": 350,
+      "max": 700,
+      "unit": "",
+      "text": "Odeur installée dans plusieurs pièces, nécessitant un traitement ozone complet."
+     },
+     {
+      "name": "Important",
+      "min": 700,
+      "max": 1400,
+      "unit": "",
+      "text": "Odeur profondément incrustée sur tout le logement, plusieurs passages nécessaires."
+     }
+    ],
+    "priceNote": "Fourchettes indicatives, hors dossier spécifique. Un devis précis est établi après diagnostic.",
+    "showPricing": false,
     "subServices": []
    }
   },
@@ -845,6 +1186,93 @@
       "answer": "Oui. Pour traitement de l'humidité, nous fournissons tous les éléments utiles à votre dossier (rapport, photos, factures détaillées) pour faciliter votre prise en charge."
      }
     ],
+    "spaces": [],
+    "sectors": [],
+    "approach": [
+     {
+      "title": "Nous diagnostiquons l'origine des remontées",
+      "text": "Un contrôle précis distingue une infiltration, une remontée capillaire ou un défaut de ventilation, pour traiter la vraie cause."
+     },
+     {
+      "title": "Nous traitons les supports en profondeur",
+      "text": "Assèchement et traitement hydrofuge s'appliquent sur les matériaux atteints, pas seulement en surface."
+     },
+     {
+      "title": "Nous vérifions la stabilité du résultat",
+      "text": "Un suivi confirme que l'humidité ne réapparaît pas après traitement, avant toute finition."
+     }
+    ],
+    "process": [
+     {
+      "title": "Diagnostic sur site",
+      "text": "Évaluation de la situation, des risques et du périmètre exact de l’intervention.",
+      "duration": "30-60 min"
+     },
+     {
+      "title": "Sécurisation & préparation",
+      "text": "Mise en sécurité des lieux et préparation du matériel adapté à la situation.",
+      "duration": "Variable"
+     },
+     {
+      "title": "Intervention",
+      "text": "Nous identifions l'origine de l'humidité, infiltration, condensation, remontée capillaire, puis mettons en œuvre le traitement adapté : assèchement par déshumidificateurs professionnels, traitement des surfaces touchées et recommandations pour limiter la récidive.",
+      "duration": "Selon ampleur"
+     },
+     {
+      "title": "Contrôle final",
+      "text": "Vérification de la qualité du résultat et remise d’un compte-rendu détaillé.",
+      "duration": "15-30 min"
+     }
+    ],
+    "plus": [
+     {
+      "title": "Réactivité",
+      "text": "Une équipe capable d'intervenir rapidement, y compris en urgence, sur l'ensemble de la Loire et du Rhône."
+     },
+     {
+      "title": "Discrétion",
+      "text": "Des interventions menées avec tact, sans jugement, dans le respect des personnes et de leur intimité."
+     },
+     {
+      "title": "Traçabilité",
+      "text": "Un compte-rendu détaillé de chaque intervention, utile pour votre dossier d'assurance ou vos démarches administratives."
+     }
+    ],
+    "guarantees": [
+     "Devis gratuit sous 24h après la visite, adapté aux spécificités de votre besoin",
+     "Assurance Responsabilité Civile Professionnelle couvrant chaque intervention",
+     "Personnel formé aux règles de sécurité et titulaire des habilitations requises",
+     "Respect des protocoles et cahiers des charges de chaque client",
+     "Réactivité pour les interventions urgentes, y compris en horaires décalés",
+     "Gestion des déchets selon les filières réglementaires en vigueur",
+     "Coordination directe avec vos interlocuteurs et responsables sécurité",
+     "Compte-rendu d'intervention transmis à chaque passage"
+    ],
+    "pricingTiers": [
+     {
+      "name": "Léger",
+      "min": 300,
+      "max": 600,
+      "unit": "",
+      "text": "Trace d'humidité localisée, sans moisissure visible."
+     },
+     {
+      "name": "Standard",
+      "min": 600,
+      "max": 1300,
+      "unit": "",
+      "text": "Humidité installée sur une ou plusieurs pièces avec débuts de moisissures."
+     },
+     {
+      "name": "Important",
+      "min": 1300,
+      "max": 2800,
+      "unit": "",
+      "text": "Humidité chronique et moisissures étendues sur l'ensemble du logement."
+     }
+    ],
+    "priceNote": "Fourchettes indicatives, hors dossier spécifique. Un devis précis est établi après diagnostic.",
+    "showPricing": false,
     "subServices": []
    }
   },
@@ -950,6 +1378,93 @@
       "answer": "Oui. Pour traitement des moisissures & champignons, nous fournissons tous les éléments utiles à votre dossier (rapport, photos, factures détaillées) pour faciliter votre prise en charge."
      }
     ],
+    "spaces": [],
+    "sectors": [],
+    "approach": [
+     {
+      "title": "Nous traitons sans disperser les spores",
+      "text": "Nos techniques évitent de libérer des spores dans l'air, contrairement à un brossage non maîtrisé."
+     },
+     {
+      "title": "Nous éliminons la cause d'humidité associée",
+      "text": "Traiter les moisissures sans corriger l'humidité qui les cause ne fait que retarder leur réapparition."
+     },
+     {
+      "title": "Nous assainissons l'ensemble de la zone touchée",
+      "text": "Le traitement couvre toute la surface contaminée, y compris les zones à peine visibles, pour un résultat durable."
+     }
+    ],
+    "process": [
+     {
+      "title": "Diagnostic sur site",
+      "text": "Évaluation de la situation, des risques et du périmètre exact de l’intervention.",
+      "duration": "30-60 min"
+     },
+     {
+      "title": "Sécurisation & préparation",
+      "text": "Mise en sécurité des lieux et préparation du matériel adapté à la situation.",
+      "duration": "Variable"
+     },
+     {
+      "title": "Intervention",
+      "text": "Nous traitons les surfaces contaminées avec des produits fongicides professionnels, éliminons les résidus et matériaux irrécupérables si nécessaire, puis traitons la cause de l'humidité à l'origine du développement pour éviter toute récidive.",
+      "duration": "Selon ampleur"
+     },
+     {
+      "title": "Contrôle final",
+      "text": "Vérification de la qualité du résultat et remise d’un compte-rendu détaillé.",
+      "duration": "15-30 min"
+     }
+    ],
+    "plus": [
+     {
+      "title": "Réactivité",
+      "text": "Une équipe capable d'intervenir rapidement, y compris en urgence, sur l'ensemble de la Loire et du Rhône."
+     },
+     {
+      "title": "Discrétion",
+      "text": "Des interventions menées avec tact, sans jugement, dans le respect des personnes et de leur intimité."
+     },
+     {
+      "title": "Traçabilité",
+      "text": "Un compte-rendu détaillé de chaque intervention, utile pour votre dossier d'assurance ou vos démarches administratives."
+     }
+    ],
+    "guarantees": [
+     "Devis gratuit sous 24h après la visite, adapté aux spécificités de votre besoin",
+     "Assurance Responsabilité Civile Professionnelle couvrant chaque intervention",
+     "Personnel formé aux règles de sécurité et titulaire des habilitations requises",
+     "Respect des protocoles et cahiers des charges de chaque client",
+     "Réactivité pour les interventions urgentes, y compris en horaires décalés",
+     "Gestion des déchets selon les filières réglementaires en vigueur",
+     "Coordination directe avec vos interlocuteurs et responsables sécurité",
+     "Compte-rendu d'intervention transmis à chaque passage"
+    ],
+    "pricingTiers": [
+     {
+      "name": "Léger",
+      "min": 280,
+      "max": 550,
+      "unit": "",
+      "text": "Foyer de moisissure isolé, surface réduite."
+     },
+     {
+      "name": "Standard",
+      "min": 550,
+      "max": 1200,
+      "unit": "",
+      "text": "Moisissures visibles sur plusieurs surfaces, traitement fongicide complet."
+     },
+     {
+      "name": "Important",
+      "min": 1200,
+      "max": 2600,
+      "unit": "",
+      "text": "Contamination fongique étendue nécessitant décontamination renforcée."
+     }
+    ],
+    "priceNote": "Fourchettes indicatives, hors dossier spécifique. Un devis précis est établi après diagnostic.",
+    "showPricing": false,
     "subServices": []
    }
   },
@@ -1055,6 +1570,93 @@
       "answer": "Oui. Pour débarras de maison, appartement & encombrants, nous fournissons tous les éléments utiles à votre dossier (rapport, photos, factures détaillées) pour faciliter votre prise en charge."
      }
     ],
+    "spaces": [],
+    "sectors": [],
+    "approach": [
+     {
+      "title": "Nous organisons le tri avant l'évacuation",
+      "text": "Objets de valeur, documents et éléments à conserver sont identifiés avant tout débarras, en lien avec vous."
+     },
+     {
+      "title": "Nous orientons les déchets vers les bonnes filières",
+      "text": "Chaque type de déchet est traité conformément aux normes de tri et de recyclage en vigueur."
+     },
+     {
+      "title": "Nous libérons les lieux rapidement",
+      "text": "Une intervention organisée permet de rendre l'espace vide et propre en une seule intervention."
+     }
+    ],
+    "process": [
+     {
+      "title": "Diagnostic sur site",
+      "text": "Évaluation de la situation, des risques et du périmètre exact de l’intervention.",
+      "duration": "30-60 min"
+     },
+     {
+      "title": "Sécurisation & préparation",
+      "text": "Mise en sécurité des lieux et préparation du matériel adapté à la situation.",
+      "duration": "Variable"
+     },
+     {
+      "title": "Intervention",
+      "text": "Nous prenons en charge le tri, la manutention lourde et l'évacuation complète de la maison, de l'appartement, de la cave ou du garage, avec un tri éco-responsable en déchetterie professionnelle.",
+      "duration": "Selon ampleur"
+     },
+     {
+      "title": "Contrôle final",
+      "text": "Vérification de la qualité du résultat et remise d’un compte-rendu détaillé.",
+      "duration": "15-30 min"
+     }
+    ],
+    "plus": [
+     {
+      "title": "Réactivité",
+      "text": "Une équipe capable d'intervenir rapidement, y compris en urgence, sur l'ensemble de la Loire et du Rhône."
+     },
+     {
+      "title": "Discrétion",
+      "text": "Des interventions menées avec tact, sans jugement, dans le respect des personnes et de leur intimité."
+     },
+     {
+      "title": "Traçabilité",
+      "text": "Un compte-rendu détaillé de chaque intervention, utile pour votre dossier d'assurance ou vos démarches administratives."
+     }
+    ],
+    "guarantees": [
+     "Devis gratuit sous 24h après la visite, adapté aux spécificités de votre besoin",
+     "Assurance Responsabilité Civile Professionnelle couvrant chaque intervention",
+     "Personnel formé aux règles de sécurité et titulaire des habilitations requises",
+     "Respect des protocoles et cahiers des charges de chaque client",
+     "Réactivité pour les interventions urgentes, y compris en horaires décalés",
+     "Gestion des déchets selon les filières réglementaires en vigueur",
+     "Coordination directe avec vos interlocuteurs et responsables sécurité",
+     "Compte-rendu d'intervention transmis à chaque passage"
+    ],
+    "pricingTiers": [
+     {
+      "name": "Léger",
+      "min": 150,
+      "max": 350,
+      "unit": "",
+      "text": "Quelques objets ou un petit volume à évacuer."
+     },
+     {
+      "name": "Standard",
+      "min": 350,
+      "max": 800,
+      "unit": "",
+      "text": "Débarras d'une pièce ou d'un garage avec tri éco-responsable."
+     },
+     {
+      "name": "Important",
+      "min": 800,
+      "max": 1800,
+      "unit": "",
+      "text": "Débarras complet d'un logement, cave et dépendances comprises."
+     }
+    ],
+    "priceNote": "Fourchettes indicatives, hors dossier spécifique. Un devis précis est établi après diagnostic.",
+    "showPricing": false,
     "subServices": []
    }
   },
@@ -1147,14 +1749,92 @@
       "answer": "Les deux. Selon vos besoins de lavage de vitres, nous proposons aussi bien des interventions ponctuelles que des contrats réguliers avec planning adapté à votre activité, en journée ou en horaires décalés. Nous construisons avec vous la formule la plus efficace pour votre budget."
      },
      {
-      "question": "Sous quel délai puis-je recevoir un devis pour lavage de vitres ?",
-      "answer": "Le devis est envoyé sous 24h après la visite pour la majorité des demandes de lavage de vitres, et proposons un devis express en cas d'urgence."
+      "question": "Sous quel délai pouvez-vous démarrer un contrat de lavage de vitres ?",
+      "answer": "Après la visite technique et la validation du devis, un premier passage peut généralement être organisé sous une à deux semaines, selon la fréquence et les effectifs à mobiliser."
      },
      {
-      "question": "Travaillez-vous avec les compagnies d'assurance pour ce type d'intervention ?",
-      "answer": "Oui. Pour lavage de vitres, nous fournissons tous les éléments utiles à votre dossier (rapport, photos, factures détaillées) pour faciliter votre prise en charge."
+      "question": "Fournissez-vous une attestation d'assurance responsabilité civile professionnelle ?",
+      "answer": "Oui, une attestation d'assurance responsabilité civile professionnelle vous est transmise sur simple demande, avant ou après la signature du contrat."
      }
     ],
+    "spaces": [
+     "Vitrines et façades",
+     "Baies vitrées de bureaux",
+     "Vérandas et verrières",
+     "Vitrages en hauteur",
+     "Parties communes de copropriété"
+    ],
+    "sectors": [
+     "Commerces et boutiques",
+     "Sièges sociaux et bureaux",
+     "Copropriétés",
+     "Agences bancaires et immobilières"
+    ],
+    "approach": [
+     {
+      "title": "Nous adaptons la technique à chaque vitrage",
+      "text": "Baies fixes, hauteur ou accès difficile imposent des méthodes et équipements spécifiques pour un résultat impeccable."
+     },
+     {
+      "title": "Nous traitons dépôts calcaires et pollution urbaine",
+      "text": "Un nettoyage professionnel retire les traces incrustées qu'un lavage classique ne suffit pas à enlever."
+     },
+     {
+      "title": "Nous proposons un entretien régulier",
+      "text": "Un passage planifié maintient un résultat constant et évite que les dépôts ne s'accumulent à nouveau."
+     }
+    ],
+    "process": [
+     {
+      "step": 1,
+      "title": "Évaluation des surfaces vitrées",
+      "description": "Visite pour mesurer les surfaces et identifier les contraintes d'accès.",
+      "duration": "20 min"
+     },
+     {
+      "step": 2,
+      "title": "Devis et planification",
+      "description": "Établissement d'un devis gratuit et proposition d'une fréquence adaptée.",
+      "duration": "24h"
+     },
+     {
+      "step": 3,
+      "title": "Intervention",
+      "description": "Lavage des vitrages avec le matériel adapté à la configuration du site.",
+      "duration": "1-3h"
+     },
+     {
+      "step": 4,
+      "title": "Contrôle qualité",
+      "description": "Vérification de l'absence de traces et de résidus.",
+      "duration": "15 min"
+     }
+    ],
+    "plus": [
+     {
+      "title": "Réactivité",
+      "text": "Une équipe capable d'intervenir rapidement, y compris en urgence, sur l'ensemble de la Loire et du Rhône."
+     },
+     {
+      "title": "Discrétion",
+      "text": "Des interventions menées avec tact, sans jugement, dans le respect des personnes et de leur intimité."
+     },
+     {
+      "title": "Traçabilité",
+      "text": "Un compte-rendu détaillé de chaque intervention, utile pour votre dossier d'assurance ou vos démarches administratives."
+     }
+    ],
+    "guarantees": [
+     "Assurance RC Pro couvrant les interventions en hauteur",
+     "Résultat sans traces garanti",
+     "Personnel formé aux techniques de vitrerie",
+     "Devis gratuit sous 24h",
+     "Intervention rapide selon vos besoins",
+     "Produits éco-responsables"
+    ],
+    "pricingTiers": [],
+    "priceNote": "Fourchettes indicatives, hors dossier spécifique. Un devis précis est établi après diagnostic.",
+    "showPricing": false,
     "subServices": [
      {
       "name": "Lavage de vitrines commerciales",
@@ -1209,40 +1889,6 @@
        "Lavage des miroirs et surfaces réfléchissantes"
       ]
      }
-    ],
-    "process": [
-     {
-      "step": 1,
-      "title": "Évaluation des surfaces vitrées",
-      "description": "Visite pour mesurer les surfaces et identifier les contraintes d'accès.",
-      "duration": "20 min"
-     },
-     {
-      "step": 2,
-      "title": "Devis et planification",
-      "description": "Établissement d'un devis gratuit et proposition d'une fréquence adaptée.",
-      "duration": "24h"
-     },
-     {
-      "step": 3,
-      "title": "Intervention",
-      "description": "Lavage des vitrages avec le matériel adapté à la configuration du site.",
-      "duration": "1-3h"
-     },
-     {
-      "step": 4,
-      "title": "Contrôle qualité",
-      "description": "Vérification de l'absence de traces et de résidus.",
-      "duration": "15 min"
-     }
-    ],
-    "guarantees": [
-     "Assurance RC Pro couvrant les interventions en hauteur",
-     "Résultat sans traces garanti",
-     "Personnel formé aux techniques de vitrerie",
-     "Devis gratuit sous 24h",
-     "Intervention rapide selon vos besoins",
-     "Produits éco-responsables"
     ],
     "applicationSectors": [
      "Commerces et boutiques",
@@ -1361,6 +2007,79 @@
       "answer": "Oui. Pour nettoyage des extérieurs, nous fournissons tous les éléments utiles à votre dossier (rapport, photos, factures détaillées) pour faciliter votre prise en charge."
      }
     ],
+    "spaces": [],
+    "sectors": [],
+    "approach": [
+     {
+      "title": "Nous traitons les mousses en profondeur",
+      "text": "Un traitement anti-mousse adapté retire ce qui rend les surfaces glissantes et attaque certains matériaux poreux."
+     },
+     {
+      "title": "Nous adaptons la pression au revêtement",
+      "text": "Chaque matériau (pierre, bois, composite) demande un réglage spécifique pour nettoyer sans abîmer."
+     },
+     {
+      "title": "Nous restaurons l'aspect d'origine",
+      "text": "Terrasses, balcons et cours retrouvent leur éclat et leur sécurité d'usage après notre passage."
+     }
+    ],
+    "process": [
+     {
+      "step": 1,
+      "title": "Visite du site",
+      "description": "Évaluation des surfaces extérieures et des besoins spécifiques.",
+      "duration": "30 min"
+     },
+     {
+      "step": 2,
+      "title": "Devis personnalisé",
+      "description": "Proposition d'un devis adapté aux surfaces et à la fréquence souhaitée.",
+      "duration": "24h"
+     },
+     {
+      "step": 3,
+      "title": "Intervention haute pression",
+      "description": "Nettoyage des surfaces extérieures avec équipement professionnel.",
+      "duration": "2-4h"
+     },
+     {
+      "step": 4,
+      "title": "Traitement anti-mousse",
+      "description": "Application de traitements préventifs sur les zones sensibles à l'humidité.",
+      "duration": "Variable"
+     },
+     {
+      "step": 5,
+      "title": "Contrôle final",
+      "description": "Vérification de la qualité du nettoyage réalisé.",
+      "duration": "15 min"
+     }
+    ],
+    "plus": [
+     {
+      "title": "Réactivité",
+      "text": "Une équipe capable d'intervenir rapidement, y compris en urgence, sur l'ensemble de la Loire et du Rhône."
+     },
+     {
+      "title": "Discrétion",
+      "text": "Des interventions menées avec tact, sans jugement, dans le respect des personnes et de leur intimité."
+     },
+     {
+      "title": "Traçabilité",
+      "text": "Un compte-rendu détaillé de chaque intervention, utile pour votre dossier d'assurance ou vos démarches administratives."
+     }
+    ],
+    "guarantees": [
+     "Assurance RC Pro couvrant l'ensemble de nos interventions",
+     "Équipements professionnels haute pression",
+     "Personnel formé aux techniques de nettoyage extérieur",
+     "Devis gratuit sous 24h",
+     "Intervention rapide selon vos besoins",
+     "Produits éco-responsables"
+    ],
+    "pricingTiers": [],
+    "priceNote": "Fourchettes indicatives, hors dossier spécifique. Un devis précis est établi après diagnostic.",
+    "showPricing": false,
     "subServices": [
      {
       "name": "Nettoyage haute pression de parkings",
@@ -1415,46 +2134,6 @@
        "Nettoyage des zones de livraison"
       ]
      }
-    ],
-    "process": [
-     {
-      "step": 1,
-      "title": "Visite du site",
-      "description": "Évaluation des surfaces extérieures et des besoins spécifiques.",
-      "duration": "30 min"
-     },
-     {
-      "step": 2,
-      "title": "Devis personnalisé",
-      "description": "Proposition d'un devis adapté aux surfaces et à la fréquence souhaitée.",
-      "duration": "24h"
-     },
-     {
-      "step": 3,
-      "title": "Intervention haute pression",
-      "description": "Nettoyage des surfaces extérieures avec équipement professionnel.",
-      "duration": "2-4h"
-     },
-     {
-      "step": 4,
-      "title": "Traitement anti-mousse",
-      "description": "Application de traitements préventifs sur les zones sensibles à l'humidité.",
-      "duration": "Variable"
-     },
-     {
-      "step": 5,
-      "title": "Contrôle final",
-      "description": "Vérification de la qualité du nettoyage réalisé.",
-      "duration": "15 min"
-     }
-    ],
-    "guarantees": [
-     "Assurance RC Pro couvrant l'ensemble de nos interventions",
-     "Équipements professionnels haute pression",
-     "Personnel formé aux techniques de nettoyage extérieur",
-     "Devis gratuit sous 24h",
-     "Intervention rapide selon vos besoins",
-     "Produits éco-responsables"
     ],
     "applicationSectors": [
      "Entreprises et zones d'activité",
@@ -1566,14 +2245,125 @@
       "answer": "Les deux. Selon vos besoins de nettoyage tertiaire & bureaux, nous proposons aussi bien des interventions ponctuelles que des contrats réguliers avec planning adapté à votre activité, en journée ou en horaires décalés. Nous construisons avec vous la formule la plus efficace pour votre budget."
      },
      {
-      "question": "Sous quel délai puis-je recevoir un devis pour nettoyage tertiaire & bureaux ?",
-      "answer": "Le devis est envoyé sous 24h après la visite pour la majorité des demandes de nettoyage tertiaire & bureaux, et proposons un devis express en cas d'urgence."
+      "question": "Sous quel délai pouvez-vous démarrer un contrat de nettoyage tertiaire & bureaux ?",
+      "answer": "Après la visite technique et la validation du devis, un premier passage peut généralement être organisé sous une à deux semaines, selon la fréquence et les effectifs à mobiliser."
      },
      {
-      "question": "Travaillez-vous avec les compagnies d'assurance pour ce type d'intervention ?",
-      "answer": "Oui. Pour nettoyage tertiaire & bureaux, nous fournissons tous les éléments utiles à votre dossier (rapport, photos, factures détaillées) pour faciliter votre prise en charge."
+      "question": "Fournissez-vous une attestation d'assurance responsabilité civile professionnelle ?",
+      "answer": "Oui, une attestation d'assurance responsabilité civile professionnelle vous est transmise sur simple demande, avant ou après la signature du contrat."
      }
     ],
+    "spaces": [
+     "Bureaux et open spaces",
+     "Sièges sociaux",
+     "Salles de réunion",
+     "Accueils et espaces d'attente",
+     "Sanitaires collectifs",
+     "Locaux professionnels indépendants",
+     "Espaces communs d'immeubles de bureaux"
+    ],
+    "sectors": [
+     "Sièges sociaux et PME",
+     "Cabinets professionnels (comptables, avocats, notaires)",
+     "Agences bancaires et immobilières",
+     "Cabinets médicaux et paramédicaux",
+     "Locaux artisans et commerçants",
+     "Immeubles de bureaux partagés",
+     "Collectivités et administrations locales"
+    ],
+    "approach": [
+     {
+      "title": "Nous adaptons nos horaires à votre activité",
+      "text": "Un passage avant l'ouverture, en horaires décalés ou le week-end évite toute perturbation de votre organisation quotidienne."
+     },
+     {
+      "title": "Nous suivons une check-list de contrôle qualité",
+      "text": "Chaque passage est vérifié selon un cahier des charges précis, avec un cahier de liaison partagé pour un suivi transparent."
+     },
+     {
+      "title": "Nous ajustons le contrat à votre évolution",
+      "text": "Fréquence, périmètre et effectifs mobilisés évoluent facilement avec un simple ajustement, sans renégociation lourde du contrat."
+     }
+    ],
+    "process": [
+     {
+      "step": 1,
+      "title": "Audit des locaux",
+      "description": "Visite des bureaux pour évaluer les surfaces et définir le périmètre d'intervention.",
+      "duration": "30 min"
+     },
+     {
+      "step": 2,
+      "title": "Proposition de contrat",
+      "description": "Élaboration d'un devis détaillé selon la fréquence et les prestations souhaitées.",
+      "duration": "24h"
+     },
+     {
+      "step": 3,
+      "title": "Mise en place du planning",
+      "description": "Définition des horaires d'intervention adaptés à l'activité de l'entreprise.",
+      "duration": "Variable"
+     },
+     {
+      "step": 4,
+      "title": "Intervention régulière",
+      "description": "Nettoyage réalisé selon la fréquence contractuelle, en horaires décalés si nécessaire.",
+      "duration": "1-3h"
+     },
+     {
+      "step": 5,
+      "title": "Suivi qualité",
+      "description": "Points de contrôle réguliers pour garantir la satisfaction dans la durée.",
+      "duration": "Variable"
+     }
+    ],
+    "plus": [
+     {
+      "title": "Réactivité",
+      "text": "Une équipe capable d'intervenir rapidement, y compris en urgence, sur l'ensemble de la Loire et du Rhône."
+     },
+     {
+      "title": "Discrétion",
+      "text": "Des interventions menées avec tact, sans jugement, dans le respect des personnes et de leur intimité."
+     },
+     {
+      "title": "Traçabilité",
+      "text": "Un compte-rendu détaillé de chaque intervention, utile pour votre dossier d'assurance ou vos démarches administratives."
+     }
+    ],
+    "guarantees": [
+     "Assurance RC Pro couvrant l'ensemble de nos interventions",
+     "Personnel formé et fidélisé sur vos sites",
+     "Confidentialité garantie sur l'ensemble de nos interventions",
+     "Devis gratuit et transparent sous 24h",
+     "Produits éco-responsables",
+     "Flexibilité horaire adaptée à votre activité"
+    ],
+    "pricingTiers": [
+     {
+      "name": "Léger",
+      "min": 180,
+      "max": 350,
+      "unit": "/mois",
+      "text": "Petit bureau ou local jusqu'à 100 m², passage 1 à 2 fois par semaine."
+     },
+     {
+      "name": "Standard",
+      "min": 350,
+      "max": 750,
+      "unit": "/mois",
+      "text": "Bureaux de 100 à 400 m², passage 2 à 5 fois par semaine."
+     },
+     {
+      "name": "Important",
+      "min": 750,
+      "max": 1600,
+      "unit": "/mois",
+      "text": "Siège social ou plateau de plus de 400 m², passage quotidien."
+     }
+    ],
+    "priceNote": "Tarifs forfaitaires mensuels, hors produits et consommables (à ajouter selon fourniture souhaitée). Fourchettes indicatives, un devis précis est établi après visite technique.",
+    "showPricing": false,
     "subServices": [
      {
       "name": "Nettoyage des bureaux et open spaces",
@@ -1636,46 +2426,6 @@
        "Entretien des salles de réunion après usage"
       ]
      }
-    ],
-    "process": [
-     {
-      "step": 1,
-      "title": "Audit des locaux",
-      "description": "Visite des bureaux pour évaluer les surfaces et définir le périmètre d'intervention.",
-      "duration": "30 min"
-     },
-     {
-      "step": 2,
-      "title": "Proposition de contrat",
-      "description": "Élaboration d'un devis détaillé selon la fréquence et les prestations souhaitées.",
-      "duration": "24h"
-     },
-     {
-      "step": 3,
-      "title": "Mise en place du planning",
-      "description": "Définition des horaires d'intervention adaptés à l'activité de l'entreprise.",
-      "duration": "Variable"
-     },
-     {
-      "step": 4,
-      "title": "Intervention régulière",
-      "description": "Nettoyage réalisé selon la fréquence contractuelle, en horaires décalés si nécessaire.",
-      "duration": "1-3h"
-     },
-     {
-      "step": 5,
-      "title": "Suivi qualité",
-      "description": "Points de contrôle réguliers pour garantir la satisfaction dans la durée.",
-      "duration": "Variable"
-     }
-    ],
-    "guarantees": [
-     "Assurance RC Pro couvrant l'ensemble de nos interventions",
-     "Personnel formé et fidélisé sur vos sites",
-     "Confidentialité garantie sur l'ensemble de nos interventions",
-     "Devis gratuit et transparent sous 24h",
-     "Produits éco-responsables",
-     "Flexibilité horaire adaptée à votre activité"
     ],
     "applicationSectors": [
      "Sièges sociaux d'entreprises",
@@ -1787,14 +2537,122 @@
       "answer": "Les deux. Selon vos besoins de nettoyage de surfaces commerciales, nous proposons aussi bien des interventions ponctuelles que des contrats réguliers avec planning adapté à votre activité, en journée ou en horaires décalés. Nous construisons avec vous la formule la plus efficace pour votre budget."
      },
      {
-      "question": "Sous quel délai puis-je recevoir un devis pour nettoyage de surfaces commerciales ?",
-      "answer": "Le devis est envoyé sous 24h après la visite pour la majorité des demandes de nettoyage de surfaces commerciales, et proposons un devis express en cas d'urgence."
+      "question": "Sous quel délai pouvez-vous démarrer un contrat de nettoyage de surfaces commerciales ?",
+      "answer": "Après la visite technique et la validation du devis, un premier passage peut généralement être organisé sous une à deux semaines, selon la fréquence et les effectifs à mobiliser."
      },
      {
-      "question": "Travaillez-vous avec les compagnies d'assurance pour ce type d'intervention ?",
-      "answer": "Oui. Pour nettoyage de surfaces commerciales, nous fournissons tous les éléments utiles à votre dossier (rapport, photos, factures détaillées) pour faciliter votre prise en charge."
+      "question": "Fournissez-vous une attestation d'assurance responsabilité civile professionnelle ?",
+      "answer": "Oui, une attestation d'assurance responsabilité civile professionnelle vous est transmise sur simple demande, avant ou après la signature du contrat."
      }
     ],
+    "spaces": [
+     "Boutiques et showrooms",
+     "Vitrines et présentoirs",
+     "Cabines d'essayage",
+     "Caisses et zones de passage",
+     "Réserves et arrière-boutiques",
+     "Sanitaires clients"
+    ],
+    "sectors": [
+     "Commerces de centre-ville",
+     "Centres commerciaux",
+     "Showrooms automobiles",
+     "Concept stores et franchises",
+     "Pharmacies et opticiens"
+    ],
+    "approach": [
+     {
+      "title": "Nous intervenons hors horaires d'ouverture",
+      "text": "Votre activité commerciale n'est jamais interrompue par notre passage, même en cas de forte affluence en journée."
+     },
+     {
+      "title": "Nous adaptons la fréquence à l'affluence",
+      "text": "Le rythme d'intervention suit vos pics saisonniers plutôt qu'un forfait figé à l'année, pour un service dimensionné au bon niveau."
+     },
+     {
+      "title": "Nous soignons les zones à forte exposition",
+      "text": "Vitrines, présentoirs et sols de circulation reçoivent une attention particulière, car ce sont eux que la clientèle voit en premier."
+     }
+    ],
+    "process": [
+     {
+      "step": 1,
+      "title": "Visite du commerce et devis",
+      "description": "Évaluation des surfaces et des besoins spécifiques liés à votre activité.",
+      "duration": "30 min"
+     },
+     {
+      "step": 2,
+      "title": "Définition du planning",
+      "description": "Choix des horaires d'intervention en fonction de vos ouvertures et fermetures.",
+      "duration": "Variable"
+     },
+     {
+      "step": 3,
+      "title": "Intervention discrète",
+      "description": "Nettoyage réalisé avant ouverture ou en dehors des heures d'affluence.",
+      "duration": "1-2h"
+     },
+     {
+      "step": 4,
+      "title": "Contrôle qualité",
+      "description": "Vérification finale avant l'ouverture du commerce.",
+      "duration": "15 min"
+     },
+     {
+      "step": 5,
+      "title": "Suivi régulier",
+      "description": "Ajustement du contrat selon l'évolution de votre activité commerciale.",
+      "duration": "Variable"
+     }
+    ],
+    "plus": [
+     {
+      "title": "Réactivité",
+      "text": "Une équipe capable d'intervenir rapidement, y compris en urgence, sur l'ensemble de la Loire et du Rhône."
+     },
+     {
+      "title": "Discrétion",
+      "text": "Des interventions menées avec tact, sans jugement, dans le respect des personnes et de leur intimité."
+     },
+     {
+      "title": "Traçabilité",
+      "text": "Un compte-rendu détaillé de chaque intervention, utile pour votre dossier d'assurance ou vos démarches administratives."
+     }
+    ],
+    "guarantees": [
+     "Assurance RC Pro couvrant l'ensemble de nos interventions",
+     "Produits éco-responsables adaptés aux surfaces commerciales",
+     "Personnel formé et discret",
+     "Devis gratuit sous 24h",
+     "Intervention rapide en cas de besoin ponctuel",
+     "Flexibilité horaire totale"
+    ],
+    "pricingTiers": [
+     {
+      "name": "Léger",
+      "min": 160,
+      "max": 320,
+      "unit": "/mois",
+      "text": "Petit commerce ou boutique jusqu'à 100 m², passage 2 à 3 fois par semaine."
+     },
+     {
+      "name": "Standard",
+      "min": 320,
+      "max": 700,
+      "unit": "/mois",
+      "text": "Surface de vente de 100 à 400 m², passage quotidien hors week-end."
+     },
+     {
+      "name": "Important",
+      "min": 700,
+      "max": 1500,
+      "unit": "/mois",
+      "text": "Grande surface ou enseigne multi-sites, passage quotidien 7j/7."
+     }
+    ],
+    "priceNote": "Tarifs forfaitaires mensuels, hors produits et consommables (à ajouter selon fourniture souhaitée). Fourchettes indicatives, un devis précis est établi après visite technique.",
+    "showPricing": false,
     "subServices": [
      {
       "name": "Nettoyage quotidien des sols",
@@ -1849,46 +2707,6 @@
        "Nettoyage des zones de caisse et comptoirs"
       ]
      }
-    ],
-    "process": [
-     {
-      "step": 1,
-      "title": "Visite du commerce et devis",
-      "description": "Évaluation des surfaces et des besoins spécifiques liés à votre activité.",
-      "duration": "30 min"
-     },
-     {
-      "step": 2,
-      "title": "Définition du planning",
-      "description": "Choix des horaires d'intervention en fonction de vos ouvertures et fermetures.",
-      "duration": "Variable"
-     },
-     {
-      "step": 3,
-      "title": "Intervention discrète",
-      "description": "Nettoyage réalisé avant ouverture ou en dehors des heures d'affluence.",
-      "duration": "1-2h"
-     },
-     {
-      "step": 4,
-      "title": "Contrôle qualité",
-      "description": "Vérification finale avant l'ouverture du commerce.",
-      "duration": "15 min"
-     },
-     {
-      "step": 5,
-      "title": "Suivi régulier",
-      "description": "Ajustement du contrat selon l'évolution de votre activité commerciale.",
-      "duration": "Variable"
-     }
-    ],
-    "guarantees": [
-     "Assurance RC Pro couvrant l'ensemble de nos interventions",
-     "Produits éco-responsables adaptés aux surfaces commerciales",
-     "Personnel formé et discret",
-     "Devis gratuit sous 24h",
-     "Intervention rapide en cas de besoin ponctuel",
-     "Flexibilité horaire totale"
     ],
     "applicationSectors": [
      "Boutiques de prêt-à-porter",
@@ -2000,14 +2818,121 @@
       "answer": "Les deux. Selon vos besoins de nettoyage de bases de vie, nous proposons aussi bien des interventions ponctuelles que des contrats réguliers avec planning adapté à votre activité, en journée ou en horaires décalés. Nous construisons avec vous la formule la plus efficace pour votre budget."
      },
      {
-      "question": "Sous quel délai puis-je recevoir un devis pour nettoyage de bases de vie ?",
-      "answer": "Le devis est envoyé sous 24h après la visite pour la majorité des demandes de nettoyage de bases de vie, et proposons un devis express en cas d'urgence."
+      "question": "Sous quel délai pouvez-vous démarrer un contrat de nettoyage de bases de vie ?",
+      "answer": "Après la visite technique et la validation du devis, un premier passage peut généralement être organisé sous une à deux semaines, selon la fréquence et les effectifs à mobiliser."
      },
      {
-      "question": "Travaillez-vous avec les compagnies d'assurance pour ce type d'intervention ?",
-      "answer": "Oui. Pour nettoyage de bases de vie, nous fournissons tous les éléments utiles à votre dossier (rapport, photos, factures détaillées) pour faciliter votre prise en charge."
+      "question": "Fournissez-vous une attestation d'assurance responsabilité civile professionnelle ?",
+      "answer": "Oui, une attestation d'assurance responsabilité civile professionnelle vous est transmise sur simple demande, avant ou après la signature du contrat."
      }
     ],
+    "spaces": [
+     "Bungalows de chantier",
+     "Réfectoires et cuisines",
+     "Sanitaires et douches",
+     "Vestiaires",
+     "Salles de repos",
+     "Emprises autoroutières"
+    ],
+    "sectors": [
+     "Chantiers du bâtiment",
+     "Travaux publics et infrastructures",
+     "Emprises autoroutières",
+     "Chantiers industriels",
+     "Sites énergétiques temporaires"
+    ],
+    "approach": [
+     {
+      "title": "Nous respectons les contraintes d'accès du site",
+      "text": "Nos équipes sont habilitées aux procédures de sécurité propres aux chantiers et emprises autoroutières, sans dépendre d'une autorisation ponctuelle."
+     },
+     {
+      "title": "Nous calons le planning sur les rotations d'équipes",
+      "text": "L'entretien des sanitaires et espaces communs suit le rythme réel d'occupation du site, pas un forfait générique."
+     },
+     {
+      "title": "Nous suivons le site sur toute sa durée",
+      "text": "Un prestataire unique accompagne l'installation de la base de vie jusqu'à son démontage, sans rupture de service."
+     }
+    ],
+    "process": [
+     {
+      "step": 1,
+      "title": "Visite du site et analyse des contraintes",
+      "description": "Évaluation des installations, des accès et des consignes de sécurité applicables.",
+      "duration": "1h"
+     },
+     {
+      "step": 2,
+      "title": "Plan de nettoyage et habilitations",
+      "description": "Définition des fréquences, des protocoles et préparation des accès de nos équipes.",
+      "duration": "Variable"
+     },
+     {
+      "step": 3,
+      "title": "Interventions planifiées",
+      "description": "Passages réguliers calés sur le rythme du chantier ou de l'exploitation.",
+      "duration": "Selon site"
+     },
+     {
+      "step": 4,
+      "title": "Contrôle qualité et traçabilité",
+      "description": "Vérification des prestations et reporting de chaque passage.",
+      "duration": "Continu"
+     },
+     {
+      "step": 5,
+      "title": "Ajustement du dispositif",
+      "description": "Adaptation du contrat à l'avancement du chantier ou à la saisonnalité du trafic.",
+      "duration": "Variable"
+     }
+    ],
+    "plus": [
+     {
+      "title": "Réactivité",
+      "text": "Une équipe capable d'intervenir rapidement, y compris en urgence, sur l'ensemble de la Loire et du Rhône."
+     },
+     {
+      "title": "Discrétion",
+      "text": "Des interventions menées avec tact, sans jugement, dans le respect des personnes et de leur intimité."
+     },
+     {
+      "title": "Traçabilité",
+      "text": "Un compte-rendu détaillé de chaque intervention, utile pour votre dossier d'assurance ou vos démarches administratives."
+     }
+    ],
+    "guarantees": [
+     "Assurance RC Pro couvrant l'ensemble de nos interventions",
+     "Personnel formé aux règles de sécurité chantier",
+     "Produits éco-responsables adaptés aux usages intensifs",
+     "Continuité de service sur toute la durée du marché",
+     "Interlocuteur dédié pour le suivi du contrat"
+    ],
+    "pricingTiers": [
+     {
+      "name": "Léger",
+      "min": 300,
+      "max": 600,
+      "unit": "",
+      "text": "Petite base de vie, quelques modules à entretenir ponctuellement."
+     },
+     {
+      "name": "Standard",
+      "min": 600,
+      "max": 1400,
+      "unit": "",
+      "text": "Base de vie de taille moyenne avec passages réguliers programmés."
+     },
+     {
+      "name": "Important",
+      "min": 1400,
+      "max": 3200,
+      "unit": "",
+      "text": "Grande base de vie ou emprise autoroutière avec suivi continu sur toute la durée du chantier."
+     }
+    ],
+    "priceNote": "Fourchettes indicatives, hors dossier spécifique. Un devis précis est établi après diagnostic.",
+    "showPricing": false,
     "subServices": [
      {
       "name": "Nettoyage quotidien de base de vie",
@@ -2058,45 +2983,6 @@
        "Interventions sous protocole de sécurité renforcé"
       ]
      }
-    ],
-    "process": [
-     {
-      "step": 1,
-      "title": "Visite du site et analyse des contraintes",
-      "description": "Évaluation des installations, des accès et des consignes de sécurité applicables.",
-      "duration": "1h"
-     },
-     {
-      "step": 2,
-      "title": "Plan de nettoyage et habilitations",
-      "description": "Définition des fréquences, des protocoles et préparation des accès de nos équipes.",
-      "duration": "Variable"
-     },
-     {
-      "step": 3,
-      "title": "Interventions planifiées",
-      "description": "Passages réguliers calés sur le rythme du chantier ou de l'exploitation.",
-      "duration": "Selon site"
-     },
-     {
-      "step": 4,
-      "title": "Contrôle qualité et traçabilité",
-      "description": "Vérification des prestations et reporting de chaque passage.",
-      "duration": "Continu"
-     },
-     {
-      "step": 5,
-      "title": "Ajustement du dispositif",
-      "description": "Adaptation du contrat à l'avancement du chantier ou à la saisonnalité du trafic.",
-      "duration": "Variable"
-     }
-    ],
-    "guarantees": [
-     "Assurance RC Pro couvrant l'ensemble de nos interventions",
-     "Personnel formé aux règles de sécurité chantier",
-     "Produits éco-responsables adaptés aux usages intensifs",
-     "Continuité de service sur toute la durée du marché",
-     "Interlocuteur dédié pour le suivi du contrat"
     ],
     "applicationSectors": [
      "Entreprises de travaux publics",
@@ -2200,14 +3086,100 @@
       "answer": "Les deux. Selon vos besoins de nettoyage de fin de chantier, nous proposons aussi bien des interventions ponctuelles que des contrats réguliers avec planning adapté à votre activité, en journée ou en horaires décalés. Nous construisons avec vous la formule la plus efficace pour votre budget."
      },
      {
-      "question": "Sous quel délai puis-je recevoir un devis pour nettoyage de fin de chantier ?",
-      "answer": "Le devis est envoyé sous 24h après la visite pour la majorité des demandes de nettoyage de fin de chantier, et proposons un devis express en cas d'urgence."
+      "question": "Sous quel délai pouvez-vous démarrer un contrat de nettoyage de fin de chantier ?",
+      "answer": "Après la visite technique et la validation du devis, un premier passage peut généralement être organisé sous une à deux semaines, selon la fréquence et les effectifs à mobiliser."
      },
      {
-      "question": "Travaillez-vous avec les compagnies d'assurance pour ce type d'intervention ?",
-      "answer": "Oui. Pour nettoyage de fin de chantier, nous fournissons tous les éléments utiles à votre dossier (rapport, photos, factures détaillées) pour faciliter votre prise en charge."
+      "question": "Fournissez-vous une attestation d'assurance responsabilité civile professionnelle ?",
+      "answer": "Oui, une attestation d'assurance responsabilité civile professionnelle vous est transmise sur simple demande, avant ou après la signature du contrat."
      }
     ],
+    "spaces": [
+     "Logements neufs livrés",
+     "Bureaux et locaux rénovés",
+     "Halls et parties communes",
+     "Vitrages et menuiseries",
+     "Sols et revêtements",
+     "Sanitaires neufs"
+    ],
+    "sectors": [
+     "Promoteurs immobiliers",
+     "Bailleurs sociaux",
+     "Entreprises du BTP",
+     "Architectes et maîtres d'œuvre",
+     "Copropriétés en rénovation"
+    ],
+    "approach": [
+     {
+      "title": "Nous intervenons en plusieurs passes successives",
+      "text": "Dépoussiérage, décollage des résidus puis lavage final garantissent un résultat impeccable, impossible en un seul passage."
+     },
+     {
+      "title": "Nous coordonnons avec les autres corps de métier",
+      "text": "Notre intervention est calée au bon moment du planning de livraison, ni trop tôt ni trop tard par rapport aux derniers travaux."
+     },
+     {
+      "title": "Nous livrons un local immédiatement utilisable",
+      "text": "Sols, vitrages et surfaces sont prêts à l'usage dès notre départ, sans résidu de chantier visible."
+     }
+    ],
+    "process": [
+     {
+      "step": 1,
+      "title": "Visite du chantier",
+      "description": "Évaluation de l'état des lieux et des surfaces à traiter avant livraison.",
+      "duration": "30 min"
+     },
+     {
+      "step": 2,
+      "title": "Devis et planification",
+      "description": "Proposition d'un devis adapté aux délais de livraison du chantier.",
+      "duration": "24h"
+     },
+     {
+      "step": 3,
+      "title": "Nettoyage de base",
+      "description": "Dépoussiérage général et élimination des résidus de construction.",
+      "duration": "Variable"
+     },
+     {
+      "step": 4,
+      "title": "Traitements spécifiques",
+      "description": "Élimination des traces de peinture, colle et plâtre selon les besoins.",
+      "duration": "Variable"
+     },
+     {
+      "step": 5,
+      "title": "Contrôle final avant livraison",
+      "description": "Vérification complète des locaux avant remise des clés.",
+      "duration": "30 min"
+     }
+    ],
+    "plus": [
+     {
+      "title": "Réactivité",
+      "text": "Une équipe capable d'intervenir rapidement, y compris en urgence, sur l'ensemble de la Loire et du Rhône."
+     },
+     {
+      "title": "Discrétion",
+      "text": "Des interventions menées avec tact, sans jugement, dans le respect des personnes et de leur intimité."
+     },
+     {
+      "title": "Traçabilité",
+      "text": "Un compte-rendu détaillé de chaque intervention, utile pour votre dossier d'assurance ou vos démarches administratives."
+     }
+    ],
+    "guarantees": [
+     "Assurance RC Pro couvrant l'ensemble de nos interventions",
+     "Personnel formé au nettoyage post-travaux",
+     "Produits adaptés aux finitions sensibles",
+     "Devis gratuit sous 24h",
+     "Respect des délais de livraison",
+     "Intervention rapide selon le planning du chantier"
+    ],
+    "pricingTiers": [],
+    "priceNote": "Fourchettes indicatives, hors dossier spécifique. Un devis précis est établi après diagnostic.",
+    "showPricing": false,
     "subServices": [
      {
       "name": "Dépoussiérage général du chantier",
@@ -2262,46 +3234,6 @@
        "Traitement des sols avant première utilisation"
       ]
      }
-    ],
-    "process": [
-     {
-      "step": 1,
-      "title": "Visite du chantier",
-      "description": "Évaluation de l'état des lieux et des surfaces à traiter avant livraison.",
-      "duration": "30 min"
-     },
-     {
-      "step": 2,
-      "title": "Devis et planification",
-      "description": "Proposition d'un devis adapté aux délais de livraison du chantier.",
-      "duration": "24h"
-     },
-     {
-      "step": 3,
-      "title": "Nettoyage de base",
-      "description": "Dépoussiérage général et élimination des résidus de construction.",
-      "duration": "Variable"
-     },
-     {
-      "step": 4,
-      "title": "Traitements spécifiques",
-      "description": "Élimination des traces de peinture, colle et plâtre selon les besoins.",
-      "duration": "Variable"
-     },
-     {
-      "step": 5,
-      "title": "Contrôle final avant livraison",
-      "description": "Vérification complète des locaux avant remise des clés.",
-      "duration": "30 min"
-     }
-    ],
-    "guarantees": [
-     "Assurance RC Pro couvrant l'ensemble de nos interventions",
-     "Personnel formé au nettoyage post-travaux",
-     "Produits adaptés aux finitions sensibles",
-     "Devis gratuit sous 24h",
-     "Respect des délais de livraison",
-     "Intervention rapide selon le planning du chantier"
     ],
     "applicationSectors": [
      "Promoteurs immobiliers",
@@ -2415,14 +3347,114 @@
       "answer": "Les deux. Selon vos besoins de nettoyage industriel, nous proposons aussi bien des interventions ponctuelles que des contrats réguliers avec planning adapté à votre activité, en journée ou en horaires décalés. Nous construisons avec vous la formule la plus efficace pour votre budget."
      },
      {
-      "question": "Sous quel délai puis-je recevoir un devis pour nettoyage industriel ?",
-      "answer": "Le devis est envoyé sous 24h après la visite pour la majorité des demandes de nettoyage industriel, et proposons un devis express en cas d'urgence."
+      "question": "Sous quel délai pouvez-vous démarrer un contrat de nettoyage industriel ?",
+      "answer": "Après la visite technique et la validation du devis, un premier passage peut généralement être organisé sous une à deux semaines, selon la fréquence et les effectifs à mobiliser."
      },
      {
-      "question": "Travaillez-vous avec les compagnies d'assurance pour ce type d'intervention ?",
-      "answer": "Oui. Pour nettoyage industriel, nous fournissons tous les éléments utiles à votre dossier (rapport, photos, factures détaillées) pour faciliter votre prise en charge."
+      "question": "Fournissez-vous une attestation d'assurance responsabilité civile professionnelle ?",
+      "answer": "Oui, une attestation d'assurance responsabilité civile professionnelle vous est transmise sur simple demande, avant ou après la signature du contrat."
      }
     ],
+    "spaces": [
+     "Ateliers de production",
+     "Entrepôts et zones de stockage",
+     "Quais de chargement",
+     "Sanitaires et vestiaires",
+     "Bureaux techniques",
+     "Zones de circulation"
+    ],
+    "sectors": [
+     "Agroalimentaire",
+     "Métallurgie et mécanique",
+     "Logistique et entreposage",
+     "Industrie manufacturière",
+     "Sites de production"
+    ],
+    "approach": [
+     {
+      "title": "Nous adaptons produits et protocole à votre secteur",
+      "text": "Agroalimentaire, métallurgie ou logistique n'imposent pas les mêmes normes ni les mêmes produits."
+     },
+     {
+      "title": "Nous respectons vos contraintes de production",
+      "text": "Nos interventions se calent sur vos créneaux d'arrêt pour ne jamais perturber votre activité."
+     },
+     {
+      "title": "Nous traitons sols, structures et stockage",
+      "text": "Un nettoyage industriel complet couvre bien plus que le simple balayage des sols."
+     }
+    ],
+    "process": [
+     {
+      "title": "Visite technique et devis",
+      "text": "Déplacement sur site pour évaluer les surfaces, les revêtements et la fréquence d'intervention souhaitée.",
+      "duration": "Sous 24h après visite"
+     },
+     {
+      "title": "Devis et cahier des charges",
+      "text": "Devis gratuit détaillé par zone, avec proposition de fréquence adaptée à votre activité.",
+      "duration": "Sous 24h après visite"
+     },
+     {
+      "title": "Mise en place du contrat",
+      "text": "Nous adaptons le protocole et les produits à votre secteur d'activité (agroalimentaire, métallurgie, logistique), nettoyons sols, structures et zones de stockage, et respectons vos contraintes de production et vos créneaux d'arrêt.",
+      "duration": "Sous 1 semaine"
+     },
+     {
+      "title": "Suivi et ajustements",
+      "text": "Points réguliers pour ajuster la prestation selon vos retours, avec possibilité de prestations ponctuelles complémentaires.",
+      "duration": "En continu"
+     }
+    ],
+    "plus": [
+     {
+      "title": "Réactivité",
+      "text": "Une équipe capable d'intervenir rapidement, y compris en urgence, sur l'ensemble de la Loire et du Rhône."
+     },
+     {
+      "title": "Discrétion",
+      "text": "Des interventions menées avec tact, sans jugement, dans le respect des personnes et de leur intimité."
+     },
+     {
+      "title": "Traçabilité",
+      "text": "Un compte-rendu détaillé de chaque intervention, utile pour votre dossier d'assurance ou vos démarches administratives."
+     }
+    ],
+    "guarantees": [
+     "Devis gratuit sous 24h après la visite, adapté aux spécificités de votre besoin",
+     "Assurance Responsabilité Civile Professionnelle couvrant chaque intervention",
+     "Personnel formé aux règles de sécurité et titulaire des habilitations requises",
+     "Respect des protocoles et cahiers des charges de chaque client",
+     "Réactivité pour les interventions urgentes, y compris en horaires décalés",
+     "Gestion des déchets selon les filières réglementaires en vigueur",
+     "Coordination directe avec vos interlocuteurs et responsables sécurité",
+     "Compte-rendu d'intervention transmis à chaque passage"
+    ],
+    "pricingTiers": [
+     {
+      "name": "Léger",
+      "min": 280,
+      "max": 550,
+      "unit": "/mois",
+      "text": "Atelier ou petit entrepôt jusqu'à 500 m², passage hebdomadaire."
+     },
+     {
+      "name": "Standard",
+      "min": 550,
+      "max": 1300,
+      "unit": "/mois",
+      "text": "Site industriel de 500 à 2000 m², passage 2 à 3 fois par semaine."
+     },
+     {
+      "name": "Important",
+      "min": 1300,
+      "max": 3000,
+      "unit": "/mois",
+      "text": "Site industriel de plus de 2000 m² ou multi-bâtiments, passage quotidien."
+     }
+    ],
+    "priceNote": "Tarifs forfaitaires mensuels, hors produits et consommables (à ajouter selon fourniture souhaitée). Fourchettes indicatives, un devis précis est établi après visite technique.",
+    "showPricing": false,
     "subServices": []
    }
   },
@@ -2518,14 +3550,113 @@
       "answer": "Les deux. Selon vos besoins de nettoyage hôtellerie & restauration, nous proposons aussi bien des interventions ponctuelles que des contrats réguliers avec planning adapté à votre activité, en journée ou en horaires décalés. Nous construisons avec vous la formule la plus efficace pour votre budget."
      },
      {
-      "question": "Sous quel délai puis-je recevoir un devis pour nettoyage hôtellerie & restauration ?",
-      "answer": "Le devis est envoyé sous 24h après la visite pour la majorité des demandes de nettoyage hôtellerie & restauration, et proposons un devis express en cas d'urgence."
+      "question": "Sous quel délai pouvez-vous démarrer un contrat de nettoyage hôtellerie & restauration ?",
+      "answer": "Après la visite technique et la validation du devis, un premier passage peut généralement être organisé sous une à deux semaines, selon la fréquence et les effectifs à mobiliser."
      },
      {
-      "question": "Travaillez-vous avec les compagnies d'assurance pour ce type d'intervention ?",
-      "answer": "Oui. Pour nettoyage hôtellerie & restauration, nous fournissons tous les éléments utiles à votre dossier (rapport, photos, factures détaillées) pour faciliter votre prise en charge."
+      "question": "Fournissez-vous une attestation d'assurance responsabilité civile professionnelle ?",
+      "answer": "Oui, une attestation d'assurance responsabilité civile professionnelle vous est transmise sur simple demande, avant ou après la signature du contrat."
      }
     ],
+    "spaces": [
+     "Chambres et suites",
+     "Parties communes et halls",
+     "Salles de restaurant",
+     "Cuisines et zones techniques",
+     "Sanitaires clients et personnel",
+     "Salles de réception"
+    ],
+    "sectors": [
+     "Hôtels et résidences hôtelières",
+     "Restaurants et brasseries",
+     "Traiteurs et salles de réception",
+     "Chambres d'hôtes et gîtes"
+    ],
+    "approach": [
+     {
+      "title": "Nous respectons les normes HACCP en cuisine",
+      "text": "Zones de préparation et de stockage alimentaire exigent des produits et protocoles spécifiques."
+     },
+     {
+      "title": "Nous calons nos passages sur vos rotations clients",
+      "text": "Chambres et salles sont traitées entre deux services sans perturber votre activité."
+     },
+     {
+      "title": "Nous traitons chambres, salles et cuisines avec la même exigence",
+      "text": "Chaque zone d'un établissement hôtelier a ses propres contraintes d'hygiène."
+     }
+    ],
+    "process": [
+     {
+      "title": "Visite technique et devis",
+      "text": "Déplacement sur site pour évaluer les surfaces, les revêtements et la fréquence d'intervention souhaitée.",
+      "duration": "Sous 24h après visite"
+     },
+     {
+      "title": "Devis et cahier des charges",
+      "text": "Devis gratuit détaillé par zone, avec proposition de fréquence adaptée à votre activité.",
+      "duration": "Sous 24h après visite"
+     },
+     {
+      "title": "Mise en place du contrat",
+      "text": "Nous intervenons sur chambres, parties communes, salles de restaurant et zones techniques de cuisine, avec des protocoles adaptés aux normes HACCP et des créneaux calés sur vos rotations clients et services.",
+      "duration": "Sous 1 semaine"
+     },
+     {
+      "title": "Suivi et ajustements",
+      "text": "Points réguliers pour ajuster la prestation selon vos retours, avec possibilité de prestations ponctuelles complémentaires.",
+      "duration": "En continu"
+     }
+    ],
+    "plus": [
+     {
+      "title": "Réactivité",
+      "text": "Une équipe capable d'intervenir rapidement, y compris en urgence, sur l'ensemble de la Loire et du Rhône."
+     },
+     {
+      "title": "Discrétion",
+      "text": "Des interventions menées avec tact, sans jugement, dans le respect des personnes et de leur intimité."
+     },
+     {
+      "title": "Traçabilité",
+      "text": "Un compte-rendu détaillé de chaque intervention, utile pour votre dossier d'assurance ou vos démarches administratives."
+     }
+    ],
+    "guarantees": [
+     "Devis gratuit sous 24h après la visite, adapté aux spécificités de votre besoin",
+     "Assurance Responsabilité Civile Professionnelle couvrant chaque intervention",
+     "Personnel formé aux règles de sécurité et titulaire des habilitations requises",
+     "Respect des protocoles et cahiers des charges de chaque client",
+     "Réactivité pour les interventions urgentes, y compris en horaires décalés",
+     "Gestion des déchets selon les filières réglementaires en vigueur",
+     "Coordination directe avec vos interlocuteurs et responsables sécurité",
+     "Compte-rendu d'intervention transmis à chaque passage"
+    ],
+    "pricingTiers": [
+     {
+      "name": "Léger",
+      "min": 200,
+      "max": 400,
+      "unit": "/mois",
+      "text": "Petit établissement jusqu'à 15 chambres ou 40 couverts, passage plusieurs fois par semaine."
+     },
+     {
+      "name": "Standard",
+      "min": 400,
+      "max": 900,
+      "unit": "/mois",
+      "text": "Établissement de 15 à 50 chambres ou 40 à 120 couverts, passage quotidien."
+     },
+     {
+      "name": "Important",
+      "min": 900,
+      "max": 2000,
+      "unit": "/mois",
+      "text": "Hôtel ou groupe de restauration de plus de 50 chambres ou 120 couverts, passage quotidien multi-équipes."
+     }
+    ],
+    "priceNote": "Tarifs forfaitaires mensuels, hors produits et consommables (à ajouter selon fourniture souhaitée). Fourchettes indicatives, un devis précis est établi après visite technique.",
+    "showPricing": false,
     "subServices": []
    }
   },
@@ -2621,14 +3752,112 @@
       "answer": "Les deux. Selon vos besoins de nettoyage événementiel, nous proposons aussi bien des interventions ponctuelles que des contrats réguliers avec planning adapté à votre activité, en journée ou en horaires décalés. Nous construisons avec vous la formule la plus efficace pour votre budget."
      },
      {
-      "question": "Sous quel délai puis-je recevoir un devis pour nettoyage événementiel ?",
-      "answer": "Le devis est envoyé sous 24h après la visite pour la majorité des demandes de nettoyage événementiel, et proposons un devis express en cas d'urgence."
+      "question": "Sous quel délai pouvez-vous démarrer un contrat de nettoyage événementiel ?",
+      "answer": "Après la visite technique et la validation du devis, un premier passage peut généralement être organisé sous une à deux semaines, selon la fréquence et les effectifs à mobiliser."
      },
      {
-      "question": "Travaillez-vous avec les compagnies d'assurance pour ce type d'intervention ?",
-      "answer": "Oui. Pour nettoyage événementiel, nous fournissons tous les éléments utiles à votre dossier (rapport, photos, factures détaillées) pour faciliter votre prise en charge."
+      "question": "Fournissez-vous une attestation d'assurance responsabilité civile professionnelle ?",
+      "answer": "Oui, une attestation d'assurance responsabilité civile professionnelle vous est transmise sur simple demande, avant ou après la signature du contrat."
      }
     ],
+    "spaces": [
+     "Halls et espaces d'accueil",
+     "Salles de conférence et stands",
+     "Zones de restauration événementielle",
+     "Sanitaires publics temporaires",
+     "Espaces extérieurs et parkings"
+    ],
+    "sectors": [
+     "Organisateurs de salons et foires",
+     "Lieux de séminaires et congrès",
+     "Salles de concert et spectacles",
+     "Organisateurs de mariages et réceptions"
+    ],
+    "approach": [
+     {
+      "title": "Nous dimensionnons l'équipe selon le délai de restitution",
+      "text": "Un grand événement à restituer en quelques heures impose une équipe renforcée, pas un simple passage classique."
+     },
+     {
+      "title": "Nous intervenons avant, pendant et après si besoin",
+      "text": "La propreté d'un événement se prépare autant qu'elle se répare une fois terminé."
+     },
+     {
+      "title": "Nous respectons les contraintes du lieu loué",
+      "text": "Chaque site événementiel a ses propres exigences de restitution que nous anticipons avec l'organisateur."
+     }
+    ],
+    "process": [
+     {
+      "title": "Visite technique et devis",
+      "text": "Déplacement sur site pour évaluer les surfaces, les revêtements et la fréquence d'intervention souhaitée.",
+      "duration": "Sous 24h après visite"
+     },
+     {
+      "title": "Devis et cahier des charges",
+      "text": "Devis gratuit détaillé par zone, avec proposition de fréquence adaptée à votre activité.",
+      "duration": "Sous 24h après visite"
+     },
+     {
+      "title": "Mise en place du contrat",
+      "text": "Nous intervenons avant l'événement pour préparer le site, pendant si nécessaire pour maintenir la propreté des espaces à forte affluence, et juste après pour une remise en état rapide et complète du lieu.",
+      "duration": "Sous 1 semaine"
+     },
+     {
+      "title": "Suivi et ajustements",
+      "text": "Points réguliers pour ajuster la prestation selon vos retours, avec possibilité de prestations ponctuelles complémentaires.",
+      "duration": "En continu"
+     }
+    ],
+    "plus": [
+     {
+      "title": "Réactivité",
+      "text": "Une équipe capable d'intervenir rapidement, y compris en urgence, sur l'ensemble de la Loire et du Rhône."
+     },
+     {
+      "title": "Discrétion",
+      "text": "Des interventions menées avec tact, sans jugement, dans le respect des personnes et de leur intimité."
+     },
+     {
+      "title": "Traçabilité",
+      "text": "Un compte-rendu détaillé de chaque intervention, utile pour votre dossier d'assurance ou vos démarches administratives."
+     }
+    ],
+    "guarantees": [
+     "Devis gratuit sous 24h après la visite, adapté aux spécificités de votre besoin",
+     "Assurance Responsabilité Civile Professionnelle couvrant chaque intervention",
+     "Personnel formé aux règles de sécurité et titulaire des habilitations requises",
+     "Respect des protocoles et cahiers des charges de chaque client",
+     "Réactivité pour les interventions urgentes, y compris en horaires décalés",
+     "Gestion des déchets selon les filières réglementaires en vigueur",
+     "Coordination directe avec vos interlocuteurs et responsables sécurité",
+     "Compte-rendu d'intervention transmis à chaque passage"
+    ],
+    "pricingTiers": [
+     {
+      "name": "Léger",
+      "min": 220,
+      "max": 450,
+      "unit": "",
+      "text": "Petit événement ou séminaire jusqu'à 100 personnes."
+     },
+     {
+      "name": "Standard",
+      "min": 450,
+      "max": 1100,
+      "unit": "",
+      "text": "Événement de 100 à 500 personnes, salon ou manifestation d'une journée."
+     },
+     {
+      "name": "Important",
+      "min": 1100,
+      "max": 2600,
+      "unit": "",
+      "text": "Grand événement de plus de 500 personnes ou manifestation sur plusieurs jours."
+     }
+    ],
+    "priceNote": "Fourchettes indicatives, hors dossier spécifique. Un devis précis est établi après diagnostic.",
+    "showPricing": false,
     "subServices": []
    }
   },
@@ -2724,14 +3953,119 @@
       "answer": "Les deux. Selon vos besoins de nettoyage de panneaux photovoltaïques, nous proposons aussi bien des interventions ponctuelles que des contrats réguliers avec planning adapté à votre activité, en journée ou en horaires décalés. Nous construisons avec vous la formule la plus efficace pour votre budget."
      },
      {
-      "question": "Sous quel délai puis-je recevoir un devis pour nettoyage de panneaux photovoltaïques ?",
-      "answer": "Le devis est envoyé sous 24h après la visite pour la majorité des demandes de nettoyage de panneaux photovoltaïques, et proposons un devis express en cas d'urgence."
+      "question": "Sous quel délai pouvez-vous démarrer un contrat de nettoyage de panneaux photovoltaïques ?",
+      "answer": "Après la visite technique et la validation du devis, un premier passage peut généralement être organisé sous une à deux semaines, selon la fréquence et les effectifs à mobiliser."
      },
      {
-      "question": "Travaillez-vous avec les compagnies d'assurance pour ce type d'intervention ?",
-      "answer": "Oui. Pour nettoyage de panneaux photovoltaïques, nous fournissons tous les éléments utiles à votre dossier (rapport, photos, factures détaillées) pour faciliter votre prise en charge."
+      "question": "Fournissez-vous une attestation d'assurance responsabilité civile professionnelle ?",
+      "answer": "Oui, une attestation d'assurance responsabilité civile professionnelle vous est transmise sur simple demande, avant ou après la signature du contrat."
      }
     ],
+    "spaces": [
+     "Panneaux en toiture",
+     "Ombrières de parking",
+     "Centrales au sol",
+     "Onduleurs et équipements techniques"
+    ],
+    "sectors": [
+     "Particuliers équipés en photovoltaïque",
+     "Exploitants de centrales solaires",
+     "Entreprises et sites industriels équipés",
+     "Collectivités et bâtiments publics"
+    ],
+    "approach": [
+     {
+      "title": "Nous nettoyons à l'eau pure, sans produit agressif",
+      "text": "Un détergent ou une pression excessive peut endommager durablement les cellules photovoltaïques."
+     },
+     {
+      "title": "Nous sécurisons chaque intervention en hauteur",
+      "text": "Toiture ou ombrière imposent des équipements de sécurité spécifiques que nous maîtrisons."
+     },
+     {
+      "title": "Nous intervenons sur toiture comme au sol",
+      "text": "Centrale au sol ou installation résidentielle n'ont pas les mêmes contraintes d'accès."
+     }
+    ],
+    "process": [
+     {
+      "step": 1,
+      "title": "Diagnostic de l'installation",
+      "description": "Évaluation de l'état d'encrassement et de l'accessibilité des panneaux.",
+      "duration": "30 min"
+     },
+     {
+      "step": 2,
+      "title": "Devis personnalisé",
+      "description": "Proposition d'un devis selon la surface et la configuration de l'installation.",
+      "duration": "24h"
+     },
+     {
+      "step": 3,
+      "title": "Nettoyage à l'eau osmosée",
+      "description": "Intervention avec équipement adapté, sans risque pour les panneaux.",
+      "duration": "2-4h"
+     },
+     {
+      "step": 4,
+      "title": "Contrôle final",
+      "description": "Vérification visuelle de la qualité du nettoyage réalisé.",
+      "duration": "15 min"
+     },
+     {
+      "step": 5,
+      "title": "Planification du suivi",
+      "description": "Mise en place d'une fréquence d'entretien adaptée à votre installation.",
+      "duration": "Variable"
+     }
+    ],
+    "plus": [
+     {
+      "title": "Réactivité",
+      "text": "Une équipe capable d'intervenir rapidement, y compris en urgence, sur l'ensemble de la Loire et du Rhône."
+     },
+     {
+      "title": "Discrétion",
+      "text": "Des interventions menées avec tact, sans jugement, dans le respect des personnes et de leur intimité."
+     },
+     {
+      "title": "Traçabilité",
+      "text": "Un compte-rendu détaillé de chaque intervention, utile pour votre dossier d'assurance ou vos démarches administratives."
+     }
+    ],
+    "guarantees": [
+     "Assurance RC Pro couvrant l'ensemble de nos interventions",
+     "Technique de nettoyage sans risque pour les panneaux",
+     "Personnel formé aux installations photovoltaïques",
+     "Devis gratuit sous 24h",
+     "Intervention en toute sécurité en hauteur",
+     "Amélioration mesurable du rendement"
+    ],
+    "pricingTiers": [
+     {
+      "name": "Léger",
+      "min": 190,
+      "max": 380,
+      "unit": "",
+      "text": "Installation résidentielle jusqu'à 20 panneaux."
+     },
+     {
+      "name": "Standard",
+      "min": 380,
+      "max": 850,
+      "unit": "",
+      "text": "Installation de 20 à 100 panneaux, toiture ou ombrière."
+     },
+     {
+      "name": "Important",
+      "min": 850,
+      "max": 1900,
+      "unit": "",
+      "text": "Centrale au sol ou installation de plus de 100 panneaux."
+     }
+    ],
+    "priceNote": "Fourchettes indicatives, hors dossier spécifique. Un devis précis est établi après diagnostic.",
+    "showPricing": false,
     "subServices": [
      {
       "name": "Nettoyage à l'eau osmosée",
@@ -2785,46 +4119,6 @@
        "Rapport d'intervention détaillé"
       ]
      }
-    ],
-    "process": [
-     {
-      "step": 1,
-      "title": "Diagnostic de l'installation",
-      "description": "Évaluation de l'état d'encrassement et de l'accessibilité des panneaux.",
-      "duration": "30 min"
-     },
-     {
-      "step": 2,
-      "title": "Devis personnalisé",
-      "description": "Proposition d'un devis selon la surface et la configuration de l'installation.",
-      "duration": "24h"
-     },
-     {
-      "step": 3,
-      "title": "Nettoyage à l'eau osmosée",
-      "description": "Intervention avec équipement adapté, sans risque pour les panneaux.",
-      "duration": "2-4h"
-     },
-     {
-      "step": 4,
-      "title": "Contrôle final",
-      "description": "Vérification visuelle de la qualité du nettoyage réalisé.",
-      "duration": "15 min"
-     },
-     {
-      "step": 5,
-      "title": "Planification du suivi",
-      "description": "Mise en place d'une fréquence d'entretien adaptée à votre installation.",
-      "duration": "Variable"
-     }
-    ],
-    "guarantees": [
-     "Assurance RC Pro couvrant l'ensemble de nos interventions",
-     "Technique de nettoyage sans risque pour les panneaux",
-     "Personnel formé aux installations photovoltaïques",
-     "Devis gratuit sous 24h",
-     "Intervention en toute sécurité en hauteur",
-     "Amélioration mesurable du rendement"
     ],
     "applicationSectors": [
      "Entreprises équipées de panneaux solaires",

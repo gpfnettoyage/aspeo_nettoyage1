@@ -1,14 +1,17 @@
 import type { FieldDef, PageContentModel, PageValues } from './types';
 import { homeContent } from './home';
+import { servicesContent } from './services';
+import { commonContent } from './common';
+import { aboutContent } from './about';
+import { zonesContent } from './zones';
+import { realisationsContent } from './realisations';
+import { mediasContent } from './medias';
+import { pressContent } from './press';
 
 /** Registre des modèles de contenu par clé de page (table Page). */
-export const PAGE_CONTENT_MODELS: Record<string, PageContentModel> = {
-  [homeContent.key]: homeContent,
-};
-
-export function registerPageModels(...models: PageContentModel[]) {
-  for (const m of models) PAGE_CONTENT_MODELS[m.key] = m;
-}
+export const PAGE_CONTENT_MODELS: Record<string, PageContentModel> = Object.fromEntries(
+  [homeContent, servicesContent, commonContent, aboutContent, zonesContent, realisationsContent, mediasContent, pressContent].map((m) => [m.key, m]),
+);
 
 export const allFields = (model: PageContentModel): FieldDef[] => model.sections.flatMap((s) => s.fields);
 
