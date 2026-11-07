@@ -1,0 +1,80 @@
+# Plan d'URL et consignes SEO pour l'intégration
+
+Chaque page de la maquette doit devenir une vraie page HTML rendue côté serveur, avec sa propre URL ci-dessous (la maquette actuelle est une seule page et Google ne verrait que l'accueil).
+
+## URL
+- /
+- /a-propos
+- /proprete-services
+- /hub-professionnel
+- /hub-specialise
+- /hub-exterieur-chantier
+- /hub-autres
+- /grands-comptes
+- /zones-intervention
+- /realisations
+- /medias
+- /presse
+- /avis
+- /nous-rejoindre
+- /contact
+- /mentions-legales
+- /politique-de-confidentialite
+- /conditions-generales-d-utilisation
+- /politique-des-cookies
+- /proprete-services/nettoyage-de-logements-insalubres
+- /proprete-services/nettoyage-syndrome-de-diogene
+- /proprete-services/remise-en-etat
+- /proprete-services/traitement-des-odeurs
+- /proprete-services/traitement-humidite
+- /proprete-services/traitement-moisissures
+- /proprete-services/debarras-maison-appartement-encombrants
+- /proprete-services/lavage-de-vitres
+- /proprete-services/nettoyage-exterieur
+- /proprete-services/nettoyage-de-bureaux-sieges-sociaux
+- /proprete-services/nettoyage-de-surfaces-commerciales
+- /proprete-services/nettoyage-bases-de-vie-infrastructures
+- /proprete-services/nettoyage-de-fin-de-chantier
+- /proprete-services/nettoyage-industriel-usine
+- /proprete-services/nettoyage-hotellerie-restauration
+- /proprete-services/nettoyage-evenementiel
+- /proprete-services/nettoyage-de-panneaux-photovoltaiques
+- /ville/panissieres
+- /ville/feurs
+- /ville/chazelles-sur-lyon
+- /ville/neronde
+- /ville/montbrison
+- /ville/andrezieux-boutheon
+- /ville/saint-just-saint-rambert
+- /ville/veauche
+- /ville/tarare
+- /ville/l-arbresle
+- /ville/saint-symphorien-sur-coise
+- /ville/tassin-la-demi-lune
+- /realisations/entretien-bureaux-siege-montbrison
+- /realisations/surface-commerciale-enseigne-sport
+- /realisations/base-de-vie-chantier-autoroutier
+- /realisations/fin-de-chantier-batiment-tertiaire-feurs
+- /realisations/logement-syndrome-diogene-roanne
+- /realisations/panneaux-solaires-site-industriel
+- /humidite-signes-a-reperer-avant-quil-ne-soit-trop-tard
+- /syndrome-diogene-comment-accompagner-un-proche
+- /odeurs-tenaces-pourquoi-le-nettoyage-classique-ne-suffit-pas
+- /nettoyage-bureaux-comment-bien-choisir-son-prestataire
+- /presse/progres-aspeo-panissieres-nettoyage-professionnel
+- /presse/pays-roannais-bases-de-vie-chantier
+- /presse/radio-diogene-accompagnement-familles
+- /presse/mag-entreprises-loire-ecolabel
+- /presse/communique-ouverture-hotellerie-restauration
+- /presse/zoom-42-collectivites-marches-publics
+
+## À respecter
+- Navigation : remplacer chaque bouton de navigation par un lien `<a href="/…">`, menus, cartes, footer, fil d'Ariane compris.
+- Une seule balise H1 par page, titres et descriptions : reprendre ceux de la fonction `applySEO` de la maquette (titre ≤ 60 caractères, description ≤ 160).
+- Balise canonical et données structurées JSON-LD (LocalBusiness, Service, FAQPage, BreadcrumbList) : reprendre `applySEO`.
+- LocalBusiness : adresse, horaires, e-mail et réseaux déjà renseignés dans la maquette. Reste à ajouter les coordonnées GPS et le lien de la fiche Google.
+- Images : déjà converties en balises `<img>` avec texte alternatif dans la maquette. Les servir en WebP, aux bonnes dimensions (width/height), en lazy-load sauf l'image du haut de page.
+- Image de partage (og:image) : prévoir une JPG 1200×630.
+- Page /recherche en noindex (déjà prévu dans la maquette).
+- Redirections 301 : voir « Redirections 301.md ». Les URL des services existants sont conservées.
+- Déclarer sitemap.xml dans la Search Console.

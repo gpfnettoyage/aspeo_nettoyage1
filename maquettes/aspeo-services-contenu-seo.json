@@ -1,0 +1,1476 @@
+{
+  "entreprise": {
+    "nom": "ASPEO Nettoyage",
+    "siege": "43 Rue de la République, 42360 Panissières",
+    "zone": "Départements Loire 42 et Rhône 69, région Auvergne-Rhône-Alpes",
+    "villes": [
+      "Saint-Étienne",
+      "Lyon",
+      "Roanne",
+      "Feurs",
+      "Montbrison",
+      "Villefranche-sur-Saône"
+    ],
+    "contact": {
+      "telephone": "04 28 53 00 02",
+      "email": "contact@aspeo.fr",
+      "site": "https://www.aspeo.fr"
+    }
+  },
+  "services": [
+    {
+      "categorie": "Nettoyage Intérieur",
+      "slug": "nettoyage-surfaces-commerciales",
+      "url": "https://www.aspeo.fr/services/nettoyage-surfaces-commerciales",
+      "titre": "Nettoyage de Surfaces Commerciales",
+      "seoDesc": "Nettoyage de surfaces commerciales en Loire et Rhône, boutiques et commerces. Équipe formée, produits adaptés. Devis gratuit sous 24h.",
+      "subtitle": "Un entretien soigné pour vos espaces de vente à Saint-Étienne, Lyon et alentours",
+      "introText": "Spécialiste du nettoyage de surfaces commerciales à Saint-Étienne, Lyon et dans toute la Loire et le Rhône, ASPEO Nettoyage intervient auprès des commerces, boutiques et enseignes pour garantir un espace de vente impeccable. Nos équipes s'adaptent aux horaires d'ouverture pour ne jamais perturber votre activité.",
+      "contextText": "L'image d'un commerce repose en grande partie sur la propreté perçue par les clients dès leur entrée. Sols, vitrines, présentoirs et zones de circulation doivent rester impeccables tout au long de la journée. ASPEO Nettoyage accompagne les commerçants et enseignes de Loire et Rhône avec des plannings d'intervention flexibles, avant ouverture, en soirée ou tôt le matin. Nous adaptons nos protocoles selon la nature du commerce et la fréquentation du point de vente.",
+      "expertise": {
+        "title": "Notre expertise en nettoyage de surfaces commerciales en Loire et Rhône",
+        "description": "ASPEO Nettoyage accompagne depuis plusieurs années des commerces de toutes tailles, du magasin indépendant à l'enseigne multi-sites, dans l'entretien de leurs espaces de vente. Nous connaissons les exigences spécifiques du commerce, où propreté rime directement avec expérience client et image de marque.\n\nNotre équipe intervient sur les sols, vitrines, présentoirs, cabines d'essayage et zones de caisse, avec des méthodes adaptées à chaque type de revêtement. Nous utilisons des produits professionnels compatibles avec les surfaces sensibles présentes dans les commerces, comme le verre, l'inox ou les sols stratifiés.\n\nQue votre commerce soit situé à Saint-Étienne, Lyon ou Roanne, nous établissons un planning d'intervention adapté à vos horaires d'ouverture, afin de garantir un espace toujours accueillant sans jamais gêner votre clientèle."
+      },
+      "highlights": [
+        "Interventions avant ouverture ou en soirée selon vos horaires",
+        "Produits adaptés aux surfaces sensibles des commerces",
+        "Personnel formé au nettoyage en environnement de vente",
+        "Flexibilité pour les commerces multi-sites en Loire et Rhône",
+        "Attention particulière aux zones à forte fréquentation",
+        "Devis gratuit et intervention rapide"
+      ],
+      "targetSpaces": [
+        "Boutiques et commerces de détail",
+        "Zones de caisse et accueil",
+        "Vitrines et devantures",
+        "Cabines d'essayage",
+        "Présentoirs et rayonnages",
+        "Sols de circulation client",
+        "Sanitaires clients et personnel",
+        "Réserves et arrière-boutiques"
+      ],
+      "prestationsCategories": [
+        {
+          "title": "Entretien courant",
+          "items": [
+            "Nettoyage quotidien ou hebdomadaire des sols",
+            "Dépoussiérage des présentoirs et rayonnages",
+            "Nettoyage des vitrines intérieures",
+            "Entretien des sanitaires clients et personnel"
+          ]
+        },
+        {
+          "title": "Nettoyage approfondi",
+          "items": [
+            "Décapage et lustrage des sols selon revêtement",
+            "Nettoyage des cabines d'essayage",
+            "Dépoussiérage en hauteur",
+            "Nettoyage des zones de caisse et comptoirs"
+          ]
+        }
+      ],
+      "subServices": [
+        {
+          "name": "Nettoyage quotidien des sols",
+          "description": "Entretien régulier des sols de votre commerce adapté au type de revêtement présent. Nous intervenons selon la fréquentation pour maintenir un espace toujours propre."
+        },
+        {
+          "name": "Entretien des vitrines intérieures",
+          "description": "Nettoyage des surfaces vitrées internes pour une mise en valeur optimale de vos produits. Cette prestation peut être couplée à notre service de lavage de vitres extérieures."
+        },
+        {
+          "name": "Nettoyage des cabines d'essayage",
+          "description": "Entretien régulier des cabines pour garantir un espace hygiénique et accueillant, essentiel dans le secteur du prêt-à-porter."
+        },
+        {
+          "name": "Entretien des zones de caisse",
+          "description": "Nettoyage et désinfection des comptoirs et terminaux de paiement, zones à fort passage nécessitant une attention particulière."
+        }
+      ],
+      "process": [
+        {
+          "step": 1,
+          "title": "Visite du commerce et devis",
+          "description": "Évaluation des surfaces et des besoins spécifiques liés à votre activité.",
+          "duration": "30 min"
+        },
+        {
+          "step": 2,
+          "title": "Définition du planning",
+          "description": "Choix des horaires d'intervention en fonction de vos ouvertures et fermetures.",
+          "duration": "Variable"
+        },
+        {
+          "step": 3,
+          "title": "Intervention discrète",
+          "description": "Nettoyage réalisé avant ouverture ou en dehors des heures d'affluence.",
+          "duration": "1-2h"
+        },
+        {
+          "step": 4,
+          "title": "Contrôle qualité",
+          "description": "Vérification finale avant l'ouverture du commerce.",
+          "duration": "15 min"
+        },
+        {
+          "step": 5,
+          "title": "Suivi régulier",
+          "description": "Ajustement du contrat selon l'évolution de votre activité commerciale.",
+          "duration": "Variable"
+        }
+      ],
+      "guarantees": [
+        "Assurance RC Pro couvrant l'ensemble de nos interventions",
+        "Produits éco-responsables adaptés aux surfaces commerciales",
+        "Personnel formé et discret",
+        "Devis gratuit sous 24h",
+        "Intervention rapide en cas de besoin ponctuel",
+        "Flexibilité horaire totale"
+      ],
+      "applicationSectors": [
+        "Boutiques de prêt-à-porter",
+        "Commerces alimentaires",
+        "Enseignes multi-sites",
+        "Magasins de bricolage",
+        "Concept stores",
+        "Galeries marchandes",
+        "Pharmacies et parapharmacies",
+        "Commerces de proximité"
+      ],
+      "whyChoose": [
+        "Une équipe habituée aux contraintes du commerce",
+        "Des interventions qui ne perturbent jamais votre clientèle",
+        "Une couverture complète de la Loire et du Rhône",
+        "Des produits adaptés aux surfaces sensibles",
+        "Un interlocuteur unique pour vos sites multiples",
+        "Une réactivité en cas d'imprévu"
+      ],
+      "faq": [
+        {
+          "question": "Intervenez-vous dans les commerces de Saint-Étienne en dehors des heures d'ouverture ?",
+          "answer": "Oui, nous adaptons systématiquement nos interventions à vos horaires de fermeture ou avant ouverture pour ne jamais gêner votre clientèle."
+        },
+        {
+          "question": "Proposez-vous ce service aux enseignes multi-sites à Lyon et dans le Rhône ?",
+          "answer": "Oui, nous accompagnons plusieurs enseignes disposant de multiples points de vente en Loire et Rhône, avec un interlocuteur unique pour l'ensemble du contrat."
+        },
+        {
+          "question": "Quelle est la fréquence recommandée pour l'entretien d'un commerce ?",
+          "answer": "Cela dépend de la fréquentation, mais un passage quotidien ou plusieurs fois par semaine est généralement recommandé pour les commerces à fort trafic."
+        },
+        {
+          "question": "Utilisez-vous des produits adaptés aux sols fragiles ?",
+          "answer": "Oui, nous sélectionnons nos produits selon le type de revêtement présent dans votre commerce, qu'il s'agisse de carrelage, parquet ou sol souple."
+        }
+      ]
+    },
+    {
+      "categorie": "Nettoyage Intérieur",
+      "slug": "nettoyage-bureaux-sieges-sociaux",
+      "url": "https://www.aspeo.fr/services/nettoyage-bureaux-sieges-sociaux",
+      "titre": "Nettoyage de bureaux & sièges sociaux",
+      "seoDesc": "Nettoyage de bureaux et sièges sociaux en Loire et Rhône. Équipe formée, discrétion assurée. Devis gratuit sous 24h.",
+      "subtitle": "Un environnement de travail propre et professionnel à Saint-Étienne, Lyon et alentours",
+      "introText": "Expert en nettoyage de bureaux et sièges sociaux à Saint-Étienne, Lyon et dans toute la Loire et le Rhône, ASPEO Nettoyage entretient vos espaces de travail avec rigueur et discrétion. Nos équipes interviennent en horaires décalés pour ne jamais perturber l'activité de vos collaborateurs.",
+      "contextText": "Un environnement de travail propre contribue directement au bien-être des équipes et à l'image renvoyée aux visiteurs et partenaires. Bureaux, salles de réunion, espaces communs et sanitaires nécessitent un entretien régulier et rigoureux. ASPEO Nettoyage accompagne les entreprises de Loire et Rhône, des PME aux sièges sociaux de grande taille, avec des contrats adaptés à chaque configuration de locaux. Nos équipes interviennent tôt le matin, en soirée ou selon vos disponibilités.",
+      "expertise": {
+        "title": "Notre expertise en nettoyage de bureaux et sièges sociaux en Loire et Rhône",
+        "description": "ASPEO Nettoyage entretient au quotidien des bureaux et sièges sociaux pour des entreprises de toutes tailles en Loire et Rhône. Nous savons que la propreté des locaux professionnels influe directement sur la productivité et le bien-être des collaborateurs.\n\nNotre équipe intervient sur l'ensemble des espaces de travail, bureaux individuels, open spaces, salles de réunion, espaces de restauration et sanitaires. Nous adaptons nos protocoles selon le type de mobilier et d'équipements présents, notamment le matériel informatique nécessitant des précautions particulières.\n\nDe Saint-Étienne à Lyon, en passant par Roanne et Villefranche-sur-Saône, nous établissons des contrats sur mesure incluant fréquence de passage, périmètre d'intervention et prestations complémentaires selon les besoins spécifiques de chaque entreprise."
+      },
+      "highlights": [
+        "Interventions en horaires décalés sans perturber vos équipes",
+        "Personnel formé au nettoyage d'espaces tertiaires",
+        "Discrétion et confidentialité garanties",
+        "Produits adaptés au matériel de bureau et informatique",
+        "Contrats flexibles selon la taille de vos locaux",
+        "Couverture complète de la Loire et du Rhône"
+      ],
+      "targetSpaces": [
+        "Bureaux individuels et open spaces",
+        "Salles de réunion",
+        "Espaces d'accueil et halls",
+        "Sanitaires et sanitaires visiteurs",
+        "Espaces de restauration et cuisines",
+        "Salles de pause",
+        "Couloirs et zones de circulation",
+        "Ascenseurs et escaliers"
+      ],
+      "prestationsCategories": [
+        {
+          "title": "Entretien quotidien",
+          "items": [
+            "Nettoyage des bureaux et open spaces",
+            "Vidage des corbeilles et poubelles de tri",
+            "Entretien des sanitaires",
+            "Nettoyage des sols de circulation"
+          ]
+        },
+        {
+          "title": "Entretien périodique",
+          "items": [
+            "Nettoyage des vitres intérieures",
+            "Décapage et lustrage des sols",
+            "Dépoussiérage en hauteur",
+            "Nettoyage des moquettes et textiles"
+          ]
+        },
+        {
+          "title": "Prestations complémentaires",
+          "items": [
+            "Réapprovisionnement des consommables sanitaires",
+            "Nettoyage des espaces de restauration",
+            "Entretien des salles de réunion après usage"
+          ]
+        }
+      ],
+      "subServices": [
+        {
+          "name": "Nettoyage des bureaux et open spaces",
+          "description": "Entretien quotidien ou hebdomadaire des postes de travail et espaces partagés, avec un soin particulier apporté au matériel informatique et aux surfaces de contact."
+        },
+        {
+          "name": "Entretien des salles de réunion",
+          "description": "Remise en état après chaque utilisation pour garantir un espace prêt à accueillir vos prochains rendez-vous professionnels."
+        },
+        {
+          "name": "Nettoyage des sanitaires",
+          "description": "Entretien et désinfection quotidienne des sanitaires, avec réapprovisionnement des consommables d'hygiène."
+        },
+        {
+          "name": "Entretien des espaces de restauration",
+          "description": "Nettoyage des cuisines et salles de pause, avec un respect strict des règles d'hygiène propres à ces espaces partagés."
+        }
+      ],
+      "process": [
+        {
+          "step": 1,
+          "title": "Audit des locaux",
+          "description": "Visite des bureaux pour évaluer les surfaces et définir le périmètre d'intervention.",
+          "duration": "30 min"
+        },
+        {
+          "step": 2,
+          "title": "Proposition de contrat",
+          "description": "Élaboration d'un devis détaillé selon la fréquence et les prestations souhaitées.",
+          "duration": "24h"
+        },
+        {
+          "step": 3,
+          "title": "Mise en place du planning",
+          "description": "Définition des horaires d'intervention adaptés à l'activité de l'entreprise.",
+          "duration": "Variable"
+        },
+        {
+          "step": 4,
+          "title": "Intervention régulière",
+          "description": "Nettoyage réalisé selon la fréquence contractuelle, en horaires décalés si nécessaire.",
+          "duration": "1-3h"
+        },
+        {
+          "step": 5,
+          "title": "Suivi qualité",
+          "description": "Points de contrôle réguliers pour garantir la satisfaction dans la durée.",
+          "duration": "Variable"
+        }
+      ],
+      "guarantees": [
+        "Assurance RC Pro couvrant l'ensemble de nos interventions",
+        "Personnel formé et fidélisé sur vos sites",
+        "Confidentialité garantie sur l'ensemble de nos interventions",
+        "Devis gratuit et transparent sous 24h",
+        "Produits éco-responsables",
+        "Flexibilité horaire adaptée à votre activité"
+      ],
+      "applicationSectors": [
+        "Sièges sociaux d'entreprises",
+        "PME et TPE",
+        "Cabinets d'expertise et professions libérales",
+        "Agences bancaires et assurances",
+        "Cabinets d'avocats et notaires",
+        "Espaces de coworking",
+        "Centres d'appels",
+        "Administrations et collectivités"
+      ],
+      "whyChoose": [
+        "Une équipe fidélisée qui connaît vos locaux",
+        "Des interventions discrètes en horaires décalés",
+        "Une couverture complète de la Loire et du Rhône",
+        "Un contrat adapté à la taille de votre entreprise",
+        "Un interlocuteur unique pour vos sites multiples",
+        "Une réactivité en cas de besoin ponctuel"
+      ],
+      "faq": [
+        {
+          "question": "Intervenez-vous dans les sièges sociaux à Lyon en horaires décalés ?",
+          "answer": "Oui, nous intervenons tôt le matin, en soirée ou le week-end selon vos besoins, afin de ne jamais perturber l'activité de vos équipes."
+        },
+        {
+          "question": "Proposez-vous des contrats pour les PME de la Loire ?",
+          "answer": "Oui, nous adaptons nos contrats à toutes les tailles d'entreprises, des petites structures aux sièges sociaux implantés à Saint-Étienne ou dans la région stéphanoise."
+        },
+        {
+          "question": "Le personnel est-il le même à chaque intervention ?",
+          "answer": "Nous privilégions autant que possible la fidélisation d'une équipe dédiée à votre site, pour une meilleure connaissance de vos locaux et de vos attentes."
+        },
+        {
+          "question": "Proposez-vous le réapprovisionnement des consommables sanitaires ?",
+          "answer": "Oui, cette prestation peut être incluse dans votre contrat afin de garantir en permanence la disponibilité du savon, papier et essuie-mains."
+        }
+      ]
+    },
+    {
+      "categorie": "Nettoyage Extérieur",
+      "slug": "lavage-de-vitres",
+      "url": "https://www.aspeo.fr/services/lavage-de-vitres",
+      "titre": "Lavage de Vitres",
+      "seoDesc": "Lavage de vitres professionnel en Loire et Rhône, bureaux et commerces. Équipe équipée, intervention rapide. Devis gratuit.",
+      "subtitle": "Des vitrages impeccables pour vos locaux professionnels à Saint-Étienne, Lyon et alentours",
+      "introText": "Spécialiste du lavage de vitres professionnel à Saint-Étienne, Lyon et dans toute la Loire et le Rhône, ASPEO Nettoyage intervient sur tous types de vitrages, du rez-de-chaussée aux étages élevés. Notre équipe équipée garantit un résultat sans traces, durable dans le temps.",
+      "contextText": "Des vitres propres et sans traces contribuent directement à la luminosité de vos locaux et à l'image de votre entreprise vis-à-vis de vos clients et visiteurs. ASPEO Nettoyage intervient sur les vitrines de commerce, les baies vitrées de bureaux et les façades vitrées d'immeubles en Loire et Rhône. Nous disposons des équipements adaptés pour intervenir en toute sécurité, y compris sur les surfaces difficiles d'accès. Nos interventions sont planifiées selon une fréquence adaptée à l'exposition de vos vitrages.",
+      "expertise": {
+        "title": "Notre expertise en lavage de vitres professionnel en Loire et Rhône",
+        "description": "ASPEO Nettoyage intervient depuis plusieurs années sur le lavage de vitres pour des professionnels de toute la Loire et du Rhône. Nous maîtrisons les techniques adaptées à chaque type de vitrage, qu'il s'agisse de vitrines de commerce, de baies vitrées de bureaux ou de façades entières d'immeubles.\n\nNotre équipe utilise du matériel professionnel, raclettes, perches télescopiques et systèmes à eau osmosée pour les hauteurs, garantissant un résultat sans traces même sur les surfaces les plus exposées. Nous adaptons la fréquence de nos interventions selon l'environnement du bâtiment, sa localisation et son exposition à la pollution ou aux intempéries.\n\nÀ Saint-Étienne, Lyon ou Roanne, nous intervenons aussi bien pour des prestations ponctuelles que dans le cadre de contrats d'entretien régulier, en toute sécurité et dans le respect des délais convenus."
+      },
+      "highlights": [
+        "Matériel professionnel adapté à tous types de vitrages",
+        "Résultat sans traces garanti",
+        "Intervention en hauteur en toute sécurité",
+        "Fréquence adaptée à l'exposition du bâtiment",
+        "Personnel formé aux techniques de vitrerie professionnelle",
+        "Couverture complète de la Loire et du Rhône"
+      ],
+      "targetSpaces": [
+        "Vitrines de commerce",
+        "Baies vitrées de bureaux",
+        "Façades vitrées d'immeubles",
+        "Vérandas et verrières",
+        "Portes et cloisons vitrées intérieures",
+        "Vitrages de copropriétés",
+        "Show-rooms et concessions",
+        "Halls d'entrée vitrés"
+      ],
+      "prestationsCategories": [
+        {
+          "title": "Vitrerie extérieure",
+          "items": [
+            "Lavage des vitrines de commerce",
+            "Nettoyage des façades vitrées",
+            "Lavage en hauteur avec équipement adapté",
+            "Nettoyage des encadrements et rebords"
+          ]
+        },
+        {
+          "title": "Vitrerie intérieure",
+          "items": [
+            "Nettoyage des cloisons vitrées de bureaux",
+            "Entretien des portes vitrées",
+            "Nettoyage des vérandas et verrières",
+            "Lavage des miroirs et surfaces réfléchissantes"
+          ]
+        }
+      ],
+      "subServices": [
+        {
+          "name": "Lavage de vitrines commerciales",
+          "description": "Entretien régulier des vitrines pour une image toujours soignée, essentielle pour les commerces situés en centre-ville ou en zone commerciale."
+        },
+        {
+          "name": "Nettoyage de façades vitrées",
+          "description": "Intervention sur les grandes surfaces vitrées d'immeubles de bureaux, avec des équipements adaptés aux hauteurs importantes."
+        },
+        {
+          "name": "Entretien des cloisons vitrées intérieures",
+          "description": "Nettoyage des séparations vitrées d'open space, fréquentes dans les environnements de bureaux modernes."
+        },
+        {
+          "name": "Lavage ponctuel ou contractuel",
+          "description": "Possibilité d'intervention unique ou de contrat d'entretien régulier selon vos besoins et l'exposition de vos vitrages."
+        }
+      ],
+      "process": [
+        {
+          "step": 1,
+          "title": "Évaluation des surfaces vitrées",
+          "description": "Visite pour mesurer les surfaces et identifier les contraintes d'accès.",
+          "duration": "20 min"
+        },
+        {
+          "step": 2,
+          "title": "Devis et planification",
+          "description": "Établissement d'un devis gratuit et proposition d'une fréquence adaptée.",
+          "duration": "24h"
+        },
+        {
+          "step": 3,
+          "title": "Intervention",
+          "description": "Lavage des vitrages avec le matériel adapté à la configuration du site.",
+          "duration": "1-3h"
+        },
+        {
+          "step": 4,
+          "title": "Contrôle qualité",
+          "description": "Vérification de l'absence de traces et de résidus.",
+          "duration": "15 min"
+        }
+      ],
+      "guarantees": [
+        "Assurance RC Pro couvrant les interventions en hauteur",
+        "Résultat sans traces garanti",
+        "Personnel formé aux techniques de vitrerie",
+        "Devis gratuit sous 24h",
+        "Intervention rapide selon vos besoins",
+        "Produits éco-responsables"
+      ],
+      "applicationSectors": [
+        "Commerces et boutiques",
+        "Bureaux et sièges sociaux",
+        "Copropriétés",
+        "Show-rooms automobiles",
+        "Hôtels et restaurants",
+        "Bâtiments industriels",
+        "Établissements de santé",
+        "Agences bancaires"
+      ],
+      "whyChoose": [
+        "Un équipement professionnel adapté à toutes les hauteurs",
+        "Un résultat sans traces à chaque intervention",
+        "Une couverture complète de la Loire et du Rhône",
+        "Une fréquence d'intervention personnalisée",
+        "Une sécurité garantie sur les interventions en hauteur",
+        "Un devis gratuit et rapide"
+      ],
+      "faq": [
+        {
+          "question": "Intervenez-vous pour le lavage de vitres en hauteur à Lyon ?",
+          "answer": "Oui, nous disposons du matériel adapté pour intervenir en toute sécurité sur des façades vitrées en hauteur, à Lyon comme dans tout le Rhône."
+        },
+        {
+          "question": "Proposez-vous des contrats réguliers pour les commerces de la Loire ?",
+          "answer": "Oui, nous établissons des contrats avec une fréquence adaptée à l'exposition de votre vitrine, que vous soyez à Saint-Étienne, Roanne ou ailleurs dans la Loire."
+        },
+        {
+          "question": "Quelle fréquence recommandez-vous pour le lavage de vitres ?",
+          "answer": "Cela dépend de l'exposition du bâtiment, mais un passage mensuel à trimestriel est généralement recommandé pour les vitrines commerciales."
+        },
+        {
+          "question": "Intervenez-vous aussi pour les cloisons vitrées intérieures de bureaux ?",
+          "answer": "Oui, nous entretenons également les cloisons et portes vitrées à l'intérieur des locaux professionnels, en complément du lavage extérieur."
+        }
+      ]
+    },
+    {
+      "categorie": "Nettoyage Extérieur",
+      "slug": "nettoyage-exterieur",
+      "url": "https://www.aspeo.fr/services/nettoyage-exterieur",
+      "titre": "Nettoyage Extérieur",
+      "seoDesc": "Nettoyage extérieur professionnel en Loire et Rhône, façades, parkings et abords. Équipe équipée. Devis gratuit sous 24h.",
+      "subtitle": "L'entretien des abords et espaces extérieurs de vos locaux à Saint-Étienne, Lyon et alentours",
+      "introText": "Spécialiste du nettoyage extérieur à Saint-Étienne, Lyon et dans toute la Loire et le Rhône, ASPEO Nettoyage entretient les abords, façades et espaces extérieurs de vos locaux professionnels. Nos équipes interviennent avec des équipements haute pression adaptés à chaque type de surface.",
+      "contextText": "Les espaces extérieurs de vos locaux, parkings, entrées, façades et abords, participent pleinement à l'image perçue par vos clients et visiteurs. Un entretien régulier permet également de préserver ces surfaces dans la durée face aux intempéries et à la pollution urbaine. ASPEO Nettoyage intervient en Loire et Rhône pour l'entretien de ces espaces extérieurs, avec des équipements professionnels de nettoyage haute pression. Nous adaptons nos interventions selon la saison et l'exposition de chaque site.",
+      "expertise": {
+        "title": "Notre expertise en nettoyage extérieur en Loire et Rhône",
+        "description": "ASPEO Nettoyage entretient les espaces extérieurs de nombreux professionnels en Loire et Rhône, des parkings d'entreprises aux façades de bâtiments commerciaux. Nous savons que ces surfaces exposées aux intempéries nécessitent un entretien régulier pour rester propres et sécurisées.\n\nNotre équipe utilise des équipements de nettoyage haute pression adaptés à chaque type de surface, béton, enrobé, pierre naturelle ou façades peintes. Nous intervenons également sur les mousses et salissures qui se développent sur les zones ombragées ou humides, fréquentes dans notre région.\n\nDe Saint-Étienne à Lyon, en passant par Roanne et Feurs, nous proposons des interventions ponctuelles ou des contrats d'entretien régulier adaptés à l'exposition et à l'usage de chaque espace extérieur."
+      },
+      "highlights": [
+        "Équipements haute pression professionnels",
+        "Traitement anti-mousse des surfaces extérieures",
+        "Intervention adaptée à chaque type de revêtement",
+        "Sécurisation des zones de circulation piétonne",
+        "Fréquence d'intervention ajustée à la saison",
+        "Couverture complète de la Loire et du Rhône"
+      ],
+      "targetSpaces": [
+        "Parkings et zones de stationnement",
+        "Entrées et halls d'accueil extérieurs",
+        "Façades de bâtiments commerciaux",
+        "Terrasses et cours extérieures",
+        "Allées piétonnes",
+        "Abords de bâtiments industriels",
+        "Escaliers et rampes extérieures",
+        "Zones de livraison"
+      ],
+      "prestationsCategories": [
+        {
+          "title": "Nettoyage haute pression",
+          "items": [
+            "Lavage des parkings et zones de circulation",
+            "Nettoyage des façades",
+            "Traitement anti-mousse des sols extérieurs",
+            "Nettoyage des allées piétonnes"
+          ]
+        },
+        {
+          "title": "Entretien courant",
+          "items": [
+            "Balayage et débarrassage des espaces extérieurs",
+            "Nettoyage des entrées et halls extérieurs",
+            "Entretien des escaliers et rampes",
+            "Nettoyage des zones de livraison"
+          ]
+        }
+      ],
+      "subServices": [
+        {
+          "name": "Nettoyage haute pression de parkings",
+          "description": "Élimination des traces d'huile, salissures et mousses sur les zones de stationnement, pour un espace propre et sécurisé."
+        },
+        {
+          "name": "Nettoyage de façades",
+          "description": "Traitement des façades exposées à la pollution urbaine ou au développement de mousses, avec des produits adaptés à chaque matériau."
+        },
+        {
+          "name": "Entretien des allées et zones piétonnes",
+          "description": "Nettoyage régulier des zones de circulation extérieure pour limiter les risques de glissade liés à l'humidité et aux mousses."
+        },
+        {
+          "name": "Nettoyage des zones de livraison",
+          "description": "Entretien des espaces logistiques extérieurs, souvent soumis à un usage intensif nécessitant un nettoyage régulier."
+        }
+      ],
+      "process": [
+        {
+          "step": 1,
+          "title": "Visite du site",
+          "description": "Évaluation des surfaces extérieures et des besoins spécifiques.",
+          "duration": "30 min"
+        },
+        {
+          "step": 2,
+          "title": "Devis personnalisé",
+          "description": "Proposition d'un devis adapté aux surfaces et à la fréquence souhaitée.",
+          "duration": "24h"
+        },
+        {
+          "step": 3,
+          "title": "Intervention haute pression",
+          "description": "Nettoyage des surfaces extérieures avec équipement professionnel.",
+          "duration": "2-4h"
+        },
+        {
+          "step": 4,
+          "title": "Traitement anti-mousse",
+          "description": "Application de traitements préventifs sur les zones sensibles à l'humidité.",
+          "duration": "Variable"
+        },
+        {
+          "step": 5,
+          "title": "Contrôle final",
+          "description": "Vérification de la qualité du nettoyage réalisé.",
+          "duration": "15 min"
+        }
+      ],
+      "guarantees": [
+        "Assurance RC Pro couvrant l'ensemble de nos interventions",
+        "Équipements professionnels haute pression",
+        "Personnel formé aux techniques de nettoyage extérieur",
+        "Devis gratuit sous 24h",
+        "Intervention rapide selon vos besoins",
+        "Produits éco-responsables"
+      ],
+      "applicationSectors": [
+        "Entreprises et zones d'activité",
+        "Copropriétés",
+        "Commerces et centres commerciaux",
+        "Bâtiments industriels",
+        "Établissements de santé",
+        "Collectivités locales",
+        "Résidences et bailleurs sociaux",
+        "Hôtels et restaurants"
+      ],
+      "whyChoose": [
+        "Un équipement haute pression professionnel",
+        "Une expertise adaptée à tous types de revêtements",
+        "Une couverture complète de la Loire et du Rhône",
+        "Une fréquence d'intervention ajustée à la saison",
+        "Un devis gratuit et rapide",
+        "Une équipe formée et réactive"
+      ],
+      "faq": [
+        {
+          "question": "Intervenez-vous pour le nettoyage de parkings d'entreprise à Lyon ?",
+          "answer": "Oui, nous intervenons sur les parkings et zones de stationnement d'entreprises à Lyon comme dans tout le Rhône, avec un équipement haute pression adapté."
+        },
+        {
+          "question": "Proposez-vous un traitement anti-mousse pour les façades dans la Loire ?",
+          "answer": "Oui, nous proposons un traitement anti-mousse adapté aux façades et sols extérieurs, particulièrement recommandé dans les zones ombragées ou humides de la Loire."
+        },
+        {
+          "question": "À quelle fréquence faut-il nettoyer les espaces extérieurs professionnels ?",
+          "answer": "Cela dépend de l'exposition du site, mais un entretien trimestriel à semestriel est généralement suffisant, avec des interventions ponctuelles supplémentaires en cas de besoin."
+        },
+        {
+          "question": "Intervenez-vous sur les façades en hauteur ?",
+          "answer": "Oui, nous disposons des équipements nécessaires pour intervenir en toute sécurité sur des façades de plusieurs niveaux."
+        }
+      ]
+    },
+    {
+      "categorie": "Nettoyage Extérieur",
+      "slug": "nettoyage-panneaux-photovoltaiques",
+      "url": "https://www.aspeo.fr/services/nettoyage-panneaux-photovoltaiques",
+      "titre": "Nettoyage de Panneaux Photovoltaïques",
+      "seoDesc": "Nettoyage de panneaux photovoltaïques en Loire et Rhône, optimisation du rendement énergétique. Devis gratuit sous 24h.",
+      "subtitle": "Optimisez le rendement de vos installations solaires à Saint-Étienne, Lyon et alentours",
+      "introText": "Spécialiste du nettoyage de panneaux photovoltaïques à Saint-Étienne, Lyon et dans toute la Loire et le Rhône, ASPEO Nettoyage intervient auprès des entreprises et exploitants pour préserver le rendement de leurs installations solaires. Nos équipes utilisent des équipements adaptés, sans risque pour vos panneaux.",
+      "contextText": "L'accumulation de poussière, de pollens ou de résidus sur les panneaux photovoltaïques peut réduire significativement leur rendement énergétique au fil du temps. Un entretien régulier permet de préserver la performance de votre installation et d'optimiser votre retour sur investissement. ASPEO Nettoyage intervient en Loire et Rhône auprès des entreprises, exploitations agricoles et collectivités disposant d'installations solaires, avec des techniques adaptées qui préservent l'intégrité des panneaux. Nos interventions sont planifiées selon l'exposition et l'environnement de chaque installation.",
+      "expertise": {
+        "title": "Notre expertise en nettoyage de panneaux photovoltaïques en Loire et Rhône",
+        "description": "ASPEO Nettoyage accompagne les exploitants d'installations photovoltaïques en Loire et Rhône dans l'entretien de leurs panneaux solaires. Nous savons que l'encrassement progressif de ces surfaces impacte directement le rendement énergétique et la rentabilité de l'installation.\n\nNotre équipe utilise de l'eau osmosée et des brosses adaptées, sans produits abrasifs susceptibles d'endommager les panneaux. Cette méthode garantit un nettoyage efficace sans laisser de résidus ni de traces calcaires, préservant ainsi la surface et les performances des installations.\n\nQue votre installation se situe sur une toiture d'entreprise, un bâtiment agricole ou une centrale au sol en Loire ou dans le Rhône, nous adaptons notre intervention à la configuration du site et aux contraintes d'accès en toute sécurité."
+      },
+      "highlights": [
+        "Nettoyage à l'eau osmosée sans traces calcaires",
+        "Techniques préservant l'intégrité des panneaux",
+        "Intervention en toute sécurité en hauteur",
+        "Amélioration mesurable du rendement énergétique",
+        "Fréquence adaptée à l'environnement de l'installation",
+        "Couverture complète de la Loire et du Rhône"
+      ],
+      "targetSpaces": [
+        "Toitures d'entreprises équipées de panneaux solaires",
+        "Bâtiments agricoles photovoltaïques",
+        "Centrales solaires au sol",
+        "Ombrières de parking photovoltaïques",
+        "Installations industrielles",
+        "Bâtiments publics équipés",
+        "Exploitations agricoles",
+        "Entrepôts logistiques"
+      ],
+      "prestationsCategories": [
+        {
+          "title": "Nettoyage des panneaux",
+          "items": [
+            "Nettoyage à l'eau osmosée",
+            "Élimination des dépôts de poussière et pollens",
+            "Traitement des salissures organiques",
+            "Nettoyage des cadres et structures de fixation"
+          ]
+        },
+        {
+          "title": "Suivi et entretien",
+          "items": [
+            "Contrôle visuel de l'état des panneaux",
+            "Planification d'un entretien périodique",
+            "Rapport d'intervention détaillé"
+          ]
+        }
+      ],
+      "subServices": [
+        {
+          "name": "Nettoyage à l'eau osmosée",
+          "description": "Technique de nettoyage sans produit chimique qui élimine les dépôts sans laisser de traces calcaires, préservant ainsi la surface des panneaux."
+        },
+        {
+          "name": "Nettoyage de centrales solaires au sol",
+          "description": "Intervention adaptée aux installations de grande envergure, avec un équipement permettant de traiter efficacement un nombre important de panneaux."
+        },
+        {
+          "name": "Nettoyage d'ombrières photovoltaïques",
+          "description": "Entretien des ombrières de parking équipées de panneaux solaires, alliant nettoyage et sécurisation de la zone d'intervention."
+        },
+        {
+          "name": "Suivi périodique du rendement",
+          "description": "Mise en place d'un contrat d'entretien régulier pour maintenir le rendement optimal de votre installation dans la durée."
+        }
+      ],
+      "process": [
+        {
+          "step": 1,
+          "title": "Diagnostic de l'installation",
+          "description": "Évaluation de l'état d'encrassement et de l'accessibilité des panneaux.",
+          "duration": "30 min"
+        },
+        {
+          "step": 2,
+          "title": "Devis personnalisé",
+          "description": "Proposition d'un devis selon la surface et la configuration de l'installation.",
+          "duration": "24h"
+        },
+        {
+          "step": 3,
+          "title": "Nettoyage à l'eau osmosée",
+          "description": "Intervention avec équipement adapté, sans risque pour les panneaux.",
+          "duration": "2-4h"
+        },
+        {
+          "step": 4,
+          "title": "Contrôle final",
+          "description": "Vérification visuelle de la qualité du nettoyage réalisé.",
+          "duration": "15 min"
+        },
+        {
+          "step": 5,
+          "title": "Planification du suivi",
+          "description": "Mise en place d'une fréquence d'entretien adaptée à votre installation.",
+          "duration": "Variable"
+        }
+      ],
+      "guarantees": [
+        "Assurance RC Pro couvrant l'ensemble de nos interventions",
+        "Technique de nettoyage sans risque pour les panneaux",
+        "Personnel formé aux installations photovoltaïques",
+        "Devis gratuit sous 24h",
+        "Intervention en toute sécurité en hauteur",
+        "Amélioration mesurable du rendement"
+      ],
+      "applicationSectors": [
+        "Entreprises équipées de panneaux solaires",
+        "Exploitations agricoles",
+        "Collectivités locales",
+        "Bâtiments industriels et logistiques",
+        "Parkings avec ombrières photovoltaïques",
+        "Centrales solaires au sol",
+        "Bailleurs sociaux",
+        "Établissements publics"
+      ],
+      "whyChoose": [
+        "Une technique de nettoyage sans risque pour vos panneaux",
+        "Une amélioration mesurable du rendement énergétique",
+        "Une couverture complète de la Loire et du Rhône",
+        "Un équipement adapté à toutes les configurations",
+        "Un devis gratuit et rapide",
+        "Une équipe formée aux installations solaires"
+      ],
+      "faq": [
+        {
+          "question": "Intervenez-vous pour le nettoyage de panneaux solaires dans la Loire ?",
+          "answer": "Oui, nous intervenons sur les installations photovoltaïques dans toute la Loire, y compris à Saint-Étienne, Roanne et Montbrison."
+        },
+        {
+          "question": "Proposez-vous ce service aux exploitations agricoles du Rhône ?",
+          "answer": "Oui, nous accompagnons de nombreuses exploitations agricoles équipées de panneaux solaires en toiture dans le Rhône et ses environs."
+        },
+        {
+          "question": "Le nettoyage améliore-t-il réellement le rendement des panneaux ?",
+          "answer": "Oui, l'accumulation de poussière et de salissures peut réduire significativement la production électrique, un nettoyage régulier permet de restaurer le rendement optimal."
+        },
+        {
+          "question": "À quelle fréquence faut-il nettoyer des panneaux photovoltaïques ?",
+          "answer": "Une à deux interventions par an sont généralement recommandées, selon l'environnement de l'installation et son exposition à la poussière ou aux pollens."
+        }
+      ]
+    },
+    {
+      "categorie": "Services Spéciaux",
+      "slug": "nettoyage-apres-sinistre",
+      "url": "https://www.aspeo.fr/services/nettoyage-apres-sinistre",
+      "titre": "Nettoyage Après Sinistre",
+      "seoDesc": "Nettoyage après sinistre en Loire et Rhône, dégâts des eaux et incendie. Intervention rapide 24h/24. Devis gratuit.",
+      "subtitle": "Une intervention rapide après un dégât des eaux ou un incendie en Loire et Rhône",
+      "introText": "Spécialiste du nettoyage après sinistre à Saint-Étienne, Lyon et dans toute la Loire et le Rhône, ASPEO Nettoyage intervient rapidement après un dégât des eaux, un incendie ou tout autre sinistre. Notre équipe accompagne particuliers, entreprises et assurances dans la remise en état des locaux touchés.",
+      "contextText": "Un sinistre, qu'il s'agisse d'un dégât des eaux, d'un incendie ou d'un dégât des eaux, nécessite une intervention rapide pour limiter l'aggravation des dommages et permettre une reprise d'activité dans les meilleurs délais. ASPEO Nettoyage accompagne les particuliers, entreprises et syndics de copropriété en Loire et Rhône, en coordination avec les compagnies d'assurance lorsque cela est nécessaire. Nous intervenons dans des délais courts, y compris en urgence, pour sécuriser les lieux et entamer le processus de remise en état.",
+      "expertise": {
+        "title": "Notre expertise en nettoyage après sinistre en Loire et Rhône",
+        "description": "ASPEO Nettoyage a développé une expertise dans la prise en charge des sinistres, dégâts des eaux, incendies et dégâts liés à des catastrophes naturelles. Nous savons que chaque situation exige une réactivité importante afin de limiter la propagation des dommages, notamment le développement de moisissures après un dégât des eaux.\n\nNotre équipe intervient avec des équipements professionnels de déshumidification, d'assèchement et de traitement des surfaces touchées par la fumée ou l'eau. Nous adaptons notre protocole selon la nature du sinistre et l'étendue des dégâts constatés sur site.\n\nÀ Saint-Étienne, Lyon ou dans toute la région, nous travaillons en lien avec les assurances et experts mandatés, en fournissant les rapports d'intervention nécessaires au traitement de votre dossier."
+      },
+      "highlights": [
+        "Intervention rapide en cas d'urgence",
+        "Équipements de déshumidification et d'assèchement",
+        "Traitement des surfaces touchées par la fumée",
+        "Prévention du développement de moisissures",
+        "Coordination possible avec les compagnies d'assurance",
+        "Couverture complète de la Loire et du Rhône"
+      ],
+      "targetSpaces": [
+        "Logements touchés par un dégât des eaux",
+        "Locaux professionnels après incendie",
+        "Caves et sous-sols inondés",
+        "Parties communes de copropriétés",
+        "Combles et toitures endommagées",
+        "Entrepôts et locaux industriels",
+        "Commerces sinistrés",
+        "Véhicules et biens mobiliers touchés"
+      ],
+      "prestationsCategories": [
+        {
+          "title": "Intervention d'urgence",
+          "items": [
+            "Sécurisation des lieux sinistrés",
+            "Pompage et évacuation de l'eau",
+            "Mise en place de déshumidificateurs",
+            "Protection des biens non endommagés"
+          ]
+        },
+        {
+          "title": "Nettoyage et décontamination",
+          "items": [
+            "Nettoyage des surfaces touchées par la fumée",
+            "Traitement anti-moisissures",
+            "Désinfection des zones touchées par l'eau",
+            "Traitement des odeurs post-sinistre"
+          ]
+        },
+        {
+          "title": "Remise en état",
+          "items": [
+            "Nettoyage final avant travaux de rénovation",
+            "Rapport d'intervention pour votre assurance"
+          ]
+        }
+      ],
+      "subServices": [
+        {
+          "name": "Intervention d'urgence dégât des eaux",
+          "description": "Pompage, évacuation de l'eau et mise en place de solutions de déshumidification pour limiter l'aggravation des dommages dans les heures suivant le sinistre."
+        },
+        {
+          "name": "Nettoyage post-incendie",
+          "description": "Traitement des surfaces touchées par la fumée et la suie, avec des produits spécifiques permettant d'éliminer les résidus et les odeurs persistantes."
+        },
+        {
+          "name": "Traitement anti-moisissures",
+          "description": "Intervention préventive et curative pour limiter le développement de moisissures suite à un dégât des eaux, particulièrement dans les zones peu ventilées."
+        },
+        {
+          "name": "Nettoyage pour dossier d'assurance",
+          "description": "Réalisation d'un rapport détaillé de l'intervention, utile pour la constitution de votre dossier auprès de votre compagnie d'assurance."
+        }
+      ],
+      "process": [
+        {
+          "step": 1,
+          "title": "Appel d'urgence",
+          "description": "Prise de contact rapide pour évaluer la nature et l'ampleur du sinistre.",
+          "duration": "15 min"
+        },
+        {
+          "step": 2,
+          "title": "Intervention sur site",
+          "description": "Déplacement rapide de l'équipe pour sécuriser les lieux et limiter l'aggravation des dégâts.",
+          "duration": "Variable"
+        },
+        {
+          "step": 3,
+          "title": "Pompage et assèchement",
+          "description": "Évacuation de l'eau et mise en place d'équipements de déshumidification.",
+          "duration": "1-2 jours"
+        },
+        {
+          "step": 4,
+          "title": "Nettoyage et décontamination",
+          "description": "Traitement des surfaces touchées selon la nature du sinistre.",
+          "duration": "1-3 jours"
+        },
+        {
+          "step": 5,
+          "title": "Rapport d'intervention",
+          "description": "Remise d'un rapport détaillé pour votre dossier d'assurance.",
+          "duration": "24h"
+        }
+      ],
+      "guarantees": [
+        "Intervention rapide y compris en urgence",
+        "Assurance RC Pro couvrant l'ensemble de nos interventions",
+        "Personnel formé aux protocoles post-sinistre",
+        "Coordination possible avec votre assurance",
+        "Devis gratuit et transparent",
+        "Équipements professionnels de déshumidification"
+      ],
+      "applicationSectors": [
+        "Particuliers",
+        "Copropriétés et syndics",
+        "Entreprises et commerces",
+        "Bailleurs sociaux",
+        "Compagnies d'assurance",
+        "Experts en sinistres",
+        "Collectivités locales",
+        "Établissements recevant du public"
+      ],
+      "whyChoose": [
+        "Une réactivité forte en cas d'urgence",
+        "Une expertise dans le traitement de tous types de sinistres",
+        "Une couverture complète de la Loire et du Rhône",
+        "Une coordination facilitée avec les assurances",
+        "Des équipements professionnels adaptés",
+        "Un accompagnement jusqu'à la remise en état complète"
+      ],
+      "faq": [
+        {
+          "question": "Intervenez-vous en urgence après un dégât des eaux à Lyon ?",
+          "answer": "Oui, nous proposons une intervention rapide en cas d'urgence à Lyon comme dans tout le Rhône, afin de limiter l'aggravation des dommages."
+        },
+        {
+          "question": "Travaillez-vous avec les compagnies d'assurance dans la Loire ?",
+          "answer": "Oui, nous fournissons un rapport d'intervention détaillé utile pour la constitution de votre dossier auprès de votre assureur, quelle que soit votre localisation en Loire."
+        },
+        {
+          "question": "Intervenez-vous aussi après un incendie ?",
+          "answer": "Oui, nous traitons les surfaces touchées par la fumée et la suie, avec des produits spécifiques pour éliminer les résidus et les odeurs persistantes."
+        },
+        {
+          "question": "Combien de temps faut-il pour assécher un logement après un dégât des eaux ?",
+          "answer": "Cela varie selon l'ampleur du sinistre, mais l'assèchement complet peut nécessiter plusieurs jours avec des équipements de déshumidification adaptés."
+        }
+      ]
+    },
+    {
+      "categorie": "Services Spéciaux",
+      "slug": "nettoyage-fin-de-chantier",
+      "url": "https://www.aspeo.fr/services/nettoyage-fin-de-chantier",
+      "titre": "Nettoyage de Fin de Chantier",
+      "seoDesc": "Nettoyage de fin de chantier en Loire et Rhône, remise en état avant livraison. Équipe formée. Devis gratuit sous 24h.",
+      "subtitle": "Une remise en état complète avant livraison à Saint-Étienne, Lyon et alentours",
+      "introText": "Spécialiste du nettoyage de fin de chantier à Saint-Étienne, Lyon et dans toute la Loire et le Rhône, ASPEO Nettoyage prépare vos locaux neufs ou rénovés avant leur livraison. Notre équipe élimine résidus de construction, poussières et traces de travaux pour un rendu impeccable.",
+      "contextText": "La fin d'un chantier de construction ou de rénovation laisse généralement des résidus importants, poussières fines, traces de peinture, résidus de colle ou de plâtre, qui nécessitent un nettoyage approfondi avant la livraison des locaux. ASPEO Nettoyage accompagne les entreprises du bâtiment, promoteurs et particuliers en Loire et Rhône dans cette étape essentielle avant remise des clés. Nous intervenons avec des équipements adaptés aux résidus de chantier, souvent plus abrasifs qu'un nettoyage classique.",
+      "expertise": {
+        "title": "Notre expertise en nettoyage de fin de chantier en Loire et Rhône",
+        "description": "ASPEO Nettoyage accompagne les professionnels du bâtiment et les particuliers en Loire et Rhône dans la remise en état de leurs locaux après travaux. Nous connaissons les spécificités de ce type de nettoyage, qui diffère largement de l'entretien courant en raison de la nature des résidus à traiter.\n\nNotre équipe intervient sur l'élimination des poussières fines de construction, des traces de peinture, de colle ou de plâtre, ainsi que sur le nettoyage approfondi des sols, vitres et sanitaires neufs. Nous adaptons nos produits et techniques selon les matériaux présents, pour éviter tout risque de rayure ou de dégradation des finitions.\n\nQue votre chantier se situe à Saint-Étienne, Lyon ou Villefranche-sur-Saône, nous intervenons en fin de chantier pour une livraison impeccable, dans les délais convenus avec les entreprises du bâtiment."
+      },
+      "highlights": [
+        "Élimination des poussières fines de construction",
+        "Traitement des traces de peinture, colle et plâtre",
+        "Nettoyage approfondi des sols et vitres neuves",
+        "Produits adaptés aux finitions et matériaux sensibles",
+        "Respect des délais de livraison",
+        "Couverture complète de la Loire et du Rhône"
+      ],
+      "targetSpaces": [
+        "Logements neufs avant livraison",
+        "Bureaux et locaux commerciaux rénovés",
+        "Parties communes d'immeubles neufs",
+        "Maisons individuelles après construction",
+        "Commerces après aménagement",
+        "Bâtiments industriels neufs",
+        "Établissements recevant du public rénovés",
+        "Extensions et surélévations"
+      ],
+      "prestationsCategories": [
+        {
+          "title": "Nettoyage de base",
+          "items": [
+            "Élimination des poussières fines de chantier",
+            "Nettoyage des sols et revêtements neufs",
+            "Nettoyage des vitres et encadrements",
+            "Dépoussiérage des surfaces hautes et basses"
+          ]
+        },
+        {
+          "title": "Traitements spécifiques",
+          "items": [
+            "Élimination des traces de peinture et colle",
+            "Nettoyage des résidus de plâtre",
+            "Nettoyage approfondi des sanitaires neufs",
+            "Traitement des sols avant première utilisation"
+          ]
+        }
+      ],
+      "subServices": [
+        {
+          "name": "Dépoussiérage général du chantier",
+          "description": "Élimination des poussières fines présentes sur toutes les surfaces, sols, murs, plafonds et équipements, résultant des travaux de construction."
+        },
+        {
+          "name": "Nettoyage des sols neufs",
+          "description": "Traitement adapté selon le type de revêtement, carrelage, parquet ou sol souple, pour éliminer les résidus de chantier sans endommager les finitions."
+        },
+        {
+          "name": "Nettoyage des vitres post-travaux",
+          "description": "Élimination des traces de peinture, ciment ou colle présentes sur les vitrages, fréquentes en fin de chantier."
+        },
+        {
+          "name": "Nettoyage des sanitaires neufs",
+          "description": "Entretien approfondi des sanitaires nouvellement installés pour une livraison impeccable aux futurs occupants."
+        }
+      ],
+      "process": [
+        {
+          "step": 1,
+          "title": "Visite du chantier",
+          "description": "Évaluation de l'état des lieux et des surfaces à traiter avant livraison.",
+          "duration": "30 min"
+        },
+        {
+          "step": 2,
+          "title": "Devis et planification",
+          "description": "Proposition d'un devis adapté aux délais de livraison du chantier.",
+          "duration": "24h"
+        },
+        {
+          "step": 3,
+          "title": "Nettoyage de base",
+          "description": "Dépoussiérage général et élimination des résidus de construction.",
+          "duration": "Variable"
+        },
+        {
+          "step": 4,
+          "title": "Traitements spécifiques",
+          "description": "Élimination des traces de peinture, colle et plâtre selon les besoins.",
+          "duration": "Variable"
+        },
+        {
+          "step": 5,
+          "title": "Contrôle final avant livraison",
+          "description": "Vérification complète des locaux avant remise des clés.",
+          "duration": "30 min"
+        }
+      ],
+      "guarantees": [
+        "Assurance RC Pro couvrant l'ensemble de nos interventions",
+        "Personnel formé au nettoyage post-travaux",
+        "Produits adaptés aux finitions sensibles",
+        "Devis gratuit sous 24h",
+        "Respect des délais de livraison",
+        "Intervention rapide selon le planning du chantier"
+      ],
+      "applicationSectors": [
+        "Promoteurs immobiliers",
+        "Entreprises du bâtiment",
+        "Architectes et maîtres d'œuvre",
+        "Particuliers en construction ou rénovation",
+        "Syndics de copropriété",
+        "Bailleurs sociaux",
+        "Commerces en cours d'aménagement",
+        "Collectivités locales"
+      ],
+      "whyChoose": [
+        "Une expertise dédiée au nettoyage post-chantier",
+        "Un respect strict des délais de livraison",
+        "Une couverture complète de la Loire et du Rhône",
+        "Des produits adaptés aux finitions neuves",
+        "Une équipe habituée aux contraintes des chantiers",
+        "Un devis gratuit et rapide"
+      ],
+      "faq": [
+        {
+          "question": "Intervenez-vous pour le nettoyage de fin de chantier à Saint-Étienne ?",
+          "answer": "Oui, nous intervenons sur les chantiers de construction et rénovation à Saint-Étienne et dans toute la Loire, avec un respect strict des délais de livraison."
+        },
+        {
+          "question": "Proposez-vous ce service aux promoteurs immobiliers du Rhône ?",
+          "answer": "Oui, nous accompagnons plusieurs promoteurs et entreprises du bâtiment dans le Rhône pour la remise en état de leurs programmes neufs avant livraison."
+        },
+        {
+          "question": "Combien de temps avant la livraison faut-il prévoir le nettoyage de fin de chantier ?",
+          "answer": "Nous recommandons de planifier cette intervention quelques jours avant la date de livraison, une fois les derniers corps de métier intervenus sur le chantier."
+        },
+        {
+          "question": "Le nettoyage de fin de chantier inclut-il les vitres ?",
+          "answer": "Oui, le nettoyage des vitres fait partie intégrante de notre prestation, avec un traitement spécifique pour éliminer les traces de peinture ou de ciment."
+        }
+      ]
+    },
+    {
+      "categorie": "Services Spéciaux",
+      "slug": "nettoyage-logements-insalubres",
+      "url": "https://www.aspeo.fr/services/nettoyage-logements-insalubres",
+      "titre": "Nettoyage de Logements Insalubres",
+      "seoDesc": "Nettoyage de logements insalubres en Loire et Rhône, décontamination et remise en état. Équipe formée. Devis gratuit.",
+      "subtitle": "Une remise en état complète des logements dégradés en Loire et Rhône",
+      "introText": "Spécialiste du nettoyage de logements insalubres à Saint-Étienne, Lyon et dans toute la Loire et le Rhône, ASPEO Nettoyage intervient pour la décontamination et la remise en état de logements fortement dégradés. Notre équipe formée traite chaque situation avec rigueur et professionnalisme.",
+      "contextText": "Un logement insalubre présente souvent des risques sanitaires importants pour ses occupants, liés à l'humidité, aux nuisibles ou à un défaut d'entretien prolongé. Cette situation nécessite une intervention méthodique, allant du nettoyage approfondi à la décontamination complète des surfaces. ASPEO Nettoyage accompagne bailleurs, syndics et travailleurs sociaux en Loire et Rhône dans le traitement de ces logements, en coordination avec les services concernés lorsque cela est nécessaire. Nous adaptons notre intervention à l'ampleur des dégradations constatées.",
+      "expertise": {
+        "title": "Notre expertise en nettoyage de logements insalubres en Loire et Rhône",
+        "description": "ASPEO Nettoyage intervient sur des logements présentant des situations d'insalubrité avancée en Loire et Rhône. Nous savons que ces environnements nécessitent une approche technique rigoureuse, associée à des mesures de protection sanitaire pour les intervenants comme pour les futurs occupants.\n\nNotre équipe traite les problématiques d'humidité, de moisissures, de nuisibles et d'accumulation de déchets, avec des protocoles de décontamination adaptés à chaque situation. Nous utilisons des équipements de protection individuelle conformes aux normes en vigueur face aux risques biologiques présents dans ce type de logement.\n\nQue le logement se situe à Saint-Étienne, Lyon ou dans une commune rurale de la Loire ou du Rhône, nous intervenons en coordination avec les bailleurs, syndics ou services sociaux pour restituer un espace sain et habitable."
+      },
+      "highlights": [
+        "Traitement des problématiques d'humidité et de moisissures",
+        "Décontamination adaptée aux risques biologiques",
+        "Personnel équipé de protections individuelles conformes",
+        "Coordination possible avec bailleurs et services sociaux",
+        "Intervention méthodique selon l'ampleur des dégradations",
+        "Couverture complète de la Loire et du Rhône"
+      ],
+      "targetSpaces": [
+        "Logements insalubres occupés ou vacants",
+        "Appartements en copropriété dégradés",
+        "Maisons individuelles en état d'abandon",
+        "Logements sociaux nécessitant une remise en état",
+        "Caves et sous-sols humides",
+        "Parties communes dégradées",
+        "Logements infestés par des nuisibles",
+        "Résidences secondaires laissées à l'abandon"
+      ],
+      "prestationsCategories": [
+        {
+          "title": "Diagnostic et préparation",
+          "items": [
+            "Évaluation de l'ampleur de l'insalubrité",
+            "Identification des risques sanitaires",
+            "Établissement d'un plan d'intervention"
+          ]
+        },
+        {
+          "title": "Nettoyage et décontamination",
+          "items": [
+            "Évacuation des déchets et objets dégradés",
+            "Traitement de l'humidité et des moisissures",
+            "Décontamination des surfaces",
+            "Désinfection complète du logement"
+          ]
+        },
+        {
+          "title": "Remise en état",
+          "items": [
+            "Nettoyage final avant travaux éventuels",
+            "Restitution d'un espace sain et habitable"
+          ]
+        }
+      ],
+      "subServices": [
+        {
+          "name": "Diagnostic d'insalubrité",
+          "description": "Visite préalable permettant d'évaluer l'ampleur des dégradations et d'établir un plan d'intervention adapté à la situation du logement."
+        },
+        {
+          "name": "Traitement de l'humidité et des moisissures",
+          "description": "Décontamination des surfaces touchées par les moisissures, souvent liées à des problèmes d'humidité persistante dans les logements insalubres."
+        },
+        {
+          "name": "Évacuation des déchets et encombrants",
+          "description": "Débarrassage des objets dégradés et déchets accumulés, avec évacuation en filières de traitement adaptées."
+        },
+        {
+          "name": "Désinfection complète du logement",
+          "description": "Traitement final visant à éliminer les agents biologiques présents et à restituer un logement sain, prêt pour d'éventuels travaux de rénovation."
+        }
+      ],
+      "process": [
+        {
+          "step": 1,
+          "title": "Premier contact",
+          "description": "Échange avec le bailleur, syndic ou mandataire pour comprendre la situation.",
+          "duration": "30 min"
+        },
+        {
+          "step": 2,
+          "title": "Visite d'évaluation",
+          "description": "Diagnostic sur site de l'ampleur de l'insalubrité et des risques sanitaires.",
+          "duration": "1h"
+        },
+        {
+          "step": 3,
+          "title": "Devis détaillé",
+          "description": "Établissement d'un devis précisant le périmètre d'intervention.",
+          "duration": "24h"
+        },
+        {
+          "step": 4,
+          "title": "Nettoyage et décontamination",
+          "description": "Évacuation des déchets, traitement de l'humidité et décontamination des surfaces.",
+          "duration": "Variable"
+        },
+        {
+          "step": 5,
+          "title": "Remise en état finale",
+          "description": "Nettoyage complet pour restituer un logement sain et habitable.",
+          "duration": "Variable"
+        }
+      ],
+      "guarantees": [
+        "Assurance RC Pro couvrant l'ensemble de nos interventions",
+        "Personnel équipé de protections conformes aux normes",
+        "Discrétion et respect des occupants",
+        "Devis gratuit et transparent sous 24h",
+        "Intervention rapide en cas de situation urgente",
+        "Respect des normes de décontamination en vigueur"
+      ],
+      "applicationSectors": [
+        "Bailleurs sociaux",
+        "Syndics de copropriété",
+        "Particuliers propriétaires",
+        "Travailleurs sociaux et mandataires",
+        "Collectivités locales",
+        "Agences immobilières",
+        "Notaires en charge de successions",
+        "Services d'hygiène municipaux"
+      ],
+      "whyChoose": [
+        "Une expertise reconnue dans le traitement de l'insalubrité",
+        "Une approche méthodique adaptée à chaque situation",
+        "Une couverture complète de la Loire et du Rhône",
+        "Des équipements de protection conformes aux normes",
+        "Une coordination facilitée avec bailleurs et services sociaux",
+        "Une capacité à intervenir rapidement selon l'urgence"
+      ],
+      "faq": [
+        {
+          "question": "Intervenez-vous pour les logements insalubres dans la Loire ?",
+          "answer": "Oui, ASPEO Nettoyage intervient dans l'ensemble de la Loire, notamment à Saint-Étienne, Roanne et Montbrison, pour la décontamination de logements insalubres."
+        },
+        {
+          "question": "Proposez-vous ce service aux bailleurs sociaux de Lyon ?",
+          "answer": "Oui, nous accompagnons plusieurs bailleurs sociaux et syndics à Lyon et dans le Rhône pour la remise en état de logements dégradés."
+        },
+        {
+          "question": "Comment se déroule une intervention sur un logement insalubre ?",
+          "answer": "L'intervention débute par une visite d'évaluation, suivie d'un devis détaillé. L'évacuation des déchets, le traitement de l'humidité et la décontamination sont ensuite réalisés étape par étape."
+        },
+        {
+          "question": "Traitez-vous les problèmes de moisissures liés à l'humidité ?",
+          "answer": "Oui, le traitement de l'humidité et des moisissures fait partie intégrante de notre protocole de décontamination pour ce type de logement."
+        }
+      ]
+    },
+    {
+      "categorie": "Services Spéciaux",
+      "slug": "bases-de-vie-autoroutes",
+      "url": "https://www.aspeo.fr/services/bases-de-vie-autoroutes",
+      "titre": "Bases de Vie & Autoroutes",
+      "seoDesc": "Nettoyage de bases de vie de chantier et d'infrastructures autoroutières en Loire et Rhône. Interventions planifiées, sécurité stricte. Devis gratuit sous 24h.",
+      "subtitle": "Un entretien rigoureux des bases de vie et des infrastructures routières à Saint-Étienne, Lyon et alentours",
+      "introText": "Spécialiste du nettoyage de bases de vie et d'infrastructures autoroutières à Saint-Étienne, Lyon et dans toute la Loire et le Rhône, ASPEO Nettoyage accompagne les entreprises de travaux publics, les concessionnaires d'autoroutes et les maîtres d'œuvre dans l'entretien de leurs installations de chantier et de leurs ouvrages.",
+      "contextText": "Les bases de vie de chantier accueillent chaque jour des équipes nombreuses dans des conditions exigeantes : vestiaires, réfectoires, sanitaires et bureaux de chantier doivent rester propres et sains pour garantir l'hygiène, la sécurité et le confort des compagnons. Sur les infrastructures autoroutières, la propreté des aires, des gares de péage et des locaux techniques participe directement à l'image du gestionnaire et à la sécurité des usagers.",
+      "expertise": {
+        "title": "Notre expertise en nettoyage de bases de vie et d'autoroutes en Loire et Rhône",
+        "description": "ASPEO Nettoyage intervient sur des sites soumis à de fortes contraintes d'exploitation : chantiers en activité, zones sous circulation, horaires imposés et protocoles de sécurité stricts. Nos équipes sont formées aux règles d'accès aux chantiers et aux consignes de sécurité des concessionnaires, et interviennent avec les équipements de protection individuelle adaptés.\n\nNous organisons des passages réguliers calés sur le rythme du chantier ou de l'exploitation : nettoyage quotidien des sanitaires et réfectoires, entretien hebdomadaire des bureaux et vestiaires, remise en état complète lors des déplacements de base de vie. Chaque intervention est tracée et contrôlée pour garantir une qualité constante sur toute la durée du marché."
+      },
+      "highlights": [
+        "Personnel formé aux consignes de sécurité chantier et autoroute",
+        "Interventions planifiées selon le rythme du site",
+        "Équipements de protection individuelle adaptés",
+        "Traçabilité de chaque passage",
+        "Couverture complète de la Loire et du Rhône",
+        "Devis gratuit et réponse sous 24h"
+      ],
+      "targetSpaces": [
+        "Bases de vie et bungalows de chantier",
+        "Vestiaires et sanitaires de chantier",
+        "Réfectoires et salles de pause",
+        "Bureaux de chantier",
+        "Aires d'autoroute et sanitaires publics",
+        "Gares de péage et locaux techniques",
+        "Ouvrages d'art et zones techniques"
+      ],
+      "prestationsCategories": [
+        {
+          "title": "Entretien des bases de vie",
+          "items": [
+            "Nettoyage quotidien des sanitaires et vestiaires",
+            "Entretien des réfectoires et espaces communs",
+            "Nettoyage des bureaux de chantier",
+            "Gestion des consommables : papier, savon, sacs",
+            "Remise en état lors des déplacements de base"
+          ]
+        },
+        {
+          "title": "Infrastructures routières",
+          "items": [
+            "Nettoyage des aires de repos et de service",
+            "Entretien des gares de péage",
+            "Nettoyage des locaux techniques et d'exploitation",
+            "Interventions sous protocole de sécurité renforcé"
+          ]
+        }
+      ],
+      "subServices": [
+        {
+          "name": "Nettoyage quotidien de base de vie",
+          "description": "Passage quotidien sur les sanitaires, vestiaires et réfectoires pour garantir l'hygiène des compagnons tout au long du chantier."
+        },
+        {
+          "name": "Entretien d'aires d'autoroute",
+          "description": "Nettoyage régulier des sanitaires publics, espaces d'accueil et zones de circulation des aires de repos et de service."
+        },
+        {
+          "name": "Remise en état de fin de chantier",
+          "description": "Nettoyage complet des installations avant restitution ou déplacement de la base de vie."
+        }
+      ],
+      "process": [
+        {
+          "step": 1,
+          "title": "Visite du site et analyse des contraintes",
+          "description": "Évaluation des installations, des accès et des consignes de sécurité applicables.",
+          "duration": "1h"
+        },
+        {
+          "step": 2,
+          "title": "Plan de nettoyage et habilitations",
+          "description": "Définition des fréquences, des protocoles et préparation des accès de nos équipes.",
+          "duration": "Variable"
+        },
+        {
+          "step": 3,
+          "title": "Interventions planifiées",
+          "description": "Passages réguliers calés sur le rythme du chantier ou de l'exploitation.",
+          "duration": "Selon site"
+        },
+        {
+          "step": 4,
+          "title": "Contrôle qualité et traçabilité",
+          "description": "Vérification des prestations et reporting de chaque passage.",
+          "duration": "Continu"
+        },
+        {
+          "step": 5,
+          "title": "Ajustement du dispositif",
+          "description": "Adaptation du contrat à l'avancement du chantier ou à la saisonnalité du trafic.",
+          "duration": "Variable"
+        }
+      ],
+      "guarantees": [
+        "Assurance RC Pro couvrant l'ensemble de nos interventions",
+        "Personnel formé aux règles de sécurité chantier",
+        "Produits éco-responsables adaptés aux usages intensifs",
+        "Continuité de service sur toute la durée du marché",
+        "Interlocuteur dédié pour le suivi du contrat"
+      ],
+      "applicationSectors": [
+        "Entreprises de travaux publics",
+        "Concessionnaires d'autoroutes",
+        "Majors du BTP et groupements",
+        "Maîtres d'œuvre et maîtres d'ouvrage",
+        "Exploitants d'infrastructures routières"
+      ],
+      "whyChoose": [
+        "Une équipe habituée aux contraintes des chantiers en activité",
+        "Des interventions qui respectent vos protocoles de sécurité",
+        "Une organisation calée sur le rythme de votre exploitation",
+        "Une traçabilité complète de chaque passage",
+        "Une réactivité en cas de besoin exceptionnel"
+      ],
+      "faq": [
+        {
+          "question": "Intervenez-vous sur des chantiers en activité en Loire et dans le Rhône ?",
+          "answer": "Oui, c'est le cœur de cette prestation. Nos équipes sont formées aux règles d'accès et de sécurité des chantiers et interviennent sans perturber l'activité, aux horaires définis avec le conducteur de travaux."
+        },
+        {
+          "question": "Pouvez-vous assurer un passage quotidien sur une base de vie ?",
+          "answer": "Oui, nous mettons en place des passages quotidiens sur les sanitaires, vestiaires et réfectoires, avec gestion des consommables incluse si vous le souhaitez. La fréquence est ajustable à tout moment selon l'effectif du chantier."
+        },
+        {
+          "question": "Respectez-vous les protocoles de sécurité des concessionnaires d'autoroutes ?",
+          "answer": "Oui, nos intervenants sont équipés des EPI requis et respectent strictement les consignes d'accès et de circulation des exploitants. Nous adaptons nos procédures à chaque site avant le démarrage du contrat."
+        },
+        {
+          "question": "Proposez-vous des contrats sur toute la durée d'un chantier ?",
+          "answer": "Oui, nous contractualisons sur la durée du marché, avec un dispositif ajustable à l'avancement : montée en charge, déplacement de base de vie et remise en état finale avant restitution."
+        }
+      ]
+    },
+    {
+      "categorie": "Services Spéciaux",
+      "slug": "nettoyage-syndrome-diogene",
+      "url": "https://www.aspeo.fr/services/nettoyage-syndrome-diogene",
+      "titre": "Nettoyage Syndrome de Diogène",
+      "seoDesc": "Nettoyage et débarras de logements touchés par le syndrome de Diogène en Loire et Rhône. Intervention discrète et respectueuse. Devis gratuit sous 24h.",
+      "subtitle": "Une intervention humaine, discrète et complète à Saint-Étienne, Lyon et alentours",
+      "introText": "Spécialiste du nettoyage de logements touchés par le syndrome de Diogène à Saint-Étienne, Lyon et dans toute la Loire et le Rhône, ASPEO Nettoyage accompagne les familles, tuteurs, bailleurs et services sociaux dans la remise en état complète de ces habitats, avec discrétion et respect des personnes.",
+      "contextText": "Le syndrome de Diogène entraîne une accumulation extrême d'objets et de déchets qui rend le logement insalubre et dangereux pour son occupant comme pour le voisinage. Ces situations, souvent douloureuses pour les proches, exigent bien plus qu'un simple nettoyage : un débarras méthodique, une désinfection profonde et une approche humaine, sans jugement, à chaque étape de l'intervention.",
+      "expertise": {
+        "title": "Notre expertise du syndrome de Diogène en Loire et Rhône",
+        "description": "ASPEO Nettoyage intervient régulièrement sur des situations d'incurie et de syndrome de Diogène, en lien avec les familles, curateurs, bailleurs sociaux et collectivités. Nos équipes sont formées à ces contextes sensibles : tri respectueux des effets personnels et des objets de valeur, débarras complet, évacuation des déchets en filières agréées, puis nettoyage et désinfection de fond en comble.\n\nChaque intervention suit un protocole sanitaire strict : équipements de protection, produits de désinfection professionnels, traitement des nuisibles si nécessaire et neutralisation des odeurs. Nous travaillons avec discrétion — véhicules banalisés sur demande — et remettons le logement dans un état sain, habitable ou relouable."
+      },
+      "highlights": [
+        "Approche humaine et sans jugement",
+        "Discrétion totale, véhicules banalisés sur demande",
+        "Tri respectueux des effets personnels et objets de valeur",
+        "Évacuation des déchets en filières agréées",
+        "Désinfection et neutralisation des odeurs",
+        "Devis gratuit et intervention rapide"
+      ],
+      "targetSpaces": [
+        "Appartements et studios",
+        "Maisons individuelles",
+        "Caves, greniers et dépendances",
+        "Logements sociaux et parc locatif",
+        "Chambres en résidence ou foyer"
+      ],
+      "prestationsCategories": [
+        {
+          "title": "Débarras et tri",
+          "items": [
+            "Tri méthodique avec mise de côté des objets de valeur",
+            "Débarras complet du logement et des annexes",
+            "Évacuation des déchets en déchetterie et filières agréées",
+            "Enlèvement du mobilier dégradé"
+          ]
+        },
+        {
+          "title": "Nettoyage et désinfection",
+          "items": [
+            "Nettoyage approfondi de toutes les surfaces",
+            "Désinfection professionnelle des sols et murs",
+            "Neutralisation des odeurs incrustées",
+            "Traitement contre les nuisibles si nécessaire"
+          ]
+        }
+      ],
+      "subServices": [
+        {
+          "name": "Débarras complet du logement",
+          "description": "Vidage méthodique de toutes les pièces avec tri des effets personnels, papiers importants et objets de valeur restitués à la famille ou au tuteur."
+        },
+        {
+          "name": "Désinfection et assainissement",
+          "description": "Nettoyage profond puis désinfection de l'ensemble des surfaces avec des produits professionnels, pour rendre le logement sain et habitable."
+        },
+        {
+          "name": "Traitement des odeurs et nuisibles",
+          "description": "Neutralisation des odeurs persistantes et traitement adapté en cas de présence de nuisibles, en coordination avec des partenaires spécialisés si besoin."
+        }
+      ],
+      "process": [
+        {
+          "step": 1,
+          "title": "Visite discrète et devis",
+          "description": "Évaluation du volume, de l'état du logement et des contraintes, en toute confidentialité.",
+          "duration": "1h"
+        },
+        {
+          "step": 2,
+          "title": "Organisation de l'intervention",
+          "description": "Planification avec la famille, le tuteur ou le bailleur, et préparation des moyens d'évacuation.",
+          "duration": "24-72h"
+        },
+        {
+          "step": 3,
+          "title": "Tri et débarras",
+          "description": "Vidage complet avec mise de côté systématique des documents et objets de valeur.",
+          "duration": "1-3 jours"
+        },
+        {
+          "step": 4,
+          "title": "Nettoyage et désinfection",
+          "description": "Remise en état sanitaire complète du logement, sols, murs et sanitaires.",
+          "duration": "1-2 jours"
+        },
+        {
+          "step": 5,
+          "title": "Contrôle final et restitution",
+          "description": "Visite de fin d'intervention avec le demandeur et remise d'un logement sain.",
+          "duration": "30 min"
+        }
+      ],
+      "guarantees": [
+        "Confidentialité et discrétion absolues",
+        "Restitution systématique des objets de valeur retrouvés",
+        "Évacuation des déchets en filières agréées",
+        "Désinfection aux produits professionnels certifiés",
+        "Assurance RC Pro couvrant l'ensemble de nos interventions"
+      ],
+      "applicationSectors": [
+        "Familles et proches",
+        "Tuteurs et curateurs",
+        "Bailleurs sociaux et privés",
+        "Services sociaux et collectivités",
+        "Syndics et administrateurs de biens",
+        "Notaires et successions"
+      ],
+      "whyChoose": [
+        "Une équipe formée aux situations d'incurie et d'insalubrité",
+        "Une approche humaine, patiente et sans jugement",
+        "Un protocole sanitaire strict de bout en bout",
+        "Une prise en charge complète, du débarras à la désinfection",
+        "Une intervention rapide en Loire et Rhône"
+      ],
+      "faq": [
+        {
+          "question": "Comment se déroule une intervention Diogène en toute discrétion ?",
+          "answer": "Nous convenons d'horaires adaptés, utilisons des véhicules banalisés sur demande et nos équipes interviennent en toute confidentialité. Aucune mention de la nature de l'intervention n'apparaît sur nos équipements."
+        },
+        {
+          "question": "Que faites-vous des objets de valeur ou des documents retrouvés ?",
+          "answer": "Chaque pièce est triée méthodiquement : papiers d'identité, documents administratifs, photos, bijoux et objets de valeur sont systématiquement mis de côté et restitués à la famille, au tuteur ou au notaire."
+        },
+        {
+          "question": "En combien de temps pouvez-vous intervenir en Loire ou dans le Rhône ?",
+          "answer": "Après la visite d'évaluation, nous intervenons généralement sous 24 à 72h selon l'urgence de la situation, notamment en cas de relogement, de vente ou de décision administrative."
+        },
+        {
+          "question": "Le logement est-il habitable après votre passage ?",
+          "answer": "Oui, c'est l'objectif de notre protocole : après débarras, nettoyage approfondi, désinfection et traitement des odeurs, le logement est rendu sain, habitable ou prêt à être reloué ou vendu."
+        }
+      ]
+    }
+  ]
+}

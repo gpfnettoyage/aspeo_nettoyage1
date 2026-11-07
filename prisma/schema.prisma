@@ -1,0 +1,216 @@
+// Prisma schema for GPF Nettoyage
+// Database: PostgreSQL (Vercel Postgres)
+// Auth: BetterAuth with email/password
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ============================================
+// BETTER AUTH MODELS
+// ============================================
+
+model user {
+  id            String    @id @default(uuid())
+  name          String?
+  email         String    @unique
+  emailVerified Boolean   @default(false)
+  image         String?
+  // SECURITY: Default to least-privileged role
+  // New users must be explicitly promoted by SUPER_ADMIN
+  role          Role      @default(USER)
+  twoFactorEnabled Boolean   @default(false)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  sessions           session[]
+  accounts           account[]
+  twoFactors         twoFactor[]
+  trustedDevices     trustedDevice[]
+  deviceVerifications deviceVerification[]
+
+  @@index([email])
+  @@index([role])
+  @@index([createdAt])
+  @@map("user")
+}
+
+model twoFactor {
+  id          String @id @default(uuid())
+  secret      String
+  backupCodes String
+  userId      String
+  user        user   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("two_factor")
+}
+
+// ============================================
+// TRUSTED DEVICE MODEL (Device Fingerprinting)
+// ============================================
+model trustedDevice {
+  id           String   @id @default(uuid())
+  userId       String
+  fingerprint  String   // Hash of device characteristics
+  name         String?  // User-friendly device name (e.g., "Chrome on Windows")
+  browser      String?
+  os           String?
+  lastIp       String?
+  lastUsedAt   DateTime @default(now())
+  createdAt    DateTime @default(now())
+
+  user user @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, fingerprint])
+  @@index([userId])
+  @@index([fingerprint])
+  @@index([lastUsedAt])
+  @@map("trusted_device")
+}
+
+// ============================================
+// DEVICE VERIFICATION MODEL (Pending challenges)
+// ============================================
+model deviceVerification {
+  id          String   @id @default(uuid())
+  userId      String
+  fingerprint String
+  code        String   // 6-digit verification code
+  browser     String?
+  os          String?
+  ip          String?
+  expiresAt   DateTime
+  createdAt   DateTime @default(now())
+
+  user user @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([code])
+  @@index([expiresAt])
+  @@map("device_verification")
+}
+
+model session {
+  id        String   @id @default(uuid())
+  userId    String
+  token     String   @unique
+  expiresAt DateTime
+  ipAddress String?
+  userAgent String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user user @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([token])
+  @@index([expiresAt])
+  @@map("session")
+}
+
+model account {
+  id                   String    @id @default(uuid())
+  userId               String
+  accountId            String
+  providerId           String
+  accessToken          String?
+  refreshToken         String?
+  accessTokenExpiresAt DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                String?
+  idToken              String?
+  password             String?
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
+
+  user user @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("account")
+}
+
+model verification {
+  id         String   @id @default(uuid())
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([expiresAt])
+  @@map("verification")
+}
+
+// ============================================
+// ROLE HIERARCHY (highest to lowest privilege)
+// ============================================
+// SUPER_ADMIN: Full system access + user management + security settings
+// ADMIN: Content management + security monitoring (no user management)
+// EDITOR: Create/update content (no delete, no security access)
+// VIEWER: Read-only dashboard access
+// ============================================
+enum Role {
+  SUPER_ADMIN
+  ADMIN
+  EDITOR
+  VIEWER
+  USER
+}
+
+// ============================================
+// CATEGORY MODEL (Service categories)
+// ============================================
+model Category {
+  id           String   @id @default(uuid())
+  name         String   @unique
+  slug         String   @unique
+  description  String?
+  displayOrder Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  // Relations
+  services Service[]
+
+  @@index([slug])
+  @@index([displayOrder])
+}
+
+// ============================================
+// SERVICE MODEL (Public services)
+// ============================================
+model Service {
+  id        String   @id @default(uuid())
+  slug      String   @unique
+  title     String
+  subtitle  String?
+
+  // Category relation (optional for backward compatibility)
+  categoryId String?
+  category   Category? @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+
+  // SEO fields (auto-generated from title/description if empty)
+  seoTitle String?
+  seoDesc  String?
+
+  // Status
+  published Boolean @default(true)
+
+  // Rich content - stored as structured JSON to preserve all data
+  // Contains: images, descriptions, expertise, introText, contextText,
+  // targetSpaces, prestationsCategories, process, guarantees,
+  // applicationSectors, faq, whyChoose, subServices
+  content Json
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([slug])
+  @@index([published])
+  @@index([categoryId])
+}

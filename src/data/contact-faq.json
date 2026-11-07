@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "question": "Quel délai pour la réalisation du nettoyage ?",
+    "answer": "Nous nous engageons à vous fournir un délai précis dès la réception de votre demande. Pour une intervention standard, comptez entre 24h et 48h selon la complexité et la taille des locaux."
+  },
+  {
+    "id": 2,
+    "question": "Proposez-vous des contrats régulier ?",
+    "answer": "Absolument ! Nous proposons des contrats régulier pour l'entretien quotidien, hebdomadaire ou mensuel selon vos besoins spécifiques."  
+  },
+  {
+    "id": 3,
+    "question": "Utilisez-vous des produits écologiques ?",
+    "answer": "Oui, nous privilégions l'utilisation de produits respectueux de l'environnement et certifiés écologiques pour préserver votre santé et celle de vos collaborateurs."
+  },
+  {
+    "id": 4,
+    "question": "Intervenez-vous en dehors des heures d'ouverture ?",
+    "answer": "Oui, nous adaptons nos horaires à vos contraintes. Nous pouvons intervenir en soirée, le week-end ou pendant les jours fériés selon vos besoins."
+  },
+  {
+    "id": 5,
+    "question": "Quels types de locaux nettoyez-vous ?",
+    "answer": "Nous intervenons dans tous types de locaux : bureaux, commerces, industries, établissements médicaux, écoles, copropriétés et locaux résidentiels."
+  },
+  {
+    "id": 6,
+    "question": "Comment obtenir un devis ?",
+    "answer": "Vous pouvez demander un devis gratuit en remplissant notre formulaire de contact, en nous appelant directement ou en nous envoyant un email. Nous vous répondons sous 24h."
+  }
+]

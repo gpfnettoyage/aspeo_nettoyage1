@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "Logo Aspeo (PNG)",
+    "description": "Logo officiel en haute résolution",
+    "downloadUrl": "/documents/presse/kit-media/logo-aspeo.png"
+  },
+  {
+    "id": 2,
+    "title": "Présentation Entreprise",
+    "description": "Présentation complète de l'entreprise Aspeo",
+    "downloadUrl": "/documents/presse/kit-media/presentation-aspeo.pdf"
+  },
+  {
+    "id": 3,
+    "title": "Chiffres Clés 2024",
+    "description": "Données et statistiques de l'entreprise",
+    "downloadUrl": "/documents/presse/kit-media/chiffres-cles-2024.pdf"
+  }
+]

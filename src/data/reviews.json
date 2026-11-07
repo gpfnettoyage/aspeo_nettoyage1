@@ -1,0 +1,131 @@
+{
+  "reviews": [
+    {
+      "id": 1,
+      "nom": "Armand Lefèvre",
+      "date": "2024-01-14",
+      "rating": 5,
+      "commentaire": "C'est la première fois que je vois un service de nettoyage d'une telle qualité chez Aspeo. Absolument incroyable ! Je suis conquis."
+    },
+    {
+      "id": 2,
+      "nom": "Solène Maréchal",
+      "date": "2024-04-23",
+      "rating": 5,
+      "commentaire": "Je suis sans mots. Le niveau de propreté atteint par Aspeo est impressionnant. Bravo à toute l'équipe."
+    },
+    {
+      "id": 3,
+      "nom": "Lucien Giraud",
+      "date": "2024-03-18",
+      "rating": 5,
+      "commentaire": "Je ne trouve pas les mots pour décrire ma satisfaction après l'intervention de Aspeo. Un service impeccable et un personnel aimable. Je recommande vivement."
+    },
+    {
+      "id": 4,
+      "nom": "Manon Dubreuil",
+      "date": "2024-07-11",
+      "rating": 5,
+      "commentaire": "Je suis épatée par la qualité du nettoyage réalisé par Aspeo chez moi. Un grand merci pour leur professionnalisme."
+    },
+    {
+      "id": 5,
+      "nom": "Alix Bourdon",
+      "date": "2024-06-12",
+      "rating": 5,
+      "commentaire": "Service exceptionnel, équipe professionnelle et résultats épatants chez Aspeo. Aspeo a transformé mon bureau, un grand merci !"
+    },
+    {
+      "id": 6,
+      "nom": "Émile Prevot",
+      "date": "2024-05-06",
+      "rating": 5,
+      "commentaire": "Impressionné par la rapidité et l'efficacité de Aspeo. Leur service est tout simplement parfait."
+    },
+    {
+      "id": 7,
+      "nom": "Enzo Besson",
+      "date": "2024-06-15",
+      "rating": 5,
+      "commentaire": "Magnifique prestation je recommande meilleurs entreprise de France"
+    },
+    {
+      "id": 8,
+      "nom": "Hugo Delacroix",
+      "date": "2024-01-20",
+      "rating": 5,
+      "commentaire": "Très pro et efficace, je recommande"
+    },
+    {
+      "id": 9,
+      "nom": "Axel Bourdier",
+      "date": "2024-06-10",
+      "rating": 5,
+      "commentaire": "Au top rien à redire"
+    },
+    {
+      "id": 10,
+      "nom": "Margaux Collay",
+      "date": "2024-05-25",
+      "rating": 5,
+      "commentaire": "Service de qualité, très satisfaite"
+    },
+    {
+      "id": 11,
+      "nom": "Kevin Vidal",
+      "date": "2024-06-12",
+      "rating": 5,
+      "commentaire": "Excellent service, je recommande"
+    },
+    {
+      "id": 12,
+      "nom": "Kévin Aubry",
+      "date": "2024-06-08",
+      "rating": 5,
+      "commentaire": "Très professionnel et efficace"
+    },
+    {
+      "id": 13,
+      "nom": "Ludovic Martin",
+      "date": "2024-04-15",
+      "rating": 5,
+      "commentaire": "Service impeccable, équipe compétente"
+    },
+    {
+      "id": 14,
+      "nom": "Damien Klein",
+      "date": "2024-06-05",
+      "rating": 5,
+      "commentaire": "Très satisfait du travail réalisé"
+    },
+    {
+      "id": 15,
+      "nom": "Zacharie Thomas",
+      "date": "2024-09-20",
+      "rating": 5,
+      "commentaire": "Service de qualité, personnel professionnel"
+    },
+    {
+      "id": 16,
+      "nom": "Stéphane Le Lay",
+      "date": "2024-08-15",
+      "rating": 5,
+      "commentaire": "Très bon service, je recommande"
+    },
+    {
+      "id": 17,
+      "nom": "Stéphanie Mure",
+      "date": "2024-08-10",
+      "rating": 5,
+      "commentaire": "Service exceptionnel, très satisfaite"
+    },
+    {
+      "id": 18,
+      "nom": "Herve Aguero",
+      "date": "2026-02-20",
+      "rating": 5,
+      "commentaire": "On était vraiment dans l'impasse avec l'appartement d'un proche à Montbrison, l'accumulation était telle qu'on ne savait plus quoi faire. L'équipe d'Aspeo a été incroyable : ils sont intervenus avec beaucoup de psychologie, sans jamais nous juger. Ils ont tout trié et nettoyé de fond en comble. Voir le logement à nouveau sain, c'est un énorme soulagement pour toute la famille. Merci pour votre humanité"
+    }
+  ]
+}
+

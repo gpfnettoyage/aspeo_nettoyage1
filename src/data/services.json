@@ -1,0 +1,2680 @@
+[
+  {
+    "id": 1,
+    "title": "Nettoyage Transport",
+    "subtitle": "Véhicules et flottes",
+    "category": "Transport",
+    "image": [
+      "/img/services/transport/belle-voiture-au-service-lavage.webp",
+      "/img/services/transport/gros-plan-processus-entretien-voiture-volant.webp",
+      "/img/services/transport/gros-plan-processus-entretien-voiture.webp"
+    ],
+    "description": [
+      "Services de nettoyage de véhicules complet et professionnel, répondant à vos attentes les plus exigeantes. Que ce soit pour un lavage rapide ou un entretien approfondi, notre équipe est dédiée à redonner à vos véhicules toute leur splendeur."
+    ],
+    "expertise": {
+      "title": "Notre Expertise en Nettoyage de Véhicules",
+      "description": "Aspeo dispose d'une expertise reconnue dans le nettoyage de tous types de véhicules. Nos équipes sont formées aux techniques spécifiques de chaque type de véhicule et aux normes de sécurité et d'hygiène applicables. Nous comprenons les enjeux de chaque secteur : transport de passagers, logistique, transport aérien ou maritime.\n\nNotre savoir-faire nous permet d'intervenir sur des véhicules de toutes tailles, des voitures particulières aux avions de ligne, en passant par les yachts de luxe. Nous adaptons nos techniques et nos produits selon les matériaux et les surfaces à traiter, garantissant un résultat optimal sans endommager les équipements.",
+      "highlights": [
+        "Expertise multi-véhicules (terrestres, aériens, maritimes)",
+        "Techniques adaptées à chaque type de véhicule",
+        "Respect des normes de sécurité et d'hygiène",
+        "Équipes formées aux spécificités du transport"
+      ]
+    },
+    "introText": "Nettoyage Transport – Entretien Professionnel de Tous Véhicules\n\nAspeo Propreté & Services propose des services de nettoyage professionnel pour tous types de véhicules : voitures, bus, camions, avions, bateaux et yachts. Notre expertise couvre l'entretien complet de vos flottes, garantissant un résultat impeccable qui reflète l'image de votre entreprise.",
+    "contextText": "Un véhicule propre et bien entretenu est essentiel pour l'image de votre entreprise et le confort de vos utilisateurs. Que vous gériez une flotte de véhicules de transport en commun, des véhicules utilitaires ou des véhicules de prestige, un nettoyage professionnel régulier préserve la valeur de vos actifs et améliore l'expérience utilisateur.",
+    "targetSpaces": [
+      "Véhicules particuliers",
+      "Flottes de véhicules d'entreprise",
+      "Bus et transport en commun",
+      "Camions et véhicules utilitaires",
+      "Avions et aéronefs",
+      "Bateaux et yachts",
+      "Véhicules de prestige"
+    ],
+    "prestationsCategories": [
+      {
+        "title": "Nettoyage intérieur et extérieur",
+        "items": [
+          "Lavage de carrosserie",
+          "Polissage et cirage",
+          "Nettoyage des jantes",
+          "Nettoyage des vitres"
+        ]
+      },
+      {
+        "title": "Dépoussiérage et désinfection des intérieurs",
+        "items": [
+          "Nettoyage des sièges",
+          "Désinfection des surfaces",
+          "Nettoyage des tapis",
+          "Désodorisation"
+        ]
+      },
+      {
+        "title": "Nettoyage de flottes de transport en commun",
+        "items": [
+          "Désinfection des sièges",
+          "Nettoyage des sols",
+          "Entretien général",
+          "Maintenance régulière"
+        ]
+      },
+      {
+        "title": "Nettoyage d'avions et aéronefs",
+        "items": [
+          "Désinfection des cabines",
+          "Nettoyage des compartiments bagages",
+          "Stérilisation des toilettes",
+          "Lavage des carlingues"
+        ]
+      },
+      {
+        "title": "Nettoyage de bateaux et yachts",
+        "items": [
+          "Lavage des ponts",
+          "Nettoyage des coques",
+          "Désinfection des cabines",
+          "Remise en état des intérieurs"
+        ]
+      },
+      {
+        "title": "Nettoyage de camions et véhicules utilitaires",
+        "items": [
+          "Lavage haute pression",
+          "Nettoyage des remorques",
+          "Désinfection des cabines",
+          "Traitement des sièges"
+        ]
+      },
+      {
+        "title": "Nettoyage écologique",
+        "items": [
+          "Produits respectueux de l'environnement",
+          "Réduction de l'empreinte écologique",
+          "Protection des surfaces",
+          "Méthodes durables"
+        ]
+      },
+      {
+        "title": "Entretien régulier et personnalisé",
+        "items": [
+          "Plans d'entretien sur mesure",
+          "Interventions programmées",
+          "Suivi personnalisé",
+          "Adaptation aux besoins"
+        ]
+      }
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Évaluation du véhicule",
+        "description": "Inspection complète du véhicule pour identifier les zones à traiter et définir les techniques appropriées",
+        "duration": "30 min"
+      },
+      {
+        "step": 2,
+        "title": "Préparation et protection",
+        "description": "Protection des zones sensibles et préparation des surfaces avant le nettoyage",
+        "duration": "15 min"
+      },
+      {
+        "step": 3,
+        "title": "Nettoyage extérieur",
+        "description": "Lavage de la carrosserie, nettoyage des jantes, vitres et surfaces extérieures",
+        "duration": "1-2h"
+      },
+      {
+        "step": 4,
+        "title": "Nettoyage intérieur",
+        "description": "Dépoussiérage, désinfection, nettoyage des sièges, tapis et surfaces intérieures",
+        "duration": "1-2h"
+      },
+      {
+        "step": 5,
+        "title": "Contrôle qualité et finition",
+        "description": "Vérification du résultat, finitions et remise en état complète",
+        "duration": "30 min"
+      }
+    ],
+    "guarantees": [
+      "100% satisfaction client",
+      "Intervention rapide et efficace",
+      "Équipes formées et certifiées",
+      "Produits professionnels adaptés",
+      "Protection des surfaces",
+      "Devis gratuit et sans engagement"
+    ],
+    "applicationSectors": [
+      "Transport de passagers",
+      "Transport de marchandises",
+      "Transport aérien",
+      "Transport maritime",
+      "Flottes d'entreprise",
+      "Véhicules de prestige",
+      "Véhicules utilitaires"
+    ],
+    "faq": [
+      {
+        "question": "Quels types de véhicules nettoyez-vous ?",
+        "answer": "Nous nettoyons tous types de véhicules : voitures particulières, bus, camions, avions, bateaux, yachts et véhicules utilitaires. Nos équipes sont formées pour intervenir sur tous types de véhicules avec les techniques appropriées."
+      },
+      {
+        "question": "Intervenez-vous sur site ou en atelier ?",
+        "answer": "Nous pouvons intervenir sur site pour les flottes de véhicules ou en atelier selon vos préférences. Pour les avions et bateaux, nous intervenons directement sur les sites d'exploitation."
+      },
+      {
+        "question": "Quels produits utilisez-vous pour le nettoyage de véhicules ?",
+        "answer": "Nous utilisons exclusivement des produits professionnels adaptés aux surfaces automobiles, aéronautiques et maritimes. Tous nos produits sont respectueux de l'environnement et certifiés pour préserver les matériaux et les finitions."
+      },
+      {
+        "question": "Proposez-vous des contrats d'entretien pour flottes ?",
+        "answer": "Oui, nous proposons des contrats d'entretien régulier pour flottes de véhicules avec des tarifs préférentiels et une planification adaptée à vos besoins opérationnels."
+      }
+    ],
+    "whyChoose": [
+      "De préserver la valeur de vos véhicules",
+      "D'améliorer l'image de votre entreprise",
+      "D'assurer le confort et la sécurité des utilisateurs",
+      "De prolonger la durée de vie de vos équipements",
+      "De bénéficier d'un entretien professionnel régulier",
+      "De garantir une hygiène irréprochable pour tous types de flottes"
+    ],
+    "services": [
+      {
+        "name": "Nettoyage Intérieur et Extérieur des Véhicules",
+        "description": "Nos services incluent le nettoyage intérieur et extérieur des véhicules, en prenant soin de chaque détail. Nous assurons le lavage des carrosseries, le polissage, le nettoyage des jantes et des vitres, ainsi que le dépoussiérage et la désinfection des intérieurs. Nos techniques de nettoyage sont conçues pour protéger la peinture et les matériaux tout en offrant un résultat éclatant."
+      },
+      {
+        "name": "Nettoyage de Bus et de Flottes de Transport en Commun",
+        "description": "Aspeo est spécialisé dans le nettoyage de bus et autres véhicules de transport en commun. Nous comprenons l'importance d'un environnement propre pour la sécurité et le confort des passagers. Nos services incluent la désinfection des sièges, le nettoyage des sols, la désodorisation, et l'entretien général pour maintenir vos flottes dans un état impeccable."
+      },
+      {
+        "name": "Nettoyage d'Avions et d'Aéronefs",
+        "description": "Le nettoyage d'avions requiert une expertise particulière en raison des normes strictes de sécurité et d'hygiène. Nous proposons des services de nettoyage intérieur et extérieur des avions, incluant la désinfection des cabines, le nettoyage des compartiments bagages, la stérilisation des toilettes, et le lavage des carlingues. Notre objectif est de garantir un environnement sain pour les passagers et le personnel navigant."
+      },
+      {
+        "name": "Nettoyage de Bateaux et Yachts",
+        "description": "Que vous possédiez un petit bateau ou un yacht de luxe, Aspeo offre des services de nettoyage de bateaux sur mesure. Nous prenons en charge le lavage des ponts, le nettoyage des coques, la désinfection des cabines et la remise en état des intérieurs, pour que votre embarcation soit toujours prête à naviguer dans les meilleures conditions."
+      },
+      {
+        "name": "Nettoyage de Camions et Véhicules Utilitaires",
+        "description": "Les camions et véhicules utilitaires sont souvent soumis à des conditions difficiles qui nécessitent un nettoyage rigoureux. Aspeo assure le nettoyage complet des camions, incluant le lavage haute pression des carrosseries, le nettoyage des remorques, la désinfection des cabines, et le traitement des sièges. Nous veillons à ce que vos véhicules restent propres et bien entretenus pour refléter l'image de votre entreprise."
+      },
+      {
+        "name": "Nettoyage Écologique des Véhicules",
+        "description": "Chez Aspeo, nous privilégions un nettoyage écologique des véhicules en utilisant des produits respectueux de l'environnement qui protègent à la fois les surfaces des véhicules et notre planète. Nos méthodes de nettoyage réduisent l'empreinte écologique tout en garantissant des résultats impeccables."
+      },
+      {
+        "name": "Entretien Régulier et Personnalisé",
+        "description": "Nous proposons des services d'entretien régulier et personnalisé pour vos flottes de véhicules, qu'il s'agisse de bus, d'avions, de bateaux ou de camions. Nous adaptons nos interventions à vos besoins spécifiques, assurant ainsi que vos véhicules restent en parfait état tout au long de l'année."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Lavage de Vitres",
+    "subtitle": "Façades et verrières",
+    "category": "Nettoyage Extérieur",
+    "image": [
+      "/img/services/vitre/nettoyage-de-vitre-professionnel.webp",
+      "/img/services/vitre/deux-personne-nettoyage-vitre.webp",
+      "/img/services/vitre/personne-nettoyage-de-vitre-professionnel.webp"
+    ],
+    "description": [
+      "Services de lavage de vitres professionnels pour les particuliers et les entreprises. Que ce soit pour des maisons, des immeubles commerciaux ou des vitrines de magasins, nous assurons un nettoyage de vitres impeccable, avec un souci constant de la qualité et du détail."
+    ],
+    "expertise": {
+      "title": "Notre Expertise en Lavage de Vitres",
+      "description": "Aspeo dispose d'une expertise reconnue dans le lavage de vitres professionnel. Nos équipes maîtrisent les techniques de nettoyage à l'eau pure, le nettoyage traditionnel et les méthodes adaptées aux surfaces difficiles d'accès. Nous intervenons sur tous types de surfaces vitrées, des fenêtres résidentielles aux façades d'immeubles de grande hauteur.\n\nNotre savoir-faire nous permet de garantir un résultat sans traces, sans rayures et sans résidus. Nous utilisons des produits et techniques adaptés à chaque type de surface vitrée, préservant ainsi l'intégrité de vos vitres tout en obtenant un résultat éclatant.",
+      "highlights": [
+        "Techniques de nettoyage à l'eau pure",
+        "Intervention sur surfaces en hauteur",
+        "Résultat sans traces ni rayures",
+        "Équipements professionnels adaptés"
+      ]
+    },
+    "introText": "Lavage de Vitres – Nettoyage Professionnel de Toutes Surfaces Vitrées\n\nAspeo Propreté & Services offre des services de lavage de vitres professionnels pour particuliers et entreprises. Que ce soit pour des maisons, des immeubles commerciaux, des vitrines de magasins ou des surfaces vitrées en hauteur, nous garantissons un résultat impeccable sans traces ni rayures.",
+    "contextText": "Des vitres propres et transparentes améliorent l'esthétique de vos bâtiments, augmentent la luminosité naturelle et créent une première impression positive. Pour les commerces, des vitrines impeccables sont essentielles pour attirer les clients et valoriser vos produits. Un nettoyage professionnel régulier préserve également la qualité de vos surfaces vitrées.",
+    "targetSpaces": [
+      "Maisons et résidences",
+      "Immeubles commerciaux",
+      "Vitrines de magasins",
+      "Façades vitrées",
+      "Verrières et baies vitrées",
+      "Surfaces vitrées en hauteur",
+      "Bureaux et espaces professionnels"
+    ],
+    "prestationsCategories": [
+      {
+        "title": "Lavage de vitres résidentielles",
+        "items": [
+          "Fenêtres et portes-fenêtres",
+          "Baies vitrées",
+          "Vérandas",
+          "Vitres intérieures et extérieures"
+        ]
+      },
+      {
+        "title": "Lavage de vitres commerciales",
+        "items": [
+          "Bureaux et immeubles",
+          "Vitrines de magasins",
+          "Façades vitrées",
+          "Surfaces vitrées en hauteur"
+        ]
+      },
+      {
+        "title": "Nettoyage de vitrines de magasins",
+        "items": [
+          "Vitrines extérieures",
+          "Vitrines intérieures",
+          "Mise en valeur des produits",
+          "Nettoyage sans traces"
+        ]
+      },
+      {
+        "title": "Nettoyage de vitres en hauteur",
+        "items": [
+          "Façades d'immeubles",
+          "Verrières",
+          "Surfaces difficilement accessibles",
+          "Intervention sécurisée"
+        ]
+      },
+      {
+        "title": "Lavage de vitres écologique",
+        "items": [
+          "Produits biodégradables",
+          "Techniques respectueuses",
+          "Réduction de l'impact environnemental",
+          "Résultat impeccable"
+        ]
+      }
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Inspection des surfaces",
+        "description": "Évaluation des surfaces vitrées à nettoyer, identification des zones difficiles d'accès et des techniques appropriées",
+        "duration": "15-30 min"
+      },
+      {
+        "step": 2,
+        "title": "Préparation et protection",
+        "description": "Protection des zones adjacentes et préparation des équipements et produits",
+        "duration": "10-15 min"
+      },
+      {
+        "step": 3,
+        "title": "Nettoyage des surfaces",
+        "description": "Lavage des vitres avec les techniques appropriées (eau pure, méthodes traditionnelles)",
+        "duration": "1-3h selon surface"
+      },
+      {
+        "step": 4,
+        "title": "Séchage et finition",
+        "description": "Séchage soigneux pour éviter les traces et vérification du résultat",
+        "duration": "15-30 min"
+      },
+      {
+        "step": 5,
+        "title": "Contrôle qualité",
+        "description": "Vérification finale du résultat, retouches si nécessaire et validation",
+        "duration": "15 min"
+      }
+    ],
+    "guarantees": [
+      "100% satisfaction client",
+      "Résultat sans traces ni rayures",
+      "Intervention sécurisée en hauteur",
+      "Équipes formées et certifiées",
+      "Produits professionnels adaptés",
+      "Devis gratuit et sans engagement"
+    ],
+    "applicationSectors": [
+      "Résidentiel",
+      "Commercial",
+      "Bureaux",
+      "Magasins",
+      "Immeubles",
+      "Industriel",
+      "Institutions"
+    ],
+    "faq": [
+      {
+        "question": "Quels types de surfaces vitrées nettoyez-vous ?",
+        "answer": "Nous nettoyons tous types de surfaces vitrées : fenêtres résidentielles, vitrines de magasins, façades d'immeubles, verrières, baies vitrées et surfaces en hauteur. Nos équipes sont équipées pour intervenir sur toutes les surfaces, même les plus difficiles d'accès."
+      },
+      {
+        "question": "Intervenez-vous sur des surfaces en hauteur ?",
+        "answer": "Oui, nous sommes spécialisés dans le nettoyage de vitres en hauteur. Nos équipes sont formées et équipées pour intervenir en toute sécurité sur les façades d'immeubles et les surfaces difficilement accessibles."
+      },
+      {
+        "question": "Quelle technique utilisez-vous pour le lavage de vitres ?",
+        "answer": "Nous utilisons principalement la technique de nettoyage à l'eau pure, qui garantit un résultat impeccable sans traces. Pour certaines surfaces, nous utilisons également des méthodes traditionnelles avec des produits professionnels adaptés."
+      },
+      {
+        "question": "Combien de temps dure une intervention ?",
+        "answer": "La durée dépend de la surface à nettoyer. Pour une maison, comptez 1 à 2 heures. Pour un immeuble commercial ou des vitrines de magasin, cela peut prendre plusieurs heures. Nous vous fournissons un devis précis avec estimation du temps d'intervention."
+      }
+    ],
+    "whyChoose": [
+      "D'obtenir un résultat impeccable sans traces",
+      "De préserver la qualité de vos surfaces vitrées",
+      "D'améliorer l'esthétique et la luminosité",
+      "De bénéficier d'une intervention sécurisée",
+      "De valoriser votre image professionnelle",
+      "De profiter d'un entretien régulier adapté à vos besoins"
+    ],
+    "services": [
+      {
+        "name": "Lavage de Vitres Résidentielles",
+        "description": "Nos experts en lavage de vitres résidentielles interviennent chez vous pour rendre vos fenêtres parfaitement transparentes. Nous utilisons des techniques avancées et des produits respectueux de l'environnement pour éliminer les traces, les saletés et les résidus sans laisser de rayures, garantissant ainsi une visibilité claire et un éclairage naturel optimal."
+      },
+      {
+        "name": "Lavage de Vitres Commerciales",
+        "description": "Pour les entreprises, un nettoyage de vitres commerciales de qualité est essentiel pour maintenir une image professionnelle. Que ce soit pour des bureaux, des vitrines ou des façades vitrées, nous assurons un entretien régulier ou ponctuel, adapté à vos besoins. Grâce à nos équipements modernes, nous pouvons intervenir sur des surfaces vitrées de toutes tailles, y compris en hauteur."
+      },
+      {
+        "name": "Nettoyage de Vitrines de Magasins",
+        "description": "Attirez l'œil des passants avec des vitrines impeccablement propres ! Nos services de lavage de vitrines sont conçus pour les commerces souhaitant valoriser leurs produits et améliorer l'expérience visuelle de leurs clients. Nous garantissons un nettoyage sans traces pour mettre en avant vos produits sous leur meilleur jour."
+      },
+      {
+        "name": "Nettoyage de Vitres en Hauteur",
+        "description": "Nos équipes sont spécialisées dans le nettoyage de vitres en hauteur. Grâce à des techniques de lavage à l'eau pure et à des équipements spécifiques, nous intervenons en toute sécurité sur des surfaces difficilement accessibles, comme les façades d'immeubles ou les verrières."
+      },
+      {
+        "name": "Lavage de Vitres Écologique",
+        "description": "Conscients de l'importance de protéger l'environnement, nous proposons également un lavage de vitres écologique. Nous utilisons des produits biodégradables et des méthodes qui minimisent l'impact sur la planète, tout en assurant un résultat parfait."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Nettoyage Exterieur",
+    "subtitle": "Façades et toitures",
+    "category": "Nettoyage Extérieur",
+    "image": [
+      "/img/services/exterieur/nettoyage-exterieur-entreprise.webp",
+      "/img/services/exterieur/nettoyage-exterieur-terrasse.webp",
+      "/img/services/exterieur/plan-rapproche-faible-angle-vertical-du-toit-noir-immeuble.webp"
+    ],
+    "description": [
+      "Services de nettoyage de façades, toitures et terrasses pour redonner à vos surfaces extérieures tout leur éclat. Que vous soyez un particulier ou une entreprise, notre équipe de professionnels est spécialisée dans l'entretien et le nettoyage de vos espaces extérieurs, en utilisant des techniques adaptées et respectueuses des matériaux."
+    ],
+    "expertise": {
+      "title": "Notre Expertise en Nettoyage Extérieur",
+      "description": "Aspeo dispose d'une expertise reconnue dans le nettoyage de toutes surfaces extérieures. Nos équipes maîtrisent les techniques de nettoyage haute pression, le traitement doux, le démoussage et les traitements hydrofuges. Nous intervenons sur tous types de matériaux : pierre, brique, béton, bois, métal, avec des techniques adaptées à chaque surface.\n\nNotre savoir-faire nous permet de garantir un résultat optimal tout en préservant l'intégrité des matériaux. Nous utilisons des produits et techniques respectueux de l'environnement, adaptés à chaque type de surface et aux contraintes spécifiques de votre bâtiment.",
+      "highlights": [
+        "Techniques adaptées à tous matériaux",
+        "Nettoyage haute pression et traitement doux",
+        "Démoussage et traitement hydrofuge",
+        "Intervention sécurisée en hauteur"
+      ]
+    },
+    "introText": "Nettoyage Extérieur – Entretien Professionnel de Façades, Toitures et Terrasses\n\nAspeo Propreté & Services offre des services de nettoyage extérieur complets pour particuliers et entreprises. Nous intervenons sur vos façades, toitures et terrasses pour redonner à vos surfaces extérieures tout leur éclat, en préservant l'intégrité des matériaux et en prolongeant leur durée de vie.",
+    "contextText": "L'entretien régulier de vos surfaces extérieures est essentiel pour préserver l'esthétique de votre bâtiment, protéger les matériaux des intempéries et des dépôts, et maintenir la valeur de votre patrimoine. Un nettoyage professionnel régulier prévient les dégâts causés par les mousses, lichens, pollution et autres dépôts, prolongeant ainsi la durée de vie de vos équipements.",
+    "targetSpaces": [
+      "Façades de maisons",
+      "Façades d'immeubles",
+      "Toitures et toits",
+      "Terrasses et balcons",
+      "Espaces extérieurs commerciaux",
+      "Surfaces en hauteur",
+      "Espaces verts et abords"
+    ],
+    "prestationsCategories": [
+      {
+        "title": "Nettoyage de façade",
+        "items": [
+          "Élimination de la pollution",
+          "Nettoyage des salissures",
+          "Traitement des mousses",
+          "Préservation des matériaux"
+        ]
+      },
+      {
+        "title": "Nettoyage de toiture",
+        "items": [
+          "Démoussage",
+          "Brossage en profondeur",
+          "Traitement hydrofuge",
+          "Prolongation de la durée de vie"
+        ]
+      },
+      {
+        "title": "Nettoyage de terrasse",
+        "items": [
+          "Terrasses en bois",
+          "Terrasses en pierre",
+          "Terrasses en béton",
+          "Élimination des taches et mousses"
+        ]
+      },
+      {
+        "title": "Démoussage et traitement anti-mousse",
+        "items": [
+          "Prévention des dommages",
+          "Traitement longue durée",
+          "Protection durable",
+          "Application professionnelle"
+        ]
+      },
+      {
+        "title": "Nettoyage écologique",
+        "items": [
+          "Produits biodégradables",
+          "Techniques respectueuses",
+          "Réduction de l'impact environnemental",
+          "Préservation de la nature"
+        ]
+      }
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Inspection des surfaces",
+        "description": "Évaluation des surfaces à nettoyer, identification des zones à traiter et des techniques appropriées selon les matériaux",
+        "duration": "30-60 min"
+      },
+      {
+        "step": 2,
+        "title": "Préparation et protection",
+        "description": "Protection des zones adjacentes, végétation et équipements, préparation des équipements et produits",
+        "duration": "15-30 min"
+      },
+      {
+        "step": 3,
+        "title": "Nettoyage des surfaces",
+        "description": "Nettoyage des façades, toitures ou terrasses avec les techniques appropriées (haute pression, traitement doux)",
+        "duration": "2-6h selon surface"
+      },
+      {
+        "step": 4,
+        "title": "Traitement et finition",
+        "description": "Application de traitements hydrofuges ou anti-mousse si nécessaire, finitions et vérification",
+        "duration": "30-60 min"
+      },
+      {
+        "step": 5,
+        "title": "Contrôle qualité",
+        "description": "Vérification finale du résultat, retouches si nécessaire et validation de l'intervention",
+        "duration": "15-30 min"
+      }
+    ],
+    "guarantees": [
+      "100% satisfaction client",
+      "Préservation des matériaux",
+      "Intervention sécurisée en hauteur",
+      "Équipes formées et certifiées",
+      "Produits professionnels adaptés",
+      "Devis gratuit et sans engagement"
+    ],
+    "applicationSectors": [
+      "Résidentiel",
+      "Commercial",
+      "Industriel",
+      "Institutions",
+      "Copropriétés",
+      "Bâtiments publics",
+      "Patrimoine historique"
+    ],
+    "faq": [
+      {
+        "question": "Quels types de surfaces extérieures nettoyez-vous ?",
+        "answer": "Nous nettoyons tous types de surfaces extérieures : façades (pierre, brique, béton, bois, métal), toitures (tuiles, ardoises, zinc), terrasses (bois, pierre, béton) et tous espaces extérieurs. Nos techniques s'adaptent à chaque type de matériau."
+      },
+      {
+        "question": "Quelle technique utilisez-vous pour le nettoyage ?",
+        "answer": "Nous utilisons principalement le nettoyage haute pression pour les surfaces résistantes, et des techniques plus douces (brossage, traitement chimique doux) pour les matériaux fragiles. Le choix de la technique dépend du type de surface et de son état."
+      },
+      {
+        "question": "Intervenez-vous sur des surfaces en hauteur ?",
+        "answer": "Oui, nous sommes équipés et formés pour intervenir en toute sécurité sur des surfaces en hauteur : façades d'immeubles, toitures, etc. Nos équipes respectent toutes les normes de sécurité en vigueur."
+      },
+      {
+        "question": "Proposez-vous des traitements anti-mousse ?",
+        "answer": "Oui, nous proposons des services de démoussage et de traitement anti-mousse longue durée pour protéger vos surfaces extérieures et retarder la réapparition des mousses et lichens."
+      }
+    ],
+    "whyChoose": [
+      "De préserver l'esthétique de votre bâtiment",
+      "De protéger les matériaux des intempéries",
+      "De prolonger la durée de vie de vos équipements",
+      "De maintenir la valeur de votre patrimoine",
+      "De bénéficier d'une intervention sécurisée",
+      "De redonner de l'éclat à vos terrasses et façades"
+    ],
+    "services": [
+      {
+        "name": "Nettoyage de Façade",
+        "description": "Nos experts en nettoyage de façade interviennent pour éliminer les traces de pollution, les salissures, les mousses et autres impuretés qui peuvent ternir l'apparence de votre bâtiment. Nous utilisons des méthodes efficaces, telles que le nettoyage haute pression ou le traitement doux selon la nature de la façade, afin de préserver les matériaux tout en leur redonnant une nouvelle jeunesse."
+      },
+      {
+        "name": "Nettoyage de Toiture",
+        "description": "Protégez votre maison des dégâts causés par les mousses, lichens et autres dépôts grâce à notre service de nettoyage de toiture. Nous proposons un nettoyage en profondeur qui comprend le démoussage, le brossage et le traitement hydrofuge de votre toiture, prolongeant ainsi sa durée de vie et améliorant son apparence."
+      },
+      {
+        "name": "Nettoyage de Terrasse",
+        "description": "Gardez votre terrasse belle et accueillante avec notre service de nettoyage de terrasse. Que ce soit pour des terrasses en bois, en pierre ou en béton, nous avons les techniques adaptées pour éliminer les taches, les mousses et les saletés incrustées, tout en préservant l'intégrité des matériaux."
+      },
+      {
+        "name": "Démoussage et Traitement Anti-Mousse",
+        "description": "Nos services de démoussage sont essentiels pour prévenir les dommages causés par les mousses et les lichens sur vos façades, toitures et terrasses. Après un nettoyage en profondeur, nous appliquons un traitement anti-mousse longue durée pour retarder leur réapparition et protéger durablement vos surfaces extérieures."
+      },
+      {
+        "name": "Nettoyage Écologique de Façades et Toitures",
+        "description": "Conscients de l'importance de préserver l'environnement, Solutions de nettoyage écologique de façades et toitures. Nous utilisons des produits biodégradables et des techniques respectueuses de la nature pour un nettoyage efficace sans compromettre la santé de notre planète."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Nettoyage de Panneaux Photovoltaïques",
+    "subtitle": "Installations solaires",
+    "category": "Nettoyage Extérieur",
+    "image": [
+      "/img/services/panneaux-photovoltaiques/beaucoup-de-panneaux-photovoltaïques.webp",
+      "/img/services/panneaux-photovoltaiques/panneaux-photovoltaïques-entreprise.webp",
+      "/img/services/panneaux-photovoltaiques/panneaux-photovoltaïques-maison.webp"
+    ],
+    "description": [
+      "Services de nettoyage de panneaux photovoltaïques de haute qualité pour optimiser leur rendement énergétique. Nos experts interviennent pour éliminer la poussière, les salissures et autres dépôts qui réduisent l'efficacité de vos installations solaires, en utilisant des techniques adaptées qui préservent les panneaux et maximisent leur production d'énergie."
+    ],
+    "expertise": {
+      "title": "Notre Expertise en Nettoyage de Panneaux Photovoltaïques",
+      "description": "Aspeo dispose d'une expertise reconnue dans le nettoyage de panneaux photovoltaïques. Nos équipes sont formées aux techniques spécifiques de nettoyage des installations solaires, en préservant l'intégrité des panneaux et en respectant les garanties constructeurs. Nous intervenons sur tous types d'installations, des petites installations résidentielles aux grandes centrales solaires.\n\nNotre savoir-faire nous permet de garantir un nettoyage efficace qui optimise le rendement énergétique tout en préservant les panneaux. Nous utilisons exclusivement de l'eau déminéralisée et des produits adaptés qui n'endommagent pas les surfaces des panneaux et respectent l'environnement.",
+      "highlights": [
+        "Techniques adaptées aux panneaux solaires",
+        "Préservation des garanties constructeurs",
+        "Optimisation du rendement énergétique",
+        "Intervention sécurisée en hauteur"
+      ]
+    },
+    "introText": "Nettoyage de Panneaux Photovoltaïques – Optimisation du Rendement Énergétique\n\nAspeo Propreté & Services propose des services de nettoyage professionnel de panneaux photovoltaïques pour optimiser le rendement de vos installations solaires. Nous intervenons sur tous types d'installations, résidentielles et commerciales, pour éliminer les dépôts qui réduisent l'efficacité énergétique de vos panneaux.",
+    "contextText": "Un nettoyage régulier de vos panneaux photovoltaïques est essentiel pour maintenir leur performance optimale. La poussière, les fientes d'oiseaux, la pollution et autres dépôts peuvent réduire significativement le rendement énergétique de vos installations. Un nettoyage professionnel régulier permet de maximiser la production d'énergie et d'optimiser le retour sur investissement de votre installation solaire.",
+    "targetSpaces": [
+      "Installations résidentielles",
+      "Installations commerciales",
+      "Centrales solaires",
+      "Panneaux en toiture",
+      "Panneaux au sol",
+      "Installations en hauteur",
+      "Parcs solaires"
+    ],
+    "prestationsCategories": [
+      {
+        "title": "Nettoyage de panneaux photovoltaïques résidentiels",
+        "items": [
+          "Élimination de la poussière",
+          "Nettoyage des fientes d'oiseaux",
+          "Traitement de la pollution",
+          "Optimisation du rendement"
+        ]
+      },
+      {
+        "title": "Nettoyage de panneaux photovoltaïques commerciaux",
+        "items": [
+          "Installations industrielles",
+          "Centrales solaires",
+          "Parcs solaires",
+          "Maintenance régulière"
+        ]
+      },
+      {
+        "title": "Traitement spécialisé des salissures tenaces",
+        "items": [
+          "Résine de pin",
+          "Fientes incrustées",
+          "Pollution industrielle",
+          "Techniques spécifiques"
+        ]
+      },
+      {
+        "title": "Service de nettoyage sur site",
+        "items": [
+          "Intervention directe",
+          "Équipement professionnel",
+          "Sécurité en hauteur",
+          "Rapidité d'intervention"
+        ]
+      },
+      {
+        "title": "Nettoyage écologique",
+        "items": [
+          "Eau déminéralisée",
+          "Produits biodégradables",
+          "Respect de l'environnement",
+          "Durabilité des installations"
+        ]
+      }
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Inspection des installations",
+        "description": "Évaluation de l'état des panneaux, identification des zones à traiter et des types de salissures",
+        "duration": "30-60 min"
+      },
+      {
+        "step": 2,
+        "title": "Préparation et sécurité",
+        "description": "Mise en place des mesures de sécurité, préparation des équipements et produits adaptés",
+        "duration": "15-30 min"
+      },
+      {
+        "step": 3,
+        "title": "Nettoyage des panneaux",
+        "description": "Nettoyage avec eau déminéralisée et techniques adaptées, traitement des salissures tenaces si nécessaire",
+        "duration": "1-4h selon installation"
+      },
+      {
+        "step": 4,
+        "title": "Vérification et contrôle",
+        "description": "Contrôle de la propreté, vérification de l'intégrité des panneaux et validation du résultat",
+        "duration": "15-30 min"
+      },
+      {
+        "step": 5,
+        "title": "Rapport et recommandations",
+        "description": "Rapport d'intervention, recommandations pour l'entretien futur et suivi du rendement",
+        "duration": "15 min"
+      }
+    ],
+    "guarantees": [
+      "100% satisfaction client",
+      "Préservation des garanties constructeurs",
+      "Optimisation du rendement énergétique",
+      "Intervention sécurisée en hauteur",
+      "Équipes formées et certifiées",
+      "Devis gratuit et sans engagement"
+    ],
+    "applicationSectors": [
+      "Résidentiel",
+      "Commercial",
+      "Industriel",
+      "Centrales solaires",
+      "Parcs solaires",
+      "Installations agricoles",
+      "Bâtiments publics"
+    ],
+    "faq": [
+      {
+        "question": "À quelle fréquence faut-il nettoyer les panneaux photovoltaïques ?",
+        "answer": "La fréquence recommandée est généralement de 1 à 2 fois par an, selon l'environnement (pollution, poussière, fientes d'oiseaux). Dans les zones très polluées ou avec beaucoup de végétation, un nettoyage plus fréquent peut être nécessaire."
+      },
+      {
+        "question": "Le nettoyage peut-il endommager les panneaux ?",
+        "answer": "Non, nos techniques de nettoyage sont spécialement adaptées aux panneaux photovoltaïques. Nous utilisons de l'eau déminéralisée et des produits doux qui préservent l'intégrité des panneaux et respectent les garanties constructeurs."
+      },
+      {
+        "question": "Intervenez-vous sur des installations en hauteur ?",
+        "answer": "Oui, nous sommes équipés et formés pour intervenir en toute sécurité sur des installations en hauteur, que ce soit sur toiture ou au sol. Nos équipes respectent toutes les normes de sécurité en vigueur."
+      },
+      {
+        "question": "Le nettoyage améliore-t-il vraiment le rendement ?",
+        "answer": "Oui, un nettoyage régulier peut améliorer le rendement énergétique de 10 à 30% selon le niveau de salissure. Des panneaux propres captent mieux la lumière solaire et produisent plus d'énergie."
+      }
+    ],
+    "whyChoose": [
+      "D'optimiser le rendement énergétique de vos installations",
+      "De préserver les garanties constructeurs",
+      "De maximiser votre retour sur investissement",
+      "De bénéficier d'une intervention sécurisée",
+      "De prolonger la durée de vie de vos panneaux",
+      "D'assurer une production d'énergie solaire constante"
+    ],
+    "services": [
+      {
+        "name": "Nettoyage de Panneaux Photovoltaïques Résidentiels",
+        "description": "Nos services de nettoyage de panneaux photovoltaïques résidentiels sont conçus pour optimiser le rendement de votre installation solaire. Nous éliminons en profondeur la poussière, les fientes d'oiseaux, la pollution et autres dépôts qui réduisent l'efficacité de vos panneaux. Grâce à notre expertise et nos techniques adaptées, vos panneaux retrouvent leur performance maximale tout en étant préservés de l'usure prématurée."
+      },
+      {
+        "name": "Nettoyage de Panneaux Photovoltaïques Commerciaux",
+        "description": "Optimisez la rentabilité de vos installations solaires commerciales avec notre service de nettoyage de panneaux photovoltaïques. Nous intervenons sur tous types d'installations industrielles et commerciales, éliminant efficacement la poussière, la pollution urbaine et les dépôts organiques. Nos techniques professionnelles garantissent un résultat optimal sans endommager les panneaux ni compromettre leur garantie."
+      },
+      {
+        "name": "Traitement Spécialisé des Salissures Tenaces",
+        "description": "Nos spécialistes interviennent sur les panneaux photovoltaïques présentant des salissures tenaces ou des dépôts difficiles à éliminer. Nous utilisons des produits et techniques spécifiques pour chaque type de contamination, qu'il s'agisse de résine de pin, de fientes d'oiseaux incrustées ou de pollution industrielle, afin de les éliminer complètement tout en préservant l'intégrité des panneaux et leur capacité de production."
+      },
+      {
+        "name": "Service de Nettoyage sur Site",
+        "description": "Pour votre confort et la sécurité de vos installations, Aspeo vous propose un service de nettoyage de panneaux photovoltaïques directement sur site. Nous intervenons avec tout l'équipement nécessaire pour un nettoyage professionnel rapide et efficace, sans que vous ayez à vous préoccuper de la logistique. Nos équipes sont formées pour travailler en toute sécurité sur toits et installations en hauteur."
+      },
+      {
+        "name": "Nettoyage Écologique de Panneaux Photovoltaïques",
+        "description": "Respectueux de l'environnement, Aspeo propose des solutions de nettoyage écologique de panneaux photovoltaïques. Nous utilisons exclusivement de l'eau déminéralisée et des produits biodégradables non toxiques qui assurent un nettoyage en profondeur tout en respectant l'environnement et la durabilité de vos installations solaires."
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Nettoyage de Surfaces Commerciales",
+    "subtitle": "Secteur tertiaire",
+    "category": "Nettoyage Intérieur",
+    "image": [
+      "/img/services/commerciaux/nettoyage-commercial-aspeo.webp",
+      "/img/services/commerciaux/entrepot_de_distribution_aspeo.webp",
+      "/img/services/commerciaux/aspeo_nettoyage_bureaux_commercial.webp"
+    ],
+    "description": [
+      "Services de nettoyage professionnel pour surfaces commerciales, magasins et espaces de vente. Aspeo offre des solutions sur-mesure pour maintenir l'image de marque de votre commerce et garantir un environnement accueillant pour vos clients. Notre expertise couvre tous les types de surfaces commerciales, des vitrines aux sols, en passant par les espaces de stockage et les zones de circulation."
+    ],
+    "expertise": {
+      "title": "Notre Expertise Sectorielle",
+      "description": "Aspeo Propreté & Services dispose d'une expertise reconnue dans le nettoyage de surfaces commerciales. Depuis plusieurs années, nous accompagnons les commerces de toutes tailles dans le maintien de leurs espaces de vente. Notre connaissance approfondie des enjeux commerciaux nous permet de proposer des solutions adaptées qui respectent vos contraintes horaires et vos exigences de qualité.\n\nNous comprenons que chaque commerce a ses spécificités et ses besoins particuliers. C'est pourquoi nous adaptons nos prestations à votre secteur d'activité, à votre taille et à votre fréquentation. Que vous gériez une petite boutique ou une grande surface, nous avons les solutions pour maintenir vos espaces dans un état impeccable.",
+      "highlights": [
+        "Expertise reconnue dans le nettoyage commercial",
+        "Solutions adaptées à tous types de commerces",
+        "Respect des contraintes horaires d'ouverture",
+        "Équipes formées aux spécificités du secteur commercial"
+      ]
+    },
+    "introText": "Nettoyage de Surfaces Commerciales – Propreté Professionnelle pour Magasins & Commerces\n\nAspeo Propreté & Services accompagne les professionnels du commerce dans le nettoyage et l'entretien complet de leurs surfaces commerciales. Nous intervenons dans les magasins, boutiques, grandes surfaces et espaces de vente afin de garantir un environnement propre, accueillant et conforme aux attentes des clients.",
+    "contextText": "Dans un espace commercial, la propreté joue un rôle clé dans l'expérience client et la valorisation de votre image de marque. Un commerce propre inspire confiance, favorise la fréquentation et améliore la perception de vos produits et services.",
+    "targetSpaces": [
+      "Magasins et boutiques",
+      "Centres commerciaux",
+      "Grandes surfaces et supermarchés",
+      "Galeries marchandes",
+      "Commerces de proximité",
+      "Espaces de vente spécialisés",
+      "Zones de stockage accessibles au public"
+    ],
+    "prestationsCategories": [
+      {
+        "title": "Nettoyage et entretien des sols",
+        "items": [
+          "Carrelage",
+          "Parquet",
+          "Résine",
+          "Moquette"
+        ]
+      },
+      {
+        "title": "Nettoyage des vitrines et surfaces vitrées",
+        "items": [
+          "Vitrines de magasins",
+          "Portes vitrées",
+          "Cloisons vitrées",
+          "Surfaces vitrées en hauteur"
+        ]
+      },
+      {
+        "title": "Dépoussiérage du mobilier et des présentoirs",
+        "items": [
+          "Étagères et rayonnages",
+          "Comptoirs et caisses",
+          "Présentoirs et vitrines intérieures",
+          "Mobilier de vente"
+        ]
+      },
+      {
+        "title": "Désinfection des zones de contact à forte fréquentation",
+        "items": [
+          "Poignées de porte",
+          "Interrupteurs",
+          "Ascenseurs",
+          "Zones de paiement"
+        ]
+      },
+      {
+        "title": "Nettoyage des caisses, comptoirs et zones d'encaissement",
+        "items": [
+          "Tapis de caisse",
+          "Comptoirs de vente",
+          "Zones de paiement",
+          "Espaces clients"
+        ]
+      },
+      {
+        "title": "Entretien des sanitaires clients et personnel",
+        "items": [
+          "Toilettes et lavabos",
+          "Désinfection complète",
+          "Renouvellement des consommables",
+          "Entretien régulier"
+        ]
+      },
+      {
+        "title": "Vidage des poubelles et gestion des déchets",
+        "items": [
+          "Collecte des déchets",
+          "Tri sélectif",
+          "Évacuation conforme",
+          "Gestion écologique"
+        ]
+      },
+      {
+        "title": "Nettoyage des zones de circulation et espaces communs",
+        "items": [
+          "Couloirs et allées",
+          "Halls d'entrée",
+          "Escaliers",
+          "Espaces d'attente"
+        ]
+      },
+      {
+        "title": "Contrôle général de la propreté et mise en valeur des espaces de vente",
+        "items": [
+          "Vérification qualité",
+          "Mise en valeur des produits",
+          "Optimisation de l'expérience client",
+          "Suivi régulier"
+        ]
+      }
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Audit initial et analyse des besoins",
+        "description": "Évaluation complète de vos espaces commerciaux, identification des zones prioritaires et définition des besoins spécifiques",
+        "duration": "1-2 jours"
+      },
+      {
+        "step": 2,
+        "title": "Élaboration du plan d'intervention",
+        "description": "Création d'un plan de nettoyage personnalisé adapté à vos horaires d'ouverture et à vos contraintes",
+        "duration": "2-3 jours"
+      },
+      {
+        "step": 3,
+        "title": "Formation des équipes",
+        "description": "Formation de nos équipes aux spécificités de votre commerce et aux protocoles établis",
+        "duration": "1 jour"
+      },
+      {
+        "step": 4,
+        "title": "Mise en œuvre opérationnelle",
+        "description": "Démarrage des interventions selon le planning établi, avec respect des horaires d'ouverture",
+        "duration": "Immédiat"
+      },
+      {
+        "step": 5,
+        "title": "Contrôles qualité et ajustements",
+        "description": "Vérifications régulières de la qualité, ajustements si nécessaire et suivi continu",
+        "duration": "Continu"
+      }
+    ],
+    "guarantees": [
+      "100% satisfaction client",
+      "Intervention adaptée à vos horaires",
+      "Équipes formées et certifiées",
+      "Produits professionnels adaptés",
+      "Suivi qualité régulier",
+      "Devis gratuit et sans engagement"
+    ],
+    "applicationSectors": [
+      "Magasins",
+      "Boutiques",
+      "Grandes surfaces",
+      "Centres commerciaux",
+      "Galeries marchandes",
+      "Commerces de proximité",
+      "Espaces de vente spécialisés"
+    ],
+    "faq": [
+      {
+        "question": "Quels types de surfaces commerciales nettoyez-vous ?",
+        "answer": "Nous nettoyons tous types de surfaces commerciales : magasins, boutiques, grandes surfaces, centres commerciaux, galeries marchandes et commerces de proximité. Nos prestations s'adaptent à tous les secteurs d'activité et à toutes les tailles de commerces."
+      },
+      {
+        "question": "Intervenez-vous pendant les heures d'ouverture ?",
+        "answer": "Nous adaptons nos interventions à vos contraintes. Nous pouvons intervenir avant l'ouverture, après la fermeture, ou pendant les heures creuses pour minimiser l'impact sur votre activité commerciale. Nos équipes sont formées pour être discrètes et efficaces."
+      },
+      {
+        "question": "Quels produits utilisez-vous pour le nettoyage commercial ?",
+        "answer": "Nous utilisons exclusivement des produits professionnels adaptés aux surfaces commerciales, certifiés et respectueux de l'environnement. Tous nos produits sont écolabel et probiotiques, garantissant un nettoyage efficace tout en préservant la santé de vos clients et de votre personnel."
+      },
+      {
+        "question": "Proposez-vous des contrats d'entretien régulier ?",
+        "answer": "Oui, nous proposons des contrats d'entretien régulier adaptés à vos besoins : quotidien, hebdomadaire ou mensuel. Ces contrats permettent de maintenir vos espaces dans un état optimal tout en bénéficiant de tarifs préférentiels."
+      }
+    ],
+    "whyChoose": [
+      "D'offrir une expérience client optimale",
+      "De maintenir une hygiène irréprochable",
+      "De préserver l'image et la réputation de votre commerce",
+      "D'assurer la sécurité et le confort des clients et du personnel",
+      "De prolonger la durée de vie des sols et des équipements",
+      "De valoriser vos produits dans un espace étincelant"
+    ],
+    "services": [
+      {
+        "name": "Nettoyage Complet de Bureaux",
+        "description": "Nos services de nettoyage complet de bureaux comprennent l'entretien des sols, le dépoussiérage des surfaces, le nettoyage des vitres intérieures, ainsi que la désinfection des poignées de porte et des zones fréquemment touchées. Nous veillons à ce que chaque bureau, salle de réunion et espace commun soit impeccablement propre, créant un cadre de travail agréable et hygiénique."
+      },
+      {
+        "name": "Nettoyage de Sanitaires",
+        "description": "Le nettoyage des sanitaires est essentiel pour maintenir un environnement de travail sain. Nous assurons un nettoyage approfondi et une désinfection des toilettes, des lavabos, et des sols des espaces sanitaires. Nos équipes utilisent des produits antibactériens pour garantir la propreté et la fraîcheur de ces espaces essentiels."
+      },
+      {
+        "name": "Nettoyage de Vestiaires",
+        "description": "Nos services de nettoyage de vestiaires incluent la désinfection des casiers, des bancs, et des douches. Nous garantissons un entretien rigoureux pour offrir un espace propre et hygiénique à vos employés, avec un renouvellement régulier des consommables tels que le savon et le papier hygiénique."
+      },
+      {
+        "name": "Nettoyage de Réfectoires",
+        "description": "Pour que vos espaces de restauration soient toujours agréables, nous proposons un nettoyage de réfectoires complet. Cela inclut l'entretien des surfaces de repas, le nettoyage des cuisines, et la gestion des déchets. Nous veillons à ce que vos espaces de repas soient toujours propres et prêts à l'emploi."
+      },
+      {
+        "name": "Nettoyage de Salles de Réunion",
+        "description": "Les salles de réunion nécessitent un entretien particulier pour maintenir un environnement professionnel. Nous nous chargeons du nettoyage des tables, des chaises, des équipements audiovisuels et des sols. Nous assurons également un nettoyage des vitres et des surfaces de présentation pour que vos réunions se déroulent dans un cadre impeccable."
+      },
+      {
+        "name": "Entretien Quotidien ou Régulier",
+        "description": "Pour maintenir la propreté de vos locaux, Aspeo propose des services d'entretien quotidien ou régulier adaptés à vos horaires et besoins spécifiques. Nous nous chargeons du nettoyage des postes de travail, de l'élimination des déchets, et du réapprovisionnement des fournitures sanitaires."
+      },
+      {
+        "name": "Nettoyage de Sols et Moquettes de Bureaux",
+        "description": "Le sol de vos bureaux est crucial pour l'apparence générale. Nos services de nettoyage de sols et moquettes de bureaux éliminent les salissures, les taches et les allergènes des revêtements de sol, qu'ils soient en moquette, carrelage ou béton, prolongeant leur durée de vie."
+      },
+      {
+        "name": "Désinfection des Espaces Communs",
+        "description": "La désinfection des espaces communs est primordiale pour assurer la sécurité. Nous désinfectons les salles de réunion, les cafétérias, les ascenseurs et les sanitaires en utilisant des produits efficaces contre les bactéries et virus."
+      },
+      {
+        "name": "Nettoyage Écologique pour Bureaux",
+        "description": "Pour les entreprises soucieuses de l'environnement, Aspeo propose des solutions de nettoyage écologique pour bureaux. Nous utilisons des produits respectueux de l'environnement et des méthodes qui réduisent notre empreinte écologique tout en assurant un haut niveau de propreté."
+      },
+      {
+        "name": "Nettoyage de Vitrines et Espaces de Vente",
+        "description": "Les vitrines et espaces de vente sont la vitrine de votre commerce. Nous assurons un nettoyage impeccable des vitrines, présentoirs, et espaces d'exposition pour mettre en valeur vos produits et créer une expérience client optimale. Nos interventions sont planifiées en fonction de vos horaires d'ouverture pour minimiser les perturbations."
+      },
+      {
+        "name": "Nettoyage de Sols Commerciaux",
+        "description": "Les sols commerciaux subissent un trafic intense et nécessitent un entretien régulier. Nous proposons des services de nettoyage adaptés à tous types de revêtements : carrelage, parquet, moquette, béton ciré. Nos techniques préservent l'aspect et la durabilité de vos sols tout en garantissant une hygiène parfaite."
+      },
+      {
+        "name": "Nettoyage d'Espaces de Stockage et Réserves",
+        "description": "Les espaces de stockage et réserves nécessitent un nettoyage régulier pour préserver vos marchandises et respecter les normes d'hygiène. Nous intervenons dans ces zones avec des protocoles adaptés, assurant un environnement propre et organisé pour vos stocks."
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Nettoyage de Fin de Chantier",
+    "subtitle": "Post-construction",
+    "category": "Services Spéciaux",
+    "image": [
+      "/img/services/industriel/deux-personnes-dans-batiment-mot-glace-dessus.webp",
+      "/img/services/chantier/ouvrier-appliquant-balayeuse-chantier.webp",
+      "/img/services/industriel/portrait-ingenieurs-pendant-heures-travail-chantier.webp"
+    ],
+    "description": [
+      "Services de nettoyage de fin de chantier complets et professionnels pour préparer vos locaux à l'occupation après des travaux de construction ou de rénovation. Nous comprenons l'importance de livrer un espace impeccable, prêt à être utilisé ou présenté à vos clients."
+    ],
+    "expertise": {
+      "title": "Notre Expertise en Nettoyage de Fin de Chantier",
+      "description": "Aspeo dispose d'une expertise reconnue dans le nettoyage de fin de chantier. Nos équipes maîtrisent les techniques spécifiques pour éliminer tous types de résidus de travaux : poussière de construction, traces de peinture, colle, ciment, etc. Nous intervenons sur tous types de surfaces et matériaux, en préservant leur intégrité.\n\nNotre savoir-faire nous permet de garantir une remise en état complète et efficace. Nous adaptons nos techniques selon le type de travaux effectués et les matériaux présents, garantissant un résultat impeccable qui respecte les délais de livraison.",
+      "highlights": [
+        "Techniques adaptées aux résidus de travaux",
+        "Préservation de toutes les surfaces",
+        "Respect des délais de livraison",
+        "Remise en état complète"
+      ]
+    },
+    "introText": "Nettoyage de Fin de Chantier – Remise en État Complète Après Travaux\n\nAspeo Propreté & Services propose des services de nettoyage de fin de chantier complets pour préparer vos locaux à l'occupation après des travaux de construction ou de rénovation. Nous intervenons pour éliminer tous les résidus de travaux et remettre vos espaces dans un état impeccable, prêts à être utilisés ou présentés.",
+    "contextText": "Après des travaux de construction ou de rénovation, un nettoyage professionnel de fin de chantier est essentiel pour livrer un espace propre et prêt à l'occupation. Les résidus de travaux (poussière, débris, taches de peinture, colle) nécessitent des techniques spécifiques et un savoir-faire professionnel pour être éliminés efficacement sans endommager les surfaces.",
+    "targetSpaces": [
+      "Locaux après construction",
+      "Espaces après rénovation",
+      "Bureaux après travaux",
+      "Commerces après aménagement",
+      "Résidences après travaux",
+      "Espaces communs après travaux",
+      "Bâtiments neufs"
+    ],
+    "prestationsCategories": [
+      {
+        "title": "Nettoyage complet après travaux",
+        "items": [
+          "Élimination des résidus de construction",
+          "Nettoyage des sols, murs, plafonds",
+          "Nettoyage des vitres",
+          "Remise en état complète"
+        ]
+      },
+      {
+        "title": "Débarras et évacuation des déchets",
+        "items": [
+          "Élimination des gravats",
+          "Évacuation des matériaux",
+          "Tri et recyclage",
+          "Respect des normes environnementales"
+        ]
+      },
+      {
+        "title": "Nettoyage de sols post-chantier",
+        "items": [
+          "Élimination des traces de colle",
+          "Nettoyage des taches de peinture",
+          "Traitement des poussières fines",
+          "Adaptation selon matériaux"
+        ]
+      },
+      {
+        "title": "Nettoyage de vitres et surfaces vitrées",
+        "items": [
+          "Élimination de la poussière",
+          "Nettoyage des traces de peinture",
+          "Restauration de la transparence",
+          "Finition impeccable"
+        ]
+      },
+      {
+        "title": "Nettoyage et désinfection des sanitaires et cuisines",
+        "items": [
+          "Désinfection complète",
+          "Nettoyage en profondeur",
+          "Remise en état hygiénique",
+          "Préparation à l'usage"
+        ]
+      },
+      {
+        "title": "Nettoyage des espaces communs et zones techniques",
+        "items": [
+          "Dépoussiérage complet",
+          "Élimination des taches",
+          "Remise en état esthétique",
+          "Nettoyage des zones techniques"
+        ]
+      },
+      {
+        "title": "Nettoyage écologique",
+        "items": [
+          "Produits biodégradables",
+          "Respect de l'environnement",
+          "Réduction de l'impact",
+          "Méthodes durables"
+        ]
+      }
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Évaluation des travaux",
+        "description": "Inspection des locaux, identification des types de résidus et définition du plan d'intervention",
+        "duration": "1-2h"
+      },
+      {
+        "step": 2,
+        "title": "Débarras et évacuation",
+        "description": "Élimination des gravats, matériaux inutilisés et emballages, tri et recyclage",
+        "duration": "2-4h"
+      },
+      {
+        "step": 3,
+        "title": "Nettoyage en profondeur",
+        "description": "Nettoyage complet des sols, murs, plafonds, vitres et toutes surfaces, élimination des résidus",
+        "duration": "4-8h"
+      },
+      {
+        "step": 4,
+        "title": "Désinfection et finition",
+        "description": "Désinfection des sanitaires et cuisines, finitions et vérification de tous les espaces",
+        "duration": "1-2h"
+      },
+      {
+        "step": 5,
+        "title": "Contrôle qualité et livraison",
+        "description": "Vérification finale complète, retouches si nécessaire et validation de la remise en état",
+        "duration": "1h"
+      }
+    ],
+    "guarantees": [
+      "100% satisfaction client",
+      "Remise en état complète",
+      "Respect des délais de livraison",
+      "Équipes formées et certifiées",
+      "Techniques adaptées aux résidus",
+      "Devis gratuit et sans engagement"
+    ],
+    "applicationSectors": [
+      "Construction neuve",
+      "Rénovation",
+      "Réhabilitation",
+      "Aménagement",
+      "Bureaux",
+      "Commerces",
+      "Résidentiel"
+    ],
+    "faq": [
+      {
+        "question": "Quels types de résidus de travaux nettoyez-vous ?",
+        "answer": "Nous nettoyons tous types de résidus de travaux : poussière de construction, traces de peinture, colle, ciment, gravats, débris, etc. Nos techniques s'adaptent à chaque type de résidu pour garantir une élimination complète."
+      },
+      {
+        "question": "Combien de temps dure une intervention de fin de chantier ?",
+        "answer": "La durée dépend de la taille des locaux et du type de travaux effectués. Pour un appartement, comptez 1 à 2 jours. Pour un bâtiment complet, cela peut prendre plusieurs jours. Nous vous fournissons un devis précis avec estimation du temps d'intervention."
+      },
+      {
+        "question": "Intervenez-vous sur tous types de surfaces ?",
+        "answer": "Oui, nous intervenons sur tous types de surfaces : sols (carrelage, parquet, béton), murs (peinture, papier peint, carrelage), plafonds, vitres, etc. Nos techniques s'adaptent à chaque matériau pour préserver son intégrité."
+      },
+      {
+        "question": "Proposez-vous aussi l'évacuation des déchets ?",
+        "answer": "Oui, nous prenons en charge l'évacuation et l'élimination des déchets de chantier, en respectant les normes environnementales et en triant pour le recyclage lorsque c'est possible."
+      }
+    ],
+    "whyChoose": [
+      "De livrer un espace impeccable et prêt à l'occupation",
+      "D'éliminer tous les résidus de travaux efficacement",
+      "De respecter les délais de livraison",
+      "De préserver l'intégrité de toutes les surfaces",
+      "De bénéficier d'une remise en état complète",
+      "D'assurer une transition fluide vers l'usage des locaux"
+    ],
+    "services": [
+      {
+        "name": "Nettoyage Complet Après Travaux",
+        "description": "Nos services de nettoyage complet après travaux incluent l'élimination des résidus de construction, tels que la poussière, les débris et les taches de peinture. Nous assurons le nettoyage en profondeur des sols, murs, plafonds, et toutes les surfaces exposées. Notre équipe s'occupe également du nettoyage des vitres, des encadrements de fenêtres et des équipements installés pour que vos locaux soient parfaitement propres et prêts à l'usage."
+      },
+      {
+        "name": "Débarras et Évacuation des Déchets",
+        "description": "Le débarras et l'évacuation des déchets sont des étapes cruciales du nettoyage de fin de chantier. Nous prenons en charge l'élimination des gravats, des matériaux inutilisés, et des emballages, en respectant les normes environnementales et en triant les déchets pour le recyclage lorsque c'est possible."
+      },
+      {
+        "name": "Nettoyage de Sols Post-Chantier",
+        "description": "Le nettoyage des sols post-chantier nécessite des techniques adaptées pour éliminer les traces de colle, de peinture et les poussières fines. Que vos sols soient en béton, carrelage, parquet ou tout autre matériau, nous utilisons des produits spécifiques et des équipements professionnels pour garantir un résultat impeccable."
+      },
+      {
+        "name": "Nettoyage de Vitres et Surfaces Vitrées",
+        "description": "Les vitres et surfaces vitrées sont souvent marquées par la poussière, la peinture et d'autres résidus après un chantier. Nos experts en nettoyage de vitres interviennent pour éliminer toutes les traces et rendre vos surfaces vitrées parfaitement transparentes, qu'il s'agisse de fenêtres, de cloisons vitrées ou de vitrines."
+      },
+      {
+        "name": "Nettoyage et Désinfection des Sanitaires et Cuisines",
+        "description": "Après un chantier, il est essentiel de s'assurer que les sanitaires et cuisines sont non seulement propres, mais aussi désinfectés. Nous nettoyons et désinfectons les toilettes, lavabos, éviers, et toutes les surfaces de ces espaces pour garantir une hygiène parfaite, prête à accueillir vos utilisateurs."
+      },
+      {
+        "name": "Nettoyage des Espaces Communs et Zones Techniques",
+        "description": "Les espaces communs et zones techniques doivent être soigneusement nettoyés après les travaux pour être fonctionnels et esthétiques. Nos services comprennent le dépoussiérage, l'élimination des taches et la remise en état des zones communes comme les couloirs, les ascenseurs, les escaliers, ainsi que les locaux techniques."
+      },
+      {
+        "name": "Nettoyage Écologique de Fin de Chantier",
+        "description": "Conscients de l'impact environnemental, Aspeo propose également des solutions de nettoyage écologique de fin de chantier. Nous utilisons des produits biodégradables et respectueux de l'environnement pour assurer un nettoyage efficace tout en minimisant l'empreinte écologique du chantier."
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Nettoyage Après Décès",
+    "subtitle": "Interventions sensibles",
+    "category": "Services Spéciaux",
+    "image": [
+      "/img/services/deces/personne-dans-equipement-protection-desinfectant.webp",
+      "/img/services/deces/personne-passant-aspirateur.webp",
+      "/img/services/deces/deux-personnes-passant-aspirateur.webp"
+    ],
+    "description": [
+      "Services de nettoyage après décès avec une approche professionnelle, discrète et respectueuse. Nous comprenons que ces situations sont particulièrement sensibles et nous mettons tout en œuvre pour restaurer les lieux rapidement et en toute sécurité, en tenant compte des besoins émotionnels des familles et des proches."
+    ],
+    "expertise": {
+      "title": "Notre Expertise en Nettoyage Après Décès",
+      "description": "Aspeo dispose d'une expertise reconnue dans le nettoyage après décès. Nos équipes sont formées aux protocoles spécifiques de décontamination, désinfection et désodorisation. Nous intervenons avec discrétion, respect et professionnalisme, en comprenant la sensibilité de ces situations.\n\nNotre savoir-faire nous permet de garantir une restauration complète des lieux, éliminant tous risques sanitaires et toutes traces visuelles ou olfactives. Nous respectons les procédures légales et sanitaires en vigueur, travaillant en collaboration avec les autorités compétentes lorsque nécessaire.",
+      "highlights": [
+        "Protocoles de décontamination rigoureux",
+        "Approche discrète et respectueuse",
+        "Respect des procédures légales",
+        "Équipes formées et certifiées"
+      ]
+    },
+    "introText": "Nettoyage Après Décès – Intervention Professionnelle, Discrète et Respectueuse\n\nAspeo Propreté & Services propose des services de nettoyage après décès avec une approche professionnelle, discrète et respectueuse. Nous comprenons la sensibilité de ces situations et intervenons rapidement pour restaurer les lieux en toute sécurité, en tenant compte des besoins émotionnels des familles et des proches.",
+    "contextText": "Après un décès, la restauration des lieux nécessite une intervention professionnelle spécialisée. Un nettoyage après décès complet et rigoureux est essentiel pour éliminer tous risques sanitaires, restaurer les lieux dans un état propre et neutre, et permettre aux familles de faire leur deuil dans un environnement sain. Notre approche respectueuse et discrète soulage les proches en prenant en charge cette tâche délicate.",
+    "targetSpaces": [
+      "Domiciles",
+      "Établissements de santé",
+      "Maisons de retraite",
+      "Espaces privés",
+      "Lieux de décès",
+      "Scènes de crime",
+      "Espaces sensibles"
+    ],
+    "prestationsCategories": [
+      {
+        "title": "Nettoyage et désinfection après décès",
+        "items": [
+          "Élimination des traces biologiques",
+          "Désinfection complète des lieux",
+          "Décontamination de l'espace",
+          "Neutralisation des agents pathogènes"
+        ]
+      },
+      {
+        "title": "Traitement des lieux sensibles",
+        "items": [
+          "Élimination des déchets biologiques",
+          "Désinfection des surfaces, sols et murs",
+          "Nettoyage en profondeur des mobiliers",
+          "Respect de la dignité des lieux"
+        ]
+      },
+      {
+        "title": "Décontamination et désodorisation",
+        "items": [
+          "Désinfection complète de l'air",
+          "Élimination des bactéries et virus",
+          "Désodorisation professionnelle",
+          "Restauration d'un environnement neutre"
+        ]
+      },
+      {
+        "title": "Nettoyage de scène de crime ou de suicide",
+        "items": [
+          "Protocoles rigoureux",
+          "Collaboration avec les autorités",
+          "Sécurisation des lieux",
+          "Respect des procédures légales"
+        ]
+      },
+      {
+        "title": "Gestion des déchets biologiques",
+        "items": [
+          "Élimination sécurisée",
+          "Conformité aux réglementations",
+          "Minimisation des risques",
+          "Gestion professionnelle"
+        ]
+      },
+      {
+        "title": "Nettoyage respectueux et discret",
+        "items": [
+          "Intervention rapide",
+          "Sensibilité envers les familles",
+          "Discrétion totale",
+          "Soulagement des proches"
+        ]
+      },
+      {
+        "title": "Nettoyage écologique",
+        "items": [
+          "Produits biodégradables",
+          "Respect de l'environnement",
+          "Sécurité sanitaire",
+          "Décontamination complète"
+        ]
+      }
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Contact et évaluation",
+        "description": "Prise de contact discrète, évaluation de la situation et définition du plan d'intervention",
+        "duration": "30 min"
+      },
+      {
+        "step": 2,
+        "title": "Sécurisation des lieux",
+        "description": "Mise en place des mesures de sécurité, protection des équipes et préparation des équipements",
+        "duration": "15-30 min"
+      },
+      {
+        "step": 3,
+        "title": "Décontamination et nettoyage",
+        "description": "Élimination des déchets biologiques, nettoyage en profondeur et désinfection complète",
+        "duration": "2-6h"
+      },
+      {
+        "step": 4,
+        "title": "Désodorisation",
+        "description": "Traitement des odeurs persistantes, désodorisation de l'air et restauration d'un environnement neutre",
+        "duration": "1-2h"
+      },
+      {
+        "step": 5,
+        "title": "Contrôle et validation",
+        "description": "Vérification finale, contrôle sanitaire et validation de la restauration complète",
+        "duration": "30 min"
+      }
+    ],
+    "guarantees": [
+      "100% satisfaction client",
+      "Intervention rapide et discrète",
+      "Décontamination complète",
+      "Respect des procédures légales",
+      "Équipes formées et certifiées",
+      "Approche respectueuse et sensible"
+    ],
+    "applicationSectors": [
+      "Domiciles",
+      "Établissements de santé",
+      "Maisons de retraite",
+      "Espaces privés",
+      "Lieux publics",
+      "Scènes de crime",
+      "Espaces sensibles"
+    ],
+    "faq": [
+      {
+        "question": "Intervenez-vous rapidement après un décès ?",
+        "answer": "Oui, nous intervenons rapidement, généralement sous 24h, pour restaurer les lieux. Nous comprenons l'urgence de ces situations et nous adaptons à vos besoins."
+      },
+      {
+        "question": "Vos équipes sont-elles formées pour ce type d'intervention ?",
+        "answer": "Oui, nos équipes sont spécialement formées aux protocoles de nettoyage après décès, de décontamination et de désinfection. Elles interviennent avec professionnalisme, discrétion et respect."
+      },
+      {
+        "question": "Respectez-vous les procédures légales ?",
+        "answer": "Absolument. Nous respectons toutes les procédures légales et sanitaires en vigueur. En cas de scène de crime ou de suicide, nous travaillons en collaboration avec les autorités compétentes."
+      },
+      {
+        "question": "Proposez-vous aussi la désodorisation ?",
+        "answer": "Oui, nous proposons des services de désodorisation professionnelle pour éliminer toutes les odeurs persistantes et restaurer un environnement neutre et sain."
+      }
+    ],
+    "whyChoose": [
+      "D'intervenir rapidement et discrètement",
+      "De bénéficier d'une décontamination complète",
+      "De respecter la dignité des lieux et des personnes",
+      "De soulager les familles en prenant en charge cette tâche",
+      "De garantir un environnement sain et sécurisé",
+      "D'apporter un soutien logistique en toute confidentialité"
+    ],
+    "services": [
+      {
+        "name": "Nettoyage et Désinfection Après Décès",
+        "description": "Nos services de nettoyage et désinfection après décès incluent l'élimination des traces biologiques, la désinfection des lieux, et la décontamination complète de l'espace. Nous utilisons des produits spécifiques pour neutraliser les agents pathogènes et éliminer les odeurs, assurant ainsi un environnement sain et sécuritaire."
+      },
+      {
+        "name": "Traitement des Lieux Sensibles",
+        "description": "Le traitement des lieux sensibles est une priorité dans le cadre d'un nettoyage après décès. Nous procédons à l'élimination des déchets biologiques, à la désinfection des surfaces, des sols et des murs, ainsi qu'au nettoyage en profondeur des mobiliers et des objets touchés. Nous intervenons avec discrétion et efficacité, respectant la dignité des lieux et des personnes concernées."
+      },
+      {
+        "name": "Décontamination et Désodorisation",
+        "description": "La décontamination après un décès est cruciale pour prévenir tout risque sanitaire. Nos experts réalisent une désinfection complète des lieux, y compris de l'air ambiant, afin de supprimer toute présence de bactéries, virus ou autres agents infectieux. Nous offrons également des services de désodorisation pour éliminer toutes les odeurs persistantes, laissant les lieux propres et neutres."
+      },
+      {
+        "name": "Nettoyage de Scène de Crime ou de Suicide",
+        "description": "En cas de nettoyage de scène de crime ou de suicide, nous suivons des protocoles rigoureux pour la gestion des lieux. Nous travaillons en collaboration avec les autorités compétentes et veillons à la sécurisation et la restauration complète des lieux, tout en respectant les procédures légales et sanitaires."
+      },
+      {
+        "name": "Gestion des Déchets Biologiques",
+        "description": "La gestion des déchets biologiques est une composante essentielle de nos services de nettoyage après décès. Nous procédons à l'élimination sécurisée de tous les matériaux contaminés, conformément aux réglementations en vigueur. Nos équipes sont formées pour gérer ces situations avec le plus grand soin, en minimisant tout risque de contamination."
+      },
+      {
+        "name": "Nettoyage Respectueux et Discret",
+        "description": "Nous comprenons l'importance de la discrétion et du respect dans ces moments difficiles. Nos services de nettoyage respectueux et discret sont conçus pour intervenir rapidement et efficacement, tout en faisant preuve de sensibilité envers les personnes affectées. Notre objectif est de soulager la famille et les proches en prenant en charge cette tâche délicate."
+      },
+      {
+        "name": "Nettoyage Écologique Après Décès",
+        "description": "Aspeo propose également un nettoyage écologique après décès en utilisant des produits biodégradables et non toxiques, respectueux de l'environnement et sans danger pour la santé, tout en garantissant une désinfection et une décontamination complètes."
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Nettoyage Après Sinistre",
+    "subtitle": "Restauration d'urgence",
+    "category": "Services Spéciaux",
+    "image": [
+      "/img/services/sinistre/maison-detruite.webp",
+      "/img/services/sinistre/maison-ruine.webp",
+      "/img/services/sinistre/ruine-maison.webp"
+    ],
+    "description": [
+      "Services de nettoyage après sinistre pour vous aider à rétablir rapidement et efficacement vos locaux après un incendie, une inondation ou tout autre type de sinistre. Notre équipe d'experts est formée pour intervenir dans les situations d'urgence, avec des solutions adaptées pour chaque type de sinistre."
+    ],
+    "expertise": {
+      "title": "Notre Expertise en Nettoyage Après Sinistre",
+      "description": "Aspeo dispose d'une expertise reconnue dans le nettoyage après sinistre. Nos équipes sont formées aux techniques spécifiques pour chaque type de sinistre : incendie, inondation, dégâts des eaux, etc. Nous intervenons rapidement dans les situations d'urgence pour limiter les dégâts et restaurer vos locaux.\n\nNotre savoir-faire nous permet de traiter efficacement tous les types de dommages : suies, odeurs de fumée, moisissures, dégâts des eaux, etc. Nous utilisons des techniques avancées comme l'ozonation et la nébulisation pour éliminer les odeurs persistantes et restaurer un environnement sain.",
+      "highlights": [
+        "Intervention rapide en situation d'urgence",
+        "Techniques adaptées à chaque type de sinistre",
+        "Traitement des odeurs persistantes",
+        "Restauration complète des locaux"
+      ]
+    },
+    "introText": "Nettoyage Après Sinistre – Restauration Rapide et Efficace\n\nAspeo Propreté & Services propose des services de nettoyage après sinistre pour vous aider à rétablir rapidement et efficacement vos locaux après un incendie, une inondation ou tout autre type de sinistre. Notre équipe d'experts est formée pour intervenir dans les situations d'urgence, avec des solutions adaptées pour chaque type de sinistre.",
+    "contextText": "Après un sinistre, une intervention rapide et professionnelle est essentielle pour limiter les dégâts et restaurer vos locaux. Les incendies, inondations et autres sinistres laissent des traces difficiles à éliminer : suies, odeurs, moisissures, dégâts des eaux. Un nettoyage professionnel spécialisé permet de restaurer vos espaces et de prévenir les dommages supplémentaires.",
+    "targetSpaces": [
+      "Locaux après incendie",
+      "Espaces après inondation",
+      "Bâtiments sinistrés",
+      "Domiciles sinistrés",
+      "Commerces sinistrés",
+      "Bureaux sinistrés",
+      "Tous types de sinistres"
+    ],
+    "prestationsCategories": [
+      {
+        "title": "Nettoyage après incendie",
+        "items": [
+          "Élimination des suies",
+          "Traitement des odeurs de fumée",
+          "Restauration des surfaces",
+          "Prévention des dégradations"
+        ]
+      },
+      {
+        "title": "Nettoyage après inondation",
+        "items": [
+          "Élimination de l'eau stagnante",
+          "Séchage des surfaces",
+          "Prévention de la moisissure",
+          "Traitement des dégâts des eaux"
+        ]
+      },
+      {
+        "title": "Décontamination et désinfection",
+        "items": [
+          "Élimination des agents pathogènes",
+          "Traitement des moisissures",
+          "Désinfection complète",
+          "Sécurisation des lieux"
+        ]
+      },
+      {
+        "title": "Restauration des surfaces et revêtements",
+        "items": [
+          "Nettoyage des murs et plafonds",
+          "Traitement des sols",
+          "Restauration des moquettes",
+          "Remise en état complète"
+        ]
+      },
+      {
+        "title": "Traitement des odeurs persistantes",
+        "items": [
+          "Ozonation",
+          "Nébulisation",
+          "Neutralisation complète",
+          "Restauration d'un air sain"
+        ]
+      },
+      {
+        "title": "Gestion des déchets et débris",
+        "items": [
+          "Évacuation des matériaux endommagés",
+          "Tri et recyclage",
+          "Respect des réglementations",
+          "Gestion écologique"
+        ]
+      },
+      {
+        "title": "Nettoyage écologique",
+        "items": [
+          "Produits écologiques",
+          "Méthodes durables",
+          "Réduction de l'impact",
+          "Respect de l'environnement"
+        ]
+      }
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Évaluation d'urgence",
+        "description": "Inspection rapide des lieux, évaluation des dégâts et définition du plan d'intervention d'urgence",
+        "duration": "1h"
+      },
+      {
+        "step": 2,
+        "title": "Sécurisation et protection",
+        "description": "Sécurisation des lieux, protection des zones non touchées et préparation des équipements",
+        "duration": "30 min - 1h"
+      },
+      {
+        "step": 3,
+        "title": "Nettoyage et restauration",
+        "description": "Nettoyage en profondeur selon le type de sinistre, restauration des surfaces et traitement des dommages",
+        "duration": "4-12h selon sinistre"
+      },
+      {
+        "step": 4,
+        "title": "Désodorisation et finition",
+        "description": "Traitement des odeurs persistantes, désodorisation complète et finitions",
+        "duration": "2-4h"
+      },
+      {
+        "step": 5,
+        "title": "Contrôle et validation",
+        "description": "Vérification finale, contrôle sanitaire et validation de la restauration complète",
+        "duration": "1h"
+      }
+    ],
+    "guarantees": [
+      "100% satisfaction client",
+      "Intervention rapide en urgence",
+      "Restauration complète des locaux",
+      "Élimination des odeurs persistantes",
+      "Équipes formées et certifiées",
+      "Devis gratuit et sans engagement"
+    ],
+    "applicationSectors": [
+      "Résidentiel",
+      "Commercial",
+      "Industriel",
+      "Bureaux",
+      "Commerces",
+      "Institutions",
+      "Tous secteurs"
+    ],
+    "faq": [
+      {
+        "question": "Intervenez-vous rapidement après un sinistre ?",
+        "answer": "Oui, nous intervenons rapidement, généralement sous 24h, pour limiter les dégâts et commencer la restauration. Nous comprenons l'urgence de ces situations et nous adaptons à vos besoins."
+      },
+      {
+        "question": "Quels types de sinistres traitez-vous ?",
+        "answer": "Nous traitons tous types de sinistres : incendies, inondations, dégâts des eaux, tempêtes, etc. Nos techniques s'adaptent à chaque type de sinistre pour garantir une restauration efficace."
+      },
+      {
+        "question": "Pouvez-vous éliminer les odeurs persistantes ?",
+        "answer": "Oui, nous utilisons des techniques avancées comme l'ozonation et la nébulisation pour éliminer complètement les odeurs persistantes, même après un incendie ou une inondation importante."
+      },
+      {
+        "question": "Travaillez-vous avec les assurances ?",
+        "answer": "Oui, nous pouvons travailler en collaboration avec votre assurance et fournir tous les documents nécessaires pour votre dossier de sinistre."
+      }
+    ],
+    "whyChoose": [
+      "D'intervenir rapidement en situation d'urgence",
+      "De limiter les dégâts et restaurer vos locaux",
+      "D'éliminer complètement les odeurs persistantes",
+      "De bénéficier d'une restauration complète",
+      "De prévenir les dommages supplémentaires",
+      "De sécuriser vos biens et l'intégrité du bâtiment"
+    ],
+    "services": [
+      {
+        "name": "Nettoyage Après Incendie",
+        "description": "Nos services de nettoyage après incendie comprennent l'élimination des suies, le traitement des odeurs de fumée, et la restauration des surfaces touchées. Nous procédons au nettoyage en profondeur des murs, sols, plafonds, et mobiliers endommagés, en utilisant des produits et techniques spécialisés pour éliminer les traces de l'incendie et prévenir toute dégradation supplémentaire."
+      },
+      {
+        "name": "Nettoyage Après Inondation",
+        "description": "En cas d'inondation, notre équipe intervient rapidement pour effectuer un nettoyage après inondation efficace. Nous éliminons l'eau stagnante, séchons les surfaces touchées, et procédons à la désinfection des lieux pour prévenir la moisissure et les odeurs désagréables. Nous traitons également les revêtements de sol, les murs, et les meubles afin de restaurer les lieux à leur état d'origine."
+      },
+      {
+        "name": "Décontamination et Désinfection des Lieux",
+        "description": "La décontamination et désinfection après sinistre est essentielle pour assurer la sécurité des lieux. Nos experts utilisent des produits désinfectants puissants pour éliminer les agents pathogènes, les moisissures et autres contaminants qui pourraient avoir été propagés par l'incendie, l'inondation ou tout autre sinistre. Nous veillons à ce que l'environnement soit totalement sécurisé pour les occupants."
+      },
+      {
+        "name": "Restauration des Surfaces et Revêtements",
+        "description": "Services de restauration des surfaces et revêtements endommagés par le sinistre. Cela inclut le nettoyage des murs, plafonds, et sols, ainsi que le traitement des moquettes, tapis, et autres revêtements de sol. Notre objectif est de redonner à vos locaux leur apparence d'origine, voire de les améliorer."
+      },
+      {
+        "name": "Traitement des Odeurs Persistantes",
+        "description": "Les sinistres, en particulier les incendies et inondations, laissent souvent des odeurs persistantes difficiles à éliminer. Nos services incluent le traitement professionnel des odeurs, en utilisant des techniques avancées telles que l'ozonation ou la nébulisation pour neutraliser complètement les mauvaises odeurs et laisser vos espaces frais et propres."
+      },
+      {
+        "name": "Gestion des Déchets et Débris",
+        "description": "La gestion des déchets et débris est une étape cruciale après un sinistre. Nous prenons en charge l'évacuation et l'élimination des matériaux endommagés, en respectant les réglementations environnementales. Nous nous assurons que tout est correctement trié, recyclé ou éliminé, contribuant ainsi à un processus de nettoyage rapide et efficace."
+      },
+      {
+        "name": "Nettoyage Écologique Après Sinistre",
+        "description": "Conscients de l'importance de protéger l'environnement, Aspeo propose des solutions de nettoyage écologique après sinistre. Nous utilisons des produits écologiques et des méthodes durables pour restaurer vos locaux tout en minimisant l'impact sur l'environnement."
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Nettoyage de Logements Insalubres",
+    "subtitle": "Réhabilitation complète",
+    "category": "Services Spéciaux",
+    "image": [
+      "/img/services/insalubre/adolescent-essayant-reduire-effet-gueule-bois-matin.webp",
+      "/img/services/insalubre/maison-abandonnee-escaliers-rouilles.webp",
+      "/img/services/insalubre/aspirateur-s-attaque-au-sol-fortement-souille.webp"
+    ],
+    "description": [
+      "Services de nettoyage pour logements insalubres en Auvergne-Rhône-Alpes, France. Que vous soyez propriétaire, locataire ou gestionnaire immobilier, nous intervenons pour remettre en état des logements dans des conditions extrêmes, en les rendant à nouveau sains et habitables."
+    ],
+    "expertise": {
+      "title": "Notre Expertise en Nettoyage de Logements Insalubres",
+      "description": "Aspeo dispose d'une expertise reconnue dans le nettoyage de logements insalubres. Nos équipes sont formées aux protocoles spécifiques de décontamination, désinfection et réhabilitation. Nous intervenons avec respect et discrétion, en comprenant la sensibilité de ces situations.\n\nNotre savoir-faire nous permet de traiter efficacement tous les types d'insalubrité : moisissures, nuisibles, déchets accumulés, odeurs persistantes, etc. Nous utilisons des techniques avancées et des produits puissants mais respectueux de l'environnement pour garantir une réhabilitation complète et sécurisée.",
+      "highlights": [
+        "Protocoles de décontamination rigoureux",
+        "Traitement de tous types d'insalubrité",
+        "Approche respectueuse et discrète",
+        "Réhabilitation complète et sécurisée"
+      ]
+    },
+    "introText": "Nettoyage de Logements Insalubres – Réhabilitation Complète en Conditions Extrêmes\n\nAspeo Propreté & Services propose des services de nettoyage pour logements insalubres. Que vous soyez propriétaire, locataire ou gestionnaire immobilier, nous intervenons pour remettre en état des logements dans des conditions extrêmes, en les rendant à nouveau sains et habitables.",
+    "contextText": "Un logement insalubre nécessite une intervention professionnelle spécialisée pour être réhabilité. Les situations d'insalubrité peuvent être causées par des moisissures, des nuisibles, des déchets accumulés, des odeurs persistantes ou d'autres sources de contamination. Un nettoyage professionnel complet et rigoureux est essentiel pour rendre ces logements à nouveau sains et habitables.",
+    "targetSpaces": [
+      "Logements insalubres",
+      "Appartements dégradés",
+      "Maisons abandonnées",
+      "Logements avec moisissures",
+      "Espaces contaminés",
+      "Logements avec nuisibles",
+      "Tous types d'insalubrité"
+    ],
+    "prestationsCategories": [
+      {
+        "title": "Nettoyage complet de logements insalubres",
+        "items": [
+          "Nettoyage en profondeur des surfaces",
+          "Élimination des déchets accumulés",
+          "Désinfection des zones contaminées",
+          "Traitement des moisissures"
+        ]
+      },
+      {
+        "title": "Désinfection et décontamination",
+        "items": [
+          "Élimination des bactéries et virus",
+          "Traitement des agents pathogènes",
+          "Désinfection complète",
+          "Sécurisation de l'environnement"
+        ]
+      },
+      {
+        "title": "Gestion des déchets et débarras",
+        "items": [
+          "Élimination des déchets",
+          "Débarras des objets inutilisables",
+          "Tri et recyclage",
+          "Gestion écologique"
+        ]
+      },
+      {
+        "title": "Traitement des odeurs persistantes",
+        "items": [
+          "Ozonation",
+          "Neutralisation complète",
+          "Restauration d'un air sain",
+          "Élimination des mauvaises odeurs"
+        ]
+      },
+      {
+        "title": "Nettoyage des surfaces et revêtements",
+        "items": [
+          "Nettoyage des sols, murs et plafonds",
+          "Traitement des tapis et moquettes",
+          "Nettoyage des textiles",
+          "Techniques spécifiques par matériau"
+        ]
+      },
+      {
+        "title": "Respect et discrétion",
+        "items": [
+          "Intervention respectueuse",
+          "Discrétion totale",
+          "Confidentialité",
+          "Sensibilité envers les occupants"
+        ]
+      },
+      {
+        "title": "Nettoyage écologique et responsable",
+        "items": [
+          "Produits respectueux de l'environnement",
+          "Efficacité et sécurité",
+          "Réduction de l'impact",
+          "Protection de la santé"
+        ]
+      }
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Évaluation de l'insalubrité",
+        "description": "Inspection complète des lieux, identification des sources de contamination et définition du plan d'intervention",
+        "duration": "1-2h"
+      },
+      {
+        "step": 2,
+        "title": "Débarras et évacuation",
+        "description": "Élimination des déchets accumulés, débarras des objets inutilisables et tri pour recyclage",
+        "duration": "2-6h"
+      },
+      {
+        "step": 3,
+        "title": "Nettoyage et décontamination",
+        "description": "Nettoyage en profondeur de toutes les surfaces, désinfection complète et traitement des moisissures",
+        "duration": "4-10h"
+      },
+      {
+        "step": 4,
+        "title": "Désodorisation",
+        "description": "Traitement des odeurs persistantes, ozonation et restauration d'un air sain",
+        "duration": "2-4h"
+      },
+      {
+        "step": 5,
+        "title": "Contrôle et validation",
+        "description": "Vérification finale, contrôle sanitaire et validation de la réhabilitation complète",
+        "duration": "1h"
+      }
+    ],
+    "guarantees": [
+      "100% satisfaction client",
+      "Réhabilitation complète et sécurisée",
+      "Intervention respectueuse et discrète",
+      "Décontamination complète",
+      "Équipes formées et certifiées",
+      "Devis gratuit et sans engagement"
+    ],
+    "applicationSectors": [
+      "Résidentiel",
+      "Immobilier",
+      "Copropriétés",
+      "Logements sociaux",
+      "Gestion locative",
+      "Réhabilitation",
+      "Tous types de logements"
+    ],
+    "faq": [
+      {
+        "question": "Quels types d'insalubrité traitez-vous ?",
+        "answer": "Nous traitons tous types d'insalubrité : moisissures, nuisibles, déchets accumulés, odeurs persistantes, contamination biologique, etc. Nos protocoles s'adaptent à chaque situation pour garantir une réhabilitation complète."
+      },
+      {
+        "question": "Combien de temps dure une intervention ?",
+        "answer": "La durée dépend de l'ampleur de l'insalubrité. Pour un logement moyen, comptez 1 à 3 jours. Pour des situations extrêmes, cela peut prendre plusieurs jours. Nous vous fournissons un devis précis avec estimation du temps d'intervention."
+      },
+      {
+        "question": "Intervenez-vous avec discrétion ?",
+        "answer": "Absolument. Nous comprenons la sensibilité de ces situations et intervenons avec le plus grand respect et la plus grande discrétion, en préservant la confidentialité et le bien-être des occupants."
+      },
+      {
+        "question": "Proposez-vous aussi le débarras ?",
+        "answer": "Oui, nous prenons en charge le débarras des objets inutilisables et l'élimination des déchets, en respectant les normes environnementales et en triant pour le recyclage lorsque c'est possible."
+      }
+    ],
+    "whyChoose": [
+      "De réhabiliter des logements en conditions extrêmes",
+      "De bénéficier d'une décontamination complète",
+      "D'intervenir avec respect et discrétion",
+      "De rendre les logements à nouveau sains et habitables",
+      "De préserver la santé des futurs occupants",
+      "De transformer un espace insalubre en lieu de vie accueillant"
+    ],
+    "services": [
+      {
+        "name": "Nettoyage Complet de Logements Insalubres",
+        "description": "Nos services incluent un nettoyage complet de logements insalubres, couvrant toutes les étapes nécessaires pour réhabiliter un espace de vie dégradé. Nous gérons le nettoyage en profondeur des surfaces, l'élimination des déchets accumulés, et la désinfection des zones touchées par les moisissures, les nuisibles ou autres sources de contamination."
+      },
+      {
+        "name": "Désinfection et Décontamination",
+        "description": "Le nettoyage d'un logement insalubre nécessite des mesures de désinfection et de décontamination rigoureuses. Nous utilisons des produits désinfectants puissants, mais respectueux de l'environnement, pour éliminer les bactéries, virus et autres agents pathogènes. Cela garantit un environnement sain et sécurisé pour les futurs occupants."
+      },
+      {
+        "name": "Gestion des Déchets et Débarras",
+        "description": "Lors de l'intervention, nous prenons également en charge la gestion des déchets et le débarras des objets ou meubles inutilisables. Notre équipe veille à trier les déchets selon les normes en vigueur et à recycler autant que possible, réduisant ainsi l'impact environnemental."
+      },
+      {
+        "name": "Traitement des Odeurs Persistantes",
+        "description": "Les logements insalubres sont souvent marqués par des odeurs désagréables qui peuvent être difficiles à éliminer. Nos services incluent le traitement des odeurs persistantes à l'aide de techniques avancées, telles que l'ozonation, qui neutralisent complètement les mauvaises odeurs pour rendre l'air à nouveau respirable."
+      },
+      {
+        "name": "Nettoyage des Surfaces et Revêtements",
+        "description": "Nous effectuons un nettoyage approfondi des surfaces et des revêtements tels que les sols, murs et plafonds. Notre équipe s'occupe également du nettoyage des tapis, moquettes, et autres textiles présents, en utilisant des techniques spécifiques pour chaque type de matériau."
+      },
+      {
+        "name": "Respect et Discrétion",
+        "description": "Nous comprenons la sensibilité des situations impliquant des logements insalubres. Chez Aspeo, nous assurons une intervention avec le plus grand respect et la plus grande discrétion, en prenant en compte le bien-être des occupants et la confidentialité des interventions."
+      },
+      {
+        "name": "Nettoyage Écologique et Responsable",
+        "description": "Conscients de l'importance de protéger l'environnement, nous offrons un nettoyage écologique et responsable. Nos produits sont choisis pour leur efficacité et leur faible impact sur l'environnement, assurant un nettoyage sûr pour les occupants et la planète."
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Nettoyage Industriel",
+    "subtitle": "Sites de production",
+    "category": "Nettoyage Intérieur",
+    "image": [
+      "/img/services/chantier/arriere-plan-ouvrier-construction-travail-bricoleur-portant-uniforme-securite.webp",
+      "/img/services/industriel/close-up-concierge-nettoyant-sol-bureau-brillant-mousse-savon-refletant-lumieres-brillantes-batiment-entreprise-moderne.webp",
+      "/img/services/chantier/arriere-plan-ouvrier-construction-travail-bricoleur-portant-uniforme-securite.webp"
+    ],
+    "description": [
+      "Services de nettoyage industriel en Auvergne-Rhône-Alpes, France. Nous intervenons dans divers secteurs industriels, y compris les usines, les entrepôts, et les sites de production, en offrant des solutions de nettoyage adaptées à vos besoins spécifiques."
+    ],
+    "expertise": {
+      "title": "Notre Expertise en Nettoyage Industriel",
+      "description": "Aspeo dispose d'une expertise reconnue dans le nettoyage industriel. Nos équipes sont formées aux spécificités des environnements industriels et aux normes de sécurité en vigueur. Nous intervenons dans tous secteurs industriels avec des techniques adaptées à chaque type d'activité.\n\nNotre savoir-faire nous permet de traiter efficacement tous types de résidus industriels : poussière, huiles, graisses, produits chimiques, etc. Nous disposons de l'équipement et de l'expertise nécessaires pour intervenir dans des environnements complexes tout en respectant les normes de sécurité et d'hygiène industrielle.",
+      "highlights": [
+        "Expertise multi-secteurs industriels",
+        "Respect des normes de sécurité",
+        "Techniques adaptées aux résidus industriels",
+        "Équipements professionnels spécialisés"
+      ]
+    },
+    "introText": "Nettoyage Industriel – Solutions Professionnelles pour Tous Secteurs Industriels\n\nAspeo Propreté & Services propose des services de nettoyage industriel pour tous secteurs industriels. Nous intervenons dans les usines, les entrepôts, les sites de production et tous espaces industriels, en offrant des solutions de nettoyage adaptées à vos besoins spécifiques et aux contraintes de votre activité.",
+    "contextText": "Un nettoyage industriel professionnel est essentiel pour maintenir la productivité, assurer la sécurité des employés et respecter les normes d'hygiène et de sécurité. Les environnements industriels génèrent des résidus spécifiques (poussière, huiles, graisses, produits chimiques) qui nécessitent des techniques et équipements adaptés. Un nettoyage régulier prévient les pannes, prolonge la durée de vie des équipements et garantit un environnement de travail sûr.",
+    "targetSpaces": [
+      "Usines et sites de production",
+      "Entrepôts et zones de stockage",
+      "Ateliers de fabrication",
+      "Zones de production",
+      "Locaux techniques",
+      "Espaces industriels",
+      "Sites de production"
+    ],
+    "prestationsCategories": [
+      {
+        "title": "Nettoyage complet des espaces industriels",
+        "items": [
+          "Nettoyage des sols, murs, plafonds",
+          "Traitement de la poussière",
+          "Élimination des huiles et graisses",
+          "Nettoyage des zones de production"
+        ]
+      },
+      {
+        "title": "Nettoyage et entretien des machines",
+        "items": [
+          "Nettoyage des équipements",
+          "Prévention des pannes",
+          "Prolongation de la durée de vie",
+          "Sécurité des opérations"
+        ]
+      },
+      {
+        "title": "Dépoussiérage et aspiration des zones sensibles",
+        "items": [
+          "Zones à risques",
+          "Matériaux sensibles",
+          "Minimisation des risques",
+          "Équipements spécifiques"
+        ]
+      },
+      {
+        "title": "Nettoyage après travaux et réaménagements",
+        "items": [
+          "Élimination des débris",
+          "Nettoyage de la poussière",
+          "Remise en état",
+          "Reprise rapide des activités"
+        ]
+      },
+      {
+        "title": "Nettoyage des sols industriels",
+        "items": [
+          "Dégraissage",
+          "Lavage haute pression",
+          "Polissage",
+          "Adaptation selon revêtements"
+        ]
+      },
+      {
+        "title": "Gestion des déchets et recyclage",
+        "items": [
+          "Tri et recyclage",
+          "Conformité réglementaire",
+          "Gestion écologique",
+          "Réduction de l'impact"
+        ]
+      },
+      {
+        "title": "Nettoyage écologique",
+        "items": [
+          "Produits non toxiques",
+          "Techniques durables",
+          "Réduction de l'impact",
+          "Performance et écologie"
+        ]
+      },
+      {
+        "title": "Respect des normes de sécurité",
+        "items": [
+          "Formation aux meilleures pratiques",
+          "Respect des normes",
+          "Sécurité des équipes",
+          "Hygiène industrielle"
+        ]
+      }
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Audit des installations",
+        "description": "Inspection des espaces industriels, identification des zones à traiter et définition du plan d'intervention",
+        "duration": "1-2h"
+      },
+      {
+        "step": 2,
+        "title": "Planification et sécurité",
+        "description": "Planification des interventions, mise en place des mesures de sécurité et préparation des équipements",
+        "duration": "1h"
+      },
+      {
+        "step": 3,
+        "title": "Nettoyage des espaces",
+        "description": "Nettoyage complet des sols, murs, plafonds et zones de production avec techniques adaptées",
+        "duration": "4-12h selon surface"
+      },
+      {
+        "step": 4,
+        "title": "Entretien des machines",
+        "description": "Nettoyage et entretien des équipements industriels, dépoussiérage des zones sensibles",
+        "duration": "2-6h"
+      },
+      {
+        "step": 5,
+        "title": "Contrôle qualité et suivi",
+        "description": "Vérification finale, contrôle de la propreté et suivi régulier pour maintenance continue",
+        "duration": "1h"
+      }
+    ],
+    "guarantees": [
+      "100% satisfaction client",
+      "Respect des normes de sécurité",
+      "Intervention adaptée à vos contraintes",
+      "Équipes formées et certifiées",
+      "Équipements professionnels spécialisés",
+      "Devis gratuit et sans engagement"
+    ],
+    "applicationSectors": [
+      "Industrie manufacturière",
+      "Industrie agroalimentaire",
+      "Industrie pharmaceutique",
+      "Industrie chimique",
+      "Entrepôts et logistique",
+      "Ateliers de production",
+      "Tous secteurs industriels"
+    ],
+    "faq": [
+      {
+        "question": "Intervenez-vous pendant la production ?",
+        "answer": "Nous adaptons nos interventions à vos contraintes. Nous pouvons intervenir pendant les arrêts de production, pendant les pauses ou en dehors des heures de production selon vos besoins."
+      },
+      {
+        "question": "Quels types de résidus industriels nettoyez-vous ?",
+        "answer": "Nous nettoyons tous types de résidus industriels : poussière, huiles, graisses, produits chimiques, débris de production, etc. Nos techniques s'adaptent à chaque type de résidu et à chaque secteur d'activité."
+      },
+      {
+        "question": "Respectez-vous les normes de sécurité industrielle ?",
+        "answer": "Absolument. Nous respectons strictement toutes les normes de sécurité et d'hygiène industrielle. Nos équipes sont formées aux meilleures pratiques et aux spécificités de chaque secteur."
+      },
+      {
+        "question": "Proposez-vous des contrats d'entretien régulier ?",
+        "answer": "Oui, nous proposons des contrats d'entretien régulier adaptés à vos besoins : quotidien, hebdomadaire, mensuel. Ces contrats permettent de maintenir vos installations dans un état optimal."
+      }
+    ],
+    "whyChoose": [
+      "De maintenir la productivité de votre entreprise",
+      "D'assurer la sécurité de vos employés",
+      "De prévenir les pannes et prolonger la durée de vie des équipements",
+      "De respecter les normes d'hygiène et de sécurité",
+      "De bénéficier d'une expertise industrielle reconnue",
+      "D'optimiser l'environnement de travail pour vos équipes"
+    ],
+    "services": [
+      {
+        "name": "Nettoyage Complet des Espaces Industriels",
+        "description": "Nos services incluent un nettoyage complet des espaces industriels, couvrant les sols, murs, plafonds, et toutes les surfaces exposées à la poussière, aux huiles, aux graisses et autres résidus de production. Nous disposons de l'équipement et de l'expertise nécessaires pour intervenir efficacement dans des environnements industriels complexes, tout en respectant les normes de sécurité."
+      },
+      {
+        "name": "Nettoyage et Entretien des Machines",
+        "description": "Le bon fonctionnement de vos équipements est essentiel pour maintenir la productivité de votre entreprise. Nous proposons des services de nettoyage et entretien des machines industrielles pour prévenir les pannes, prolonger la durée de vie de vos équipements et assurer la sécurité de vos opérations."
+      },
+      {
+        "name": "Dépoussiérage et Aspiration des Zones Sensibles",
+        "description": "Certaines zones de vos installations industrielles nécessitent une attention particulière en raison de la présence de matériaux sensibles ou dangereux. Nos experts assurent un dépoussiérage et une aspiration des zones sensibles, en utilisant des équipements spécifiques qui minimisent les risques de contamination et d'explosion."
+      },
+      {
+        "name": "Nettoyage Après Travaux et Réaménagements",
+        "description": "Après des travaux de maintenance ou des réaménagements dans vos installations, il est crucial de rétablir la propreté des lieux pour une reprise rapide et efficace de vos activités. Aspeo offre des services de nettoyage après travaux industriels, en éliminant tous les débris, la poussière et les traces de construction, laissant vos espaces prêts à être utilisés."
+      },
+      {
+        "name": "Nettoyage des Sols Industriels",
+        "description": "Les sols industriels sont souvent exposés à des conditions extrêmes. Nous réalisons un nettoyage approfondi des sols industriels, qu'il s'agisse de béton, de résine, de carrelage ou d'autres revêtements spécifiques. Nos techniques de nettoyage incluent le dégraissage, le lavage haute pression, et le polissage, assurant des sols propres et sûrs pour vos employés."
+      },
+      {
+        "name": "Gestion des Déchets et Recyclage",
+        "description": "Le respect de l'environnement est au cœur de nos interventions. Nous offrons des services de gestion des déchets industriels et de recyclage, en conformité avec les réglementations en vigueur. Notre équipe s'assure que les déchets sont triés, traités et éliminés de manière écologique."
+      },
+      {
+        "name": "Nettoyage Écologique pour l'Industrie",
+        "description": "Chez Aspeo, nous combinons performance et respect de l'environnement en proposant des solutions de nettoyage industriel écologiques. Nous utilisons des produits non toxiques et des techniques durables qui assurent un nettoyage en profondeur tout en minimisant l'impact environnemental."
+      },
+      {
+        "name": "Respect des Normes de Sécurité",
+        "description": "Nous sommes conscients des risques associés au nettoyage dans les environnements industriels. C'est pourquoi Aspeo s'engage à respecter strictement toutes les normes de sécurité et à former notre équipe aux meilleures pratiques de sécurité et d'hygiène industrielle."
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Nettoyage de bureaux & sièges sociaux",
+    "subtitle": "Services spécialisés",
+    "category": "Nettoyage Intérieur",
+    "image": [
+      "/img/services/bureaux/personne-nettoyant-bureau.webp",
+      "/img/services/bureaux/nettoyage-pro-bureaux.webp",
+      "/img/services/bureaux/nettoyage-de-bureaux-professionnel.webp"
+    ],
+    "description": [
+      "Services de nettoyage professionnel spécialisés pour bureaux, espaces tertiaires et sièges sociaux. Aspeo comprend les enjeux spécifiques de ces environnements professionnels et propose des solutions adaptées pour maintenir un cadre de travail optimal, reflétant l'image d'excellence de votre entreprise."
+    ],
+    "expertise": {
+      "title": "Notre Expertise en Nettoyage de Bureaux",
+      "description": "Aspeo dispose d'une expertise reconnue dans le nettoyage de bureaux et espaces tertiaires. Nos équipes comprennent les enjeux spécifiques de ces environnements professionnels et adaptent leurs interventions aux contraintes horaires et aux besoins de chaque entreprise. Nous offrons une grande flexibilité horaire (en journée ou en horaires décalés) afin de ne pas perturber votre activité.\n\nNotre savoir-faire nous permet de garantir un niveau de propreté optimal qui reflète l'excellence de votre entreprise. Pour les sièges sociaux et espaces de direction, nous proposons des services avec des produits haut de gamme et des techniques pour maintenir ces espaces dans un état irréprochable.",
+      "highlights": [
+        "Expertise en environnements professionnels",
+        "Flexibilité horaire (en journée ou en horaires décalés)",
+        "Respect des contraintes horaires"
+      ]
+    },
+    "introText": "Nous agissons pour préserver l'hygiène de votre environnement de travail\n\nAspeo Propreté & Services propose des services de nettoyage professionnel spécialisés pour bureaux, espaces tertiaires et sièges sociaux. Nous comprenons les enjeux spécifiques de ces environnements professionnels et proposons des solutions adaptées pour maintenir un cadre de travail optimal, reflétant l'image d'excellence de votre entreprise.",
+    "contextText": "Un environnement de travail propre et bien entretenu est essentiel pour la productivité, le bien-être des collaborateurs et l'image de votre entreprise. Pour les sièges sociaux et espaces de direction, un nettoyage premium est indispensable pour refléter l'excellence et le prestige de votre organisation. Un entretien professionnel régulier crée un cadre de travail agréable et valorise votre image de marque.",
+    "targetSpaces": [
+      "Bureaux et open spaces",
+      "Sièges sociaux",
+      "Espaces de direction",
+      "Salles de réunion",
+      "Espaces tertiaires",
+      "Espaces de collaboration",
+      "Bureaux d'entreprise"
+    ],
+    "prestationsCategories": [
+      {
+        "title": "Nettoyage quotidien des bureaux",
+        "items": [
+          "Dépoussiérage des postes de travail",
+          "Nettoyage des sols",
+          "Vidange des corbeilles",
+          "Entretien des espaces communs"
+        ]
+      },
+      {
+        "title": "Nettoyage des espaces tertiaires",
+        "items": [
+          "Open spaces",
+          "Salles de réunion",
+          "Espaces de détente",
+          "Nettoyage adapté par zone"
+        ]
+      },
+      {
+        "title": "Nettoyage de sièges sociaux et directions",
+        "items": [
+          "Produits haut de gamme",
+          "Techniques raffinées",
+          "État irréprochable"
+        ]
+      },
+      {
+        "title": "Entretien des espaces communs",
+        "items": [
+          "Accueil et halls",
+          "Couloirs et ascenseurs",
+          "Désinfection des points de contact",
+          "Première impression optimale"
+        ]
+      },
+      {
+        "title": "Nettoyage de salles de réunion et espaces de collaboration",
+        "items": [
+          "Tables et chaises",
+          "Équipements audiovisuels",
+          "Désinfection complète",
+          "Environnement professionnel"
+        ]
+      },
+      {
+        "title": "Désinfection et hygiène renforcée",
+        "items": [
+          "Désinfection renforcée",
+          "Surfaces et points de contact",
+          "Efficacité contre bactéries et virus",
+          "Respect de l'environnement"
+        ]
+      },
+      {
+        "title": "Gestion des déchets et recyclage",
+        "items": [
+          "Tri sélectif",
+          "Recyclage",
+          "Normes environnementales",
+          "Optimisation de la gestion"
+        ]
+      },
+      {
+        "title": "Nettoyage écologique",
+        "items": [
+          "Produits écolabel et probiotiques",
+          "Respect de l'environnement",
+          "Santé des collaborateurs",
+          "Performance et écologie"
+        ]
+      }
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Audit des besoins",
+        "description": "Évaluation des espaces, identification des besoins spécifiques et définition du plan d'intervention",
+        "duration": "1-2h"
+      },
+      {
+        "step": 2,
+        "title": "Élaboration du plan de nettoyage",
+        "description": "Création d'un plan personnalisé adapté à vos horaires et contraintes, définition des fréquences",
+        "duration": "2-3 jours"
+      },
+      {
+        "step": 3,
+        "title": "Formation des équipes",
+        "description": "Formation de nos équipes aux spécificités de vos espaces et aux protocoles établis",
+        "duration": "1 jour"
+      },
+      {
+        "step": 4,
+        "title": "Mise en œuvre opérationnelle",
+        "description": "Démarrage des interventions selon le planning, en respectant vos horaires d'ouverture",
+        "duration": "Immédiat"
+      },
+      {
+        "step": 5,
+        "title": "Contrôles qualité et ajustements",
+        "description": "Vérifications régulières, ajustements si nécessaire et suivi continu pour excellence constante",
+        "duration": "Continu"
+      }
+    ],
+    "guarantees": [
+      "100% satisfaction client",
+      "Grande flexibilité horaire (journée ou décalé)",
+      "Équipes formées et certifiées",
+      "Produits professionnels adaptés",
+      "Devis gratuit et sans engagement"
+    ],
+    "applicationSectors": [
+      "Bureaux d'entreprise",
+      "Sièges sociaux",
+      "Espaces tertiaires",
+      "Open spaces",
+      "Salles de réunion",
+      "Espaces de direction",
+      "Tous environnements professionnels"
+    ],
+    "faq": [
+      {
+        "question": "Intervenez-vous pendant les heures de bureau ?",
+        "answer": "Oui, nous adaptons nos horaires à vos contraintes. Nous pouvons intervenir aussi bien pendant vos heures d'activité qu'en horaires décalés (tôt le matin, le soir ou le week-end) afin de minimiser toute gêne pour votre activité."
+      },
+      {
+        "question": "Quels produits utilisez-vous pour le nettoyage de bureaux ?",
+        "answer": "Nous utilisons exclusivement des produits professionnels certifiés écolabel et probiotiques, respectueux de l'environnement et de la santé de vos collaborateurs."
+      },
+      {
+        "question": "Proposez-vous des contrats d'entretien régulier ?",
+        "answer": "Oui, nous proposons des contrats d'entretien régulier adaptés à vos besoins : quotidien, hebdomadaire ou mensuel. Ces contrats permettent de maintenir vos espaces dans un état optimal avec des tarifs préférentiels."
+      }
+    ],
+    "whyChoose": [
+      "De maintenir un cadre de travail optimal",
+      "De refléter l'excellence de votre entreprise",
+      "D'améliorer le bien-être de vos collaborateurs",
+      "De valoriser votre image de marque",
+      "D'assurer une propreté constante et discrète au quotidien"
+    ],
+    "services": [
+      {
+        "name": "Nettoyage Quotidien des Bureaux",
+        "description": "Nous proposons des services de nettoyage quotidien pour maintenir vos bureaux dans un état impeccable. Nos interventions incluent le dépoussiérage des postes de travail, le nettoyage des sols, la vidange des corbeilles, et l'entretien des espaces communs. Nos équipes interviennent en dehors des heures de bureau pour ne pas perturber votre activité."
+      },
+      {
+        "name": "Nettoyage des Espaces Tertiaires",
+        "description": "Les espaces tertiaires (open spaces, salles de réunion, espaces de détente) nécessitent un entretien régulier et adapté. Nous assurons le nettoyage complet de ces espaces en respectant les contraintes horaires et les spécificités de chaque zone. Notre objectif est de créer un environnement de travail agréable et productif."
+      },
+      {
+        "name": "Nettoyage de Sièges Sociaux et Directions",
+        "description": "Les sièges sociaux et espaces de direction nécessitent une attention particulière pour refléter l'image de prestige de votre entreprise. Nous proposons des services de nettoyage premium avec des produits haut de gamme et des techniques raffinées pour maintenir ces espaces dans un état irréprochable."
+      },
+      {
+        "name": "Entretien des Espaces Communs",
+        "description": "Les espaces communs (accueil, halls, couloirs, ascenseurs) sont la première impression de vos visiteurs. Nous assurons un entretien rigoureux de ces zones avec un nettoyage régulier des sols, murs, et surfaces, ainsi que la désinfection des points de contact fréquents."
+      },
+      {
+        "name": "Nettoyage de Salles de Réunion et Espaces de Collaboration",
+        "description": "Les salles de réunion et espaces de collaboration doivent être impeccables pour accueillir vos équipes et clients. Nous assurons le nettoyage des tables, chaises, équipements audiovisuels, et la désinfection complète après chaque utilisation pour garantir un environnement sain et professionnel."
+      },
+      {
+        "name": "Désinfection et Hygiène Renforcée",
+        "description": "Dans le contexte actuel, la désinfection est primordiale. Nous proposons des services de désinfection renforcée des surfaces, poignées de porte, interrupteurs, et tous les points de contact fréquents. Nos produits sont efficaces contre les bactéries et virus tout en respectant l'environnement."
+      },
+      {
+        "name": "Gestion des Déchets et Recyclage",
+        "description": "Nous prenons en charge la gestion complète des déchets de vos bureaux, incluant le tri sélectif et le recyclage. Nos équipes respectent les normes environnementales et vous aident à optimiser votre gestion des déchets pour réduire votre empreinte écologique."
+      },
+      {
+        "name": "Nettoyage Écologique pour Bureaux",
+        "description": "Aspeo propose des solutions de nettoyage écologique pour bureaux, utilisant des produits certifiés écolabel et probiotiques. Ces solutions respectueuses de l'environnement garantissent un nettoyage efficace tout en préservant la santé de vos collaborateurs et de la planète."
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Hôtellerie & Restauration",
+    "subtitle": "Secteur hôtelier",
+    "category": "Nettoyage Intérieur",
+    "image": [
+      "/img/services/hotellerie/nettoyage-chambre-hotel-et-salle-de-bain.webp",
+      "/img/services/hotellerie/nettoyage-cuisine-professionnelle.webp",
+      "/img/services/hotellerie/nettoyage-salle-evenement-haut-de-gamme.webp"
+    ],
+    "description": [
+      "Services de nettoyage spécialisés pour l'hôtellerie et la restauration. Aspeo comprend les exigences strictes de ces secteurs en matière d'hygiène et de propreté. Nous proposons des solutions adaptées aux contraintes horaires et aux normes sanitaires pour garantir la satisfaction de vos clients et le respect des réglementations."
+    ],
+    "expertise": {
+      "title": "Notre Expertise en Nettoyage Hôtellerie-Restauration",
+      "description": "Aspeo dispose d'une expertise reconnue dans le nettoyage pour l'hôtellerie et la restauration. Nos équipes sont formées aux normes d'hygiène alimentaire et aux spécificités de ces secteurs. Nous comprenons les contraintes horaires et adaptons nos interventions pour minimiser les perturbations tout en garantissant une propreté irréprochable.\n\nNotre savoir-faire nous permet de garantir un niveau d'hygiène optimal qui respecte les normes sanitaires les plus strictes. Nous utilisons des produits certifiés pour la sécurité alimentaire et adaptés aux contraintes spécifiques de l'hôtellerie et de la restauration.",
+      "highlights": [
+        "Expertise en normes d'hygiène alimentaire",
+        "Adaptation aux contraintes horaires",
+        "Produits certifiés sécurité alimentaire",
+        "Respect des réglementations sanitaires"
+      ]
+    },
+    "introText": "Aspeo est le partenaire des établissements hôteliers et restaurateurs, conscients des enjeux de l'hygiène et de la propreté pour leurs clients.\n\nAspeo Propreté & Services propose des services de nettoyage spécialisés pour l'hôtellerie et la restauration. Nous comprenons les exigences strictes de ces secteurs en matière d'hygiène et de propreté. Nos solutions sont adaptées aux contraintes horaires et aux normes sanitaires pour garantir la satisfaction de vos clients et le respect des réglementations.",
+    "contextText": "Dans l'hôtellerie et la restauration, la propreté et l'hygiène sont des critères essentiels de satisfaction client et de réputation. Un nettoyage professionnel rigoureux est indispensable pour maintenir des standards élevés, respecter les normes sanitaires et garantir la sécurité alimentaire. Un environnement propre et hygiénique améliore l'expérience client et renforce la confiance dans votre établissement.",
+    "targetSpaces": [
+      "Chambres d'hôtel",
+      "Salles de restaurant",
+      "Cuisines professionnelles",
+      "Sanitaires et espaces communs",
+      "Bars et espaces de service",
+      "Salles de séminaires",
+      "Tous espaces hôteliers"
+    ],
+    "prestationsCategories": [
+      {
+        "title": "Nettoyage de chambres d'hôtel",
+        "items": [
+          "Changement de literie",
+          "Nettoyage des sanitaires",
+          "Désinfection des surfaces",
+          "Remise en état complète"
+        ]
+      },
+      {
+        "title": "Nettoyage de salles de restaurant",
+        "items": [
+          "Tables et chaises",
+          "Sols et surfaces",
+          "Nettoyage après service",
+          "Salle impeccable à chaque ouverture"
+        ]
+      },
+      {
+        "title": "Nettoyage de cuisines professionnelles",
+        "items": [
+          "Équipements et surfaces de travail",
+          "Hottes et sols",
+          "Produits adaptés secteur alimentaire",
+          "Certification sécurité sanitaire"
+        ]
+      },
+      {
+        "title": "Nettoyage de sanitaires et espaces communs",
+        "items": [
+          "Halls et réceptions",
+          "Couloirs",
+          "Renouvellement des consommables",
+          "Propreté irréprochable"
+        ]
+      },
+      {
+        "title": "Nettoyage de bars et espaces de service",
+        "items": [
+          "Comptoirs et équipements",
+          "Surfaces en contact",
+          "Normes d'hygiène strictes",
+          "Entretien quotidien rigoureux"
+        ]
+      },
+      {
+        "title": "Nettoyage de salles de séminaires et événements",
+        "items": [
+          "Préparation avant événement",
+          "Nettoyage pendant pauses",
+          "Remise en état après événement",
+          "Environnement professionnel"
+        ]
+      },
+      {
+        "title": "Désinfection et hygiène renforcée",
+        "items": [
+          "Désinfection complète",
+          "Produits certifiés",
+          "Efficacité contre bactéries et virus",
+          "Sécurité sanitaire optimale"
+        ]
+      },
+      {
+        "title": "Nettoyage écologique",
+        "items": [
+          "Produits respectueux de l'environnement",
+          "Certification sécurité alimentaire",
+          "Santé des clients",
+          "Performance et écologie"
+        ]
+      }
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Audit des besoins",
+        "description": "Évaluation des espaces, identification des besoins spécifiques et définition du plan d'intervention",
+        "duration": "1-2h"
+      },
+      {
+        "step": 2,
+        "title": "Élaboration du plan de nettoyage",
+        "description": "Création d'un plan personnalisé adapté à vos horaires de service et contraintes opérationnelles",
+        "duration": "2-3 jours"
+      },
+      {
+        "step": 3,
+        "title": "Formation des équipes",
+        "description": "Formation de nos équipes aux normes d'hygiène alimentaire et aux protocoles établis",
+        "duration": "1-2 jours"
+      },
+      {
+        "step": 4,
+        "title": "Mise en œuvre opérationnelle",
+        "description": "Démarrage des interventions selon le planning, en respectant vos horaires de service",
+        "duration": "Immédiat"
+      },
+      {
+        "step": 5,
+        "title": "Contrôles qualité et ajustements",
+        "description": "Vérifications régulières, contrôles sanitaires et ajustements pour excellence constante",
+        "duration": "Continu"
+      }
+    ],
+    "guarantees": [
+      "100% satisfaction client",
+      "Respect des normes sanitaires",
+      "Intervention adaptée à vos horaires",
+      "Équipes formées et certifiées",
+      "Produits certifiés sécurité alimentaire",
+      "Devis gratuit et sans engagement"
+    ],
+    "applicationSectors": [
+      "Hôtels",
+      "Restaurants",
+      "Bars",
+      "Cafés",
+      "Cuisines professionnelles",
+      "Salles de séminaires",
+      "Tous établissements hôteliers"
+    ],
+    "faq": [
+      {
+        "question": "Respectez-vous les normes d'hygiène alimentaire ?",
+        "answer": "Absolument. Nous respectons strictement toutes les normes d'hygiène alimentaire et utilisons des produits certifiés pour la sécurité sanitaire. Nos équipes sont formées aux spécificités du secteur alimentaire."
+      },
+      {
+        "question": "Intervenez-vous pendant les heures de service ?",
+        "answer": "Nous adaptons nos interventions à vos contraintes. Nous intervenons généralement en dehors des heures de service, pendant les pauses ou entre les services pour minimiser les perturbations."
+      },
+      {
+        "question": "Proposez-vous aussi le nettoyage de cuisines professionnelles ?",
+        "answer": "Oui, nous proposons des services de nettoyage en profondeur des cuisines professionnelles avec des produits adaptés au secteur alimentaire et certifiés pour la sécurité sanitaire."
+      },
+      {
+        "question": "Quels produits utilisez-vous ?",
+        "answer": "Nous utilisons exclusivement des produits professionnels certifiés pour la sécurité alimentaire, respectueux de l'environnement et efficaces contre les bactéries et virus."
+      }
+    ],
+    "whyChoose": [
+      "De garantir la satisfaction de vos clients",
+      "De respecter les normes sanitaires strictes",
+      "D'améliorer votre réputation et votre image",
+      "D'assurer la sécurité alimentaire",
+      "De bénéficier d'une expertise reconnue en hôtellerie-restauration",
+      "De maintenir des standards de propreté dignes de l'hôtellerie"
+    ],
+    "services": [
+      {
+        "name": "Nettoyage de Chambres d'Hôtel",
+        "description": "Nous assurons le nettoyage complet des chambres d'hôtel avec une attention particulière aux détails. Nos services incluent le changement de literie, le nettoyage des sanitaires, la désinfection des surfaces, le dépoussiérage, et la remise en état complète pour accueillir chaque nouveau client dans les meilleures conditions."
+      },
+      {
+        "name": "Nettoyage de Salles de Restaurant",
+        "description": "Les salles de restaurant nécessitent un nettoyage rigoureux après chaque service. Nous intervenons pour nettoyer les tables, chaises, sols, et toutes les surfaces en contact avec les clients. Nos équipes respectent les horaires de service pour minimiser les perturbations et garantir une salle impeccable à chaque ouverture."
+      },
+      {
+        "name": "Nettoyage de Cuisines Professionnelles",
+        "description": "Le nettoyage de cuisines professionnelles exige une expertise particulière et le respect strict des normes d'hygiène alimentaire. Nous proposons des services de nettoyage en profondeur des équipements, surfaces de travail, hottes, et sols, avec des produits adaptés au secteur alimentaire et certifiés pour la sécurité sanitaire."
+      },
+      {
+        "name": "Nettoyage de Sanitaires et Espaces Communs",
+        "description": "Les sanitaires et espaces communs (halls, réceptions, couloirs) sont des zones critiques pour l'image de votre établissement. Nous assurons un nettoyage et une désinfection réguliers de ces espaces, avec un renouvellement des consommables et un entretien constant pour garantir une propreté irréprochable."
+      },
+      {
+        "name": "Nettoyage de Bars et Espaces de Service",
+        "description": "Les bars et espaces de service nécessitent un entretien quotidien rigoureux. Nous assurons le nettoyage des comptoirs, équipements, verres, et toutes les surfaces en contact avec les boissons et aliments. Nos interventions respectent les normes d'hygiène les plus strictes du secteur."
+      },
+      {
+        "name": "Nettoyage de Salles de Séminaires et Événements",
+        "description": "Pour les hôtels accueillant des séminaires et événements, nous proposons des services de nettoyage avant et après chaque événement. Nous assurons la préparation des salles, le nettoyage pendant les pauses, et la remise en état complète après chaque événement pour garantir un environnement professionnel."
+      },
+      {
+        "name": "Désinfection et Hygiène Renforcée",
+        "description": "Dans le secteur hôtelier et de la restauration, la désinfection est essentielle. Nous proposons des services de désinfection complète des chambres, salles, et espaces communs avec des produits certifiés et efficaces contre les bactéries, virus, et autres agents pathogènes."
+      },
+      {
+        "name": "Nettoyage Écologique pour Hôtellerie-Restauration",
+        "description": "Aspeo propose des solutions de nettoyage écologique adaptées à l'hôtellerie et la restauration, utilisant des produits respectueux de l'environnement et certifiés pour la sécurité alimentaire. Ces solutions garantissent un nettoyage efficace tout en préservant la santé de vos clients et de la planète."
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Nettoyage événementiel",
+    "subtitle": "Événements",
+    "category": "Nettoyage Intérieur",
+    "image": [
+      "/img/services/evenementiel/nettoyage-salle-de-conference-evenementielle.webp",
+      "/img/services/evenementiel/nettoyage-evenementiel-collecte-dechets-exterieur.webp",
+      "/img/services/evenementiel/nettoyage-reception-exterieure.webp"
+    ],
+    "description": [
+      "Services de nettoyage spécialisés pour événements et événementiel. Aspeo accompagne vos événements de A à Z avec des services de nettoyage avant, pendant et après. Que ce soit pour des salons, conférences, mariages, ou événements d'entreprise, nous garantissons des espaces impeccables pour le succès de vos événements."
+    ],
+    "expertise": {
+      "title": "Notre Expertise en Nettoyage Événementiel",
+      "description": "Aspeo dispose d'une expertise reconnue dans le nettoyage événementiel. Nos équipes comprennent les contraintes spécifiques des événements et adaptent leurs interventions pour être discrètes et efficaces. Nous intervenons avant, pendant et après vos événements pour garantir des espaces impeccables à chaque étape.\n\nNotre savoir-faire nous permet de garantir un niveau de propreté optimal qui contribue au succès de vos événements. Nous adaptons nos interventions aux contraintes horaires et aux spécificités de chaque type d'événement, en intervenant de manière discrète pour ne pas perturber le déroulement.",
+      "highlights": [
+        "Accompagnement complet avant, pendant et après",
+        "Intervention discrète et efficace",
+        "Adaptation aux contraintes événementielles",
+        "Garantie d'espaces impeccables"
+      ]
+    },
+    "introText": "Confiez à Aspeo Propreté, votre nettoyage événementiel\n\nAspeo Propreté & Services propose des services de nettoyage spécialisés pour événements et événementiel. Nous accompagnons vos événements de A à Z avec des services de nettoyage avant, pendant et après. Que ce soit pour des salons, conférences, mariages, ou événements d'entreprise, nous garantissons des espaces impeccables pour le succès de vos événements.",
+    "contextText": "Un événement réussi nécessite des espaces propres et bien entretenus à chaque étape : avant pour créer une première impression parfaite, pendant pour maintenir la propreté, et après pour une remise en état rapide. Un nettoyage professionnel adapté aux contraintes événementielles garantit le succès de vos événements et la satisfaction de vos participants.",
+    "targetSpaces": [
+      "Salons et foires",
+      "Conférences et séminaires",
+      "Mariages et réceptions",
+      "Événements d'entreprise",
+      "Salles de congrès",
+      "Espaces événementiels",
+      "Tous types d'événements"
+    ],
+    "prestationsCategories": [
+      {
+        "title": "Préparation et nettoyage avant événement",
+        "items": [
+          "Nettoyage complet des salles",
+          "Installation des équipements",
+          "Préparation des espaces d'accueil",
+          "Vérification de la propreté"
+        ]
+      },
+      {
+        "title": "Nettoyage pendant l'événement",
+        "items": [
+          "Nettoyage discret et continu",
+          "Intervention pendant les pauses",
+          "Maintien de la propreté",
+          "Sans perturber l'événement"
+        ]
+      },
+      {
+        "title": "Nettoyage et remise en état après événement",
+        "items": [
+          "Nettoyage des salles",
+          "Collecte des déchets",
+          "Désinfection des surfaces",
+          "Remise en ordre complète"
+        ]
+      },
+      {
+        "title": "Nettoyage de salles de conférence et séminaires",
+        "items": [
+          "Nettoyage entre sessions",
+          "Équipements audiovisuels",
+          "Environnement professionnel",
+          "Adaptation aux contraintes horaires"
+        ]
+      },
+      {
+        "title": "Nettoyage d'espaces de restauration événementielle",
+        "items": [
+          "Zones de service",
+          "Tables et espaces de préparation",
+          "Gestion des déchets alimentaires",
+          "Normes d'hygiène strictes"
+        ]
+      },
+      {
+        "title": "Nettoyage de stands et espaces d'exposition",
+        "items": [
+          "Préparation avant ouverture",
+          "Maintien de la propreté pendant",
+          "Remise en état après fermeture",
+          "Espaces d'exposition impeccables"
+        ]
+      },
+      {
+        "title": "Gestion des déchets événementiels",
+        "items": [
+          "Collecte complète",
+          "Tri sélectif",
+          "Recyclage",
+          "Conformité environnementale"
+        ]
+      },
+      {
+        "title": "Nettoyage écologique",
+        "items": [
+          "Produits respectueux de l'environnement",
+          "Méthodes durables",
+          "Réduction de l'impact",
+          "Événements responsables"
+        ]
+      }
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Préparation avant événement",
+        "description": "Nettoyage complet des salles, préparation des espaces et vérification de la propreté",
+        "duration": "2-4h"
+      },
+      {
+        "step": 2,
+        "title": "Intervention pendant l'événement",
+        "description": "Nettoyage discret pendant les pauses, maintien de la propreté des sanitaires et espaces de restauration",
+        "duration": "Continu"
+      },
+      {
+        "step": 3,
+        "title": "Remise en état après événement",
+        "description": "Nettoyage complet des salles, collecte des déchets, désinfection et remise en ordre",
+        "duration": "2-6h"
+      },
+      {
+        "step": 4,
+        "title": "Gestion des déchets",
+        "description": "Collecte, tri sélectif, recyclage et évacuation conforme aux normes environnementales",
+        "duration": "1-2h"
+      },
+      {
+        "step": 5,
+        "title": "Validation et contrôle",
+        "description": "Vérification finale, contrôle de la propreté et validation de la remise en état",
+        "duration": "30 min"
+      }
+    ],
+    "guarantees": [
+      "100% satisfaction client",
+      "Intervention discrète et efficace",
+      "Accompagnement complet avant, pendant et après",
+      "Équipes formées et certifiées",
+      "Adaptation aux contraintes événementielles",
+      "Devis gratuit et sans engagement"
+    ],
+    "applicationSectors": [
+      "Salons et foires",
+      "Conférences",
+      "Séminaires",
+      "Mariages",
+      "Événements d'entreprise",
+      "Réceptions",
+      "Tous types d'événements"
+    ],
+    "faq": [
+      {
+        "question": "Intervenez-vous pendant l'événement ?",
+        "answer": "Oui, nous intervenons de manière discrète pendant l'événement, généralement pendant les pauses, pour maintenir la propreté des sanitaires, des espaces de restauration et des zones de circulation sans perturber le déroulement."
+      },
+      {
+        "question": "Proposez-vous aussi la préparation avant événement ?",
+        "answer": "Oui, nous proposons des services de préparation et nettoyage avant événement pour garantir une première impression parfaite. Nous préparons les salles, installons les équipements et vérifions la propreté de tous les espaces."
+      },
+      {
+        "question": "Combien de temps après l'événement les lieux sont-ils prêts ?",
+        "answer": "Nous assurons une remise en état complète généralement en 2 à 6 heures après la fin de l'événement, selon la taille des espaces. Les lieux sont prêts pour la prochaine utilisation."
+      },
+      {
+        "question": "Proposez-vous aussi la gestion des déchets ?",
+        "answer": "Oui, nous prenons en charge la gestion complète des déchets événementiels : collecte, tri sélectif, recyclage et évacuation conforme aux normes environnementales."
+      }
+    ],
+    "whyChoose": [
+      "De garantir le succès de vos événements",
+      "De bénéficier d'un accompagnement complet",
+      "D'intervenir de manière discrète et efficace",
+      "De maintenir des espaces impeccables à chaque étape",
+      "D'organiser des événements responsables et écologiques",
+      "De refléter l'éclat de votre événement dès l'arrivée des invités"
+    ],
+    "services": [
+      {
+        "name": "Préparation et Nettoyage Avant Événement",
+        "description": "Nous intervenons avant votre événement pour préparer les lieux dans les meilleures conditions. Nos services incluent le nettoyage complet des salles, l'installation des équipements, la préparation des espaces d'accueil, et la vérification de la propreté de tous les espaces pour garantir une première impression parfaite."
+      },
+      {
+        "name": "Nettoyage Pendant l'Événement",
+        "description": "Pendant votre événement, nos équipes assurent un nettoyage discret et continu des espaces. Nous intervenons pendant les pauses pour maintenir la propreté des sanitaires, des espaces de restauration, et des zones de circulation, sans perturber le déroulement de votre événement."
+      },
+      {
+        "name": "Nettoyage et Remise en État Après Événement",
+        "description": "Après votre événement, nous assurons une remise en état complète des lieux. Nos services incluent le nettoyage des salles, la collecte des déchets, le nettoyage des sanitaires, la désinfection des surfaces, et la remise en ordre complète pour que les lieux soient prêts pour la prochaine utilisation."
+      },
+      {
+        "name": "Nettoyage de Salles de Conférence et Séminaires",
+        "description": "Pour les conférences et séminaires, nous proposons des services de nettoyage adaptés aux contraintes horaires. Nous intervenons entre les sessions pour maintenir la propreté des salles, nettoyer les équipements audiovisuels, et assurer un environnement professionnel tout au long de l'événement."
+      },
+      {
+        "name": "Nettoyage d'Espaces de Restauration Événementielle",
+        "description": "Les espaces de restauration événementielle nécessitent un entretien rigoureux. Nous assurons le nettoyage des zones de service, des tables, des espaces de préparation, et la gestion des déchets alimentaires avec le respect strict des normes d'hygiène et de sécurité alimentaire."
+      },
+      {
+        "name": "Nettoyage de Stands et Espaces d'Exposition",
+        "description": "Pour les salons et foires, nous proposons des services de nettoyage des stands et espaces d'exposition. Nous intervenons avant l'ouverture pour préparer les stands, pendant l'événement pour maintenir la propreté, et après la fermeture pour la remise en état complète."
+      },
+      {
+        "name": "Gestion des Déchets Événementiels",
+        "description": "Nous prenons en charge la gestion complète des déchets générés lors de vos événements. Nos services incluent la collecte, le tri sélectif, le recyclage, et l'évacuation conforme aux normes environnementales. Nous vous aidons à organiser des événements plus responsables et écologiques."
+      },
+      {
+        "name": "Nettoyage Écologique pour Événements",
+        "description": "Aspeo propose des solutions de nettoyage écologique pour vos événements, utilisant des produits respectueux de l'environnement et des méthodes durables. Ces solutions garantissent un nettoyage efficace tout en réduisant l'impact environnemental de vos événements."
+      }
+    ]
+  }
+]
