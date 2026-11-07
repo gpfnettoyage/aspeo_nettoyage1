@@ -18,7 +18,16 @@ const config = {
   		}
   	},
   	extend: {
+  		fontFamily: {
+  			heading: ['var(--font-montserrat)', 'Montserrat', 'sans-serif'],
+  			body: ['var(--font-inter)', 'Inter', 'sans-serif'],
+  		},
   		colors: {
+  			navy: '#06226D',
+  			brand: {
+  				DEFAULT: 'var(--asp-accent)',
+  				tint: 'var(--asp-tint)',
+  			},
   			border: 'hsl(var(--border))',
   			input: 'hsl(var(--input))',
   			ring: 'hsl(var(--ring))',

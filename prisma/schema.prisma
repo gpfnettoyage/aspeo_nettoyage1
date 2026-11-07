@@ -174,6 +174,15 @@ model Category {
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 
+  // Refonte 2026 (ajouts non destructifs)
+  // pole : "professionnel" | "specialise" — regroupement du méga-menu
+  pole      String?
+  // Page « activité » : titre court du menu, accroche, image, méthode, CTA…
+  content   Json?
+  seoTitle  String?
+  seoDesc   String?
+  published Boolean @default(true)
+
   // Relations
   services Service[]
 
@@ -201,6 +210,12 @@ model Service {
   // Status
   published Boolean @default(true)
 
+  // Refonte 2026 (ajouts non destructifs)
+  displayOrder Int       @default(0)
+  // Modifications en attente sur un service publié (brouillon)
+  draft        Json?
+  publishedAt  DateTime?
+
   // Rich content - stored as structured JSON to preserve all data
   // Contains: images, descriptions, expertise, introText, contextText,
   // targetSpaces, prestationsCategories, process, guarantees,
@@ -213,4 +228,329 @@ model Service {
   @@index([slug])
   @@index([published])
   @@index([categoryId])
+}
+
+// ============================================
+// REFONTE 2026 — CONTENUS ADMINISTRABLES
+// Tous les modèles ci-dessous sont des AJOUTS : aucune table existante n'est
+// renommée ni supprimée. Migration : prisma/migrations/20261107_refonte_contenus
+// ============================================
+
+enum ContentStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+/// Fiche ville / zone d'intervention (/ville/[slug])
+model City {
+  id            String        @id @default(uuid())
+  slug          String        @unique
+  name          String
+  department    String?
+  sector        String?
+  distance      String?
+  focusService  String?
+  image         String?
+  imageAlt      String?
+  intro         String?
+  sectorText    String?
+  whyText       String?
+  urgencyText   String?
+  insalubreText String?
+  practicalText String?
+  caseText      String?
+  latitude      Float?
+  longitude     Float?
+  mapX          Float?
+  mapY          Float?
+  featured      Boolean       @default(false)
+  seoTitle      String?
+  seoDesc       String?
+  status        ContentStatus @default(DRAFT)
+  publishedAt   DateTime?
+  displayOrder  Int           @default(0)
+  draft         Json?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  @@index([status])
+  @@index([displayOrder])
+}
+
+/// Réalisation / étude de chantier (/realisations/[slug])
+model Realisation {
+  id           String        @id @default(uuid())
+  slug         String        @unique
+  title        String
+  pole         String?
+  serviceSlug  String?
+  serviceLabel String?
+  city         String?
+  client       String?
+  dateLabel    String?
+  image        String?
+  imageAlt     String?
+  gallery      Json?
+  facts        Json?
+  context      String?
+  constraints  String?
+  intervention String?
+  result       String?
+  featured     Boolean       @default(false)
+  seoTitle     String?
+  seoDesc      String?
+  status       ContentStatus @default(DRAFT)
+  publishedAt  DateTime?
+  displayOrder Int           @default(0)
+  draft        Json?
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  @@index([status])
+}
+
+/// Article « Médias / Actualités » (/medias/actualites/[slug])
+model Article {
+  id          String        @id @default(uuid())
+  slug        String        @unique
+  title       String
+  category    String?
+  excerpt     String?
+  image       String?
+  imageAlt    String?
+  /// Corps en Markdown (GFM)
+  body        String        @default("")
+  tags        String[]      @default([])
+  faq         Json?
+  author      String?
+  seoTitle    String?
+  seoDesc     String?
+  status      ContentStatus @default(DRAFT)
+  publishedAt DateTime?
+  draft       Json?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@index([status, publishedAt])
+}
+
+/// Retombée presse / communiqué (/medias/presse/[slug])
+model PressArticle {
+  id          String        @id @default(uuid())
+  slug        String        @unique
+  title       String
+  media       String?
+  type        String?
+  dateLabel   String?
+  excerpt     String?
+  body        String        @default("")
+  image       String?
+  imageAlt    String?
+  externalUrl String?
+  fileUrl     String?
+  seoTitle    String?
+  seoDesc     String?
+  status      ContentStatus @default(DRAFT)
+  publishedAt DateTime?
+  draft       Json?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@index([status, publishedAt])
+}
+
+/// Avis client (saisi manuellement ou repris de Google)
+model Testimonial {
+  id           String        @id @default(uuid())
+  author       String
+  initials     String?
+  context      String?
+  dateLabel    String?
+  rating       Int           @default(5)
+  quote        String
+  source       String?       @default("google")
+  serviceSlug  String?
+  status       ContentStatus @default(PUBLISHED)
+  displayOrder Int           @default(0)
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  @@index([status, displayOrder])
+}
+
+/// Offre d'emploi (/nous-rejoindre)
+model Job {
+  id           String           @id @default(uuid())
+  slug         String           @unique
+  title        String
+  contractType String?
+  location     String?
+  city         String?
+  duration     String?
+  hours        String?
+  summary      String?
+  missions     String?
+  profile      String?
+  conditions   String?
+  status       ContentStatus    @default(DRAFT)
+  publishedAt  DateTime?
+  displayOrder Int              @default(0)
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+  applications JobApplication[]
+
+  @@index([status, displayOrder])
+}
+
+/// Questions fréquentes administrables (accueil, grands comptes, contact…)
+model FaqItem {
+  id           String        @id @default(uuid())
+  scope        String
+  question     String
+  answer       String
+  status       ContentStatus @default(PUBLISHED)
+  displayOrder Int           @default(0)
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  @@index([scope, status, displayOrder])
+}
+
+/// Page éditable (textes des sections, SEO) — clé = identifiant de page
+model Page {
+  id          String        @id @default(uuid())
+  key         String        @unique
+  title       String
+  path        String
+  content     Json?
+  seoTitle    String?
+  seoDesc     String?
+  ogImage     String?
+  noindex     Boolean       @default(false)
+  status      ContentStatus @default(PUBLISHED)
+  publishedAt DateTime?
+  draft       Json?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+}
+
+/// Réglages globaux (entreprise, identité, menu, pied de page, SEO par défaut…)
+model SiteSetting {
+  key       String   @id
+  value     Json
+  updatedAt DateTime @updatedAt
+  updatedBy String?
+}
+
+/// Bibliothèque d'images
+model Media {
+  id           String   @id @default(uuid())
+  url          String   @unique
+  pathname     String?
+  filename     String
+  originalName String?
+  mimeType     String
+  size         Int
+  width        Int?
+  height       Int?
+  alt          String?
+  folder       String?
+  uploadedBy   String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([folder])
+  @@index([createdAt])
+}
+
+enum LeadStatus {
+  NEW
+  IN_PROGRESS
+  DONE
+  SPAM
+}
+
+/// Demande de devis / message de contact
+model QuoteRequest {
+  id              String     @id @default(uuid())
+  kind            String     @default("devis")
+  firstName       String?
+  lastName        String
+  company         String?
+  email           String
+  phone           String?
+  city            String?
+  postalCode      String?
+  clientType      String?
+  serviceSlug     String?
+  serviceLabel    String?
+  frequency       String?
+  surface         String?
+  message         String
+  attachments     Json?
+  sourcePage      String?
+  consentAt       DateTime
+  ipHash          String?
+  userAgent       String?
+  status          LeadStatus @default(NEW)
+  notes           String?
+  emailSent       Boolean    @default(false)
+  ackSent         Boolean    @default(false)
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
+
+  @@index([status, createdAt])
+}
+
+/// Candidature (spontanée ou à une offre)
+model JobApplication {
+  id         String     @id @default(uuid())
+  jobId      String?
+  job        Job?       @relation(fields: [jobId], references: [id], onDelete: SetNull)
+  firstName  String
+  lastName   String
+  email      String
+  phone      String?
+  city       String?
+  message    String?
+  cvUrl      String?
+  cvName     String?
+  consentAt  DateTime
+  ipHash     String?
+  status     LeadStatus @default(NEW)
+  emailSent  Boolean    @default(false)
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+
+  @@index([status, createdAt])
+}
+
+/// Redirections 301/302 administrables (anciennes URL)
+model Redirect {
+  id          String   @id @default(uuid())
+  source      String   @unique
+  destination String
+  permanent   Boolean  @default(true)
+  hits        Int      @default(0)
+  note        String?
+  enabled     Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+/// Journal des modifications (tableau de bord « Dernières modifications »)
+model AuditLog {
+  id           String   @id @default(uuid())
+  userId       String?
+  userName     String?
+  action       String
+  resource     String
+  resourceId   String?
+  resourceName String?
+  details      Json?
+  createdAt    DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([resource, resourceId])
 }
