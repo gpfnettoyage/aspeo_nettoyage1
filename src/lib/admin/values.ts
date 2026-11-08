@@ -112,7 +112,8 @@ export function valuesToData(def: CollectionDef, values: FormValues, existing: R
   for (const field of allAdminFields(def)) {
     const value = coerce(field, values[field.name], errors);
     const empty = value === null || value === '' || (Array.isArray(value) && value.length === 0);
-    if (field.required && empty) errors[field.name] = 'Champ obligatoire.';
+    // Adresse vide : générée depuis le titre ci-dessous (erreur seulement si le titre est vide aussi).
+    if (field.required && empty && !(field.type === 'slug' && def.slugFrom)) errors[field.name] = 'Champ obligatoire.';
     if (field.type === 'list' && Array.isArray(value)) {
       (value as Record<string, unknown>[]).forEach((item, i) => (field.itemFields ?? []).forEach((sf) => {
         if (sf.required && (item[sf.name] === '' || item[sf.name] === null)) errors[field.name] = `${field.itemLabel ?? 'Élément'} ${i + 1} : « ${sf.label} » est obligatoire.`;
