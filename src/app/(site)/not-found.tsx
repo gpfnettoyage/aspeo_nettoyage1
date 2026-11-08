@@ -28,7 +28,7 @@ export default function NotFound() {
             <span className="text-[color:#8a97a8] inline-flex"><SearchIcon size={18} /></span>
             <label htmlFor="nf-q" className="sr-only">Rechercher sur le site</label>
             <input id="nf-q" name="q" className="flex-1 min-w-0 border-none outline-none text-[length:1rem] text-navy p-[12px_0] bg-transparent" placeholder="Un service, une ville, une réalisation…" />
-            <button type="submit" className="flex-none bg-[color:var(--asp-accent)] text-white border-none p-[14px_24px] font-heading font-bold text-[length:.94rem] cursor-pointer">Rechercher</button>
+            <button type="submit" aria-label="Rechercher" data-search-btn="" className="flex-none bg-[color:var(--asp-accent)] text-white border-none p-[14px_24px] font-heading font-bold text-[length:.94rem] cursor-pointer"><span data-xs-hide="">Rechercher</span><span className="hidden" data-xs-only="" aria-hidden="true">→</span></button>
           </form>
         </Container>
       </section>

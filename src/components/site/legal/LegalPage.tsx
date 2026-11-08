@@ -19,7 +19,7 @@ export default function LegalPage({ c }: { c: PageAccessor }) {
       <section className="p-[clamp(48px,7vw,88px)_0] bg-white">
         <Container className="grid grid-cols-[minmax(0,1fr)] [&>h2:first-child]:mt-0">
           <ReactMarkdown remarkPlugins={[remarkGfm]} components={{
-            h2: ({ children }) => <h2 className="font-heading font-extrabold text-[length:1.25rem] text-navy m-[34px_0_14px]">{children}</h2>,
+            h2: ({ children }) => <h2 data-h2-mob="" className="font-heading font-extrabold text-[length:1.25rem] text-navy m-[34px_0_14px]">{children}</h2>,
             h3: ({ children }) => <h3 className="font-heading font-bold text-[length:1.08rem] text-navy m-[24px_0_10px]">{children}</h3>,
             p: ({ children }) => <p className="text-[length:1rem] leading-[1.85] text-[color:#42505f] m-[0_0_16px]">{children}</p>,
             ul: ({ children }) => <ul className="list-disc pl-[22px] m-[0_0_16px] text-[length:1rem] leading-[1.8] text-[color:#42505f]">{children}</ul>,
