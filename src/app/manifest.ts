@@ -1,66 +1,24 @@
 import { MetadataRoute } from 'next';
 import { COMPANY } from '@/constants/company';
 
+/** Tailles générées depuis le pictogramme officiel ASPEO (scripts/generate-icons.mjs). */
+const SIZES = [16, 32, 48, 72, 96, 144, 192, 256, 384, 512];
+
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: COMPANY.name,
-    short_name: COMPANY.name,
+    short_name: 'ASPEO',
     description: 'Services de nettoyage professionnel en Loire et Rhône',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',
-    theme_color: '#2563eb',
+    // Orange de la charte ASPEO (identique au pictogramme officiel).
+    theme_color: '#ff5c00',
     icons: [
-      {
-        src: '/icons/icon-16x16.png',
-        sizes: '16x16',
-        type: 'image/png',
-      },
-      {
-        src: '/icons/icon-32x32.png',
-        sizes: '32x32',
-        type: 'image/png',
-      },
-      {
-        src: '/icons/icon-48x48.png',
-        sizes: '48x48',
-        type: 'image/png',
-      },
-      {
-        src: '/icons/icon-72x72.png',
-        sizes: '72x72',
-        type: 'image/png',
-      },
-      {
-        src: '/icons/icon-96x96.png',
-        sizes: '96x96',
-        type: 'image/png',
-      },
-      {
-        src: '/icons/icon-144x144.png',
-        sizes: '144x144',
-        type: 'image/png',
-      },
-      {
-        src: '/icons/icon-192x192.png',
-        sizes: '192x192',
-        type: 'image/png',
-      },
-      {
-        src: '/icons/icon-256x256.png',
-        sizes: '256x256',
-        type: 'image/png',
-      },
-      {
-        src: '/icons/icon-384x384.png',
-        sizes: '384x384',
-        type: 'image/png',
-      },
-      {
-        src: '/icons/icon-512x512.png',
-        sizes: '512x512',
-        type: 'image/png',
-      },
+      ...SIZES.map((s) => ({ src: `/icons/icon-${s}x${s}.png`, sizes: `${s}x${s}`, type: 'image/png', purpose: 'any' as const })),
+      // Fond blanc et zone de sécurité : utilisées par Android pour les icônes adaptatives.
+      { src: '/icons/icon-maskable-192x192.png', sizes: '192x192', type: 'image/png', purpose: 'maskable' as const },
+      { src: '/icons/icon-maskable-512x512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' as const },
     ],
   };
 }

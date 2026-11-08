@@ -21,16 +21,19 @@ export const metadata: Metadata = {
   title: 'Nettoyage professionnel Loire & Rhône | ASPEO',
   description:
     'Nettoyage de bureaux, commerces, sites industriels et chantiers, interventions Diogène et logements insalubres en Loire et Rhône. Devis gratuit après visite.',
-  manifest: '/manifest.json',
+  // Le manifeste est servi par src/app/manifest.ts (/manifest.webmanifest, lien ajouté par Next.js).
   authors: [{ name: COMPANY.name }],
+  // Icônes générées depuis le pictogramme officiel (scripts/generate-icons.mjs).
+  // favicon.ico est servi automatiquement depuis src/app.
   icons: {
     icon: [
-      { url: '/img/brand/aspeo-icone.svg', type: 'image/svg+xml' },
+      { url: '/icons/icon.svg', type: 'image/svg+xml' },
+      { url: '/icons/icon-16x16.png', sizes: '16x16', type: 'image/png' },
       { url: '/icons/icon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icons/icon-48x48.png', sizes: '48x48', type: 'image/png' },
       { url: '/icons/icon-192x192.png', sizes: '192x192', type: 'image/png' },
     ],
-    apple: [{ url: '/icons/icon-192x192.png', sizes: '192x192', type: 'image/png' }],
-    shortcut: '/icons/icon-32x32.png',
+    apple: [{ url: '/icons/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
   },
 };
 
