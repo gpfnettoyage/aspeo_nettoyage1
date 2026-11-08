@@ -607,7 +607,10 @@ describe('permissions', () => {
       expect(permissions).toContain('dashboard:view');
       expect(permissions).toContain('services:view');
       expect(permissions).toContain('categories:view');
-      expect(permissions).toHaveLength(3);
+      // Refonte : consultation des contenus, demandes, médias et réglages (lecture seule)
+      expect(permissions).toEqual(expect.arrayContaining(['content:view', 'leads:view', 'media:view', 'settings:view']));
+      expect(permissions.some((p) => /:(create|update|delete|publish|upload|manage)$/.test(p))).toBe(false);
+      expect(permissions).toHaveLength(7);
     });
 
     it('should return more permissions for EDITOR than VIEWER', () => {

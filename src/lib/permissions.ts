@@ -45,7 +45,27 @@ export type Permission =
   | 'users:delete'
   | 'users:change_role'
   // Audit logs
-  | 'audit:view';
+  | 'audit:view'
+  // Refonte 2026 : contenus, demandes, médias, réglages
+  | 'content:view'
+  | 'content:create'
+  | 'content:update'
+  | 'content:publish'
+  | 'content:delete'
+  | 'leads:view'
+  | 'leads:update'
+  | 'leads:delete'
+  | 'media:view'
+  | 'media:upload'
+  | 'media:delete'
+  | 'settings:view'
+  | 'settings:update'
+  | 'redirects:manage';
+
+// Permissions ajoutées par la refonte (contenus, demandes, médias, réglages)
+const CONTENT_VIEWER = ['content:view', 'leads:view', 'media:view', 'settings:view'] as Permission[];
+const CONTENT_EDITOR = ['content:view', 'content:create', 'content:update', 'content:publish', 'leads:view', 'leads:update', 'media:view', 'media:upload', 'settings:view'] as Permission[];
+const CONTENT_ADMIN = ['content:view', 'content:create', 'content:update', 'content:publish', 'content:delete', 'leads:view', 'leads:update', 'leads:delete', 'media:view', 'media:upload', 'media:delete', 'settings:view', 'settings:update', 'redirects:manage'] as Permission[];
 
 /**
  * Permission matrix: which roles have which permissions
@@ -56,6 +76,7 @@ const ROLE_PERMISSIONS: Record<Role, Permission[]> = {
     'dashboard:view',
     'services:view',
     'categories:view',
+    ...CONTENT_VIEWER,
   ],
 
   EDITOR: [
@@ -67,6 +88,7 @@ const ROLE_PERMISSIONS: Record<Role, Permission[]> = {
     'categories:view',
     'categories:create',
     'categories:update',
+    ...CONTENT_EDITOR,
   ],
 
   ADMIN: [
@@ -84,6 +106,7 @@ const ROLE_PERMISSIONS: Record<Role, Permission[]> = {
     'security:ban_ip',
     'security:unban_ip',
     'audit:view',
+    ...CONTENT_ADMIN,
   ],
 
   SUPER_ADMIN: [
@@ -106,6 +129,7 @@ const ROLE_PERMISSIONS: Record<Role, Permission[]> = {
     'users:delete',
     'users:change_role',
     'audit:view',
+    ...CONTENT_ADMIN,
   ],
 };
 
