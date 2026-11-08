@@ -21,6 +21,9 @@ export default function MobileMenu({ data, onClose }: { data: HeaderData; onClos
     return () => { document.body.style.overflow = prev; };
   }, []);
 
+  // Menu principal réglé dans l'administration : libellés, ordre et visibilité repris dans la structure mobile de la maquette.
+  const history = data.main.find((m) => m.href === '/a-propos');
+  const medias = data.main.find((m) => m.key === 'medias');
   const pro = data.poles.find((p) => p.key === 'professionnel');
   const spe = data.poles.find((p) => p.key === 'specialise');
   const subs: Record<Exclude<Sub, null>, { hub?: { label: string; href: string }; items: MenuService[] }> = {
@@ -29,10 +32,10 @@ export default function MobileMenu({ data, onClose }: { data: HeaderData; onClos
     autres: { hub: { label: 'Tous les autres services', href: data.others?.href ?? '/proprete-services' }, items: data.others?.allItems ?? [] },
     apropos: {
       items: [
-        { title: 'Notre Histoire', short: '', href: '/a-propos' },
+        ...(history ? [{ title: history.label, short: '', href: history.href }] : []),
         { title: 'Nous rejoindre', short: '', href: '/nous-rejoindre' },
         { title: 'Grands Comptes & Marchés Publics', short: '', href: '/grands-comptes' },
-        { title: 'Médias', short: '', href: '/medias' },
+        ...(medias ? [{ title: medias.label, short: '', href: medias.href }] : []),
         { title: 'Nos réalisations', short: '', href: '/realisations' },
         { title: 'Presse', short: '', href: '/medias/presse' },
       ],
@@ -65,13 +68,21 @@ export default function MobileMenu({ data, onClose }: { data: HeaderData; onClos
             <div className="flex items-center justify-end mb-[24px]">
               <button type="button" className={closeBtn} onClick={onClose} aria-label="Fermer le menu">×</button>
             </div>
-            <Link href="/" onClick={onClose} className={`${rowCls} text-[length:1.3rem] p-[18px_0]`}>Accueil<span aria-hidden="true">→</span></Link>
-            {(['professionnel', 'specialise', 'autres'] as const).map((k) => (
-              <button key={k} type="button" onClick={() => setSub(k)} className={`${rowCls} bg-transparent border-x-0 border-t-0 cursor-pointer text-[length:1.3rem] leading-[1.15] p-[18px_0] gap-[12px] w-full`}>
-                {k === 'professionnel' ? 'Nettoyage professionnel' : k === 'specialise' ? 'Nettoyage spécialisé' : 'Autres services'}
-                <span className="flex-none" aria-hidden="true">→</span>
-              </button>
-            ))}
+            {data.main.map((item) => {
+              if (item.key === 'services') {
+                return (['professionnel', 'specialise', 'autres'] as const).map((k) => (
+                  <button key={k} type="button" onClick={() => setSub(k)} className={`${rowCls} bg-transparent border-x-0 border-t-0 cursor-pointer text-[length:1.3rem] leading-[1.15] p-[18px_0] gap-[12px] w-full`}>
+                    {k === 'professionnel' ? 'Nettoyage professionnel' : k === 'specialise' ? 'Nettoyage spécialisé' : 'Autres services'}
+                    <span className="flex-none" aria-hidden="true">→</span>
+                  </button>
+                ));
+              }
+              // « Notre Histoire » et « Médias » sont regroupés dans « À propos », comme dans la maquette mobile.
+              if (item.key === 'medias' || item.href === '/a-propos') return null;
+              return (
+                <Link key={item.href + item.label} href={item.href} onClick={onClose} className={`${rowCls} text-[length:1.3rem] p-[18px_0]`}>{item.label}<span aria-hidden="true">→</span></Link>
+              );
+            })}
             <button type="button" onClick={() => setSub('apropos')} className={`${rowCls} bg-transparent border-x-0 border-t-0 cursor-pointer text-[length:1.3rem] p-[18px_0] w-full`}>
               À propos<span aria-hidden="true">→</span>
             </button>
