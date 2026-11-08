@@ -81,6 +81,48 @@ async function usages(url: string) {
   return [...services.map((x) => x.title), ...categories.map((x) => x.name), ...cities.map((x) => x.name), ...realisations.map((x) => x.title), ...articles.map((x) => x.title), ...press.map((x) => x.title), ...pages.map((x) => `Page ${x.title}`), ...settings.map((x) => `Réglage ${x.key}`)];
 }
 
+export async function mediaUsagesAction(id: string): Promise<string[]> {
+  await requirePermission('media:view');
+  const media = await prisma.media.findUnique({ where: { id } });
+  return media ? usages(media.url) : [];
+}
+
+const IMG_RE = /(?:https:\/\/[a-z0-9.-]+\.public\.blob\.vercel-storage\.com|\/(?:img|uploads))\/[^"'\s)\\]+?\.(?:webp|jpe?g|png|gif|avif|svg)/gi;
+const MIME: Record<string, string> = { webp: 'image/webp', jpg: 'image/jpeg', jpeg: 'image/jpeg', png: 'image/png', gif: 'image/gif', avif: 'image/avif', svg: 'image/svg+xml' };
+
+/**
+ * Recense les images déjà utilisées par le site (contenus, pages, réglages) et les ajoute à la
+ * bibliothèque. Ajout uniquement : aucune image ni aucun contenu n'est modifié ou supprimé.
+ */
+export async function syncMediaFromContentAction(): Promise<{ ok: true; added: number }> {
+  const session = await requirePermission('media:upload');
+  const sources: [string, unknown][] = [];
+  const [services, categories, cities, realisations, articles, press, pages, settings] = await Promise.all([
+    prisma.service.findMany({ select: { content: true } }), prisma.category.findMany({ select: { content: true } }),
+    prisma.city.findMany({ select: { image: true } }), prisma.realisation.findMany({ select: { image: true, gallery: true } }),
+    prisma.article.findMany({ select: { image: true, body: true } }), prisma.pressArticle.findMany({ select: { image: true, body: true } }),
+    prisma.page.findMany({ select: { content: true } }), prisma.siteSetting.findMany({ select: { key: true, value: true } }),
+  ]);
+  services.forEach((x) => sources.push(['services', x]));
+  categories.forEach((x) => sources.push(['services', x]));
+  cities.forEach((x) => sources.push(['villes', x]));
+  realisations.forEach((x) => sources.push(['realisations', x]));
+  articles.forEach((x) => sources.push(['articles', x]));
+  press.forEach((x) => sources.push(['presse', x]));
+  pages.forEach((x) => sources.push(['pages', x]));
+  settings.forEach((x) => sources.push([x.key === 'identity' ? 'logos' : 'pages', x]));
+  const found = new Map<string, string>();
+  for (const [folder, data] of sources) for (const m of JSON.stringify(data).matchAll(IMG_RE)) if (!found.has(m[0])) found.set(m[0], folder);
+  const existing = new Set((await prisma.media.findMany({ where: { url: { in: [...found.keys()] } }, select: { url: true } })).map((m) => m.url));
+  const rows = [...found].filter(([url]) => !existing.has(url)).map(([url, folder]) => {
+    const filename = decodeURIComponent(url.split('/').pop() ?? 'image');
+    return { url, filename, mimeType: MIME[filename.split('.').pop()!.toLowerCase()] ?? 'image/webp', size: 0, folder, uploadedBy: session.user.id };
+  });
+  if (rows.length) await prisma.media.createMany({ data: rows, skipDuplicates: true });
+  if (rows.length) await recordAudit(session, 'upload', 'medias', null, `${rows.length} image(s) recensée(s)`);
+  return { ok: true, added: rows.length };
+}
+
 export async function deleteMediaAction(id: string, force = false): Promise<{ ok: boolean; message: string; usedBy?: string[] }> {
   const session = await requirePermission('media:delete');
   const media = await prisma.media.findUnique({ where: { id } });
