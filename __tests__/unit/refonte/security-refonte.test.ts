@@ -7,7 +7,6 @@ import { checkSpam, createFormToken, HONEYPOT_FIELD, TOKEN_FIELD } from '@/lib/f
 import { detectType, isImageType } from '@/lib/storage/images';
 import { checkRequiredColumns } from '@/lib/admin/repository';
 import { withDraft } from '@/lib/site/preview';
-// @ts-expect-error module JavaScript sans types
 import { buildCsp } from '../../../csp.mjs';
 
 const form = (fields: Record<string, string>) => { const fd = new FormData(); Object.entries(fields).forEach(([k, v]) => fd.set(k, v)); return fd; };
