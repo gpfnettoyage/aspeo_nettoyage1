@@ -29,6 +29,8 @@ export interface AdminField {
   /** Pour `list` : sous-champs de chaque élément. */
   itemFields?: AdminField[];
   itemLabel?: string;
+  /** Libellé du bouton d'ajout (défaut : « Ajouter une ligne »). */
+  addLabel?: string;
   maxItems?: number;
   /** Compteur de caractères recommandé (SEO). */
   recommended?: [number, number];

@@ -163,23 +163,25 @@ export default function FieldInput({ field, value, onChange, error, relations, i
     case 'list': {
       const items = Array.isArray(value) ? (value as Record<string, string>[]) : [];
       const sub = field.itemFields ?? [];
-      const compact = sub.length <= 3 && sub.every((s) => s.type === 'text' || s.type === 'number' || s.type === 'textarea');
-      const blank = () => Object.fromEntries(sub.map((s) => [s.name, '']));
+      const compact = sub.filter((s) => s.type !== 'toggle').length <= 3 && sub.every((s) => s.type === 'text' || s.type === 'number' || s.type === 'textarea' || s.type === 'toggle');
+      const cols = sub.filter((s) => s.type !== 'toggle').length;
+      const blank = () => Object.fromEntries(sub.map((s) => [s.name, s.type === 'toggle' ? 'true' : '']));
       const setItem = (i: number, k: string, v: string) => onChange(items.map((it, j) => (j === i ? { ...it, [k]: v } : it)));
       control = (
         <div className="space-y-2">
           {items.map((it, i) => (
             <div key={i} className={compact ? 'flex items-start gap-1.5' : 'rounded-md border border-zinc-200 p-3'}>
               {!compact && <div className="mb-2 flex items-center justify-between"><span className="text-[13px] font-medium text-zinc-600">{field.itemLabel} {i + 1}</span><RowTools i={i} n={items.length} label={field.itemLabel ?? 'l’élément'} onMove={(d) => onChange(move(items, i, d))} onRemove={() => onChange(items.filter((_, k) => k !== i))} /></div>}
-              <div className={compact ? `grid min-w-0 flex-1 gap-1.5 ${sub.length === 1 ? '' : sub.length === 2 ? 'sm:grid-cols-[2fr_3fr]' : 'sm:grid-cols-3'}` : 'grid gap-3 sm:grid-cols-2'}>
+              <div className={compact ? `grid min-w-0 flex-1 gap-1.5 ${cols === 1 ? '' : cols === 2 ? (sub.length > cols ? 'sm:grid-cols-[2fr_3fr_auto]' : 'sm:grid-cols-[2fr_3fr]') : 'sm:grid-cols-3'}` : 'grid gap-3 sm:grid-cols-2'}>
                 {sub.map((s) => {
                   const v = it[s.name] ?? '';
                   const sid = `${id}-${i}-${s.name}`;
                   const wide = !compact && (s.type === 'textarea' || s.type === 'markdown');
                   return (
                     <div key={s.name} className={wide ? 'sm:col-span-2' : ''}>
-                      {!compact && <label htmlFor={sid} className="mb-1 block text-[13px] font-medium">{s.label}{s.required && <span className="text-red-600">*</span>}</label>}
-                      {s.type === 'image' ? <ImageInput id={sid} value={v} onChange={(u) => setItem(i, s.name, u)} />
+                      {!compact && s.type !== 'toggle' && <label htmlFor={sid} className="mb-1 block text-[13px] font-medium">{s.label}{s.required && <span className="text-red-600">*</span>}</label>}
+                      {s.type === 'toggle' ? <label className="inline-flex h-full items-center gap-1.5 whitespace-nowrap text-[13.5px]"><input id={sid} type="checkbox" className="h-4 w-4 accent-[#06226D]" checked={v !== 'false'} onChange={(e) => setItem(i, s.name, e.target.checked ? 'true' : 'false')} />{s.label}</label>
+                        : s.type === 'image' ? <ImageInput id={sid} value={v} onChange={(u) => setItem(i, s.name, u)} />
                         : s.type === 'textarea' && !compact ? <textarea id={sid} rows={s.rows ?? 3} className={inputCls} value={v} onChange={(e) => setItem(i, s.name, e.target.value)} />
                         : s.type === 'select' ? <select id={sid} className={inputCls} value={v} onChange={(e) => setItem(i, s.name, e.target.value)}><option value="">—</option>{s.options?.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}</select>
                         : <input id={sid} aria-label={compact ? `${s.label} ${i + 1}` : undefined} placeholder={compact ? s.label : undefined} type={s.type === 'number' ? 'number' : 'text'} className={inputCls} value={v} onChange={(e) => setItem(i, s.name, e.target.value)} />}
@@ -190,7 +192,7 @@ export default function FieldInput({ field, value, onChange, error, relations, i
               {compact && <RowTools i={i} n={items.length} label={field.itemLabel ?? 'l’élément'} onMove={(d) => onChange(move(items, i, d))} onRemove={() => onChange(items.filter((_, k) => k !== i))} />}
             </div>
           ))}
-          <AddRow onClick={() => onChange([...items, blank()])} disabled={items.length >= (field.maxItems ?? 50)} label={`Ajouter ${field.itemLabel ? field.itemLabel.toLowerCase() : 'une ligne'}`} />
+          <AddRow onClick={() => onChange([...items, blank()])} disabled={items.length >= (field.maxItems ?? 50)} label={field.addLabel ?? 'Ajouter une ligne'} />
         </div>
       );
       break;
