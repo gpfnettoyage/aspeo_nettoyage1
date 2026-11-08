@@ -5,15 +5,15 @@
  */
 const BASE = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://www.clarity.ms https://c.bing.com https://va.vercel-scripts.com https://static.hotjar.com https://script.hotjar.com https://vercel.live",
+  "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://www.clarity.ms https://c.bing.com https://va.vercel-scripts.com https://static.hotjar.com https://script.hotjar.com https://vercel.live https://challenges.cloudflare.com",
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' blob: data: https://www.googletagmanager.com https://*.public.blob.vercel-storage.com",
   "font-src 'self'",
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",
-  "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://www.googletagmanager.com https://www.clarity.ms https://c.bing.com https://vitals.vercel-insights.com https://in.hotjar.com https://insights.hotjar.com https://api.hotjar.com wss://ws.hotjar.com https://content.hotjar.io https://metrics.hotjar.io https://vercel.live",
-  "frame-src 'self' https://vercel.live",
+  "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://www.googletagmanager.com https://www.clarity.ms https://c.bing.com https://vitals.vercel-insights.com https://in.hotjar.com https://insights.hotjar.com https://api.hotjar.com wss://ws.hotjar.com https://content.hotjar.io https://metrics.hotjar.io https://vercel.live https://challenges.cloudflare.com",
+  "frame-src 'self' https://vercel.live https://challenges.cloudflare.com",
 ];
 
 /** @param {{ allowSameOriginFrame?: boolean }} [opts] */

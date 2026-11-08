@@ -20,6 +20,8 @@ export default defineConfig({
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'on-first-retry',
+    // Navigateur déjà installé sur la machine (facultatif), ex. PW_CHROMIUM_PATH=/opt/pw-browsers/chromium
+    ...(process.env.PW_CHROMIUM_PATH ? { launchOptions: { executablePath: process.env.PW_CHROMIUM_PATH } } : {}),
   },
 
   projects: [

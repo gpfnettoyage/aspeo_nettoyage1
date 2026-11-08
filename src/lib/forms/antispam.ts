@@ -8,7 +8,7 @@ import { redis } from '@/lib/redis';
  * 1. champ piège invisible (« honeypot ») qui doit rester vide ;
  * 2. jeton horodaté signé : un envoi moins de 3 s après l'affichage (robot) ou plus de 24 h après est refusé ;
  * 3. limitation de débit par IP (Upstash Redis si configuré, sinon mémoire du serveur).
- * Cloudflare Turnstile est vérifié en plus si TURNSTILE_SECRET_KEY est défini.
+ * Cloudflare Turnstile est vérifié en plus si TURNSTILE_SECRET_KEY et NEXT_PUBLIC_TURNSTILE_SITE_KEY sont définis.
  */
 export const HONEYPOT_FIELD = 'site_web';
 export const TOKEN_FIELD = 'form_ts';
@@ -40,7 +40,8 @@ export async function checkSpam(formData: FormData, ip: string, now = Date.now()
   if (age < MIN_AGE_MS) return { ok: false, reason: 'too-fast' };
   if (age > MAX_AGE_MS) return { ok: false, reason: 'expired' };
 
-  if (process.env.TURNSTILE_SECRET_KEY) {
+  // Vérifié seulement si le widget est aussi affiché (clé publique définie) : sinon tous les envois échoueraient.
+  if (process.env.TURNSTILE_SECRET_KEY && process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY) {
     const response = String(formData.get('cf-turnstile-response') ?? '');
     try {
       const res = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
