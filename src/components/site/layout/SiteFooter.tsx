@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { SettingsMap } from '@/lib/site/settings-defaults';
 import { FacebookIcon, InstagramIcon, LinkedinIcon } from '@/components/site/ui/icons';
+import CookieSettingsButton from './CookieSettingsButton';
 
 interface FooterProps {
   settings: Pick<SettingsMap, 'company' | 'identity' | 'navigation'>;
@@ -76,6 +77,7 @@ export default function SiteFooter({ settings, services }: FooterProps) {
               {legalLinks.map((l) => (
                 <Link key={l.href} href={l.href} className="p-[8px_4px] m-[-6px_-4px] text-[color:rgba(255,255,255,.55)] no-underline [transition:color_.2s] hover:text-white">{l.label}</Link>
               ))}
+              <CookieSettingsButton className="p-[8px_4px] m-[-6px_-4px] text-[length:.82rem] font-body text-[color:rgba(255,255,255,.55)] [transition:color_.2s] hover:text-white" />
             </nav>
           </div>
         </div>
@@ -124,6 +126,7 @@ export default function SiteFooter({ settings, services }: FooterProps) {
               <Link key={l.href} href={l.href} className="p-[10px_4px] min-h-[44px] text-white font-body text-[length:.98rem] no-underline inline-flex items-center">{l.label}</Link>
             ))}
             <Link href="/contact" className="p-[10px_4px] min-h-[44px] text-white font-body text-[length:.98rem] no-underline inline-flex items-center">Contact</Link>
+            <CookieSettingsButton className="p-[10px_4px] min-h-[44px] text-white font-body text-[length:.98rem] inline-flex items-center" />
           </nav>
           <p className="m-[18px_0_0] text-[length:.85rem] text-[color:rgba(255,255,255,.7)]">© {year} {company.name}. Tous droits réservés.</p>
         </div>

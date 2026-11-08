@@ -7,7 +7,7 @@ import {
   FunctionComponent,
   useSyncExternalStore,
 } from 'react';
-import { getCookie, setCookie, removeCookie } from '@/lib/utils';
+import { getCookie, setCookie } from '@/lib/utils';
 
 type CookieConsentContextType = {
   consentGiven: boolean;
@@ -69,7 +69,8 @@ export const CookieConsentProvider: FunctionComponent<
   }, []);
 
   const revokeConsent = useCallback(() => {
-    removeCookie('cookieConsent');
+    // Le refus est mémorisé 6 mois (recommandation CNIL) : le bandeau n'est pas réaffiché à chaque visite.
+    setCookie('cookieConsent', 'false', 182);
     emitChange();
   }, []);
 
