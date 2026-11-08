@@ -87,7 +87,12 @@ function ScaledFrame({ src, width }: { src: string; width: number }) {
     return () => ro.disconnect();
   }, []);
   const scale = box ? Math.min(1, box / width) : 1;
-  const height = typeof window === 'undefined' ? 700 : Math.round(window.innerHeight * 0.72);
+  // Hauteur liée à la fenêtre : 700 px au rendu serveur, valeur réelle après hydratation (pas d'écart serveur/client).
+  const height = useSyncExternalStore(
+    (cb) => { window.addEventListener('resize', cb); return () => window.removeEventListener('resize', cb); },
+    () => Math.round(window.innerHeight * 0.72),
+    () => 700,
+  );
   return (
     <div ref={ref} className="overflow-hidden bg-zinc-100" style={{ height }}>
       <iframe src={src} title="Aperçu de la page" className="block origin-top-left border-0 bg-white"
