@@ -32,14 +32,14 @@ export default async function AdminShell({ children, title, description, actions
   return (
     <div className="min-h-screen bg-white text-[14px] leading-[normal] text-[#0a0a0a] antialiased [font-family:ui-sans-serif,system-ui,-apple-system,'Segoe_UI',Roboto,sans-serif]">
       <header className="fixed inset-x-0 top-0 z-40 flex h-14 items-center justify-between border-b border-gray-200 bg-white pl-14 pr-4 lg:pl-4">
-        <a href={ADMIN_BASE_PATH} className="flex items-center gap-3 no-underline">
-          <img src="/img/brand/logo-aspeo-couleur.svg" alt="ASPEO" className="h-7 w-auto" width={130} height={28} />
-          <span className="hidden border-l border-gray-200 pl-3 text-[13px] text-gray-500 sm:inline">Administration</span>
+        <a href={ADMIN_BASE_PATH} className="flex min-w-0 items-center gap-3 no-underline">
+          <img src="/img/brand/logo-aspeo-couleur.svg" alt="ASPEO" className="h-auto max-h-7 w-full min-w-[64px] max-w-[130px] flex-shrink" width={130} height={28} />
+          <span className="border-l border-gray-200 pl-3 text-[13px] text-gray-500">Administration</span>
         </a>
-        <div className="flex items-center gap-2.5">
-          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#06226D] text-[12px] font-semibold text-white" aria-hidden="true">{initials(name)}</span>
-          <span className="hidden flex-col leading-[1.2] sm:flex">
-            <span className="text-[13.5px] font-semibold">{name}</span>
+        <div className="ml-3 flex min-w-0 items-center gap-2.5">
+          <span className="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-[#06226D] text-[12px] font-semibold text-white" aria-hidden="true">{initials(name)}</span>
+          <span className="flex min-w-0 flex-col leading-[1.2]">
+            <span className="truncate text-[13.5px] font-semibold">{name}</span>
             <span className="text-[12px] uppercase tracking-wide text-gray-500">{getRoleDisplayName(session.user.role)}</span>
           </span>
         </div>

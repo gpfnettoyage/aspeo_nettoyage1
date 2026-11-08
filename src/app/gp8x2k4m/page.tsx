@@ -65,10 +65,11 @@ export default async function AdminDashboardPage() {
         {stat('Référencement à corriger', seoToFix, 'titres ou descriptions', `${B}/referencement`)}
         {stat('Images sans texte alternatif', missingAlt, 'à compléter', `${B}/medias`)}
       </div>
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,380px),1fr))] items-start gap-4">
-        <div className="space-y-4">
+      {/* Ordre de la maquette sur écran étroit : demandes, dernières modifications, raccourcis. */}
+      <div className="grid items-start gap-4 xl:grid-cols-2">
+        <div className="contents xl:block xl:space-y-4">
           {canLeads && (
-            <section className="rounded-lg border border-gray-200 bg-white">
+            <section className="order-1 rounded-lg border border-gray-200 bg-white">
               <div className="flex items-center justify-between border-b border-[#f0f0f1] px-4 py-3.5"><h2 className="m-0 text-[15px] font-semibold">Demandes de devis récentes</h2><Link href={`${B}/demandes`} className="text-[13px] font-medium no-underline text-[#06226D]">Tout voir →</Link></div>
               {recent.length ? (
                 <ul className="m-0 list-none p-0">
@@ -84,7 +85,7 @@ export default async function AdminDashboardPage() {
               ) : <p className="m-0 px-4 py-6 text-[14px] text-gray-500">Aucune demande pour le moment.</p>}
             </section>
           )}
-          <section className="rounded-lg border border-gray-200 bg-white">
+          <section className="order-3 rounded-lg border border-gray-200 bg-white">
             <div className="p-4">
             <h2 className="m-0 mb-3 text-[15px] font-semibold">Raccourcis</h2>
             <div className="flex flex-col gap-2">
@@ -93,7 +94,7 @@ export default async function AdminDashboardPage() {
             </div>
           </section>
         </div>
-        <section className="rounded-lg border border-gray-200 bg-white">
+        <section className="order-2 rounded-lg border border-gray-200 bg-white">
           <div className="border-b border-[#f0f0f1] px-4 py-3.5"><h2 className="m-0 text-[15px] font-semibold">Dernières modifications</h2></div>
           {logs.length ? (
             <ul className="m-0 list-none p-0">
