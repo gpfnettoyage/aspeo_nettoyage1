@@ -1,3 +1,4 @@
+/* global process */
 /**
  * Content-Security-Policy du site (source unique, utilisée par next.config.mjs et src/proxy.ts).
  * - frame-ancestors : « none » partout ; « self » uniquement pour l'aperçu de l'administration.

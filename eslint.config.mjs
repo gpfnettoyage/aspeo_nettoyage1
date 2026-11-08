@@ -9,6 +9,8 @@ export default tseslint.config(
   {
     ignores: [
       'node_modules/**',
+      // Maquettes de référence (fichiers fournis, non modifiés)
+      'maquettes/**',
       '.next/**',
       'dist/**',
       'coverage/**',
