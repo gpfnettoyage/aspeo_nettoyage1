@@ -202,10 +202,11 @@ export default function AdminLoginPage() {
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-4 text-center">
             <Image
-              src="/img/logo/logo.webp"
-              alt="ASPEO Logo"
-              width={300}
-              height={100}
+              src="/img/brand/logo-aspeo-couleur.svg"
+              unoptimized
+              alt="ASPEO"
+              width={200}
+              height={44}
               className="mx-auto"
               priority
             />
