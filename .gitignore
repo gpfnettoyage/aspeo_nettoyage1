@@ -48,3 +48,7 @@ skills-lock.json
 # test outputs
 /playwright-report
 /test-results
+
+# fichiers privés (développement local)
+/storage
+/public/uploads

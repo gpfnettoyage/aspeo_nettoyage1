@@ -122,9 +122,10 @@ async function contents() {
   if (await prisma.testimonial.count() === 0) {
     await write(`${data.testimonials.length} avis clients importés`, () => prisma.testimonial.createMany({ data: data.testimonials.map((t) => ({ ...t, status: 'PUBLISHED' as const, source: 'google' })) }));
   } else log('= avis clients déjà présents');
-  if (await prisma.faqItem.count({ where: { scope: 'accueil' } }) === 0) {
-    await write('FAQ de l\'accueil importée', () => prisma.faqItem.createMany({ data: data.faq.map((f) => ({ ...f, status: 'PUBLISHED' as const })) }));
-  } else log('= FAQ accueil déjà présente');
+  for (const scope of Array.from(new Set(data.faq.map((f) => f.scope)))) {
+    if (await prisma.faqItem.count({ where: { scope } }) > 0) { log(`= FAQ « ${scope} » déjà présente`); continue; }
+    await write(`FAQ « ${scope} » importée`, () => prisma.faqItem.createMany({ data: data.faq.filter((f) => f.scope === scope).map((f) => ({ ...f, status: 'PUBLISHED' as const })) }));
+  }
 }
 
 async function pages() {

@@ -129,7 +129,7 @@ export const DEFAULT_SETTINGS: SettingsMap = {
     googleBusiness: 'https://maps.app.goo.gl/ZxZqwfi7CzU3zBnB6',
     // Lien de dépôt d'avis Google repris de la maquette.
     googleReviewUrl: 'https://share.google/V4g9mDrTE3zthSV6b',
-    host: 'Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis',
+    host: 'Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis',
   },
   identity: {
     logo: '/img/brand/logo-aspeo-couleur.svg',

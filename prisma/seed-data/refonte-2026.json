@@ -5199,6 +5199,48 @@
    "question": "Sous quel délai puis-je recevoir un devis ?",
    "answer": "Le devis est envoyé sous 24h après la visite pour la majorité des demandes, et proposons un devis express en cas d'urgence.",
    "displayOrder": 8
+  },
+  {
+   "scope": "grands-comptes",
+   "question": "Travaillez-vous sur des marchés publics à procédure formalisée ?",
+   "answer": "Oui, nous répondons aux marchés publics et pouvons fournir les attestations et documents administratifs nécessaires à votre dossier de consultation.",
+   "displayOrder": 1
+  },
+  {
+   "scope": "grands-comptes",
+   "question": "Pouvez-vous intervenir sur plusieurs sites simultanément ?",
+   "answer": "Oui, notre organisation permet de couvrir plusieurs sites répartis sur la Plaine du Forez, les Monts du Lyonnais et le Roannais, avec un seul interlocuteur pour l'ensemble du contrat.",
+   "displayOrder": 2
+  },
+  {
+   "scope": "grands-comptes",
+   "question": "Fournissez-vous une attestation d'assurance responsabilité civile professionnelle ?",
+   "answer": "Oui, une attestation d'assurance responsabilité civile professionnelle vous est transmise sur demande, avant ou pendant la durée du contrat.",
+   "displayOrder": 3
+  },
+  {
+   "scope": "grands-comptes",
+   "question": "Comment se passe le reporting sur un contrat grand compte ?",
+   "answer": "Nous convenons avec vous du format et de la fréquence : compte-rendu écrit, photos, ou point régulier avec votre référent selon vos besoins internes.",
+   "displayOrder": 4
+  },
+  {
+   "scope": "grands-comptes",
+   "question": "Vos équipes sont-elles habilitées pour intervenir en zone de chantier ou d'emprise autoroutière ?",
+   "answer": "Oui, nos équipes sont formées aux plans de prévention, PPSPS et habilitations nécessaires selon le type de site.",
+   "displayOrder": 5
+  },
+  {
+   "scope": "grands-comptes",
+   "question": "Proposez-vous des contrats sur plusieurs années ?",
+   "answer": "Oui, nous mettons en place des contrats pluriannuels avec des clauses de revoyure permettant d'ajuster périmètre et fréquence selon l'évolution de vos besoins.",
+   "displayOrder": 6
+  },
+  {
+   "scope": "grands-comptes",
+   "question": "Comment se déroule la mise en place initiale d'un contrat ?",
+   "answer": "Après étude du cahier des charges, nous établissons une proposition détaillée par site puis déployons les équipes selon le planning convenu avec vous.",
+   "displayOrder": 7
   }
  ],
  "blocks": {

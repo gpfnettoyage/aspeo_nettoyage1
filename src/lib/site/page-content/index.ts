@@ -7,10 +7,15 @@ import { zonesContent } from './zones';
 import { realisationsContent } from './realisations';
 import { mediasContent } from './medias';
 import { pressContent } from './press';
+import { reviewsContent } from './reviews';
+import { accountsContent } from './accounts';
+import { contactContent } from './contact';
+import { careersContent } from './careers';
+import { legalContents } from './legal';
 
 /** Registre des modèles de contenu par clé de page (table Page). */
 export const PAGE_CONTENT_MODELS: Record<string, PageContentModel> = Object.fromEntries(
-  [homeContent, servicesContent, commonContent, aboutContent, zonesContent, realisationsContent, mediasContent, pressContent].map((m) => [m.key, m]),
+  [homeContent, servicesContent, commonContent, aboutContent, zonesContent, realisationsContent, mediasContent, pressContent, reviewsContent, accountsContent, contactContent, careersContent, ...legalContents].map((m) => [m.key, m]),
 );
 
 export const allFields = (model: PageContentModel): FieldDef[] => model.sections.flatMap((s) => s.fields);
