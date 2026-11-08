@@ -118,7 +118,9 @@ test.describe('Authentication', () => {
       await page.waitForTimeout(2000);
 
       // Check if success view appeared or we're still on form
-      const hasSuccess = await page.getByText(/email envoy|verifiez/i).isVisible().catch(() => false);
+      // La vue de succès contient plusieurs textes correspondants (« Email envoye », « Verifiez… ») :
+      // .first() évite l'erreur de mode strict, qui était silencieusement convertie en « non visible ».
+      const hasSuccess = await page.getByText(/email envoy|verifiez/i).first().isVisible().catch(() => false);
       const hasError = await page.locator('.text-red-600').isVisible().catch(() => false);
 
       // Either success or rate limit error is acceptable
