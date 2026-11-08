@@ -111,7 +111,7 @@ export async function submitQuoteRequest(_prev: FormState, fd: FormData): Promis
     { k: 'Réponse envoyée à', v: d.email },
     ...(photos.length ? [{ k: 'Photos jointes', v: String(photos.length) }] : []),
   ];
-  const adminUrl = absoluteUrl(`${ADMIN_BASE_PATH}/demandes/${request.id}`, company.website);
+  const adminUrl = absoluteUrl(`${ADMIN_BASE_PATH}/demandes?id=${request.id}`, company.website);
   const photoLinks = photos.map((p) => absoluteUrl(p.url, company.website));
   const notif = quoteNotification({
     fields: [['Nom', `${d.firstName} ${d.lastName}`], ['Entreprise', d.company], ['E-mail', d.email], ['Téléphone', d.phone], ['Type de besoin', d.direction], ['Prestation', d.prestation], ['Fréquence', d.frequency], ['Page d\'origine', d.sourcePage]],
@@ -178,7 +178,7 @@ export async function submitApplication(_prev: FormState, fd: FormData): Promise
   const { company, notifications } = await getSettings();
   const notif = applicationNotification({
     fields: [['Candidat', `${d.firstName} ${d.lastName}`], ['Poste', job ? `${job.title}${job.location ? ` (${job.location})` : ''}` : 'Candidature spontanée'], ['E-mail', d.email], ['Téléphone', d.phone], ['Ville', d.city], ['CV', cvName]],
-    message: d.message ?? null, adminUrl: absoluteUrl(`${ADMIN_BASE_PATH}/candidatures`, company.website), cvUrl: cvUrl ? absoluteUrl(cvUrl, company.website) : null,
+    message: d.message ?? null, adminUrl: absoluteUrl(`${ADMIN_BASE_PATH}/candidatures?id=${application.id}`, company.website), cvUrl: cvUrl ? absoluteUrl(cvUrl, company.website) : null,
   });
   const sent = await sendMail({ to: notifications.jobRecipients, subject: `Candidature — ${d.firstName} ${d.lastName}${job ? ` · ${job.title}` : ''}`, ...notif, replyTo: d.email, fromName: notifications.senderName });
   if (notifications.sendAcknowledgement) {
