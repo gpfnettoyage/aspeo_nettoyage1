@@ -135,7 +135,7 @@ const articles: CollectionDef = {
   groups: [
     { title: 'Article', fields: [
       f.text('title', 'Titre', { required: true, max: 160 }), f.slug(),
-      f.text('category', 'Catégorie', { half: true }), f.date('publishedAt', 'Date de publication', { half: true, help: 'Une date future programme la publication.' }),
+      f.text('category', 'Catégorie', { half: true, help: 'Indiquez « Actualités » pour que l’article apparaisse dans l’onglet Actualités de la page Médias.' }), f.date('publishedAt', 'Date de publication', { half: true, help: 'Une date future programme la publication.' }),
       f.area('excerpt', 'Résumé (cartes, partage)', { rows: 3, max: 300 }), f.image('image', 'Image principale'), f.text('imageAlt', 'Texte alternatif'),
       f.md('body', 'Texte de l’article', { required: true }), f.lines('tags', 'Mots-clés'), f.text('author', 'Auteur'),
       f.list('faq', 'Questions fréquentes', 'Question', qa, { maxItems: 10 }),

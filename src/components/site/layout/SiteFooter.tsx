@@ -47,7 +47,7 @@ export default function SiteFooter({ settings, services }: FooterProps) {
             <div className="flex flex-col gap-[11px]">
               {services.map((s) => (
                 <Link key={s.href} href={s.href} className={`${deskLink} leading-[1.35] flex gap-[9px]`}>
-                  <span className="text-[color:var(--asp-accent-ink)] flex-none" aria-hidden="true">—</span>{s.title}
+                  <span className="flex-none" aria-hidden="true">—</span>{s.title}
                 </Link>
               ))}
             </div>
@@ -55,7 +55,7 @@ export default function SiteFooter({ settings, services }: FooterProps) {
           <div>
             <h2 className={h3Desk}>Entreprise</h2>
             <div className="flex flex-col gap-[11px]">
-              {companyLinks.map((l) => <Link key={l.href} href={l.href} className={deskLink}>{l.label}</Link>)}
+              {companyLinks.map((l) => <Link key={l.href} href={l.href} className={`${deskLink} leading-[normal]`}>{l.label}</Link>)}
             </div>
           </div>
           <div>

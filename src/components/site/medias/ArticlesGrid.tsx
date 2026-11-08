@@ -6,15 +6,17 @@ import { useState } from 'react';
 
 export interface ArticleCardData { href: string; title: string; category: string | null; date: string; excerpt: string | null; image: string | null; imageAlt: string | null }
 
-/** Liste des articles (Médias) avec onglets par catégorie. */
+/**
+ * Liste des articles (Médias). Onglets de la maquette : « Tous les médias » et « Actualités »
+ * (articles dont la catégorie est « Actualités », réglable dans l'éditeur d'article).
+ */
 export default function ArticlesGrid({ items }: { items: ArticleCardData[] }) {
-  const cats = Array.from(new Set(items.map((a) => a.category).filter((c): c is string => !!c)));
   const [filter, setFilter] = useState<string>('Tous');
-  const tabs = [{ f: 'Tous', label: 'Tous les médias' }, ...cats.map((c) => ({ f: c, label: c }))];
+  const tabs = [{ f: 'Tous', label: 'Tous les médias' }, { f: 'Actualités', label: 'Actualités' }];
   const list = filter === 'Tous' ? items : items.filter((a) => a.category === filter);
   return (
     <>
-      {tabs.length > 2 && (
+      {(
         <div className="flex gap-[10px] mb-[28px] flex-wrap" role="group" aria-label="Filtrer les articles">
           {tabs.map((t) => {
             const sel = filter === t.f;
@@ -27,6 +29,7 @@ export default function ArticlesGrid({ items }: { items: ArticleCardData[] }) {
           })}
         </div>
       )}
+      {list.length === 0 && <p className="m-0 text-[length:.98rem] text-[color:#5b6878]">Aucune actualité publiée pour le moment.</p>}
       <ul className="list-none p-0 m-0 grid grid-cols-[repeat(auto-fill,minmax(min(100%,300px),1fr))] gap-[20px]">
         {list.map((item) => (
           <li key={item.href}>

@@ -15,7 +15,7 @@ export default function SearchView({ query, results, phone, phoneIntl }: { query
   const shown = tag ? results.filter((r) => r.type === tag) : results;
   const hidden = results.length - shown.length;
   const tags = ORDER.map((t) => ({ t, n: results.filter((r) => r.type === t).length })).filter((x) => x.n > 0);
-  const count = query ? `${results.length} résultat${results.length > 1 ? 's' : ''} pour « ${query} »` : 'Exemples : bureaux, Diogène, Montbrison, vitres, fin de chantier';
+  const count = query ? `${results.length} résultat${results.length > 1 ? 's' : ''} pour « ${query} »${results.length > 1 ? ' · classés par pertinence' : ''}` : 'Exemples : bureaux, Diogène, Montbrison, vitres, fin de chantier';
 
   return (
     <main>

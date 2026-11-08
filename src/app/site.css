@@ -4,6 +4,8 @@
  * shadcn de l'administration (--accent, --primary…).
  */
 .asp-site {
+  /* Interligne par défaut de la maquette (aucun line-height global) : Tailwind impose 1.5. */
+  line-height: normal;
   --asp-accent: #ff5c00;
   --asp-accent-ink: #ff5c00;
   --asp-on-accent: #ffffff;

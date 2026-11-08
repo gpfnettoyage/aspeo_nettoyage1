@@ -41,6 +41,7 @@ export default async function CareersPage() {
         text={c.t('hero.text')}
         image={c.t('hero.image')}
         imageAlt="Les équipes ASPEO"
+        crumbs={[{ name: 'Nous rejoindre' }]}
         actions={<ButtonLink href="#offres" arrow={false} className="p-[16px_28px] text-[length:.98rem]">Voir nos offres d&apos;emploi →</ButtonLink>}
       />
 
@@ -73,11 +74,15 @@ export default async function CareersPage() {
           <h2 className="font-heading font-extrabold text-[length:clamp(1.6rem,3vw,2.4rem)] leading-[1.15] tracking-[-.015em] m-[0_0_14px] text-navy">{c.t('jobs.title')}</h2>
           <p className="text-[length:1rem] leading-[1.7] text-[color:#42505f] m-[0_0_24px]">{c.t('jobs.text')}</p>
           <JobsBoard email={company.email} jobs={jobs.map((j) => ({ id: j.id, slug: j.slug, title: j.title, contractType: j.contractType, location: j.location, hours: j.hours, summary: j.summary, missions: j.missions, profile: j.profile, conditions: j.conditions }))} />
+          {/* Maquette : la candidature spontanée est une entrée de la liste des offres ; ce bloc ne sert
+              qu'en secours si cette entrée a été retirée dans l'administration. */}
+          {!jobs.some((j) => /spontan/i.test(j.title)) && (
           <div className="mt-[48px] bg-[color:#f8fafc] [border:1px_solid_#eef2f7] p-[clamp(22px,3vw,32px)]" id="candidature-spontanee">
             <h2 className="font-heading font-extrabold text-[length:1.3rem] text-navy m-[0_0_8px]">{c.t('spontaneous.title')}</h2>
             <p className="text-[length:.98rem] leading-[1.6] text-[color:#42505f] m-[0_0_20px]">{c.t('spontaneous.text')}</p>
             <ApplicationForm />
           </div>
+          )}
         </div>
       </section>
     </main>

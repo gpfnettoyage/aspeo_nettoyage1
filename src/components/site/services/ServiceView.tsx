@@ -41,6 +41,7 @@ const Chip = ({ children }: { children: string }) => <li className="[border:1px_
 /** Fiche service, fidèle à la maquette « Service ». */
 export default function ServiceView({ service, related, articles, testimonial, commitments }: Props) {
   const c = service.content;
+  const showTiers = !!c.showPricing && (c.pricingTiers?.length ?? 0) > 0;
   const isPro = service.pole === 'professionnel';
   const [heroImg, expImg, whyImg] = [c.images?.[0] ?? null, c.images?.[1] ?? c.images?.[0] ?? null, c.images?.[2] ?? c.images?.[0] ?? null];
   const includes = c.includes ?? [];
@@ -254,7 +255,8 @@ export default function ServiceView({ service, related, articles, testimonial, c
           <Container>
             <div className="inline-flex items-center gap-[12px]">
               <span className="w-[30px] h-[3px] bg-[color:var(--asp-accent)] block" aria-hidden="true" />
-              <span className="font-heading font-bold text-[length:.8rem] tracking-[.16em] uppercase text-[color:rgba(255,255,255,.85)]">Notre méthode</span>
+              {/* Maquette : libellé non visible (bleu sur bleu) ; la barre orange et l'espacement sont conservés. */}
+              <span className="font-heading font-bold text-[length:.8rem] tracking-[.16em] uppercase invisible" aria-hidden="true">Notre méthode</span>
             </div>
             <h2 className="font-heading font-extrabold text-[length:clamp(1.45rem,2.6vw,2.05rem)] tracking-[-.015em] m-[14px_0_32px]" data-light="">Notre méthode d&apos;intervention</h2>
             <ol className="list-none p-0 m-0 flex flex-col">
@@ -316,14 +318,15 @@ export default function ServiceView({ service, related, articles, testimonial, c
         </section>
       )}
 
-      {c.showPricing && (c.pricingTiers?.length ?? 0) > 0 && (
+      {/* Maquette : section toujours présente ; les fourchettes n'apparaissent qu'une fois validées (showPricing). */}
+      {(
         <section className="p-[clamp(56px,8vw,96px)_0] bg-[color:#f8fafc] [border-top:1px_solid_#eef2f7] [border-bottom:1px_solid_#eef2f7]">
           <Container>
             <div className="flex flex-wrap justify-between items-end gap-[20px] m-[0_0_28px]">
               <H2Bar className="max-w-[600px]">Combien coûte {service.title} ?</H2Bar>
               <ButtonLink href={urls.contact(service.slug)} className="flex-none text-[length:.92rem]">Estimer mon devis</ButtonLink>
             </div>
-            <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,240px),1fr))] gap-[1px] bg-[color:#eef2f7] [border:1px_solid_#eef2f7] overflow-hidden" data-sepgrid="">
+            {showTiers && <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,240px),1fr))] gap-[1px] bg-[color:#eef2f7] [border:1px_solid_#eef2f7] overflow-hidden" data-sepgrid="">
               {c.pricingTiers!.map((t) => (
                 <div key={t.name} className="bg-white p-[28px_26px] flex flex-col gap-[10px]">
                   <span className="font-heading font-bold text-[length:.85rem] tracking-[.06em] uppercase text-navy">{t.name}</span>
@@ -331,8 +334,8 @@ export default function ServiceView({ service, related, articles, testimonial, c
                   <p className="text-[length:.9rem] leading-[1.6] text-[color:#42505f] m-0">{t.text}</p>
                 </div>
               ))}
-            </div>
-            {c.priceNote && <p className="text-[length:.85rem] text-[color:#8a97a8] m-[16px_0_0]">{c.priceNote}</p>}
+            </div>}
+            <p className="text-[length:.85rem] text-[color:#8a97a8] m-[16px_0_0]">{(showTiers && c.priceNote) || 'Fourchettes indicatives, hors dossier spécifique. Un devis précis est établi après diagnostic.'}</p>
           </Container>
         </section>
       )}

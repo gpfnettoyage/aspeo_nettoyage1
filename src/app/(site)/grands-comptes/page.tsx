@@ -124,7 +124,8 @@ export default async function AccountsPage() {
         <Container>
           <div className="inline-flex items-center gap-[12px]">
             <span className="w-[30px] h-[3px] bg-[color:var(--asp-accent)] block" aria-hidden="true" />
-            <span className="font-heading font-bold text-[length:.8rem] tracking-[.16em] uppercase text-[color:rgba(255,255,255,.85)]">Notre méthode</span>
+            {/* Maquette : libellé non visible (bleu sur bleu) ; barre orange et espacement conservés. */}
+            <span className="font-heading font-bold text-[length:.8rem] tracking-[.16em] uppercase invisible" aria-hidden="true">Notre méthode</span>
           </div>
           <h2 className="font-heading font-extrabold text-[length:clamp(1.45rem,2.6vw,2.05rem)] tracking-[-.015em] m-[14px_0_32px]" data-light="">{c.t('method.title')}</h2>
           <ol className="list-none p-0 m-0 flex flex-col">

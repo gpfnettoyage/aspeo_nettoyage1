@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import PageHero from '@/components/site/shared/PageHero';
-import { ButtonLink, Container, Stars } from '@/components/site/ui/primitives';
+import { Container, Stars } from '@/components/site/ui/primitives';
 import JsonLd from '@/components/site/JsonLd';
 import { getPageContent, getTestimonials } from '@/lib/site/content';
 import { getSettings } from '@/lib/site/settings';
@@ -24,11 +24,11 @@ export default async function ReviewsPage() {
         title={c.t('hero.title')}
         image={c.t('hero.image')}
         imageAlt="Client ASPEO satisfait"
+        titleClassName="font-heading font-extrabold text-[length:clamp(2.6rem,5.2vw,4.8rem)] leading-[1.02] tracking-[-.02em] m-[16px_0_0]"
         actions={<div className="flex items-center gap-[16px] flex-wrap">
           <span className="font-heading font-extrabold text-[length:2rem]">{rating}/5</span>
           <Stars className="text-[length:1.1rem]" />
-          <span className="text-[color:rgba(255,255,255,.85)]">Basé sur {stats.googleReviewCount} avis clients Google</span>
-          {company.googleReviewUrl && <ButtonLink href={company.googleReviewUrl} external target="_blank" rel="noopener noreferrer" className="ml-[8px] p-[12px_20px] text-[length:.9rem]">Laissez-nous un avis</ButtonLink>}
+          <span className="text-[color:rgba(255,255,255,.85)]">Basé sur {stats.googleReviewCount} avis clients vérifiés</span>
         </div>}
       />
       <section className="p-[clamp(48px,7vw,88px)_0] bg-[color:#f5f7fa]">

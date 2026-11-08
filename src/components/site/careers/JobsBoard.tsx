@@ -10,7 +10,8 @@ const norm = (s: string) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,
 /** Liste des offres (recherche, détail dépliable, candidature en ligne). */
 export default function JobsBoard({ jobs, email }: { jobs: JobView[]; email: string }) {
   const [query, setQuery] = useState('');
-  const [open, setOpen] = useState<string | null>(null);
+  // Maquette : la première offre est dépliée à l'arrivée sur la page.
+  const [open, setOpen] = useState<string | null>(jobs[0]?.id ?? null);
   const [applying, setApplying] = useState<string | null>(null);
   const list = useMemo(() => {
     const q = norm(query.trim());
@@ -63,7 +64,7 @@ export default function JobsBoard({ jobs, email }: { jobs: JobView[]; email: str
         })}
       </ul>
       {list.length === 0 && (
-        <p className="text-[length:.96rem] text-[color:#42505f] m-[8px_0_0]" role="status">Aucune offre ne correspond. Envoyez-nous une candidature spontanée ci-dessous ou à <a className="text-[color:var(--asp-accent-ink)] font-bold" href={`mailto:${email}`}>{email}</a>.</p>
+        <p className="text-[length:.96rem] text-[color:#42505f] m-[8px_0_0]" role="status">Aucune offre ne correspond. Envoyez-nous une candidature spontanée ou écrivez à <a className="text-[color:var(--asp-accent-ink)] font-bold" href={`mailto:${email}`}>{email}</a>.</p>
       )}
     </>
   );

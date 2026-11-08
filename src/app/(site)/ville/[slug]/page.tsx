@@ -169,7 +169,7 @@ export default async function CityPage({ params }: Props) {
               <Link href={urls.medias()} className="font-heading font-bold text-[length:.9rem] text-[color:var(--asp-accent-ink)] inline-flex items-center gap-[8px] no-underline">Toutes les actualités <span aria-hidden="true">→</span></Link>
             </div>
             <ul className="list-none p-0 m-0 grid grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] gap-[20px]">
-              {articles.slice(0, 3).map((a) => (
+              {articles.slice(0, 2).map((a) => (
                 <li key={a.href}>
                   <Link href={a.href} className="h-full text-left bg-white shadow-[0_4px_20px_-8px_rgba(15,23,42,.14)] overflow-hidden flex flex-col no-underline">
                     <div className="relative w-full h-[170px] bg-[color:#dfe7f2]">{a.image && <Image src={a.image} alt="" fill sizes="400px" className="object-cover" />}</div>
