@@ -32,9 +32,7 @@
 :where(.asp-site) :where(img, svg, video) { display: inline; vertical-align: baseline; }
 :where(.asp-site) :where(button) { color: inherit; }
 
-.asp-site img,
-.asp-site video,
-.asp-site svg { max-width: 100%; }
+:where(.asp-site) :where(img, video, svg) { max-width: 100%; }
 .asp-site h1, .asp-site h2, .asp-site h3, .asp-site h4 { overflow-wrap: break-word; hyphens: manual; text-wrap: balance; }
 .asp-site p, .asp-site li { overflow-wrap: break-word; text-wrap: pretty; }
 .asp-site ::selection { background: #06226d; color: #fff; }
@@ -105,7 +103,8 @@
   .asp-site [data-hdr-tools] { order: 0; margin-left: 0 !important; }
   .asp-site [data-env] [data-r2] > div:first-child { padding-left: clamp(20px, 5vw, 40px) !important; }
   .asp-site label:has(input[type='radio']), .asp-site label:has(input[type='checkbox']) { min-height: 44px; display: flex !important; align-items: center; }
-  .asp-site main a[href^='tel:'], .asp-site main a[href^='mailto:'] { min-height: 44px; display: inline-flex !important; align-items: center; }
+  /* Cibles tactiles : liens tel/mail isolés (pas les liens dans un paragraphe de texte, qui casseraient l'interligne) */
+  .asp-site main :not(p) > a[href^='tel:'], .asp-site main :not(p) > a[href^='mailto:'] { min-height: 44px; display: inline-flex !important; align-items: center; }
   .asp-site input[type='radio'], .asp-site input[type='checkbox'] { width: 20px !important; height: 20px !important; flex: none; }
   .asp-site footer:not([data-ft-m]) a, .asp-site footer:not([data-ft-m]) button { min-height: 44px; }
   .asp-site footer[data-ft-m] [data-ft-btn] { display: flex !important; justify-content: center !important; margin-top: 28px !important; padding: 16px !important; }

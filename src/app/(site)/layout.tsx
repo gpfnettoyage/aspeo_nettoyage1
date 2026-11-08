@@ -42,8 +42,8 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
     articles: articles.slice(0, 2).map((a) => ({ title: a.title.length > 76 ? `${a.title.slice(0, 73)}…` : a.title, category: a.category ?? 'Actualité', image: a.image, href: a.href })),
     promoImage: PROMO_IMAGE,
   };
-  // Pied de page : 8 premières prestations, dans l'ordre des activités
-  const footerServices = catalog.categories.flatMap((c) => c.services).slice(0, 8).map((s) => ({ title: s.title, href: s.href }));
+  // Pied de page : 8 premières prestations dans l'ordre global des services (comme la maquette)
+  const footerServices = catalog.services.filter((s) => catalog.categories.some((c) => c.slug === s.categorySlug)).slice(0, 8).map((s) => ({ title: s.title, href: s.href }));
 
   return (
     <div className="asp-site">
