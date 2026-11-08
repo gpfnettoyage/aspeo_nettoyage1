@@ -49,7 +49,7 @@ const GROUPS: { title: string; items: Item[] }[] = [
 ];
 
 const itemCls = (active: boolean) =>
-  `flex items-center gap-3 rounded-md px-2.5 py-2 text-[14.5px] no-underline transition-colors ${active ? 'bg-zinc-100 font-semibold text-zinc-950' : 'text-zinc-700 hover:bg-zinc-50 hover:text-zinc-950'}`;
+  `flex items-center gap-2.5 rounded-md px-2.5 py-[7px] text-[14px] no-underline transition-colors ${active ? 'bg-[#efeff1] font-semibold text-zinc-950' : 'text-zinc-700 hover:bg-[#efeff1] hover:text-zinc-950'}`;
 
 export default function AdminNav({ role, counts }: { role: Role; counts: { leads: number; applications: number } }) {
   const pathname = usePathname() || B;
@@ -64,7 +64,7 @@ export default function AdminNav({ role, counts }: { role: Role; counts: { leads
           const items = g.items.filter((i) => hasPermission(role, i.permission));
           if (!items.length) return null;
           return (
-            <div key={g.title} className="mb-3">
+            <div key={g.title} className="mb-1">
               <div className="px-2.5 pb-1.5 pt-2 text-[12.5px] font-medium text-zinc-500">{g.title}</div>
               <ul className="m-0 list-none p-0">
                 {items.map((i) => {
@@ -98,7 +98,7 @@ export default function AdminNav({ role, counts }: { role: Role; counts: { leads
       <button type="button" onClick={() => setOpen(true)} className="fixed left-3 top-3 z-50 inline-flex h-9 w-9 items-center justify-center rounded-md border border-zinc-200 bg-white lg:hidden" aria-label="Ouvrir le menu">
         <MenuIcon className="h-4 w-4" />
       </button>
-      <aside className="fixed bottom-0 left-0 top-14 z-30 hidden w-64 border-r border-zinc-200 bg-white lg:block">{nav}</aside>
+      <aside className="fixed bottom-0 left-0 top-14 z-30 hidden w-64 border-r border-zinc-200 bg-[#fafafa] lg:block">{nav}</aside>
       {open && (
         <div className="fixed inset-0 z-50 lg:hidden" role="dialog" aria-modal="true">
           <div className="absolute inset-0 bg-black/30" onClick={() => setOpen(false)} aria-hidden="true" />

@@ -17,6 +17,7 @@ export const isPreview = cache(async (): Promise<boolean> => {
 
 /** Superpose les modifications en attente (colonne `draft`) aux valeurs publiées. */
 export function withDraft<T extends { draft?: unknown }>(row: T, preview: boolean): T {
-  if (!preview || !row.draft || typeof row.draft !== 'object') return row;
-  return { ...row, ...(row.draft as Partial<T>) };
+  const { draft, ...rest } = row;
+  if (!preview || !draft || typeof draft !== 'object') return rest as T;
+  return { ...rest, ...(draft as Partial<T>) } as T;
 }

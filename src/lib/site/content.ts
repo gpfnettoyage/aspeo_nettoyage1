@@ -20,7 +20,8 @@ function reviveDates<T>(value: T): T {
   if (Array.isArray(value)) return value.map(reviveDates) as T;
   if (value && typeof value === 'object' && !(value instanceof Date)) {
     const out: Record<string, unknown> = {};
-    for (const [k, v] of Object.entries(value)) out[k] = typeof v === 'string' && k.endsWith('At') && ISO_DATE.test(v) ? new Date(v) : reviveDates(v);
+    // La colonne `draft` (modifications non publiées) ne doit jamais quitter le serveur.
+    for (const [k, v] of Object.entries(value)) if (k !== 'draft') out[k] = typeof v === 'string' && k.endsWith('At') && ISO_DATE.test(v) ? new Date(v) : reviveDates(v);
     return out as T;
   }
   return value;

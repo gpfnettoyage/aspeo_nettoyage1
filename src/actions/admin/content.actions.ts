@@ -1,10 +1,10 @@
 'use server';
 
-import type { Prisma } from '@prisma/client';
+import { Prisma } from '@prisma/client';
 import { requirePermission } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
 import { getCollection } from '@/lib/admin/collections';
-import { getEntry, isLive, publicUrl, repo } from '@/lib/admin/repository';
+import { checkRequiredColumns, getEntry, isLive, publicUrl, repo } from '@/lib/admin/repository';
 import { valuesToData, type FormValues } from '@/lib/admin/values';
 import { recordAudit } from '@/lib/admin/audit-log';
 import { invalidatePublicSite } from '@/lib/site/cache';
@@ -44,7 +44,9 @@ export async function saveEntryAction(collection: string, id: string | null, val
 
   const existing = id ? await getEntry(def, id) : null;
   if (id && !existing) return { ok: false, message: 'Ce contenu n’existe plus.' };
-  const { data, errors } = valuesToData(def, values, existing);
+  const parsed = valuesToData(def, values, existing);
+  const { data, errors: columnErrors } = checkRequiredColumns(def.key, parsed.data);
+  const errors = { ...columnErrors, ...parsed.errors };
   if (Object.keys(errors).length) return { ok: false, message: 'Certains champs sont à corriger.', errors };
 
   if (typeof data.slug === 'string') {
@@ -71,7 +73,7 @@ export async function saveEntryAction(collection: string, id: string | null, val
     }
 
     const oldUrl = publicUrl(def, existing);
-    await db.update({ where: { id }, data: { ...data, ...(def.draft ? { draft: null } : {}), ...(intent === 'publish' ? liveData(def, existing) : {}) } });
+    await db.update({ where: { id }, data: { ...data, ...(def.draft ? { draft: Prisma.DbNull } : {}), ...(intent === 'publish' ? liveData(def, existing) : {}) } });
     const newUrl = publicUrl(def, { ...existing, ...data });
     if ((live || intent === 'publish') && oldUrl && newUrl && oldUrl !== newUrl && !oldUrl.includes('#')) await ensureRedirect(oldUrl, newUrl, `Changement d'adresse (${def.singular})`);
     await recordAudit(session, intent === 'publish' && !live ? 'publish' : 'update', def.key, id, titleOf(def, { ...existing, ...data }));
@@ -92,7 +94,7 @@ export async function setEntryStatusAction(collection: string, id: string, statu
   if (status === 'archive' && def.status !== 'content') return { ok: false, message: 'Archivage non disponible pour ce contenu.' };
   // Publier depuis la liste applique aussi les modifications en attente.
   const pending = status === 'publish' && def.draft && row.draft && typeof row.draft === 'object' ? (row.draft as Record<string, unknown>) : {};
-  const data = status === 'publish' ? { ...pending, ...liveData(def, row), ...(def.draft ? { draft: null } : {}) } : status === 'archive' ? { status: 'ARCHIVED' } : offlineData(def);
+  const data = status === 'publish' ? { ...pending, ...liveData(def, row), ...(def.draft ? { draft: Prisma.DbNull } : {}) } : status === 'archive' ? { status: 'ARCHIVED' } : offlineData(def);
   await repo(def.key).update({ where: { id }, data });
   await recordAudit(session, status, def.key, id, titleOf(def, row));
   invalidatePublicSite();
@@ -103,7 +105,7 @@ export async function discardDraftAction(collection: string, id: string): Promis
   const def = getCollection(collection);
   if (!def?.draft) return { ok: false, message: 'Action impossible.' };
   const session = await requirePermission('content:update');
-  await repo(def.key).update({ where: { id }, data: { draft: null } });
+  await repo(def.key).update({ where: { id }, data: { draft: Prisma.DbNull } });
   await recordAudit(session, 'update', def.key, id, 'Brouillon abandonné');
   invalidatePublicSite();
   return { ok: true, id, message: 'Modifications en attente abandonnées.' };

@@ -25,6 +25,38 @@ const DELEGATES: Record<string, () => Delegate> = {
   emplois: () => d(prisma.job),
   faq: () => d(prisma.faqItem),
 };
+/** Colonnes non nulles des modèles (extrait de prisma/schema.prisma). */
+const REQUIRED: Record<string, string[]> = {
+  services: ['slug', 'title', 'published', 'displayOrder', 'content'],
+  categories: ['name', 'slug', 'displayOrder', 'published'],
+  villes: ['slug', 'name', 'featured', 'status', 'displayOrder'],
+  realisations: ['slug', 'title', 'featured', 'status', 'displayOrder'],
+  articles: ['slug', 'title', 'body', 'status'],
+  presse: ['slug', 'title', 'body', 'status'],
+  avis: ['author', 'rating', 'quote', 'status', 'displayOrder'],
+  emplois: ['slug', 'title', 'status', 'displayOrder'],
+  faq: ['scope', 'question', 'answer', 'status', 'displayOrder'],
+};
+/** Colonnes non nulles disposant d'une valeur par défaut en base. */
+const WITH_DEFAULT = new Set(['displayOrder', 'rating', 'featured', 'published', 'status']);
+
+/**
+ * Valeurs nulles sur des colonnes obligatoires : celles qui ont une valeur par défaut sont retirées
+ * (défaut à la création, valeur existante conservée en modification) ; les autres sont signalées.
+ */
+export function checkRequiredColumns(key: string, data: Record<string, unknown>) {
+  const errors: Record<string, string> = {};
+  const out: Record<string, unknown> = {};
+  for (const [k, v] of Object.entries(data)) {
+    if (v === null && REQUIRED[key]?.includes(k)) {
+      if (!WITH_DEFAULT.has(k)) errors[k] = 'Champ obligatoire.';
+      continue;
+    }
+    out[k] = v;
+  }
+  return { data: out, errors };
+}
+
 const INCLUDES: Record<string, object | undefined> = { services: { category: { select: { id: true, name: true } } } };
 
 export const repo = (key: string) => {
