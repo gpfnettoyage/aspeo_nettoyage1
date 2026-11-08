@@ -469,6 +469,7 @@ model Media {
 enum LeadStatus {
   NEW
   IN_PROGRESS
+  QUOTED
   DONE
   SPAM
 }

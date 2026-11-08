@@ -26,6 +26,8 @@ export default function CookieConsent({
 
   useEffect(() => {
     const showConsent = () => {
+      // Pas de bandeau dans l'aperçu intégré à l'administration (page affichée en cadre).
+      if (window.self !== window.top) return;
       const cookieConsent = document.cookie.includes('cookieConsent=true');
       if (!cookieConsent || demo) {
         setIsVisible(true);

@@ -8,6 +8,7 @@ import {
   isAdminPublicPath,
   getSafeCallbackUrl,
 } from '@/lib/constants/admin';
+import { buildCsp } from '../csp.mjs';
 
 // ============================================
 // Security Headers
@@ -46,6 +47,13 @@ export function proxy(request: NextRequest) {
   for (const [key, value] of Object.entries(securityHeaders)) {
     response.headers.set(key, value);
   }
+
+  // Anti-clickjacking : aucune page ne peut être affichée dans un cadre, sauf l'aperçu de
+  // l'administration (cookie Draft Mode posé par /api/preview pour un administrateur connecté),
+  // et uniquement par le site lui-même. Les brouillons restent soumis à la vérification de session.
+  const previewFrame = !isAdminPath(pathname) && request.cookies.has('__prerender_bypass');
+  response.headers.set('X-Frame-Options', previewFrame ? 'SAMEORIGIN' : 'DENY');
+  response.headers.set('Content-Security-Policy', buildCsp({ allowSameOriginFrame: previewFrame }));
 
   // ============================================
   // Admin Route Protection (using BetterAuth cookie helper)

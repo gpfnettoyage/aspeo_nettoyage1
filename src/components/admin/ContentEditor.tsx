@@ -67,6 +67,27 @@ function SerpPreview({ title, desc, url }: { title: string; desc: string; url: s
   );
 }
 
+/** Page affichée à sa largeur réelle (ordinateur 1280 px, mobile 390 px), réduite pour tenir dans le panneau. */
+function ScaledFrame({ src, width }: { src: string; width: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [box, setBox] = useState(0);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const ro = new ResizeObserver(([e]) => setBox(e!.contentRect.width));
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+  const scale = box ? Math.min(1, box / width) : 1;
+  const height = typeof window === 'undefined' ? 700 : Math.round(window.innerHeight * 0.72);
+  return (
+    <div ref={ref} className="overflow-hidden bg-zinc-100" style={{ height }}>
+      <iframe src={src} title="Aperçu de la page" className="block origin-top-left border-0 bg-white"
+        style={{ width, height: height / scale, transform: `scale(${scale})`, marginLeft: width * scale < box ? (box - width * scale) / 2 : 0 }} />
+    </div>
+  );
+}
+
 export default function ContentEditor(props: EditorProps) {
   const { target, groups, can } = props;
   const router = useRouter();
@@ -217,9 +238,7 @@ export default function ContentEditor(props: EditorProps) {
           <button type="button" onClick={() => setFrameKey((k) => k + 1)} className="inline-flex h-7 w-7 items-center justify-center rounded hover:bg-zinc-100" aria-label="Actualiser l’aperçu"><RefreshCw className="h-3.5 w-3.5" /></button>
           <a href={previewSrc} target="_blank" rel="noopener" className="inline-flex h-7 w-7 items-center justify-center rounded hover:bg-zinc-100" aria-label="Ouvrir l’aperçu dans un nouvel onglet"><ExternalLink className="h-3.5 w-3.5" /></a>
         </div>
-        <div className="flex justify-center bg-zinc-100">
-          <iframe key={frameKey} src={previewSrc} title="Aperçu de la page" className="block h-[72vh] border-0 bg-white" style={{ width: device === 'mobile' ? 390 : '100%' }} />
-        </div>
+        <ScaledFrame key={frameKey} src={previewSrc} width={device === 'mobile' ? 390 : 1280} />
       </div>
       <p className="m-0 mt-2 text-[12.5px] text-zinc-500">L’aperçu affiche la dernière version enregistrée (brouillon compris), avec la maquette du site. {dirty && <strong className="text-[#C74700]">Enregistrez le brouillon pour voir vos dernières modifications.</strong>}</p>
     </div>
