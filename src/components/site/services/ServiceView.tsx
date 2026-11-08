@@ -73,7 +73,8 @@ export default function ServiceView({ service, related, articles, testimonial, c
         aside={<DevisCard />}
       />
       <Container className="pt-[14px]">
-        <Breadcrumbs items={[{ name: 'Propreté & services', href: urls.services() }, ...(service.categorySlug && service.categoryName ? [{ name: service.categoryName, href: urls.category(service.categorySlug) }] : []), { name: service.title }]} />
+        {/* Maquette : trois niveaux (l'activité reste dans le fil d'Ariane des données structurées). */}
+        <Breadcrumbs items={[{ name: 'Propreté & services', href: urls.services() }, { name: service.title }]} />
       </Container>
 
       {(audience.length > 0 || notIncluded.length > 0 || c.delay) && (

@@ -24,7 +24,7 @@ export default function MobileMenu({ data, onClose }: { data: HeaderData; onClos
   const pro = data.poles.find((p) => p.key === 'professionnel');
   const spe = data.poles.find((p) => p.key === 'specialise');
   const subs: Record<Exclude<Sub, null>, { hub?: { label: string; href: string }; items: MenuService[] }> = {
-    professionnel: { hub: { label: 'Tout le nettoyage professionnel', href: '/proprete-services#professionnel' }, items: pro ? pro.groups.flatMap((g) => g.allItems) : [] },
+    professionnel: { hub: { label: 'Tout le nettoyage professionnel', href: pro?.groups[0]?.href ?? '/proprete-services' }, items: pro ? pro.groups.flatMap((g) => g.allItems) : [] },
     specialise: { hub: { label: 'Tous les services spécialisés', href: spe?.groups[0]?.href ?? '/proprete-services' }, items: spe ? spe.groups.flatMap((g) => g.allItems) : [] },
     autres: { hub: { label: 'Tous les autres services', href: data.others?.href ?? '/proprete-services' }, items: data.others?.allItems ?? [] },
     apropos: {

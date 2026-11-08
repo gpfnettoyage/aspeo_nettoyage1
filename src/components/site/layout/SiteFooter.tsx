@@ -18,6 +18,14 @@ export default function SiteFooter({ settings, services }: FooterProps) {
   const year = new Date().getFullYear();
   const companyLinks = navigation.companyLinks.filter((l) => l.visible);
   const legalLinks = navigation.legalLinks.filter((l) => l.visible);
+  // Pied de page mobile : ordre de la maquette (Accueil, Mentions, Contact, Cookies, Confidentialité, CGU),
+  // les liens ajoutés dans l'administration se placent à la suite.
+  const MOBILE_ORDER = ['/', '/mentions-legales', '/contact', '/politique-des-cookies', '/politique-de-confidentialite', '/conditions-generales-d-utilisation'];
+  const rank = (href: string) => { const i = MOBILE_ORDER.indexOf(href); return i < 0 ? MOBILE_ORDER.length : i; };
+  const mobileLegal = [{ label: 'Accueil', href: '/' }, ...legalLinks, { label: 'Contact', href: '/contact' }]
+    .filter((l, i, a) => a.findIndex((x) => x.href === l.href) === i)
+    .map((l, i) => ({ ...l, i }))
+    .sort((a, b) => rank(a.href) - rank(b.href) || a.i - b.i);
   const socials = [
     { href: company.facebook, label: 'Facebook', Icon: FacebookIcon },
     { href: company.linkedin, label: 'LinkedIn', Icon: LinkedinIcon },
@@ -121,11 +129,9 @@ export default function SiteFooter({ settings, services }: FooterProps) {
         </div>
         <div className="[border-top:1px_solid_rgba(255,255,255,.16)] p-[26px_22px_36px] text-center">
           <nav className="flex flex-wrap justify-center gap-x-[22px]" aria-label="Informations légales">
-            <Link href="/" className="p-[10px_4px] min-h-[44px] text-white font-body text-[length:.98rem] no-underline inline-flex items-center">Accueil</Link>
-            {legalLinks.map((l) => (
+            {mobileLegal.map((l) => (
               <Link key={l.href} href={l.href} className="p-[10px_4px] min-h-[44px] text-white font-body text-[length:.98rem] no-underline inline-flex items-center">{l.label}</Link>
             ))}
-            <Link href="/contact" className="p-[10px_4px] min-h-[44px] text-white font-body text-[length:.98rem] no-underline inline-flex items-center">Contact</Link>
             <CookieSettingsButton className="p-[10px_4px] min-h-[44px] text-white font-body text-[length:.98rem] inline-flex items-center" />
           </nav>
           <p className="m-[18px_0_0] text-[length:.85rem] text-[color:rgba(255,255,255,.7)]">© {year} {company.name}. Tous droits réservés.</p>
