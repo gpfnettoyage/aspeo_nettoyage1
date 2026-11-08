@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { useEffect, useMemo, useRef, useState, useTransition } from 'react';
+import { useEffect, useMemo, useRef, useState, useSyncExternalStore, useTransition } from 'react';
 import { Check, X } from 'lucide-react';
 import { deleteMediaAction, mediaUsagesAction, syncMediaFromContentAction, updateMediaAltAction, uploadMediaAction, type MediaItem } from '@/actions/admin/media.actions';
 import { ConfirmDialog, useToast } from './feedback';
@@ -24,6 +24,19 @@ export default function MediaLibrary({ items: initial, can }: { items: MediaItem
   const [uploadFolder, setUploadFolder] = useState('medias');
   const [busy, start] = useTransition();
   const fileRef = useRef<HTMLInputElement>(null);
+  const asideRef = useRef<HTMLElement>(null);
+  // Colonne de détail à droite à partir de 960 px (maquette), dessous sur écran étroit.
+  const wide = useSyncExternalStore(
+    (cb) => { const m = window.matchMedia('(min-width: 960px)'); m.addEventListener('change', cb); return () => m.removeEventListener('change', cb); },
+    () => window.matchMedia('(min-width: 960px)').matches,
+    () => true,
+  );
+  useEffect(() => { if (current && !wide) asideRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, [current, wide]);
+  const copyUrl = async () => {
+    if (!current) return;
+    const abs = new URL(current.url, window.location.origin).href;
+    try { await navigator.clipboard.writeText(abs); say('Adresse de l’image copiée.'); } catch { say('Copie impossible : sélectionnez l’adresse affichée et copiez-la.', true); }
+  };
 
   // Liste rechargée par le serveur (router.refresh) : on repart des données reçues.
   const [lastInitial, setLastInitial] = useState(initial);
@@ -59,7 +72,7 @@ export default function MediaLibrary({ items: initial, can }: { items: MediaItem
   const saveAlt = () => current && start(async () => {
     const m = await updateMediaAltAction(current.id, alt);
     setItems((prev) => prev.map((i) => (i.id === m.id ? m : i)));
-    setCurrent(null);
+    setCurrentItem(m);
     say('Texte alternatif enregistré.');
   });
   const remove = (force: boolean) => current && start(async () => {
@@ -76,7 +89,8 @@ export default function MediaLibrary({ items: initial, can }: { items: MediaItem
   });
 
   return (
-    <div>
+    <div className="grid items-start gap-6" style={{ gridTemplateColumns: wide && current ? 'minmax(0,1fr) 320px' : 'minmax(0,1fr)' }}>
+      <div className="min-w-0">
       {can.upload && (
         <div
           onDragOver={(e) => { e.preventDefault(); setDrag(true); }} onDragLeave={() => setDrag(false)}
@@ -111,7 +125,7 @@ export default function MediaLibrary({ items: initial, can }: { items: MediaItem
         <ul className="m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(160px,1fr))] gap-3 p-0">
           {shown.map((m) => (
             <li key={m.id}>
-              <button type="button" onClick={() => setCurrent(m)} className="block w-full overflow-hidden rounded-lg border border-gray-200 bg-white p-0 text-left text-black hover:border-zinc-400">
+              <button type="button" onClick={() => setCurrent(m)} aria-pressed={current?.id === m.id} className={`block w-full overflow-hidden rounded-lg border bg-white p-0 text-left text-black ${current?.id === m.id ? 'border-[#06226D] shadow-[0_0_0_2px_#06226D]' : 'border-gray-200 hover:border-zinc-400'}`}>
                 <span className="block aspect-[4/3] bg-[#f4f4f5]"><img src={m.url} alt={m.alt ?? ''} className={`h-full w-full ${m.url.endsWith('.svg') ? 'object-contain p-4' : 'object-cover'}`} loading="lazy" /></span>
                 <span className="block px-2.5 py-2">
                   <span className="block truncate text-[13px] font-medium">{m.filename}</span>
@@ -123,31 +137,39 @@ export default function MediaLibrary({ items: initial, can }: { items: MediaItem
         </ul>
       )}
 
+      </div>
+
       {current && (
-        <div className="fixed inset-0 z-[55]" role="dialog" aria-modal="true" aria-labelledby="media-title">
-          <div className="absolute inset-0 bg-black/40" onClick={() => setCurrent(null)} aria-hidden="true" />
-          <aside className="absolute bottom-0 right-0 top-0 flex w-full max-w-[460px] flex-col bg-white shadow-2xl">
-            <div className="flex items-start justify-between border-b border-gray-200 px-5 py-4">
-              <div className="min-w-0"><h2 id="media-title" className="m-0 truncate text-[17px] font-semibold">{current.filename}</h2>
-                <p className="m-0 text-[13px] text-gray-500">{[current.width && current.height ? `${current.width} × ${current.height}` : null, current.size ? `${Math.round(current.size / 1024)} Ko` : null, folderLabel(current.folder ?? 'medias')].filter(Boolean).join(' · ')}</p></div>
-              <button type="button" onClick={() => setCurrent(null)} className="inline-flex h-8 w-8 items-center justify-center rounded-md hover:bg-zinc-100" aria-label="Fermer"><X className="h-4 w-4" /></button>
-            </div>
-            <div className="flex-1 overflow-y-auto px-5 py-4">
-              <div className="mb-4 overflow-hidden rounded-md bg-zinc-100"><img src={current.url} alt={current.alt ?? ''} className="max-h-[260px] w-full object-contain" /></div>
-              <label htmlFor="media-alt" className="mb-1.5 block text-[14px] font-medium">Texte alternatif</label>
-              <textarea id="media-alt" rows={3} maxLength={200} className={inputCls} value={alt} onChange={(e) => setAlt(e.target.value)} placeholder="Décrivez l’image en une phrase (ex. : Agent ASPEO nettoyant une vitre de bureau)" disabled={!can.upload} />
-              <p className="m-0 mt-1 text-[12.5px] text-gray-500">Lu par les lecteurs d’écran et par Google. Ne commencez pas par « image de ».</p>
-              <label htmlFor="media-url" className="mb-1.5 mt-4 block text-[14px] font-medium">Adresse</label>
-              <input id="media-url" readOnly className={`${inputCls} font-mono text-[12px]`} value={current.url} onFocus={(e) => e.target.select()} />
-              <h3 className="mb-1.5 mt-5 text-[14px] font-semibold">Utilisée par</h3>
-              {usedBy === null ? <p className="m-0 text-[13.5px] text-gray-500">Recherche…</p> : usedBy.length ? <ul className="m-0 pl-5 text-[14px]">{usedBy.map((u) => <li key={u}>{u}</li>)}</ul> : <p className="m-0 text-[13.5px] text-gray-500">Aucun contenu n’utilise cette image.</p>}
-            </div>
-            <div className="flex items-center justify-between gap-2 border-t border-gray-200 px-5 py-3">
-              {can.delete ? <Btn variant="dangerGhost" onClick={() => remove(false)} disabled={busy}>Supprimer</Btn> : <span />}
-              <div className="flex gap-2"><Btn onClick={() => setCurrent(null)}>Fermer</Btn>{can.upload && <Btn variant="primary" onClick={saveAlt} disabled={busy}>Enregistrer</Btn>}</div>
-            </div>
-          </aside>
-        </div>
+        <aside ref={asideRef} aria-labelledby="media-title" className={`flex min-w-0 flex-col gap-3.5 rounded-lg border border-gray-200 bg-white p-4 ${wide ? 'sticky top-[132px]' : ''}`}>
+          <div className="relative aspect-[4/3] w-full max-w-full overflow-hidden rounded-md bg-[#f4f4f5]">
+            <img src={current.url} alt={current.alt ?? ''} className={`h-full w-full ${current.url.endsWith('.svg') ? 'object-contain p-6' : 'object-cover'}`} />
+            <button type="button" onClick={() => setCurrent(null)} className="absolute right-1.5 top-1.5 inline-flex h-7 w-7 items-center justify-center rounded-md border-0 bg-white/90 text-zinc-700 hover:bg-white" aria-label="Fermer le détail"><X className="h-4 w-4" /></button>
+          </div>
+          <div>
+            <h2 id="media-title" className="m-0 break-all text-[14px] font-semibold">{current.filename}</h2>
+            <p className="m-0 mt-0.5 text-[12.5px] text-gray-500">Dossier : {folderLabel(current.folder ?? 'medias')}{current.width && current.height ? ` · ${current.width} × ${current.height}` : ''}{current.size ? ` · ${Math.round(current.size / 1024)} Ko` : ''}</p>
+          </div>
+          <div className="flex flex-col gap-1.5">
+            <label htmlFor="media-alt" className="text-[14px] font-medium leading-[1.35]">Texte alternatif</label>
+            <textarea id="media-alt" rows={3} maxLength={200} className={inputCls} value={alt} onChange={(e) => setAlt(e.target.value)} placeholder="Décrivez l’image en une phrase (ex. : Agent ASPEO nettoyant une vitre de bureau)" disabled={!can.upload} />
+            <p className="m-0 text-[12.5px] leading-[1.45] text-gray-500">Lu par les lecteurs d’écran et par Google. Ne commencez pas par « image de ».</p>
+          </div>
+          <div className="flex flex-col gap-1.5">
+            <label htmlFor="media-url" className="text-[14px] font-medium leading-[1.35]">Adresse</label>
+            <input id="media-url" readOnly className={`${inputCls} font-mono text-[12px]`} value={current.url} onFocus={(e) => e.target.select()} />
+          </div>
+          <div>
+            <div className="mb-1.5 text-[13px] font-medium">Utilisée sur</div>
+            {usedBy === null ? <p className="m-0 text-[12.5px] text-gray-500">Recherche…</p>
+              : usedBy.length ? <div className="flex flex-wrap gap-1.5">{usedBy.map((u) => <span key={u} className="rounded-full bg-[#f4f4f5] px-2.5 py-[3px] text-[12.5px] text-zinc-700">{u}</span>)}</div>
+              : <p className="m-0 text-[12.5px] text-gray-500">Aucun contenu n’utilise cette image.</p>}
+          </div>
+          <div className="flex flex-wrap items-center gap-2">
+            {can.upload && <button type="button" onClick={saveAlt} disabled={busy} className="rounded-md border border-[#06226D] bg-[#06226D] px-3.5 py-2 text-[13.5px] font-medium text-white hover:bg-[#0a2f8f] disabled:opacity-60">Enregistrer</button>}
+            <button type="button" onClick={copyUrl} className="rounded-md border border-gray-200 bg-white px-3 py-2 text-[13.5px] text-black hover:bg-[#f4f4f5]">Copier l’URL</button>
+            {can.delete && <Btn variant="dangerGhost" size="sm" onClick={() => remove(false)} disabled={busy} className="ml-auto">Supprimer</Btn>}
+          </div>
+        </aside>
       )}
       <ConfirmDialog open={confirm} busy={busy} title="Cette image est utilisée" confirmLabel="Supprimer quand même" onCancel={() => setConfirm(false)} onConfirm={() => remove(true)}>
         <p className="m-0">Elle apparaît dans : {usedBy?.join(', ')}. Si vous la supprimez, elle disparaîtra de ces contenus.</p>
