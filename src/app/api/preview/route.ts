@@ -11,7 +11,13 @@ export async function GET(request: Request) {
   const session = await getSession();
   if (!session || !canAccessAdmin(session.user.role)) return new NextResponse('Accès réservé aux administrateurs.', { status: 401 });
   const path = new URL(request.url).searchParams.get('path') || '/';
-  const safe = path.startsWith('/') && !path.startsWith('//') && !path.includes('\\') ? path : '/';
+  // URL() retire les tabulations et retours à la ligne avant d'analyser l'adresse.
+  const origin = new URL(request.url).origin;
+  const destination = new URL('/', origin);
+  if (path.startsWith('/') && !path.startsWith('//') && !path.includes('\\') && !/[\r\n\t]/.test(path)) {
+    const candidate = new URL(path, origin);
+    if (candidate.origin === origin) destination.href = candidate.href;
+  }
   (await draftMode()).enable();
-  return NextResponse.redirect(new URL(safe, request.url), { status: 307 });
+  return NextResponse.redirect(destination, { status: 307 });
 }

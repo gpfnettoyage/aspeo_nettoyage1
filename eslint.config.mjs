@@ -1,7 +1,6 @@
 import js from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import reactHooks from 'eslint-plugin-react-hooks';
-import reactRefresh from 'eslint-plugin-react-refresh';
 
 export default tseslint.config(
   js.configs.recommended,
@@ -14,6 +13,7 @@ export default tseslint.config(
       'coverage/**',
       'playwright-report/**',
       'test-results/**',
+      'maquettes/**',
       '__tests__/**',
       'e2e/**',
       'scripts/**',
@@ -22,6 +22,10 @@ export default tseslint.config(
       '*.config.mjs',
       'vitest.setup.ts',
     ],
+  },
+  {
+    files: ['csp.mjs'],
+    languageOptions: { globals: { process: 'readonly' } },
   },
   {
     files: ['**/*.{ts,tsx}'],
