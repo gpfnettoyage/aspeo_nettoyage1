@@ -93,7 +93,7 @@
   .asp-site [data-hero-accent] { left: clamp(20px, 5vw, 40px) !important; top: auto !important; width: 22px !important; height: 44px !important; bottom: -22px !important; }
   .asp-site [data-hero-text] { padding: 36px 0 8px !important; }
   .asp-site [data-hero-text] h1 { font-size: clamp(2rem, 8.4vw, 2.8rem) !important; line-height: 1.05 !important; }
-  .asp-site [data-hero-text] p { font-size: 1.08rem !important; line-height: 1.6 !important; }
+  .asp-site [data-hero-text] p:not([data-hero-eyebrow]) { font-size: 1.08rem !important; line-height: 1.6 !important; }
   .asp-site [data-r2] { grid-template-columns: minmax(0, 1fr) !important; }
   .asp-site [data-r2] > * { min-width: 0; }
   .asp-site [data-img-stack] { aspect-ratio: 16/10 !important; }
@@ -134,10 +134,10 @@
   .asp-site section[data-hero-home] { padding-top: 128px !important; }
   .asp-site [data-hero-text] { display: flex; flex-direction: column; padding: 16px 0 24px !important; }
   .asp-site [data-hero-text] h1 { font-size: 1.8rem !important; line-height: 1.1 !important; margin-top: 10px !important; }
-  .asp-site [data-hero-text] > p { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin-top: 12px !important; font-size: 0.98rem !important; line-height: 1.6 !important; }
+  .asp-site [data-hero-text] > p:not([data-hero-eyebrow]) { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin-top: 12px !important; font-size: 0.98rem !important; line-height: 1.6 !important; }
   .asp-site [data-hero-cta] { order: 3; margin-top: 18px !important; gap: 10px !important; }
-  .asp-site [data-hero-cta] > a:first-child { width: 100%; justify-content: center; min-height: 50px; display: flex !important; }
-  .asp-site [data-hero-cta] > a:nth-of-type(2) { display: none !important; }
+  .asp-site [data-hero-cta] > a:first-child, .asp-site [data-hero-cta] > a[href^="tel"] { width: 100%; justify-content: center; min-height: 50px; display: flex !important; }
+  .asp-site [data-hero-cta] > [data-hero-more] { display: none !important; }
   .asp-site [data-hero-search] { order: 4; margin-top: 16px !important; }
   .asp-site [data-r2s] { grid-template-columns: minmax(0, 1fr) !important; }
   .asp-site input, .asp-site select, .asp-site textarea { font-size: 16px !important; }
@@ -145,7 +145,7 @@
 @media (max-width: 560px) {
   .asp-site [data-hero-mosaic] { height: 108vw !important; }
   .asp-site [data-hero-text] h1 { font-size: clamp(1.9rem, 8.6vw, 2.4rem) !important; }
-  .asp-site [data-hero-text] button, .asp-site [data-hero-text] a { flex: 1 1 100%; justify-content: center; }
+  .asp-site [data-hero-cta] > * { flex: 1 1 100%; justify-content: center; }
   .asp-site [data-topbar] a, .asp-site [data-topbar] button { font-size: 0.78rem !important; padding: 0 9px !important; }
   .asp-site [data-xs-hide] { display: none !important; }
   .asp-site [data-xs-only] { display: inline-block !important; }

@@ -156,17 +156,22 @@ export default function SiteHeader({ data }: { data: HeaderData }) {
           </div>
 
           {/* Bouton menu mobile */}
-          <div className="ml-auto flex items-center gap-[8px] min-[1041px]:hidden" data-hdr-tools="">
+          <div className="ml-auto flex items-center gap-[12px] flex-none min-[1041px]:hidden" data-hdr-tools="">
+            {/* Maquette (en-tête « minimal » mobile/tablette) : bouton d'appel puis menu */}
+            <a href={`tel:${data.phoneIntl}`} aria-label={`Appeler ASPEO au ${data.phone}`} data-hdr-call=""
+              className="flex flex-col items-start justify-center gap-[1px] bg-[color:var(--asp-accent)] text-white no-underline p-[9px_18px] min-h-[44px] font-heading whitespace-nowrap">
+              <span className="hidden" data-xs-only=""><PhoneIcon size={20} /></span>
+              <span className="text-[length:.68rem] font-bold tracking-[.08em] uppercase opacity-90" data-xs-hide="">Nous appeler</span>
+              <span className="text-[length:.94rem] font-extrabold" data-xs-hide="">{data.phone}</span>
+            </a>
             <button
               type="button"
-              className="bg-transparent [border:1px_solid_#e2e7ee] cursor-pointer p-[12px_11px] flex flex-col gap-[4px]"
+              className="bg-white/85 [border:1px_solid_rgba(255,255,255,.6)] cursor-pointer w-[44px] h-[44px] flex items-center justify-center flex-none"
               onClick={() => setMobileOpen(true)}
               aria-label="Ouvrir le menu"
               aria-expanded={mobileOpen}
             >
-              <span className="w-[20px] h-[2px] bg-navy block" />
-              <span className="w-[20px] h-[2px] bg-navy block" />
-              <span className="w-[20px] h-[2px] bg-navy block" />
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#06226D" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
             </button>
           </div>
         </div>

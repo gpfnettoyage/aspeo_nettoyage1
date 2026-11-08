@@ -102,6 +102,10 @@ ADMIN_EMAIL=… ADMIN_PASSWORD=… npx tsx scripts/seed-admin.ts
 
 ---
 
+### Cache des pages publiques
+
+Les données publiques sont mises en cache et invalidées à chaque enregistrement dans l'admin (étiquettes de cache Next.js). Sur Vercel, ce cache est persistant et partagé : une modification est visible au rechargement suivant. En cas d'hébergement hors Vercel avec plusieurs instances ou redémarrages, configurer un gestionnaire de cache partagé (`cacheHandler`), sinon une invalidation peut être perdue au redémarrage (constaté en développement local).
+
 ## 6. Contenus et choix à valider par ASPEO
 
 - **Tarifs** : fourchettes de prix masquées (`showPricing` désactivé) tant qu'elles ne sont pas validées.
