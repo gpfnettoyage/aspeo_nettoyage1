@@ -52,3 +52,6 @@ skills-lock.json
 # fichiers privés (développement local)
 /storage
 /public/uploads
+
+# Sauvegarde automatique d’un Redis local (tests)
+dump.rdb
