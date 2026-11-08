@@ -1,6 +1,5 @@
 'use client';
 
-/* eslint-disable @next/next/no-img-element -- icône SVG officielle */
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 

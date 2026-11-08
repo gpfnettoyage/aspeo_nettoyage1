@@ -1,6 +1,5 @@
 'use client';
 
-/* eslint-disable @next/next/no-img-element -- bibliothèque d'images (URL variables) */
 import { useRouter } from 'next/navigation';
 import { useEffect, useMemo, useRef, useState, useTransition } from 'react';
 import { Check, X } from 'lucide-react';
@@ -17,7 +16,7 @@ export default function MediaLibrary({ items: initial, can }: { items: MediaItem
   const [folder, setFolder] = useState('Tous');
   const [query, setQuery] = useState('');
   const [onlyMissing, setOnlyMissing] = useState(false);
-  const [current, setCurrent] = useState<MediaItem | null>(null);
+  const [current, setCurrentItem] = useState<MediaItem | null>(null);
   const [alt, setAlt] = useState('');
   const [usedBy, setUsedBy] = useState<string[] | null>(null);
   const [confirm, setConfirm] = useState(false);
@@ -26,11 +25,12 @@ export default function MediaLibrary({ items: initial, can }: { items: MediaItem
   const [busy, start] = useTransition();
   const fileRef = useRef<HTMLInputElement>(null);
 
-  useEffect(() => setItems(initial), [initial]);
+  // Liste rechargée par le serveur (router.refresh) : on repart des données reçues.
+  const [lastInitial, setLastInitial] = useState(initial);
+  if (initial !== lastInitial) { setLastInitial(initial); setItems(initial); }
+  const setCurrent = (m: MediaItem | null) => { setCurrentItem(m); if (m) { setAlt(m.alt ?? ''); setUsedBy(null); } };
   useEffect(() => {
     if (!current) return;
-    setAlt(current.alt ?? '');
-    setUsedBy(null);
     let alive = true;
     mediaUsagesAction(current.id).then((u) => alive && setUsedBy(u)).catch(() => alive && setUsedBy([]));
     return () => { alive = false; };

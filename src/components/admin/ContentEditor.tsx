@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useCallback, useEffect, useMemo, useRef, useState, useTransition } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore, useTransition } from 'react';
 import { ArrowLeft, ChevronDown, ExternalLink, RefreshCw } from 'lucide-react';
 import type { AdminField, AdminFieldGroup } from '@/lib/admin/fields';
 import type { FormValue, FormValues } from '@/lib/admin/values';
@@ -67,6 +67,14 @@ function SerpPreview({ title, desc, url }: { title: string; desc: string; url: s
   );
 }
 
+function useMediaQuery(query: string) {
+  return useSyncExternalStore(
+    (cb) => { const m = window.matchMedia(query); m.addEventListener('change', cb); return () => m.removeEventListener('change', cb); },
+    () => window.matchMedia(query).matches,
+    () => false,
+  );
+}
+
 /** Page affichée à sa largeur réelle (ordinateur 1280 px, mobile 390 px), réduite pour tenir dans le panneau. */
 function ScaledFrame({ src, width }: { src: string; width: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -98,9 +106,12 @@ export default function ContentEditor(props: EditorProps) {
   const [dirty, setDirty] = useState(false);
   const [busy, start] = useTransition();
   const [tab, setTab] = useState<'content' | 'images' | 'seo'>('content');
-  const [layout, setLayout] = useState<'form' | 'split' | 'preview'>('form');
-  // Maquette : « Côte à côte » par défaut sur grand écran.
-  useEffect(() => { if (props.previewPath && window.innerWidth >= 1280) setLayout('split'); }, [props.previewPath]);
+  // Maquette : « Côte à côte » par défaut sur grand écran ; sur écran étroit, l'aperçu remplace le côte à côte.
+  const wide = useMediaQuery('(min-width: 1280px)');
+  const medium = useMediaQuery('(min-width: 1100px)');
+  const [layoutChoice, setLayout] = useState<'form' | 'split' | 'preview' | null>(null);
+  const chosen = layoutChoice ?? (props.previewPath && wide ? 'split' : 'form');
+  const layout = chosen === 'split' && !medium ? 'preview' : chosen;
   const [device, setDevice] = useState<'desktop' | 'mobile'>('desktop');
   const [open, setOpen] = useState<Record<number, boolean>>({ 0: true });
   const [confirm, setConfirm] = useState<null | 'delete' | 'unpublish' | 'discard'>(null);
@@ -118,8 +129,6 @@ export default function ContentEditor(props: EditorProps) {
     return () => window.removeEventListener('beforeunload', warn);
   }, [dirty]);
 
-  // Le mode côte à côte n'a pas de sens sur petit écran.
-  useEffect(() => { if (layout === 'split' && window.innerWidth < 1100) setLayout('preview'); }, [layout]);
 
   const set = useCallback((name: string, v: FormValue) => {
     setDirty(true);

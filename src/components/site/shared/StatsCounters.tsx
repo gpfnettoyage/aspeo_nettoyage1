@@ -12,7 +12,7 @@ export default function StatsCounters({ stats }: { stats: Stat[] }) {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { setProgress(1); return; }
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { const raf0 = requestAnimationFrame(() => setProgress(1)); return () => cancelAnimationFrame(raf0); }
     let raf = 0;
     const io = new IntersectionObserver(([entry]) => {
       if (!entry?.isIntersecting) return;

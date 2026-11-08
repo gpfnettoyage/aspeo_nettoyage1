@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import {
   LayoutDashboard, Inbox, UserRoundSearch, PanelsTopLeft, FileText, Folder, MapPin, Camera, Newspaper, Mic, Star, BriefcaseBusiness, CircleHelp,
   Image as ImageIcon, Building2, Menu as MenuIcon, Search, Images, Gauge, Shield, Users, ExternalLink, LogOut, X, ArrowLeftRight,
@@ -54,7 +54,9 @@ const itemCls = (active: boolean) =>
 export default function AdminNav({ role, counts }: { role: Role; counts: { leads: number; applications: number } }) {
   const pathname = usePathname() || B;
   const [open, setOpen] = useState(false);
-  useEffect(() => setOpen(false), [pathname]);
+  // Fermeture du menu mobile à chaque changement de page.
+  const [lastPath, setLastPath] = useState(pathname);
+  if (pathname !== lastPath) { setLastPath(pathname); setOpen(false); }
   const isActive = (href: string) => (href === B ? pathname === B : pathname === href || pathname.startsWith(`${href}/`));
 
   const nav = (

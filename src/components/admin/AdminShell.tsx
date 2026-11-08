@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element -- logo SVG officiel */
 import { redirect } from 'next/navigation';
 import { getSession } from '@/lib/auth';
 import { canAccessAdmin, getRoleDisplayName } from '@/lib/permissions';

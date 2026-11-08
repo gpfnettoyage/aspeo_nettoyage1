@@ -66,7 +66,6 @@ export default function SiteFooter({ settings, services }: FooterProps) {
                 </a>
               ))}
             </div>
-            {/* eslint-disable-next-line @next/next/no-img-element -- logo SVG officiel */}
             <img className="w-full max-w-[420px] h-auto block mt-[24px]" src={identity.logoWhite} alt="ASPEO Nettoyage" width={420} height={108} loading="lazy" />
           </div>
         </div>
@@ -116,7 +115,6 @@ export default function SiteFooter({ settings, services }: FooterProps) {
               </a>
             ))}
           </div>
-          {/* eslint-disable-next-line @next/next/no-img-element -- logo SVG officiel */}
           <img className="w-full max-w-[340px] h-auto block mt-[36px]" src={identity.logoWhite} alt="ASPEO Nettoyage" width={340} height={88} loading="lazy" />
         </div>
         <div className="[border-top:1px_solid_rgba(255,255,255,.16)] p-[26px_22px_36px] text-center">

@@ -16,9 +16,12 @@ export default function HeroSearch({ placeholder }: { placeholder: string }) {
   const boxRef = useRef<HTMLFormElement>(null);
   const listId = useId();
 
+  // Moins de 2 caractères : pas de suggestions (les anciens résultats sont masqués).
+  const shown = query.trim().length >= 2 ? results : null;
+
   useEffect(() => {
     const q = query.trim();
-    if (q.length < 2) { setResults(null); return; }
+    if (q.length < 2) return;
     const ctrl = new AbortController();
     const t = setTimeout(async () => {
       try {
@@ -49,12 +52,12 @@ export default function HeroSearch({ placeholder }: { placeholder: string }) {
         className="flex-1 min-w-0 border-none outline-none text-[length:1rem] text-navy p-[12px_0] bg-transparent"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        onFocus={() => results && setOpen(true)}
+        onFocus={() => shown && setOpen(true)}
         onKeyDown={(e) => { if (e.key === 'Escape') setOpen(false); }}
         placeholder={placeholder}
         autoComplete="off"
         aria-controls={listId}
-        aria-expanded={open && !!results}
+        aria-expanded={open && !!shown}
         role="combobox"
       />
       <button type="submit" className="flex-none bg-[color:var(--asp-accent)] text-white border-none p-[14px_24px] font-heading font-bold text-[length:.94rem] cursor-pointer hover:[background:color-mix(in_srgb,var(--asp-accent)_84%,#000)]" aria-label="Rechercher" data-search-btn="">
@@ -62,9 +65,9 @@ export default function HeroSearch({ placeholder }: { placeholder: string }) {
         <span className="hidden" data-xs-only="">→</span>
       </button>
 
-      {open && results && results.length > 0 && (
+      {open && shown && shown.length > 0 && (
         <div id={listId} role="listbox" className="absolute top-[calc(100%_+_8px)] left-0 right-0 bg-white shadow-[0_20px_40px_-12px_rgba(6,34,109,.25)] z-[5] overflow-hidden">
-          {results.map((r) => (
+          {shown.map((r) => (
             <Link key={r.href} href={r.href} role="option" aria-selected="false" className="flex items-center gap-[12px] w-full text-left [border-bottom:1px_solid_#eef2f7] p-[10px_18px] no-underline hover:bg-[color:var(--asp-tint)]">
               <span className="flex-none w-[40px] h-[40px] [background-size:cover] [background-position:center] bg-[color:#eef2f7]" aria-hidden="true" style={r.img ? { backgroundImage: `url('${r.img}')` } : undefined} />
               <span className="flex flex-col gap-[2px] min-w-0">
@@ -78,7 +81,7 @@ export default function HeroSearch({ placeholder }: { placeholder: string }) {
           </Link>
         </div>
       )}
-      {open && results && results.length === 0 && (
+      {open && shown && shown.length === 0 && (
         <div id={listId} className="absolute top-[calc(100%_+_8px)] left-0 right-0 bg-white shadow-[0_20px_40px_-12px_rgba(6,34,109,.25)] z-[5] p-[18px]">
           <p className="m-[0_0_12px] text-[length:.92rem] text-[color:#42505f]">Aucun résultat pour cette recherche, mais nous pouvons sûrement vous aider.</p>
           <Link href="/contact" className="inline-block bg-[color:var(--asp-accent)] text-white p-[10px_18px] font-heading font-bold text-[length:.88rem] no-underline">Demander un devis <span aria-hidden="true">→</span></Link>

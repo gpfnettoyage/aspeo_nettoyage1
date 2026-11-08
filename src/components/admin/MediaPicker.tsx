@@ -1,6 +1,5 @@
 'use client';
 
-/* eslint-disable @next/next/no-img-element -- vignettes de la bibliothèque (URL variables) */
 import { useEffect, useRef, useState, useTransition } from 'react';
 import { Upload, X, Check } from 'lucide-react';
 import { listMediaAction, uploadMediaAction, type MediaItem } from '@/actions/admin/media.actions';

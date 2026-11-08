@@ -73,10 +73,8 @@ export default function SiteHeader({ data }: { data: HeaderData }) {
   }, []);
 
   // Fermeture des menus à chaque navigation
-  useEffect(() => {
-    setPanel(null);
-    setMobileOpen(false);
-  }, [pathname]);
+  const [lastPath, setLastPath] = useState(pathname);
+  if (pathname !== lastPath) { setLastPath(pathname); setPanel(null); setMobileOpen(false); }
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -110,7 +108,6 @@ export default function SiteHeader({ data }: { data: HeaderData }) {
 
         <div className="max-w-[1600px] m-[0_auto] p-[0_clamp(20px,4vw,56px)] h-[88px] flex items-center gap-[20px]">
           <Link href="/" className="p-0 flex items-center flex-none" data-hdr-logo="" aria-label="ASPEO Nettoyage — accueil">
-            {/* eslint-disable-next-line @next/next/no-img-element -- logo SVG officiel, servi tel quel */}
             <img className="h-[52px] w-auto block" src={data.logo} alt="ASPEO Nettoyage" width={202} height={52} />
           </Link>
 
@@ -198,7 +195,6 @@ export default function SiteHeader({ data }: { data: HeaderData }) {
                 </div>
               )}
               <div className="relative rounded-[10px] overflow-hidden p-[22px] flex flex-col gap-[12px] self-stretch">
-                {/* eslint-disable-next-line @next/next/no-img-element -- image décorative du panneau */}
                 <img className="absolute inset-0 w-full h-full object-cover" src={data.promoImage} alt="" loading="lazy" decoding="async" />
                 <div className="absolute inset-0 [background:linear-gradient(100deg,rgba(6,34,109,.88)_0%,rgba(6,34,109,.72)_45%,rgba(6,34,109,.5)_100%)]" aria-hidden="true" />
                 <div className="absolute inset-0 bg-[color:rgba(10,14,26,.25)]" aria-hidden="true" />

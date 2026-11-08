@@ -1,6 +1,5 @@
 'use client';
 
-/* eslint-disable @next/next/no-img-element -- aperçus locaux (blob:) des photos sélectionnées */
 import { startTransition, useActionState, useEffect, useRef, useState } from 'react';
 import { submitQuoteRequest, type FormState } from '@/actions/public/forms.actions';
 import AntiSpamFields from './AntiSpamFields';
@@ -60,8 +59,10 @@ export default function QuoteForm({ directions, initialDirection = '', initialPr
       const t = setTimeout(() => { setOverlay('done'); formRef.current?.reset(); setPhotos([]); setFrequency(''); }, wait);
       return () => clearTimeout(t);
     }
-    if (state.status === 'error') setOverlay(null);
   }, [state]);
+  // En cas d'erreur, l'animation d'envoi est retirée (le message d'erreur reste affiché).
+  const [lastState, setLastState] = useState(state);
+  if (state !== lastState) { setLastState(state); if (state.status === 'error') setOverlay(null); }
 
   useEffect(() => () => photos.forEach((p) => URL.revokeObjectURL(p.url)), [photos]);
 

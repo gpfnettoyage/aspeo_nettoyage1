@@ -1,6 +1,5 @@
 'use client';
 
-/* eslint-disable @next/next/no-img-element -- aperçu d'images choisies (URL variables) */
 import { useState } from 'react';
 import { ArrowDown, ArrowUp, Plus, X } from 'lucide-react';
 import type { AdminField } from '@/lib/admin/fields';

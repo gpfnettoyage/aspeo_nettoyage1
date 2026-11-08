@@ -1,16 +1,6 @@
-import { requireAdmin } from '@/lib/auth';
-import AdminShell from '@/components/admin/AdminShell';
-import CategoryForm from '@/components/admin/CategoryForm';
+import { redirect } from 'next/navigation';
+import { ADMIN_BASE_PATH } from '@/lib/constants/admin';
 
-export default async function NewCategoryPage() {
-  await requireAdmin();
-
-  return (
-    <AdminShell
-      title="Nouvelle catégorie"
-      description="Créer une nouvelle catégorie de services"
-    >
-      <CategoryForm mode="create" />
-    </AdminShell>
-  );
+export default function LegacyNew() {
+  redirect(`${ADMIN_BASE_PATH}/contenus/categories/nouveau`);
 }

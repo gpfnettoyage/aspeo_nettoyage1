@@ -20,7 +20,6 @@ const components: Components = {
   a: ({ href = '', children }) => href.startsWith('/')
     ? <Link href={href} className="text-[color:var(--asp-accent-ink)] font-semibold underline [text-underline-offset:3px]">{children}</Link>
     : <a href={href} target="_blank" rel="noopener noreferrer" className="text-[color:var(--asp-accent-ink)] font-semibold underline [text-underline-offset:3px]">{children}</a>,
-  // eslint-disable-next-line @next/next/no-img-element -- dimensions inconnues dans le Markdown : chargement différé natif
   img: ({ src, alt }) => <img src={typeof src === 'string' ? src : ''} alt={alt ?? ''} loading="lazy" decoding="async" className="block w-full h-auto m-[8px_0_24px]" />,
   table: ({ children }) => <div className="overflow-x-auto m-[0_0_24px]"><table className="w-full border-collapse text-[length:.95rem] text-[color:#334155]">{children}</table></div>,
   th: ({ children }) => <th className="text-left bg-navy text-white font-heading font-bold p-[10px_12px] [border:1px_solid_#06226D]">{children}</th>,

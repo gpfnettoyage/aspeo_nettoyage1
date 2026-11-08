@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element -- vignettes */
 import Link from 'next/link';
 import { requirePermission } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';

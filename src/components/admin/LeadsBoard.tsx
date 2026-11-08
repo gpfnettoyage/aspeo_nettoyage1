@@ -1,12 +1,12 @@
 'use client';
 
-/* eslint-disable @next/next/no-img-element -- photos jointes (fichiers privés) */
 import { useRouter } from 'next/navigation';
 import { Fragment, useEffect, useMemo, useState, useTransition } from 'react';
 import { FileText, X } from 'lucide-react';
 import { updateLeadAction, deleteLeadAction } from '@/actions/admin/leads.actions';
 import { ConfirmDialog, useToast } from './feedback';
-import { Badge, Btn, inputCls, type Tone } from './ui';
+import { LEAD_STATUS } from '@/lib/admin/lead-status';
+import { Badge, Btn, inputCls } from './ui';
 
 export interface LeadRow {
   id: string;
@@ -25,13 +25,6 @@ export interface LeadRow {
   files: { url: string; name: string; image: boolean }[];
 }
 
-export const LEAD_STATUS: Record<string, { label: string; tone: Tone }> = {
-  NEW: { label: 'Nouveau', tone: 'orange' },
-  IN_PROGRESS: { label: 'En cours', tone: 'blue' },
-  QUOTED: { label: 'Devis envoyé', tone: 'green' },
-  DONE: { label: 'Clôturé', tone: 'gray' },
-  SPAM: { label: 'Indésirable', tone: 'red' },
-};
 const TABS: [string, string][] = [['ALL', 'Toutes'], ['NEW', 'Nouvelles'], ['IN_PROGRESS', 'En cours'], ['QUOTED', 'Devis envoyé'], ['DONE', 'Clôturées'], ['SPAM', 'Indésirables']];
 
 interface Props { kind: 'devis' | 'candidature'; rows: LeadRow[]; columns: { need: string; frequency?: string }; can: { update: boolean; delete: boolean }; openId?: string }
@@ -40,13 +33,14 @@ export default function LeadsBoard({ kind, rows, columns, can, openId }: Props) 
   const router = useRouter();
   const { say, node: toast } = useToast();
   const [tab, setTab] = useState('ALL');
-  const [current, setCurrent] = useState<LeadRow | null>(() => rows.find((r) => r.id === openId) ?? null);
-  const [status, setStatus] = useState('');
-  const [notes, setNotes] = useState('');
+  const initial = rows.find((r) => r.id === openId) ?? null;
+  const [current, setCurrentRow] = useState<LeadRow | null>(initial);
+  const [status, setStatus] = useState(initial?.status ?? '');
+  const [notes, setNotes] = useState(initial?.notes ?? '');
+  const setCurrent = (r: LeadRow | null) => { setCurrentRow(r); if (r) { setStatus(r.status); setNotes(r.notes); } };
   const [busy, start] = useTransition();
   const [confirmDelete, setConfirmDelete] = useState(false);
 
-  useEffect(() => { if (current) { setStatus(current.status); setNotes(current.notes); } }, [current]);
   useEffect(() => {
     if (!current) return;
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setCurrent(null);
