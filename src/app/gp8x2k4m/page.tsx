@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
 import { requireAdmin } from '@/lib/auth';
 import { hasPermission } from '@/lib/permissions';
 import { prisma } from '@/lib/prisma';
@@ -47,10 +46,10 @@ export default async function AdminDashboardPage() {
   const seoToFix = seo.filter((r) => titleLevel(r.title) !== 'ok' || descLevel(r.desc) !== 'ok').length;
 
   const stat = (label: string, n: number, sub: string, href: string, accent = false) => (
-    <Link href={href} className="block rounded-lg border border-zinc-200 bg-white p-4 text-zinc-950 no-underline hover:border-zinc-300">
-      <p className="m-0 text-[13.5px] text-zinc-500">{label}</p>
-      <p className={`m-0 mt-1 text-[28px] font-semibold leading-tight ${accent && n > 0 ? 'text-[#C74700]' : ''}`}>{n}</p>
-      <p className="m-0 text-[13px] text-zinc-500">{sub}</p>
+    <Link href={href} className="block rounded-lg border border-gray-200 bg-white p-4 text-[#0a0a0a] no-underline hover:border-[#c9d6ea] hover:bg-[#fafcff]">
+      <p className="m-0 text-[13px] text-gray-500">{label}</p>
+      <p className={`m-0 mt-1.5 text-[28px] font-bold ${accent ? 'text-[#c2410c]' : ''}`}>{n}</p>
+      <p className="m-0 mt-0.5 text-[12.5px] text-gray-500">{sub}</p>
     </Link>
   );
   const shortcuts: [string, string][] = [
@@ -59,59 +58,61 @@ export default async function AdminDashboardPage() {
   ];
 
   return (
-    <AdminShell title="Tableau de bord">
-      <div className="mb-6 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+    <AdminShell title="Dashboard">
+      <div className="mb-6 grid grid-cols-[repeat(auto-fit,minmax(min(100%,200px),1fr))] gap-4">
         {stat('Demandes à traiter', newLeads, 'nouvelles demandes de devis', `${B}/demandes`, true)}
         {stat('En attente de publication', pending, 'brouillons et modifications', `${B}/contenus/services`)}
         {stat('Référencement à corriger', seoToFix, 'titres ou descriptions', `${B}/referencement`)}
         {stat('Images sans texte alternatif', missingAlt, 'à compléter', `${B}/medias`)}
       </div>
-      <div className="grid items-start gap-6 lg:grid-cols-2">
-        <div className="space-y-6">
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,380px),1fr))] items-start gap-4">
+        <div className="space-y-4">
           {canLeads && (
-            <section className="rounded-lg border border-zinc-200 bg-white">
-              <div className="flex items-center justify-between border-b border-zinc-200 px-4 py-3.5"><h2 className="m-0 text-[15px] font-semibold">Demandes de devis récentes</h2><Link href={`${B}/demandes`} className="text-[13.5px] font-medium text-[#06226D]">Tout voir →</Link></div>
+            <section className="rounded-lg border border-gray-200 bg-white">
+              <div className="flex items-center justify-between border-b border-[#f0f0f1] px-4 py-3.5"><h2 className="m-0 text-[15px] font-semibold">Demandes de devis récentes</h2><Link href={`${B}/demandes`} className="text-[13px] font-medium no-underline text-[#06226D]">Tout voir →</Link></div>
               {recent.length ? (
                 <ul className="m-0 list-none p-0">
                   {quoteRows(recent).map((r) => (
-                    <li key={r.id} className="border-b border-zinc-100 last:border-0">
-                      <Link href={`${B}/demandes?id=${r.id}`} className="flex items-center justify-between gap-3 px-4 py-3 text-zinc-950 no-underline hover:bg-zinc-50">
-                        <span className="min-w-0"><span className="block font-medium">{r.name}</span><span className="block truncate text-[13px] text-zinc-500">{r.need} · {r.date}</span></span>
+                    <li key={r.id} className="border-b border-zinc-100">
+                      <Link href={`${B}/demandes?id=${r.id}`} className="flex items-center justify-between gap-3 px-4 py-3 text-[13.333px] text-[#0a0a0a] no-underline hover:bg-zinc-50">
+                        <span className="min-w-0"><span className="block font-medium">{r.name}</span><span className="block truncate text-[12.5px] text-gray-500">{r.need} · {r.date}</span></span>
                         <Badge tone={LEAD_STATUS[r.status]?.tone}>{LEAD_STATUS[r.status]?.label}</Badge>
                       </Link>
                     </li>
                   ))}
                 </ul>
-              ) : <p className="m-0 px-4 py-6 text-[14px] text-zinc-500">Aucune demande pour le moment.</p>}
+              ) : <p className="m-0 px-4 py-6 text-[14px] text-gray-500">Aucune demande pour le moment.</p>}
             </section>
           )}
-          <section className="rounded-lg border border-zinc-200 bg-white">
-            <div className="border-b border-zinc-200 px-4 py-3.5"><h2 className="m-0 text-[15px] font-semibold">Raccourcis</h2></div>
-            <div className="grid gap-2 p-4">
-              {shortcuts.map(([l, h]) => <Link key={h} href={h} className="flex items-center justify-between rounded-md border border-zinc-200 px-3.5 py-2.5 text-[14.5px] text-zinc-950 no-underline hover:bg-zinc-50">{l}<ArrowRight className="h-4 w-4 text-zinc-500" /></Link>)}
+          <section className="rounded-lg border border-gray-200 bg-white">
+            <div className="p-4">
+            <h2 className="m-0 mb-3 text-[15px] font-semibold">Raccourcis</h2>
+            <div className="flex flex-col gap-2">
+              {shortcuts.map(([l, h]) => <Link key={h} href={h} className="flex items-center justify-between gap-2 rounded-md border border-gray-200 px-3 py-2.5 text-[14px] text-black no-underline hover:bg-zinc-100">{l}<span className="text-gray-500" aria-hidden="true">→</span></Link>)}
+            </div>
             </div>
           </section>
         </div>
-        <section className="rounded-lg border border-zinc-200 bg-white">
-          <div className="border-b border-zinc-200 px-4 py-3.5"><h2 className="m-0 text-[15px] font-semibold">Dernières modifications</h2></div>
+        <section className="rounded-lg border border-gray-200 bg-white">
+          <div className="border-b border-[#f0f0f1] px-4 py-3.5"><h2 className="m-0 text-[15px] font-semibold">Dernières modifications</h2></div>
           {logs.length ? (
             <ul className="m-0 list-none p-0">
               {logs.map((l) => {
                 const [what, path] = RESOURCE[l.resource] ?? ['', null];
                 const href = path && l.resourceId && l.action !== 'delete' ? `${B}/${path}/${l.resourceId}` : null;
                 return (
-                  <li key={l.id} className="flex gap-3 border-b border-zinc-100 px-4 py-3 last:border-0">
-                    <span className="flex h-7 w-7 flex-none items-center justify-center rounded-full bg-zinc-100 text-[11px] font-semibold text-zinc-600" aria-hidden="true">{initials(l.userName ?? '?')}</span>
-                    <span className="min-w-0 text-[14px]">
+                  <li key={l.id} className="flex gap-3 border-b border-zinc-100 px-4 py-3">
+                    <span className="flex h-7 w-7 flex-none items-center justify-center rounded-full bg-zinc-100 text-[11px] font-semibold text-zinc-700" aria-hidden="true">{initials(l.userName ?? '?')}</span>
+                    <span className="min-w-0 flex-1 text-[13.5px] leading-[1.45]">
                       <strong className="font-semibold">{l.userName}</strong> {VERB[l.action] ?? l.action} {what}{' '}
                       {href ? <Link href={href} className="text-[#06226D]">{l.resourceName}</Link> : <span className="text-[#06226D]">{l.resourceName}</span>}
-                      <span className="block text-[12.5px] text-zinc-500">{relativeTime(l.createdAt)}</span>
+                      <span className="block text-[12px] text-gray-500">{relativeTime(l.createdAt)}</span>
                     </span>
                   </li>
                 );
               })}
             </ul>
-          ) : <p className="m-0 px-4 py-6 text-[14px] text-zinc-500">Les modifications faites dans l’administration apparaîtront ici.</p>}
+          ) : <p className="m-0 px-4 py-6 text-[14px] text-gray-500">Les modifications faites dans l’administration apparaîtront ici.</p>}
         </section>
       </div>
     </AdminShell>

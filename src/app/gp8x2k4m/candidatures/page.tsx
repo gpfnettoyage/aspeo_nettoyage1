@@ -14,7 +14,7 @@ export default async function ApplicationsPage({ searchParams }: { searchParams:
   const role = session.user.role;
   return (
     <AdminShell title="Candidatures">
-      <p className="m-0 mb-5 text-[14px] text-zinc-500">Candidatures reçues depuis la page « Nous rejoindre ». Les CV sont stockés de façon privée.</p>
+      <p className="m-0 mb-5 text-[14px] text-gray-500">Candidatures reçues depuis la page « Nous rejoindre ». Les CV sont stockés de façon privée.</p>
       <LeadsBoard kind="candidature" rows={applicationRows(rows)} columns={{ need: 'Poste' }} openId={id}
         can={{ update: hasPermission(role, 'leads:update'), delete: hasPermission(role, 'leads:delete') }} />
     </AdminShell>

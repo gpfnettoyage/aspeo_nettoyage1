@@ -40,7 +40,7 @@ export interface AdminFieldGroup { title: string; description?: string; fields: 
 
 export type StatusMode = 'content' | 'boolean' | 'none';
 
-export interface ListColumn { label: string; path: string; kind?: 'text' | 'date' | 'status' | 'relation' | 'badge' }
+export interface ListColumn { label: string; path: string; kind?: 'text' | 'date' | 'status' | 'relation' | 'badge'; format?: (v: unknown) => string }
 
 export interface CollectionDef {
   key: string;

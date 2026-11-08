@@ -58,11 +58,11 @@ function StateBadge({ state, pending }: { state: EditorProps['state']; pending: 
 /** Aperçu Google (titre, adresse, description). */
 function SerpPreview({ title, desc, url }: { title: string; desc: string; url: string }) {
   return (
-    <div className="rounded-lg border border-zinc-200 bg-white p-4">
-      <p className="m-0 mb-2 text-[12px] font-medium uppercase tracking-wide text-zinc-500">Aperçu dans Google</p>
-      <p className="m-0 truncate text-[13px] text-zinc-600">{url}</p>
-      <p className="m-0 mt-0.5 line-clamp-1 text-[19px] leading-snug text-[#1a0dab]">{title}</p>
-      <p className="m-0 mt-1 line-clamp-2 text-[13.5px] leading-relaxed text-zinc-600">{desc}</p>
+    <div className="rounded-lg border border-gray-200 bg-[#fafafa] p-3">
+      <p className="m-0 mb-1.5 text-[11.5px] uppercase tracking-[.04em] text-gray-500">Aperçu dans Google</p>
+      <p className="m-0 break-all text-[12.5px] text-[#202124]">{url}</p>
+      <p className="m-0 mt-0.5 line-clamp-1 text-[17px] leading-[1.3] text-[#1a0dab]">{title}</p>
+      <p className="m-0 mt-1 line-clamp-2 text-[13px] leading-[1.45] text-[#4d5156]">{desc}</p>
     </div>
   );
 }
@@ -191,7 +191,7 @@ export default function ContentEditor(props: EditorProps) {
   // Boutons d'action (maquette : Supprimer · Enregistrer le brouillon · Publier)
   const actions = (
     <div className="flex flex-wrap items-center gap-2">
-      {isEntry && !isNew && can.delete && <Btn variant="dangerGhost" onClick={() => setConfirm('delete')} disabled={busy}>Supprimer</Btn>}
+      {isEntry && !isNew && can.delete && <Btn variant="dangerGhost" onClick={() => setConfirm('delete')} disabled={busy} className="!px-2.5 !font-normal">Supprimer</Btn>}
       {statusNone ? <Btn variant="primary" onClick={() => save('save')} disabled={busy}>{busy ? 'Enregistrement…' : 'Enregistrer'}</Btn> : (
         <>
           {(usesDraft || !live) && <Btn onClick={() => save(live || target.kind === 'page' ? 'draft' : isNew ? 'draft' : 'save')} disabled={busy}>Enregistrer le brouillon</Btn>}
@@ -213,18 +213,18 @@ export default function ContentEditor(props: EditorProps) {
     const fields = g.fields;
     const hasError = fields.some((f) => errors[f.name]);
     return (
-      <section key={g.title} className={`rounded-lg border bg-white ${hasError ? 'border-red-300' : 'border-zinc-200'}`}>
+      <section key={g.title} className={`overflow-hidden rounded-lg border bg-white ${hasError ? 'border-red-300' : 'border-gray-200'}`}>
         <button type="button" onClick={() => setOpen((o) => ({ ...o, [i]: !isOpen }))} aria-expanded={isOpen}
-          className="flex w-full items-center gap-3 border-0 bg-transparent px-4 py-3.5 text-left">
-          {numbered && <span className="inline-flex h-6 w-6 flex-none items-center justify-center rounded-md bg-zinc-100 text-[12px] font-medium text-zinc-600">{i + 1}</span>}
+          className="flex w-full items-center gap-3 border-0 bg-white px-4 py-3.5 text-left text-black hover:bg-[#fafafa]">
+          {numbered && <span className="inline-flex h-[26px] w-[26px] flex-none items-center justify-center rounded-md bg-[#f4f4f5] text-[12px] font-semibold text-zinc-700">{i + 1}</span>}
           <span className="min-w-0 flex-1">
             <span className="block text-[15px] font-semibold">{g.title}</span>
-            {g.description && <span className="block text-[13px] text-zinc-500">{g.description}</span>}
+            {g.description && <span className="mt-0.5 block text-[13px] text-gray-500">{g.description}</span>}
           </span>
-          <ChevronDown className={`h-4 w-4 flex-none text-zinc-500 transition-transform ${isOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
+          <ChevronDown className={`h-4 w-4 flex-none text-gray-500 transition-transform ${isOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
         </button>
         {isOpen && (
-          <div className="grid gap-5 border-t border-zinc-200 px-4 py-4 sm:grid-cols-2">
+          <div className="grid gap-[18px] border-t border-[#f0f0f1] p-[16px_16px_20px] sm:grid-cols-2">
             {fields.map((f) => (
               <div key={f.name} className={f.half ? '' : 'sm:col-span-2'}>
                 <FieldInput field={f} value={values[f.name]} onChange={(v) => set(f.name, v)} error={errors[f.name]} relations={props.relations} />
@@ -239,37 +239,37 @@ export default function ContentEditor(props: EditorProps) {
   const previewSrc = props.previewPath ? `/api/preview?path=${encodeURIComponent(props.previewPath)}` : null;
   const preview = previewSrc && (
     <div className="lg:sticky lg:top-[132px]">
-      <div className="overflow-hidden rounded-lg border border-zinc-200 bg-white">
-        <div className="flex items-center gap-2 border-b border-zinc-200 px-3 py-2 text-[12.5px]">
+      <div className="overflow-hidden rounded-lg border border-gray-200 bg-white">
+        <div className="flex items-center gap-2 border-b border-gray-200 px-3 py-2 text-[12.5px]">
           <span className="h-2 w-2 rounded-full bg-green-500" aria-hidden="true" />
           <span className="font-medium">Aperçu</span>
-          <span className="min-w-0 flex-1 truncate text-zinc-500">{host}{props.previewPath}</span>
+          <span className="min-w-0 flex-1 truncate text-gray-500">{host}{props.previewPath}</span>
           <button type="button" onClick={() => setFrameKey((k) => k + 1)} className="inline-flex h-7 w-7 items-center justify-center rounded hover:bg-zinc-100" aria-label="Actualiser l’aperçu"><RefreshCw className="h-3.5 w-3.5" /></button>
           <a href={previewSrc} target="_blank" rel="noopener" className="inline-flex h-7 w-7 items-center justify-center rounded hover:bg-zinc-100" aria-label="Ouvrir l’aperçu dans un nouvel onglet"><ExternalLink className="h-3.5 w-3.5" /></a>
         </div>
         <ScaledFrame key={frameKey} src={previewSrc} width={device === 'mobile' ? 390 : 1280} />
       </div>
-      <p className="m-0 mt-2 text-[12.5px] text-zinc-500">L’aperçu affiche la dernière version enregistrée (brouillon compris), avec la maquette du site. {dirty && <strong className="text-[#C74700]">Enregistrez le brouillon pour voir vos dernières modifications.</strong>}</p>
+      <p className="m-0 mt-2 text-[12.5px] text-gray-500">L’aperçu affiche la dernière version enregistrée (brouillon compris), avec la maquette du site. {dirty && <strong className="text-[#C74700]">Enregistrez le brouillon pour voir vos dernières modifications.</strong>}</p>
     </div>
   );
 
   return (
     <div>
       {/* En-tête collant : retour, titre, statut, actions */}
-      <div className="sticky top-14 z-20 -mx-4 -mt-6 mb-6 border-b border-zinc-200 bg-white/95 px-4 py-3 backdrop-blur sm:-mx-8 sm:-mt-8 sm:px-8">
+      <div className="sticky top-14 z-20 -mx-4 -mt-6 mb-6 border-b border-gray-200 bg-white/95 px-4 py-3 backdrop-blur sm:-mx-8 sm:-mt-8 sm:px-8">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="min-w-0">
-            <Link href={props.backHref} className="inline-flex items-center gap-1 text-[13px] text-zinc-500 no-underline hover:text-zinc-900"><ArrowLeft className="h-3.5 w-3.5" />{props.backLabel}</Link>
+            <Link href={props.backHref} className="mb-0.5 inline-flex items-center gap-1 text-[12.5px] text-gray-500 no-underline hover:text-[#06226D]"><ArrowLeft className="h-3.5 w-3.5" />{props.backLabel}</Link>
             <div className="flex flex-wrap items-center gap-2">
-              <h1 className="m-0 truncate text-[19px] font-semibold tracking-tight">{props.title}</h1>
+              <h1 className="m-0 truncate text-[18px] font-semibold leading-[1.3]">{props.title}</h1>
               {!statusNone && <StateBadge state={props.state} pending={props.hasPendingDraft} />}
               {dirty && <span className="text-[12.5px] text-[#C74700]">Non enregistré</span>}
             </div>
             {!isNew && (
-              <p className="m-0 mt-0.5 text-[13px] text-zinc-500">
+              <p className="m-0 mt-0.5 text-[12.5px] text-gray-500">
                 {props.publishedAt ? `Dernière publication : ${fmtDate(props.publishedAt)}` : props.updatedAt ? `Mis à jour : ${fmtDate(props.updatedAt)}` : ''}
-                {isEntry && live && !statusNone && can.publish && <> · <button type="button" onClick={() => setConfirm('unpublish')} className="border-0 bg-transparent p-0 text-[13px] text-zinc-600 underline hover:text-zinc-950">Dépublier</button></>}
-                {live && props.previewPath && <> · <a href={props.previewPath} target="_blank" rel="noopener" className="text-zinc-600">Voir sur le site</a></>}
+                {isEntry && live && !statusNone && can.publish && <> · <button type="button" onClick={() => setConfirm('unpublish')} className="border-0 bg-transparent p-0 text-[12.5px] text-gray-500 underline hover:text-[#0a0a0a]">Dépublier</button></>}
+                {live && props.previewPath && <> · <a href={props.previewPath} target="_blank" rel="noopener" className="text-gray-500">Voir sur le site</a></>}
               </p>
             )}
           </div>
@@ -278,12 +278,12 @@ export default function ContentEditor(props: EditorProps) {
       </div>
 
       {/* Onglets et affichage */}
-      <div className="mb-5 flex flex-wrap items-end justify-between gap-3 border-b border-zinc-200">
-        <div role="tablist" aria-label="Sections de l’éditeur" className="flex gap-1">
+      <div className="mb-5 flex flex-wrap items-end justify-between gap-3 border-b border-gray-200">
+        <div role="tablist" aria-label="Sections de l’éditeur" className="flex gap-0.5 overflow-x-auto">
           {([['content', 'Contenu'], ['images', 'Images'], ['seo', 'Référencement Google']] as const).filter(([k]) => k !== 'images' || imageFields.length).filter(([k]) => k !== 'seo' || seoGroup || seo).map(([k, label]) => (
             <button key={k} type="button" role="tab" aria-selected={tab === k} onClick={() => setTab(k)}
-              className={`-mb-px border-0 border-b-2 bg-transparent px-3 py-2.5 text-[14.5px] ${tab === k ? 'border-[#06226D] font-medium text-zinc-950' : 'border-transparent text-zinc-500 hover:text-zinc-900'}`}>
-              {label}{k === 'images' && <span className="ml-1.5 rounded-full bg-zinc-100 px-1.5 text-[11.5px] text-zinc-600">{imageCount}</span>}
+              className={`-mb-px inline-flex items-center gap-1.5 whitespace-nowrap border-0 border-b-2 bg-transparent px-3 py-[11px] text-[14px] font-medium ${tab === k ? 'border-[#06226D] text-[#0a0a0a]' : 'border-transparent text-gray-500 hover:text-[#0a0a0a]'}`}>
+              {label}{k === 'images' && <span className="rounded-full bg-[#f4f4f5] px-[7px] py-px text-[11.5px] font-semibold text-zinc-700">{imageCount}</span>}
             </button>
           ))}
         </div>
@@ -308,15 +308,15 @@ export default function ContentEditor(props: EditorProps) {
           <div className="space-y-4">
             {tab === 'content' && contentGroups.map((g, i) => renderGroup(g, i, true))}
             {tab === 'images' && (
-              <section className="rounded-lg border border-zinc-200 bg-white p-4">
-                <p className="m-0 mb-4 text-[13.5px] text-zinc-500">Toutes les images de {target.kind === 'page' ? 'la page' : `ce${props.singular.match(/^[aeéiou]/i) ? 't' : ''} ${props.singular}`}. Pensez au texte alternatif dans la bibliothèque d’images.</p>
+              <section className="rounded-lg border border-gray-200 bg-white p-4">
+                <p className="m-0 mb-4 text-[13.5px] text-gray-500">Toutes les images de {target.kind === 'page' ? 'la page' : `ce${props.singular.match(/^[aeéiou]/i) ? 't' : ''} ${props.singular}`}. Pensez au texte alternatif dans la bibliothèque d’images.</p>
                 <div className="grid gap-6">{imageFields.map((f) => <FieldInput key={f.name} field={f} value={values[f.name]} onChange={(v) => set(f.name, v)} error={errors[f.name]} idPrefix="img" />)}</div>
               </section>
             )}
             {tab === 'seo' && (
               <div className="space-y-4">
                 <SerpPreview title={seoTitle || autoTitle} desc={seoDesc || autoDesc} url={`${host}${props.previewPath ?? ''}`} />
-                <section className="grid gap-5 rounded-lg border border-zinc-200 bg-white p-4">
+                <section className="grid gap-5 rounded-lg border border-gray-200 bg-white p-4">
                   <Notice>Laissés vides, le titre et la description sont générés automatiquement. Titre : 30 à 60 caractères ; description : 110 à 160.</Notice>
                   {target.kind === 'page' && seo ? (
                     <>
@@ -326,7 +326,7 @@ export default function ContentEditor(props: EditorProps) {
                       <label className="flex items-center gap-2 text-[14px]"><input type="checkbox" className="h-4 w-4 accent-[#06226D]" checked={seo.noindex} onChange={(e) => { setDirty(true); setSeo({ ...seo, noindex: e.target.checked }); }} />Ne pas indexer cette page dans Google (noindex)</label>
                     </>
                   ) : seoGroup?.fields.map((f) => <FieldInput key={f.name} field={{ ...f, placeholder: f.name === 'seoTitle' ? autoTitle : undefined }} value={values[f.name]} onChange={(v) => set(f.name, v)} error={errors[f.name]} />)}
-                  {isEntry && 'slug' in values && <p className="m-0 text-[13px] text-zinc-500">Adresse : <span className="font-mono">{host}{props.previewPath}</span> — modifiable dans l’onglet Contenu.</p>}
+                  {isEntry && 'slug' in values && <p className="m-0 text-[13px] text-gray-500">Adresse : <span className="font-mono">{host}{props.previewPath}</span> — modifiable dans l’onglet Contenu.</p>}
                 </section>
               </div>
             )}

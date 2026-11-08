@@ -52,18 +52,18 @@ export default function SettingsForm({ sections, canEdit, aside }: { sections: S
     <div className={aside ? 'grid items-start gap-6 xl:grid-cols-[minmax(0,1fr)_440px]' : ''}>
       <div>
         {tabs.length > 1 && (
-          <div role="tablist" className="mb-4 flex gap-1 overflow-x-auto border-b border-zinc-200">
+          <div role="tablist" className="mb-4 flex gap-1 overflow-x-auto border-b border-gray-200">
             {tabs.map((t) => (
               <button key={t.id} type="button" role="tab" aria-selected={t.id === current.id} onClick={() => setTab(t.id)}
-                className={`-mb-px whitespace-nowrap border-0 border-b-2 bg-transparent px-3 py-2.5 text-[14.5px] ${t.id === current.id ? 'border-[#06226D] font-medium' : 'border-transparent text-zinc-500 hover:text-zinc-900'}`}>
+                className={`-mb-px whitespace-nowrap border-0 border-b-2 bg-transparent px-3 py-[11px] text-[14px] font-medium ${t.id === current.id ? 'border-[#06226D] text-[#0a0a0a]' : 'border-transparent text-gray-500 hover:text-[#0a0a0a]'}`}>
                 {t.group.title}{errCount(t) > 0 && <span className="ml-1.5 rounded-full bg-red-100 px-1.5 text-[11.5px] text-red-700">{errCount(t)}</span>}
               </button>
             ))}
           </div>
         )}
-        <section className="rounded-lg border border-zinc-200 bg-white p-5">
+        <section className="rounded-lg border border-gray-200 bg-white p-5">
           {tabs.length === 1 && <h2 className="m-0 mb-1 text-[15px] font-semibold">{current.group.title}</h2>}
-          {current.group.description && <p className="m-0 mb-4 text-[13.5px] text-zinc-500">{current.group.description}</p>}
+          {current.group.description && <p className="m-0 mb-4 text-[13.5px] text-gray-500">{current.group.description}</p>}
           <fieldset disabled={!canEdit} className="m-0 grid gap-5 border-0 p-0 sm:grid-cols-2">
             {current.group.fields.map((f) => (
               <div key={f.name} className={f.half ? '' : 'sm:col-span-2'}>

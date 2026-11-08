@@ -12,7 +12,7 @@ export default async function MediaPage() {
   const role = session.user.role;
   return (
     <AdminShell title="Bibliothèque d’images">
-      <p className="m-0 mb-5 text-[14px] text-zinc-500">Toutes les images du site. Ajoutez un texte alternatif à chacune : c’est utile pour Google et pour l’accessibilité.</p>
+      <p className="m-0 mb-5 text-[14px] text-gray-500">Toutes les images du site. Ajoutez un texte alternatif à chacune : c’est utile pour Google et pour l’accessibilité.</p>
       <MediaLibrary items={items} can={{ upload: hasPermission(role, 'media:upload'), delete: hasPermission(role, 'media:delete') }} />
     </AdminShell>
   );

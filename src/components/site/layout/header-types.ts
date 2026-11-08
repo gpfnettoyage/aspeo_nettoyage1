@@ -9,6 +9,8 @@ export interface HeaderData {
   phone: string;
   phoneIntl: string;
   ctaLabel: string;
+  /** Menu principal (ordre, libellés et visibilité réglés dans l'administration). */
+  main: { label: string; href: string; key?: 'services' | 'medias' }[];
   topbar: { label: string; href: string }[];
   poles: MenuPole[];
   others: MenuGroup | null;

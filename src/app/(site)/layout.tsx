@@ -33,6 +33,7 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
     phone: settings.company.phone,
     phoneIntl: settings.company.phoneIntl,
     ctaLabel: settings.navigation.ctaLabel,
+    main: settings.navigation.main.filter((l) => l.visible).map(({ label, href, key }) => ({ label, href, ...(key ? { key } : {}) })),
     topbar: settings.navigation.topbar.filter((l) => l.visible),
     poles: [
       { key: 'professionnel', label: 'Nettoyage Professionnel', groups: columns.filter((c) => c.pole === 'professionnel').map((c) => toGroup(c, 3)) },

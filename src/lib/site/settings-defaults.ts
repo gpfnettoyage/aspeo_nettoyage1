@@ -77,7 +77,11 @@ export const seoSchema = z.object({
 });
 export type SeoSettings = z.infer<typeof seoSchema>;
 
+/** Entrée du menu principal : « services » et « medias » ouvrent leurs sous-menus (méga-menu, menu Médias). */
+const mainLink = link.extend({ key: z.enum(['services', 'medias']).optional() });
+
 export const navigationSchema = z.object({
+  main: z.array(mainLink).max(8),
   topbar: z.array(link).max(6),
   companyLinks: z.array(link).max(12),
   legalLinks: z.array(link).max(8),
@@ -165,6 +169,12 @@ export const DEFAULT_SETTINGS: SettingsMap = {
     googleSiteVerification: '',
   },
   navigation: {
+    main: [
+      { label: 'Accueil', href: '/', visible: true },
+      { label: 'Notre Histoire', href: '/a-propos', visible: true },
+      { label: 'Propreté & Services', href: '/proprete-services', visible: true, key: 'services' },
+      { label: 'Médias', href: '/medias', visible: true, key: 'medias' },
+    ],
     topbar: [{ label: 'Nous rejoindre', href: '/nous-rejoindre', visible: true }],
     companyLinks: [
       { label: 'Accueil', href: '/', visible: true },

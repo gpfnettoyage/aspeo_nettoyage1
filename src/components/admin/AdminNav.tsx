@@ -49,7 +49,7 @@ const GROUPS: { title: string; items: Item[] }[] = [
 ];
 
 const itemCls = (active: boolean) =>
-  `flex items-center gap-2.5 rounded-md px-2.5 py-[7px] text-[14px] no-underline transition-colors ${active ? 'bg-[#efeff1] font-semibold text-zinc-950' : 'text-zinc-700 hover:bg-[#efeff1] hover:text-zinc-950'}`;
+  `flex items-center gap-2.5 rounded-md px-2.5 py-2 text-[14px] text-[#0a0a0a] no-underline transition-colors ${active ? 'bg-[#ececee] font-semibold' : 'hover:bg-[#ececee]'}`;
 
 export default function AdminNav({ role, counts }: { role: Role; counts: { leads: number; applications: number } }) {
   const pathname = usePathname() || B;
@@ -61,14 +61,14 @@ export default function AdminNav({ role, counts }: { role: Role; counts: { leads
 
   const nav = (
     <nav className="flex h-full flex-col" aria-label="Navigation de l’administration">
-      <div className="flex-1 overflow-y-auto px-2 py-3">
+      <div className="flex-1 overflow-y-auto">
         {GROUPS.map((g) => {
           const items = g.items.filter((i) => hasPermission(role, i.permission));
           if (!items.length) return null;
           return (
-            <div key={g.title} className="mb-1">
-              <div className="px-2.5 pb-1.5 pt-2 text-[12.5px] font-medium text-zinc-500">{g.title}</div>
-              <ul className="m-0 list-none p-0">
+            <div key={g.title} className="px-2 pb-0.5 pt-3">
+              <div className="px-2.5 pb-1.5 text-[12px] font-medium text-gray-500">{g.title}</div>
+              <ul className="m-0 flex list-none flex-col gap-px p-0">
                 {items.map((i) => {
                   const n = i.badge ? counts[i.badge] : 0;
                   return (
@@ -76,7 +76,7 @@ export default function AdminNav({ role, counts }: { role: Role; counts: { leads
                       <Link href={i.href} className={itemCls(isActive(i.href))} aria-current={isActive(i.href) ? 'page' : undefined}>
                         <i.icon className="h-4 w-4 flex-none" aria-hidden="true" />
                         <span className="flex-1 truncate">{i.label}</span>
-                        {n > 0 && <span className="ml-auto inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-[#FF5C00] px-1.5 text-[11px] font-bold text-white" aria-label={`${n} nouvelles`}>{n}</span>}
+                        {n > 0 && <span className="ml-auto inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-[#FF5C00] px-1.5 text-[11.5px] font-bold text-white" aria-label={`${n} nouvelles`}>{n}</span>}
                       </Link>
                     </li>
                   );
@@ -86,10 +86,10 @@ export default function AdminNav({ role, counts }: { role: Role; counts: { leads
           );
         })}
       </div>
-      <div className="border-t border-zinc-200 px-2 py-2">
+      <div className="flex flex-col gap-px border-t border-gray-200 p-2">
         <a href="/" target="_blank" rel="noopener" className={itemCls(false)}><ExternalLink className="h-4 w-4" aria-hidden="true" />Voir le site</a>
         <form action={logoutAction}>
-          <button type="submit" className={`${itemCls(false)} w-full border-0 bg-transparent text-left`}><LogOut className="h-4 w-4" aria-hidden="true" />Déconnexion</button>
+          <button type="submit" className={`${itemCls(false)} w-full border-0 bg-transparent text-left !text-[#dc2626]`}><LogOut className="h-4 w-4" aria-hidden="true" />Déconnexion</button>
         </form>
       </div>
     </nav>
@@ -97,10 +97,10 @@ export default function AdminNav({ role, counts }: { role: Role; counts: { leads
 
   return (
     <>
-      <button type="button" onClick={() => setOpen(true)} className="fixed left-3 top-3 z-50 inline-flex h-9 w-9 items-center justify-center rounded-md border border-zinc-200 bg-white lg:hidden" aria-label="Ouvrir le menu">
+      <button type="button" onClick={() => setOpen(true)} className="fixed left-3 top-3 z-50 inline-flex h-9 w-9 items-center justify-center rounded-md border border-gray-200 bg-white lg:hidden" aria-label="Ouvrir le menu">
         <MenuIcon className="h-4 w-4" />
       </button>
-      <aside className="fixed bottom-0 left-0 top-14 z-30 hidden w-64 border-r border-zinc-200 bg-[#fafafa] lg:block">{nav}</aside>
+      <aside className="fixed bottom-0 left-0 top-14 z-30 hidden w-64 border-r border-gray-200 bg-[#fafafa] lg:block">{nav}</aside>
       {open && (
         <div className="fixed inset-0 z-50 lg:hidden" role="dialog" aria-modal="true">
           <div className="absolute inset-0 bg-black/30" onClick={() => setOpen(false)} aria-hidden="true" />

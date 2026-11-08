@@ -35,7 +35,8 @@ export function toListRows(def: CollectionDef, rows: Record<string, unknown>[]):
       cells: def.list.columns.map((c) => {
         const v = getPath(row, c.path);
         if (c.kind === 'status') return { text: STATUS[state]![0], tone: STATUS[state]![1] };
-        if (c.kind === 'date') return { text: fmt(v) };
+        if (c.format) return { text: c.format(v) };
+        if (c.kind === 'date') return { text: fmt(v), muted: c.path === 'updatedAt' };
         if (c.kind === 'badge') return { text: v ? String(v) : '—', badge: !!v };
         return { text: v === null || v === undefined || v === '' ? '—' : String(v) };
       }),

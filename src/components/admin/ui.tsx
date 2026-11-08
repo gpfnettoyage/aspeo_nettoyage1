@@ -7,14 +7,14 @@ import type { ComponentProps, ReactNode } from 'react';
 
 type Variant = 'primary' | 'secondary' | 'danger' | 'ghost' | 'dangerGhost';
 const BTN: Record<Variant, string> = {
-  primary: 'border-[#06226D] bg-[#06226D] text-white hover:bg-[#0b2f8a]',
-  secondary: 'border-zinc-200 bg-white text-zinc-900 hover:bg-zinc-50',
-  danger: 'border-red-200 bg-white text-red-600 hover:bg-red-50',
-  ghost: 'border-transparent bg-transparent text-zinc-700 hover:bg-zinc-100',
-  dangerGhost: 'border-transparent bg-transparent text-red-600 hover:bg-red-50',
+  primary: 'border-[#06226D] bg-[#06226D] text-white hover:bg-[#0a2f8f]',
+  secondary: 'border-gray-200 bg-white text-[#0a0a0a] hover:bg-[#f4f4f5]',
+  danger: 'border-[#fecaca] bg-white text-[#dc2626] hover:bg-[#fef2f2]',
+  ghost: 'border-transparent bg-transparent text-zinc-700 hover:bg-[#f4f4f5]',
+  dangerGhost: 'border-transparent bg-transparent text-[#dc2626] hover:bg-[#fef2f2]',
 };
 export const btn = (variant: Variant = 'secondary', size: 'sm' | 'md' = 'md') =>
-  `inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-md border font-medium no-underline transition-colors disabled:cursor-not-allowed disabled:opacity-50 ${size === 'sm' ? 'h-8 px-2.5 text-[13.5px]' : 'h-9 px-3.5 text-[14.5px]'} ${BTN[variant]}`;
+  `inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-md border font-medium no-underline transition-colors disabled:cursor-not-allowed disabled:opacity-50 ${size === 'sm' ? 'px-2.5 py-[5px] text-[12.5px]' : 'px-3.5 py-2 text-[14px]'} ${BTN[variant]}`;
 
 export function Btn({ variant = 'secondary', size = 'md', className = '', ...p }: ComponentProps<'button'> & { variant?: Variant; size?: 'sm' | 'md' }) {
   return <button type="button" {...p} className={`${btn(variant, size)} ${className}`} />;
@@ -23,9 +23,10 @@ export function BtnLink({ variant = 'secondary', size = 'md', className = '', ..
   return <Link {...p} className={`${btn(variant, size)} ${className}`} />;
 }
 
-export type Tone = 'green' | 'gray' | 'orange' | 'blue' | 'red';
+export type Tone = 'green' | 'gray' | 'orange' | 'blue' | 'violet' | 'red';
+// Couleurs des pastilles de la maquette (BADGE / LB) : fonds -100, textes -700.
 const TONE: Record<Tone, string> = {
-  green: 'bg-green-50 text-green-700', gray: 'bg-zinc-100 text-zinc-600', orange: 'bg-orange-50 text-[#C74700]', blue: 'bg-blue-50 text-blue-700', red: 'bg-red-50 text-red-700',
+  green: 'bg-[#dcfce7] text-[#15803d]', gray: 'bg-[#f4f4f5] text-[#3f3f46]', orange: 'bg-[#ffedd5] text-[#c2410c]', blue: 'bg-[#dbeafe] text-[#1d4ed8]', violet: 'bg-[#ede9fe] text-[#6d28d9]', red: 'bg-[#fee2e2] text-[#b91c1c]',
 };
 export function Badge({ tone = 'gray', children }: { tone?: Tone; children: ReactNode }) {
   return <span className={`inline-flex items-center whitespace-nowrap rounded-full px-2 py-0.5 text-[12px] font-medium ${TONE[tone]}`}>{children}</span>;
@@ -33,9 +34,9 @@ export function Badge({ tone = 'gray', children }: { tone?: Tone; children: Reac
 
 export function Card({ title, action, children, className = '', pad = true }: { title?: ReactNode; action?: ReactNode; children: ReactNode; className?: string; pad?: boolean }) {
   return (
-    <section className={`rounded-lg border border-zinc-200 bg-white ${className}`}>
+    <section className={`rounded-lg border border-gray-200 bg-white ${className}`}>
       {(title || action) && (
-        <div className="flex items-center justify-between gap-3 border-b border-zinc-200 px-4 py-3.5">
+        <div className="flex items-center justify-between gap-3 border-b border-[#f0f0f1] px-4 py-3.5">
           {title && <h2 className="m-0 text-[15px] font-semibold">{title}</h2>}
           {action}
         </div>
@@ -50,15 +51,15 @@ export function Notice({ children, tone = 'blue' }: { children: ReactNode; tone?
   return <div className={`rounded-lg border px-4 py-3 text-[14px] ${cls}`}>{children}</div>;
 }
 
-export const inputCls = 'block w-full rounded-md border border-zinc-200 bg-white px-3 py-2 text-[14px] text-zinc-950 outline-none placeholder:text-zinc-400 focus:border-[#06226D] focus:ring-2 focus:ring-[#06226D]/15 aria-[invalid=true]:border-red-400';
+export const inputCls = 'block w-full rounded-md border border-gray-200 bg-white px-2.5 py-2 text-[14px] leading-[1.5] text-[#0a0a0a] outline-none placeholder:text-zinc-400 focus:border-[#06226D] focus:shadow-[0_0_0_3px_rgba(6,34,109,.14)] aria-[invalid=true]:border-red-400';
 
 /** Onglets segmentés (« Tous / Publiés / Brouillons »). */
 export function Segmented<T extends string>({ value, options, onChange, label }: { value: T; options: { value: T; label: string; count?: number }[]; onChange: (v: T) => void; label: string }) {
   return (
-    <div role="tablist" aria-label={label} className="inline-flex rounded-md border border-zinc-200 bg-zinc-50 p-0.5">
+    <div role="tablist" aria-label={label} className="inline-flex gap-0.5 rounded-md border border-gray-200 bg-[#fafafa] p-0.5">
       {options.map((o) => (
         <button key={o.value} type="button" role="tab" aria-selected={value === o.value} onClick={() => onChange(o.value)}
-          className={`rounded px-3 py-1.5 text-[13.5px] ${value === o.value ? 'bg-white font-medium text-zinc-950 shadow-sm' : 'text-zinc-500 hover:text-zinc-900'}`}>
+          className={`whitespace-nowrap rounded px-[11px] py-1.5 text-[13px] font-medium ${value === o.value ? 'bg-white text-[#0a0a0a] shadow-[0_1px_2px_rgba(0,0,0,.08)]' : 'text-gray-500 hover:text-[#0a0a0a]'}`}>
           {o.label}{o.count !== undefined && <span className="ml-1.5 text-[12px] text-zinc-400">{o.count}</span>}
         </button>
       ))}

@@ -5,7 +5,7 @@ import { ArrowDown, ArrowUp, Plus, X } from 'lucide-react';
 import type { AdminField } from '@/lib/admin/fields';
 import type { FormValue } from '@/lib/admin/values';
 import MediaPicker from './MediaPicker';
-import { Btn, inputCls } from './ui';
+import { inputCls } from './ui';
 
 export interface RelationOption { id: string; slug: string; label: string }
 export type RelationMap = Partial<Record<NonNullable<AdminField['relation']>, RelationOption[]>>;
@@ -23,7 +23,7 @@ function Label({ field, htmlFor, len }: { field: AdminField; htmlFor: string; le
   const showCount = len !== undefined && (field.max || field.recommended);
   return (
     <div className="mb-1.5 flex items-baseline justify-between gap-3">
-      <label htmlFor={htmlFor} className="text-[14px] font-medium text-zinc-900">{field.label}{field.required && <span className="ml-0.5 text-red-600" aria-hidden="true">*</span>}</label>
+      <label htmlFor={htmlFor} className="text-[14px] font-medium leading-[1.35] text-[#0a0a0a]">{field.label}{field.required && <span className="text-[#c2410c]" aria-hidden="true"> *</span>}</label>
       {showCount && <span className={`text-[12px] tabular-nums ${counterTone(len!, field)}`}>{len} / {field.max ?? field.recommended![1]}</span>}
     </div>
   );
@@ -33,14 +33,14 @@ function Label({ field, htmlFor, len }: { field: AdminField; htmlFor: string; le
 export function ImageInput({ value, onChange, id, label = 'Changer l’image', emptyLabel = 'Choisir une image' }: { value: string; onChange: (v: string) => void; id: string; label?: string; emptyLabel?: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="flex items-center gap-3">
-      <div className="h-[66px] w-[88px] flex-none overflow-hidden rounded-md border border-zinc-200 bg-zinc-100">
+    <div className="flex flex-wrap items-center gap-3">
+      <div className="aspect-[4/3] w-[120px] flex-none overflow-hidden rounded-md border border-gray-200 bg-[#f4f4f5]">
         {value && <img src={value} alt="" className="h-full w-full object-cover" />}
       </div>
       <div className="min-w-0">
         <div className="flex flex-wrap items-center gap-2">
-          <Btn id={id} size="sm" onClick={() => setOpen(true)}>{value ? label : emptyLabel}</Btn>
-          {value && <button type="button" onClick={() => onChange('')} className="text-[13.5px] text-zinc-500 hover:text-red-600">Retirer</button>}
+          <button id={id} type="button" onClick={() => setOpen(true)} className="rounded-md border border-gray-200 bg-white px-3 py-[7px] text-[13.5px] font-medium text-[#0a0a0a] hover:bg-[#f4f4f5]">{value ? label : emptyLabel}</button>
+          {value && <button type="button" onClick={() => onChange('')} className="rounded-md border-0 bg-transparent px-2.5 py-[7px] text-[13.5px] text-gray-500 hover:bg-[#f4f4f5] hover:text-[#0a0a0a]">Retirer</button>}
         </div>
         {value && <p className="m-0 mt-1 max-w-[340px] truncate text-[12px] text-zinc-400" title={value}>{value}</p>}
       </div>
@@ -58,7 +58,7 @@ function move<T>(arr: T[], i: number, d: -1 | 1) {
 }
 
 function RowTools({ i, n, onMove, onRemove, label }: { i: number; n: number; onMove: (d: -1 | 1) => void; onRemove: () => void; label: string }) {
-  const ic = 'inline-flex h-7 w-7 items-center justify-center rounded text-zinc-400 hover:bg-zinc-100 hover:text-zinc-900 disabled:opacity-30';
+  const ic = 'inline-flex h-7 w-7 items-center justify-center rounded text-zinc-400 hover:bg-zinc-100 hover:text-[#0a0a0a] disabled:opacity-30';
   return (
     <div className="flex flex-none items-center">
       <button type="button" className={ic} onClick={() => onMove(-1)} disabled={i === 0} aria-label={`Monter ${label} ${i + 1}`}><ArrowUp className="h-3.5 w-3.5" /></button>
@@ -69,7 +69,7 @@ function RowTools({ i, n, onMove, onRemove, label }: { i: number; n: number; onM
 }
 
 const AddRow = ({ onClick, disabled, label = 'Ajouter une ligne' }: { onClick: () => void; disabled?: boolean; label?: string }) => (
-  <button type="button" onClick={onClick} disabled={disabled} className="inline-flex items-center gap-1 rounded-md border border-dashed border-zinc-300 px-2.5 py-1 text-[13px] text-zinc-700 hover:bg-zinc-50 disabled:opacity-40">
+  <button type="button" onClick={onClick} disabled={disabled} className="inline-flex items-center gap-1 self-start rounded-md border border-dashed border-zinc-300 bg-white px-3 py-1.5 text-[13px] text-zinc-700 hover:border-[#06226D] hover:text-[#06226D] disabled:opacity-40">
     <Plus className="h-3.5 w-3.5" />{label}
   </button>
 );
@@ -84,12 +84,15 @@ export default function FieldInput({ field, value, onChange, error, relations, i
   switch (field.type) {
     case 'toggle':
       return (
-        <div>
-          <label htmlFor={id} className="flex cursor-pointer items-center gap-2.5 text-[14px] font-medium">
-            <input id={id} type="checkbox" checked={value === true} onChange={(e) => onChange(e.target.checked)} className="h-4 w-4 accent-[#06226D]" />
-            {field.label}
-          </label>
-          {field.help && <p id={`${id}-help`} className="m-0 mt-1 pl-6 text-[12.5px] text-zinc-500">{field.help}</p>}
+        <div className="flex flex-col gap-1.5">
+          <button id={id} type="button" role="switch" aria-checked={value === true} aria-describedby={field.help ? `${id}-help` : undefined} onClick={() => onChange(value !== true)}
+            className="inline-flex items-center gap-2.5 self-start border-0 bg-transparent px-0 py-0.5 text-left text-[#0a0a0a]">
+            <span className={`relative h-[22px] w-[38px] flex-none rounded-full transition-colors ${value === true ? 'bg-[#06226D]' : 'bg-zinc-300'}`} aria-hidden="true">
+              <span className={`absolute top-0.5 h-[18px] w-[18px] rounded-full bg-white shadow-[0_1px_2px_rgba(0,0,0,.25)] transition-[left] ${value === true ? 'left-[18px]' : 'left-0.5'}`} />
+            </span>
+            <span className="text-[14px]">{field.label}</span>
+          </button>
+          {field.help && <p id={`${id}-help`} className="m-0 text-[12.5px] leading-[1.45] text-gray-500">{field.help}</p>}
         </div>
       );
     case 'textarea':
@@ -127,16 +130,18 @@ export default function FieldInput({ field, value, onChange, error, relations, i
       const arr = Array.isArray(value) ? (value as string[]) : [];
       const slots = Math.min(field.maxItems ?? 8, Math.max(arr.length + 1, 1));
       control = (
-        <div className="space-y-3">
+        <div className="flex flex-col gap-[18px]">
           {Array.from({ length: slots }, (_, i) => (
-            <div key={i} className="flex items-center gap-2">
-              <span className="w-16 flex-none text-[12.5px] text-zinc-500">Photo {i + 1}</span>
-              <div className="min-w-0 flex-1"><ImageInput id={i === 0 ? id : `${id}-${i}`} value={arr[i] ?? ''} onChange={(url) => {
+            <div key={i} className="flex flex-col gap-1.5">
+              <div className="flex items-center justify-between gap-3">
+                <span className="text-[14px] font-medium leading-[1.35] text-[#0a0a0a]">Photo {i + 1}</span>
+                {i < arr.length && <RowTools i={i} n={arr.length} label="la photo" onMove={(d) => onChange(move(arr, i, d))} onRemove={() => onChange(arr.filter((_, k) => k !== i))} />}
+              </div>
+              <div className="min-w-0"><ImageInput id={i === 0 ? id : `${id}-${i}`} value={arr[i] ?? ''} onChange={(url) => {
                 const next = arr.slice();
                 if (url) next[i] = url; else next.splice(i, 1);
                 onChange(next.filter(Boolean));
               }} /></div>
-              {i < arr.length && <RowTools i={i} n={arr.length} label="la photo" onMove={(d) => onChange(move(arr, i, d))} onRemove={() => onChange(arr.filter((_, k) => k !== i))} />}
             </div>
           ))}
         </div>
@@ -147,7 +152,7 @@ export default function FieldInput({ field, value, onChange, error, relations, i
       const rows = str ? str.split('\n') : [];
       const set = (next: string[]) => onChange(next.join('\n'));
       control = (
-        <div className="space-y-2">
+        <div className="flex flex-col gap-2">
           {rows.map((r, i) => (
             <div key={i} className="flex items-center gap-1.5">
               <input id={i === 0 ? id : undefined} aria-label={`${field.label} — ligne ${i + 1}`} className={inputCls} value={r} onChange={(e) => { const n = rows.slice(); n[i] = e.target.value.replace(/\n/g, ' '); set(n); }} />
@@ -167,9 +172,9 @@ export default function FieldInput({ field, value, onChange, error, relations, i
       const blank = () => Object.fromEntries(sub.map((s) => [s.name, s.type === 'toggle' ? 'true' : '']));
       const setItem = (i: number, k: string, v: string) => onChange(items.map((it, j) => (j === i ? { ...it, [k]: v } : it)));
       control = (
-        <div className="space-y-2">
+        <div className="flex flex-col gap-2">
           {items.map((it, i) => (
-            <div key={i} className={compact ? 'flex items-start gap-1.5' : 'rounded-md border border-zinc-200 p-3'}>
+            <div key={i} className={compact ? 'flex items-start gap-1.5' : 'rounded-md border border-gray-200 p-3'}>
               {!compact && <div className="mb-2 flex items-center justify-between"><span className="text-[13px] font-medium text-zinc-600">{field.itemLabel} {i + 1}</span><RowTools i={i} n={items.length} label={field.itemLabel ?? 'l’élément'} onMove={(d) => onChange(move(items, i, d))} onRemove={() => onChange(items.filter((_, k) => k !== i))} /></div>}
               <div className={compact ? `grid min-w-0 flex-1 gap-1.5 ${cols === 1 ? '' : cols === 2 ? (sub.length > cols ? 'sm:grid-cols-[2fr_3fr_auto]' : 'sm:grid-cols-[2fr_3fr]') : 'sm:grid-cols-3'}` : 'grid gap-3 sm:grid-cols-2'}>
                 {sub.map((s) => {
@@ -205,7 +210,7 @@ export default function FieldInput({ field, value, onChange, error, relations, i
     <div>
       <Label field={field} htmlFor={id} len={len} />
       {control}
-      {field.help && <p id={`${id}-help`} className="m-0 mt-1.5 text-[12.5px] text-zinc-500">{field.help}</p>}
+      {field.help && <p id={`${id}-help`} className="m-0 mt-1.5 text-[12.5px] leading-[1.45] text-gray-500">{field.help}</p>}
       {field.type === 'markdown' && <p className="m-0 mt-1 text-[12px] text-zinc-400">Mise en forme : ## Intertitre · **gras** · - liste · [lien](https://…)</p>}
       {error && <p id={`${id}-err`} className="m-0 mt-1 text-[13px] text-red-600" role="alert">{error}</p>}
     </div>

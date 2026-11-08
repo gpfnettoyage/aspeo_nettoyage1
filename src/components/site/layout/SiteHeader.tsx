@@ -113,36 +113,33 @@ export default function SiteHeader({ data }: { data: HeaderData }) {
 
           {/* Navigation bureau */}
           <nav className="flex items-stretch h-[88px] ml-[14px] max-[1040px]:hidden" aria-label="Navigation principale">
-            <Link href="/" className={navItem} onMouseEnter={() => setPanel(null)} aria-current={isHome ? 'page' : undefined}>
-              Accueil{isHome && <ActiveBar />}
-            </Link>
-            <Link href="/a-propos" className={navItem} onMouseEnter={() => setPanel(null)} aria-current={isAbout ? 'page' : undefined}>
-              Notre Histoire{isAbout && <ActiveBar />}
-            </Link>
-            <Link
-              href="/proprete-services"
-              className={`${navItem} ${panel === 'services' ? 'text-[color:var(--asp-accent-ink)]' : ''}`}
-              onMouseEnter={() => open('services')}
-              onFocus={() => open('services')}
-              aria-expanded={panel === 'services'}
-              aria-haspopup="true"
-            >
-              Propreté &amp; Services
-              <ChevronDownIcon className="ml-[6px] flex-none" />
-              {isServicesArea && <ActiveBar />}
-            </Link>
-            <Link
-              href="/medias"
-              className={`${navItem} ${panel === 'media' ? 'text-[color:var(--asp-accent-ink)]' : ''}`}
-              onMouseEnter={() => open('media')}
-              onFocus={() => open('media')}
-              aria-expanded={panel === 'media'}
-              aria-haspopup="true"
-            >
-              Médias
-              <ChevronDownIcon className="ml-[6px] flex-none" />
-              {isMediaArea && <ActiveBar />}
-            </Link>
+            {data.main.map((item) => {
+              if (item.key === 'services' || item.key === 'medias') {
+                const p = item.key === 'services' ? 'services' : 'media';
+                const active = item.key === 'services' ? isServicesArea : isMediaArea;
+                return (
+                  <Link
+                    key={item.href + item.label}
+                    href={item.href}
+                    className={`${navItem} ${panel === p ? 'text-[color:var(--asp-accent-ink)]' : ''}`}
+                    onMouseEnter={() => open(p)}
+                    onFocus={() => open(p)}
+                    aria-expanded={panel === p}
+                    aria-haspopup="true"
+                  >
+                    {item.label}
+                    <ChevronDownIcon className="ml-[6px] flex-none" />
+                    {active && <ActiveBar />}
+                  </Link>
+                );
+              }
+              const current = item.href === '/' ? isHome : item.href === '/a-propos' ? isAbout : pathname === item.href || pathname.startsWith(`${item.href}/`);
+              return (
+                <Link key={item.href + item.label} href={item.href} className={navItem} onMouseEnter={() => setPanel(null)} aria-current={current ? 'page' : undefined}>
+                  {item.label}{current && <ActiveBar />}
+                </Link>
+              );
+            })}
           </nav>
 
           <div className="ml-auto flex items-center gap-[16px] flex-none max-[1040px]:hidden">

@@ -33,7 +33,7 @@ export default function RedirectsManager({ rows, canEdit }: { rows: RedirectRow[
   return (
     <div>
       {canEdit && (
-        <form onSubmit={submit} className="mb-6 rounded-lg border border-zinc-200 bg-white p-4" noValidate>
+        <form onSubmit={submit} className="mb-6 rounded-lg border border-gray-200 bg-white p-4" noValidate>
           <h2 className="m-0 mb-3 text-[15px] font-semibold">{editing ? 'Modifier la redirection' : 'Ajouter une redirection'}</h2>
           <div className="grid gap-3 md:grid-cols-[1fr_1fr_auto]">
             <div><label htmlFor="r-source" className="mb-1 block text-[13.5px] font-medium">Ancienne adresse</label>
@@ -51,14 +51,14 @@ export default function RedirectsManager({ rows, canEdit }: { rows: RedirectRow[
           </div>
         </form>
       )}
-      <div className="mb-3 flex items-center gap-3"><input type="search" className={`${inputCls} max-w-xs`} placeholder="Rechercher une adresse…" value={q} onChange={(e) => setQ(e.target.value)} aria-label="Rechercher" /><span className="ml-auto text-[13.5px] text-zinc-500">{shown.length} sur {rows.length}</span></div>
-      <div className="overflow-x-auto rounded-lg border border-zinc-200 bg-white">
+      <div className="mb-3 flex items-center gap-3"><input type="search" className={`${inputCls} max-w-xs`} placeholder="Rechercher une adresse…" value={q} onChange={(e) => setQ(e.target.value)} aria-label="Rechercher" /><span className="ml-auto text-[13.5px] text-gray-500">{shown.length} sur {rows.length}</span></div>
+      <div className="overflow-x-auto rounded-lg border border-gray-200 bg-white">
         <table className="w-full min-w-[820px] border-collapse text-[14px]">
-          <thead><tr className="border-b border-zinc-200 text-left text-[13px] text-zinc-500"><th className="px-4 py-2.5 font-medium">Ancienne adresse</th><th className="px-3 py-2.5 font-medium">Nouvelle adresse</th><th className="px-3 py-2.5 font-medium">Type</th><th className="px-3 py-2.5 font-medium">Utilisations</th><th className="px-4"><span className="sr-only">Actions</span></th></tr></thead>
+          <thead><tr className="border-b border-gray-200 text-left text-[13px] text-gray-500"><th className="px-4 py-2.5 font-medium">Ancienne adresse</th><th className="px-3 py-2.5 font-medium">Nouvelle adresse</th><th className="px-3 py-2.5 font-medium">Type</th><th className="px-3 py-2.5 font-medium">Utilisations</th><th className="px-4"><span className="sr-only">Actions</span></th></tr></thead>
           <tbody>
             {shown.map((r) => (
               <tr key={r.id} className={`border-b border-zinc-100 last:border-0 ${r.enabled ? '' : 'opacity-60'}`}>
-                <td className="px-4 py-2.5"><span className="block break-all font-mono text-[12.5px]">{r.source}</span>{r.note && <span className="block text-[12px] text-zinc-500">{r.note}</span>}</td>
+                <td className="px-4 py-2.5"><span className="block break-all font-mono text-[12.5px]">{r.source}</span>{r.note && <span className="block text-[12px] text-gray-500">{r.note}</span>}</td>
                 <td className="px-3 py-2.5"><span className="block break-all font-mono text-[12.5px]">{r.destination}</span></td>
                 <td className="whitespace-nowrap px-3 py-2.5">{r.enabled ? <Badge tone={r.permanent ? 'green' : 'blue'}>{r.permanent ? '301' : '302'}</Badge> : <Badge>Désactivée</Badge>}</td>
                 <td className="px-3 py-2.5 text-zinc-600">{r.hits}</td>

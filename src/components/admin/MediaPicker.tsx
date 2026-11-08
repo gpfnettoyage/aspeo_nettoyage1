@@ -53,19 +53,19 @@ export default function MediaPicker({ open, onClose, onSelect, folder = 'medias'
     <div className="fixed inset-0 z-[60] flex items-center justify-center p-3" role="dialog" aria-modal="true" aria-label="Choisir une image">
       <div className="absolute inset-0 bg-black/40" onClick={onClose} aria-hidden="true" />
       <div className="relative flex max-h-[90vh] w-full max-w-4xl flex-col rounded-lg bg-white shadow-2xl">
-        <div className="flex items-center justify-between border-b border-zinc-200 px-4 py-3">
+        <div className="flex items-center justify-between border-b border-gray-200 px-4 py-3">
           <h2 className="m-0 text-[16px] font-semibold">Bibliothèque d’images</h2>
           <button type="button" onClick={onClose} className="inline-flex h-8 w-8 items-center justify-center rounded-md hover:bg-zinc-100" aria-label="Fermer"><X className="h-4 w-4" /></button>
         </div>
-        <div className="flex flex-wrap items-center gap-2 border-b border-zinc-200 px-4 py-3">
+        <div className="flex flex-wrap items-center gap-2 border-b border-gray-200 px-4 py-3">
           <input className={`${inputCls} max-w-xs`} placeholder="Rechercher une image…" value={query} onChange={(e) => setQuery(e.target.value)} aria-label="Rechercher une image" />
           <input ref={fileRef} type="file" accept="image/jpeg,image/png,image/webp,image/gif,image/avif,image/heic,image/heif,.heic,.heif" multiple hidden onChange={(e) => { upload(e.target.files); e.target.value = ''; }} />
           <Btn onClick={() => fileRef.current?.click()} disabled={uploading}><Upload className="h-4 w-4" />{uploading ? 'Envoi…' : 'Téléverser'}</Btn>
-          <span className="text-[12.5px] text-zinc-500">JPG, PNG, WebP, AVIF ou HEIC (iPhone) · 15 Mo max · converties en WebP, localisation GPS supprimée</span>
+          <span className="text-[12.5px] text-gray-500">JPG, PNG, WebP, AVIF ou HEIC (iPhone) · 15 Mo max · converties en WebP, localisation GPS supprimée</span>
         </div>
         {message && <p className="m-0 px-4 pt-3 text-[13.5px] text-zinc-700" role="status">{message}</p>}
         <div className="min-h-[240px] flex-1 overflow-y-auto p-4">
-          {loading && !items.length ? <p className="text-[14px] text-zinc-500">Chargement…</p> : !items.length ? <p className="text-[14px] text-zinc-500">Aucune image. Téléversez la première.</p> : (
+          {loading && !items.length ? <p className="text-[14px] text-gray-500">Chargement…</p> : !items.length ? <p className="text-[14px] text-gray-500">Aucune image. Téléversez la première.</p> : (
             <ul className="m-0 grid list-none grid-cols-2 gap-3 p-0 sm:grid-cols-4 lg:grid-cols-5">
               {items.map((m) => {
                 const on = selected?.id === m.id;
@@ -83,7 +83,7 @@ export default function MediaPicker({ open, onClose, onSelect, folder = 'medias'
             </ul>
           )}
         </div>
-        <div className="flex flex-wrap items-center gap-2 border-t border-zinc-200 px-4 py-3">
+        <div className="flex flex-wrap items-center gap-2 border-t border-gray-200 px-4 py-3">
           <input className={`${inputCls} min-w-0 flex-1`} placeholder="…ou coller l’adresse d’une image déjà en ligne (https://… ou /img/…)" value={manual} onChange={(e) => setManual(e.target.value)} aria-label="Adresse d’une image" />
           <Btn onClick={onClose}>Annuler</Btn>
           <Btn variant="primary" disabled={!selected && !/^(https:\/\/|\/)/.test(manual.trim())}

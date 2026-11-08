@@ -27,9 +27,16 @@ const loadSettings = unstable_cache(
   { tags: [CACHE_TAGS.settings], revalidate: 3600 },
 );
 
+/** Complète une valeur mise en cache avant l'ajout d'un réglage (ex. menu principal) par les valeurs par défaut. */
+function withDefaults(s: SettingsMap): SettingsMap {
+  const out = { ...s } as Record<SettingKey, unknown>;
+  for (const key of Object.keys(DEFAULT_SETTINGS) as SettingKey[]) out[key] = { ...(DEFAULT_SETTINGS[key] as object), ...((s[key] as object | undefined) ?? {}) };
+  return out as SettingsMap;
+}
+
 export const getSettings = cache(async (): Promise<SettingsMap> => {
   try {
-    return await loadSettings();
+    return withDefaults(await loadSettings());
   } catch (error) {
     console.error('[settings] lecture impossible, valeurs par défaut utilisées', error);
     return DEFAULT_SETTINGS;

@@ -40,13 +40,13 @@ export default async function PagesPage() {
 
   return (
     <AdminShell title="Pages">
-      <p className="m-0 mb-6 text-[14px] text-zinc-500">Modifiez les textes et les images de chaque page. La mise en page reste fixe : rien ne peut être cassé. Les services, villes, réalisations et articles se gèrent dans leurs rubriques.</p>
+      <p className="m-0 mb-6 text-[14px] text-gray-500">Modifiez les textes et les images de chaque page. La mise en page reste fixe : rien ne peut être cassé. Les services, villes, réalisations et articles se gèrent dans leurs rubriques.</p>
       {GROUPS.map((g) => (
         <section key={g.title} className="mb-8">
-          <h2 className="m-0 mb-2.5 text-[13px] font-semibold uppercase tracking-wider text-zinc-500">{g.title}</h2>
-          <div className="overflow-x-auto rounded-lg border border-zinc-200 bg-white">
+          <h2 className="m-0 mb-2.5 text-[13px] font-semibold uppercase tracking-wider text-gray-500">{g.title}</h2>
+          <div className="overflow-x-auto rounded-lg border border-gray-200 bg-white">
             <table className="w-full min-w-[640px] border-collapse text-[14px]">
-              <thead><tr className="border-b border-zinc-200 text-left text-[13px] text-zinc-500"><th className="px-4 py-2.5 font-medium">Page</th><th className="px-3 py-2.5 font-medium">Statut</th><th className="px-3 py-2.5 font-medium">Mis à jour</th><th className="px-4"><span className="sr-only">Actions</span></th></tr></thead>
+              <thead><tr className="border-b border-gray-200 text-left text-[13px] text-gray-500"><th className="px-4 py-2.5 font-medium">Page</th><th className="px-3 py-2.5 font-medium">Statut</th><th className="px-3 py-2.5 font-medium">Mis à jour</th><th className="px-4"><span className="sr-only">Actions</span></th></tr></thead>
               <tbody>
                 {g.keys.map((key) => {
                   const def = PAGE_DEFINITIONS.find((d) => d.key === key);
@@ -58,14 +58,14 @@ export default async function PagesPage() {
                   return (
                     <tr key={key} className="border-b border-zinc-100 last:border-0 hover:bg-zinc-50/60">
                       <td className="px-4 py-2.5">
-                        <Link href={href} className="flex items-center gap-3 text-zinc-950 no-underline">
+                        <Link href={href} className="flex items-center gap-3 text-[#0a0a0a] no-underline">
                           <span className="h-9 w-14 flex-none overflow-hidden rounded bg-zinc-100">{img && <img src={img} alt="" className="h-full w-full object-cover" loading="lazy" />}</span>
-                          <span><span className="block font-medium">{def.title}</span><span className="block text-[12.5px] text-zinc-500">{key === 'blocs-communs' ? 'Engagements et bandeaux repris sur plusieurs pages' : def.path} · {model?.sections.length ?? 0} section{(model?.sections.length ?? 0) > 1 ? 's' : ''}</span></span>
+                          <span><span className="block font-medium">{def.title}</span><span className="block text-[12.5px] text-gray-500">{key === 'blocs-communs' ? 'Engagements et bandeaux repris sur plusieurs pages' : def.path} · {model?.sections.length ?? 0} section{(model?.sections.length ?? 0) > 1 ? 's' : ''}</span></span>
                         </Link>
                       </td>
                       <td className="px-3 py-2.5"><span className="inline-flex gap-1"><Badge tone="green">Publié</Badge>{row?.draft ? <Badge tone="orange">Modifié</Badge> : null}</span></td>
                       <td className="whitespace-nowrap px-3 py-2.5 text-zinc-600">{row ? fmtDate(row.updatedAt) : '—'}</td>
-                      <td className="px-4 py-2.5 text-right"><Link href={href} className="inline-flex h-8 items-center rounded-md border border-zinc-200 bg-white px-2.5 text-[13.5px] text-zinc-900 no-underline hover:bg-zinc-50">Modifier</Link></td>
+                      <td className="px-4 py-2.5 text-right"><Link href={href} className="inline-flex items-center whitespace-nowrap rounded-md border border-gray-200 bg-white px-2.5 py-[5px] text-[12.5px] font-medium text-[#0a0a0a] no-underline hover:bg-[#f4f4f5]">Modifier</Link></td>
                     </tr>
                   );
                 })}

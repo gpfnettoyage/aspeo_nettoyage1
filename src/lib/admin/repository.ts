@@ -58,6 +58,8 @@ export function checkRequiredColumns(key: string, data: Record<string, unknown>)
 }
 
 const INCLUDES: Record<string, object | undefined> = { services: { category: { select: { id: true, name: true } } } };
+/** Données supplémentaires pour les listes uniquement (jamais renvoyées lors de l'enregistrement). */
+const LIST_INCLUDES: Record<string, object | undefined> = { ...INCLUDES, categories: { _count: { select: { services: true } } } };
 
 export const repo = (key: string) => {
   const factory = DELEGATES[key];
@@ -66,7 +68,7 @@ export const repo = (key: string) => {
 };
 
 export async function listEntries(def: CollectionDef) {
-  return repo(def.key).findMany({ orderBy: def.orderBy, ...(INCLUDES[def.key] ? { include: INCLUDES[def.key] } : {}) });
+  return repo(def.key).findMany({ orderBy: def.orderBy, ...(LIST_INCLUDES[def.key] ? { include: LIST_INCLUDES[def.key] } : {}) });
 }
 
 export async function getEntry(def: CollectionDef, id: string) {

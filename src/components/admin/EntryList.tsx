@@ -12,7 +12,7 @@ export interface ListRow {
   title: string;
   subtitle: string;
   image: string | null;
-  cells: { text: string; tone?: Tone; badge?: boolean }[];
+  cells: { text: string; tone?: Tone; badge?: boolean; muted?: boolean }[];
   state: 'live' | 'offline' | 'archived';
   pending: boolean;
   search: string;
@@ -73,43 +73,43 @@ export default function EntryList({ collection, singular, basePath, columns, row
             {filter.options.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
           </select>
         )}
-        <span className="ml-auto text-[13.5px] text-zinc-500">{shown.length} sur {counts.all}</span>
+        <span className="ml-auto text-[13px] text-gray-500">{shown.length} sur {counts.all}</span>
       </div>
 
       {shown.length === 0 ? (
-        <div className="rounded-lg border border-dashed border-zinc-300 p-10 text-center text-[14px] text-zinc-500">
+        <div className="rounded-lg border border-dashed border-zinc-300 p-10 text-center text-[14px] text-gray-500">
           {rows.length ? 'Aucun résultat pour ces filtres.' : `Aucun contenu pour le moment.`}
         </div>
       ) : (
-        <div className="overflow-x-auto rounded-lg border border-zinc-200 bg-white">
-          <table className="w-full min-w-[720px] border-collapse text-[14px]">
+        <div className="overflow-x-auto rounded-lg border border-gray-200 bg-white">
+          <table className="w-full min-w-[720px] border-collapse">
             <thead>
-              <tr className="border-b border-zinc-200 text-left text-[13px] text-zinc-500">
-                <th className="px-4 py-2.5 font-medium">{singular.charAt(0).toUpperCase() + singular.slice(1)}</th>
-                {columns.map((c) => <th key={c} className="px-3 py-2.5 font-medium">{c}</th>)}
-                <th className="px-4 py-2.5"><span className="sr-only">Actions</span></th>
+              <tr className="border-b border-gray-200 bg-[#fafafa] text-left text-[13px] text-gray-500">
+                <th className="px-3.5 py-2.5 font-medium">{singular.charAt(0).toUpperCase() + singular.slice(1)}</th>
+                {columns.map((c) => <th key={c} className="px-3.5 py-2.5 font-medium">{c}</th>)}
+                <th className="w-[1%]"><span className="sr-only">Actions</span></th>
               </tr>
             </thead>
             <tbody>
               {shown.map((r) => (
-                <tr key={r.id} className="border-b border-zinc-100 last:border-0 hover:bg-zinc-50/60">
-                  <td className="px-4 py-2.5">
-                    <Link href={`${basePath}/${r.id}`} className="flex items-center gap-3 text-zinc-950 no-underline">
+                <tr key={r.id} className="border-b border-[#f0f0f1] hover:bg-[#fafafa]">
+                  <td className="max-w-[380px] px-3.5 py-3">
+                    <Link href={`${basePath}/${r.id}`} className="flex items-center gap-3 text-[#0a0a0a] no-underline">
                       {hasImage && <span className="h-9 w-12 flex-none overflow-hidden rounded bg-zinc-100">{r.image && <img src={r.image} alt="" className="h-full w-full object-cover" loading="lazy" />}</span>}
                       <span className="min-w-0">
                         <span className="block font-medium">{r.title || '(sans titre)'}</span>
-                        {r.subtitle && <span className="block max-w-[420px] truncate text-[12.5px] text-zinc-500">{r.subtitle}</span>}
+                        {r.subtitle && <span className="block max-w-[420px] truncate text-[12.5px] text-gray-500">{r.subtitle}</span>}
                       </span>
                     </Link>
                   </td>
                   {r.cells.map((c, i) => (
-                    <td key={i} className="whitespace-nowrap px-3 py-2.5 text-zinc-600">
+                    <td key={i} className={`px-3.5 py-3 ${c.muted ? 'whitespace-nowrap text-[13px] text-gray-500' : 'text-[13.5px] text-zinc-700'}`}>
                       {c.tone || c.badge ? <span className="inline-flex gap-1"><Badge tone={c.tone ?? 'gray'}>{c.text}</Badge>{c.tone && r.pending && <Badge tone="orange">Modifié</Badge>}</span> : c.text}
                     </td>
                   ))}
-                  <td className="px-4 py-2.5">
-                    <div className="flex justify-end gap-1.5">
-                      <Link href={`${basePath}/${r.id}`} className="inline-flex h-8 items-center rounded-md border border-zinc-200 bg-white px-2.5 text-[13.5px] text-zinc-900 no-underline hover:bg-zinc-50">Modifier</Link>
+                  <td className="whitespace-nowrap px-3.5 py-2 text-right">
+                    <div className="inline-flex gap-1">
+                      <Link href={`${basePath}/${r.id}`} className="inline-flex items-center whitespace-nowrap rounded-md border border-gray-200 bg-white px-2.5 py-[5px] text-[12.5px] font-medium text-[#0a0a0a] no-underline hover:bg-[#f4f4f5]">Modifier</Link>
                       {statusMode !== 'none' && can.publish && (r.state === 'live'
                         ? <Btn size="sm" disabled={busy} onClick={() => status(r, 'unpublish')}>Dépublier</Btn>
                         : <Btn size="sm" disabled={busy} onClick={() => status(r, 'publish')}>Publier</Btn>)}

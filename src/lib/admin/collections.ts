@@ -47,7 +47,7 @@ const services: CollectionDef = {
     ] },
     SEO_GROUP,
   ],
-  list: { title: 'title', subtitle: 'subtitle', columns: [{ label: 'Catégorie', path: 'category.name', kind: 'relation' }, { label: 'Statut', path: 'published', kind: 'status' }, { label: 'Mis à jour', path: 'updatedAt', kind: 'date' }], search: ['title', 'subtitle', 'slug'] },
+  list: { title: 'title', columns: [{ label: 'Catégorie', path: 'category.name', kind: 'relation' }, { label: 'Statut', path: 'published', kind: 'status' }, { label: 'Mis à jour', path: 'updatedAt', kind: 'date' }], search: ['title', 'subtitle', 'slug'] },
   orderBy: [{ displayOrder: 'asc' }, { title: 'asc' }],
 };
 
@@ -78,7 +78,7 @@ const categories: CollectionDef = {
     ] },
     SEO_GROUP,
   ],
-  list: { title: 'name', subtitle: 'slug', columns: [{ label: 'Pôle', path: 'pole', kind: 'badge' }, { label: 'Statut', path: 'published', kind: 'status' }, { label: 'Mis à jour', path: 'updatedAt', kind: 'date' }], search: ['name', 'slug'] },
+  list: { title: 'name', columns: [{ label: 'Services', path: '_count.services', format: (v) => `${Number(v) || 0} service${Number(v) > 1 ? 's' : ''}` }, { label: 'Statut', path: 'published', kind: 'status' }, { label: 'Mis à jour', path: 'updatedAt', kind: 'date' }], search: ['name', 'slug'] },
   orderBy: [{ displayOrder: 'asc' }, { name: 'asc' }],
 };
 
@@ -103,7 +103,7 @@ const cities: CollectionDef = {
     { title: 'Carte', fields: [f.number('mapX', 'Position X sur la carte (%)', { half: true }), f.number('mapY', 'Position Y (%)', { half: true }), f.number('latitude', 'Latitude', { half: true }), f.number('longitude', 'Longitude', { half: true })] },
     SEO_GROUP,
   ],
-  list: { title: 'name', subtitle: 'sector', image: 'image', columns: [{ label: 'Statut', path: 'status', kind: 'status' }, { label: 'Mis à jour', path: 'updatedAt', kind: 'date' }], search: ['name', 'sector', 'slug'] },
+  list: { title: 'name', columns: [{ label: 'Secteur', path: 'sector' }, { label: 'Trajet depuis Panissières', path: 'distance' }, { label: 'Statut', path: 'status', kind: 'status' }, { label: 'Mis à jour', path: 'updatedAt', kind: 'date' }], search: ['name', 'sector', 'slug'] },
   orderBy: [{ displayOrder: 'asc' }, { name: 'asc' }],
 };
 
@@ -125,7 +125,7 @@ const realisations: CollectionDef = {
     { title: 'Photos du chantier', fields: [f.image('gallery.before', 'Avant'), f.image('gallery.during', 'Pendant'), f.image('gallery.after', 'Après')] },
     SEO_GROUP,
   ],
-  list: { title: 'title', subtitle: 'city', image: 'image', columns: [{ label: 'Prestation', path: 'serviceLabel' }, { label: 'Statut', path: 'status', kind: 'status' }, { label: 'Mis à jour', path: 'updatedAt', kind: 'date' }], search: ['title', 'city', 'client', 'serviceLabel'] },
+  list: { title: 'title', columns: [{ label: 'Service', path: 'serviceLabel' }, { label: 'Commune', path: 'city' }, { label: 'Statut', path: 'status', kind: 'status' }, { label: 'Mis à jour', path: 'updatedAt', kind: 'date' }], search: ['title', 'city', 'client', 'serviceLabel'] },
   orderBy: [{ displayOrder: 'asc' }, { createdAt: 'desc' }],
 };
 
@@ -142,7 +142,7 @@ const articles: CollectionDef = {
     ] },
     SEO_GROUP,
   ],
-  list: { title: 'title', subtitle: 'category', image: 'image', columns: [{ label: 'Publication', path: 'publishedAt', kind: 'date' }, { label: 'Statut', path: 'status', kind: 'status' }], search: ['title', 'category', 'excerpt'] },
+  list: { title: 'title', columns: [{ label: 'Catégorie', path: 'category' }, { label: 'Date', path: 'publishedAt', kind: 'date' }, { label: 'Statut', path: 'status', kind: 'status' }, { label: 'Mis à jour', path: 'updatedAt', kind: 'date' }], search: ['title', 'category', 'excerpt'] },
   orderBy: [{ publishedAt: 'desc' }, { createdAt: 'desc' }],
 };
 
@@ -159,7 +159,7 @@ const press: CollectionDef = {
     ] },
     SEO_GROUP,
   ],
-  list: { title: 'title', subtitle: 'media', image: 'image', columns: [{ label: 'Type', path: 'type', kind: 'badge' }, { label: 'Statut', path: 'status', kind: 'status' }, { label: 'Mis à jour', path: 'updatedAt', kind: 'date' }], search: ['title', 'media'] },
+  list: { title: 'title', columns: [{ label: 'Média', path: 'media' }, { label: 'Date', path: 'dateLabel' }, { label: 'Statut', path: 'status', kind: 'status' }, { label: 'Mis à jour', path: 'updatedAt', kind: 'date' }], search: ['title', 'media'] },
   orderBy: [{ publishedAt: 'desc' }, { createdAt: 'desc' }],
 };
 
@@ -174,7 +174,7 @@ const testimonials: CollectionDef = {
     f.select('source', 'Source', [{ value: 'google', label: 'Google' }, { value: 'direct', label: 'Transmis directement' }], { half: true }),
     f.number('displayOrder', 'Ordre', { half: true, min: 0 }),
   ] }],
-  list: { title: 'author', subtitle: 'context', columns: [{ label: 'Statut', path: 'status', kind: 'status' }, { label: 'Mis à jour', path: 'updatedAt', kind: 'date' }], search: ['author', 'quote', 'context'] },
+  list: { title: 'author', columns: [{ label: 'Activité · commune', path: 'context' }, { label: 'Note', path: 'rating', format: (v) => (v ? `${v}/5` : '—') }, { label: 'Source', path: 'source' }, { label: 'Statut', path: 'status', kind: 'status' }, { label: 'Mis à jour', path: 'updatedAt', kind: 'date' }], search: ['author', 'quote', 'context'] },
   orderBy: [{ displayOrder: 'asc' }, { createdAt: 'desc' }],
 };
 
@@ -188,9 +188,12 @@ const jobs: CollectionDef = {
     f.number('displayOrder', 'Ordre', { half: true, min: 0 }),
     f.area('summary', 'Résumé'), f.area('missions', 'Vos missions'), f.area('profile', 'Votre profil'), f.area('conditions', 'Conditions'),
   ] }],
-  list: { title: 'title', subtitle: 'location', columns: [{ label: 'Contrat', path: 'contractType', kind: 'badge' }, { label: 'Statut', path: 'status', kind: 'status' }, { label: 'Mis à jour', path: 'updatedAt', kind: 'date' }], search: ['title', 'location'] },
+  list: { title: 'title', columns: [{ label: 'Contrat', path: 'contractType' }, { label: 'Lieu', path: 'location' }, { label: 'Statut', path: 'status', kind: 'status' }, { label: 'Mis à jour', path: 'updatedAt', kind: 'date' }], search: ['title', 'location'] },
   orderBy: [{ displayOrder: 'asc' }, { createdAt: 'desc' }],
 };
+
+/** Libellés des pages où une question de FAQ est affichée (colonne « Affichée sur »). */
+const FAQ_SCOPES: Record<string, string> = { 'grands-comptes': 'Grands Comptes & Marchés Publics', accueil: 'Accueil', contact: 'Contact' };
 
 const faq: CollectionDef = {
   key: 'faq', label: 'FAQ', singular: 'question', gender: 'f', icon: 'help',
@@ -200,7 +203,7 @@ const faq: CollectionDef = {
     f.select('scope', 'Page', [{ value: 'grands-comptes', label: 'Grands Comptes & Marchés Publics' }, { value: 'accueil', label: 'Accueil' }, { value: 'contact', label: 'Contact' }], { required: true, half: true }),
     f.number('displayOrder', 'Ordre', { half: true, min: 0 }), ...qa,
   ] }],
-  list: { title: 'question', subtitle: 'scope', columns: [{ label: 'Page', path: 'scope', kind: 'badge' }, { label: 'Statut', path: 'status', kind: 'status' }], search: ['question', 'answer'], filter: { path: 'scope', label: 'Page', options: [{ value: 'grands-comptes', label: 'Grands Comptes' }, { value: 'accueil', label: 'Accueil' }, { value: 'contact', label: 'Contact' }] } },
+  list: { title: 'question', columns: [{ label: 'Affichée sur', path: 'scope', format: (v) => FAQ_SCOPES[String(v)] ?? (v ? String(v) : '—') }, { label: 'Statut', path: 'status', kind: 'status' }, { label: 'Mis à jour', path: 'updatedAt', kind: 'date' }], search: ['question', 'answer'], filter: { path: 'scope', label: 'Page', options: [{ value: 'grands-comptes', label: 'Grands Comptes' }, { value: 'accueil', label: 'Accueil' }, { value: 'contact', label: 'Contact' }] } },
   orderBy: [{ scope: 'asc' }, { displayOrder: 'asc' }],
 };
 

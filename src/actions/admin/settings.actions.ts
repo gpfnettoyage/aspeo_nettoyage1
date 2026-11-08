@@ -32,3 +32,18 @@ export async function saveSettingsAction(entries: { key: string; values: FormVal
   invalidatePublicSite();
   return { ok: true, message: 'Enregistré : les modifications sont en ligne.' };
 }
+
+/** Enregistre et publie le menu principal, la barre du haut et les liens du pied de page (écran « Menu & pied de page »). */
+export async function saveNavigationAction(input: unknown): Promise<{ ok: true; message: string } | { ok: false; message: string }> {
+  const session = await requirePermission('settings:update');
+  const parsed = SETTINGS_SCHEMAS.navigation.safeParse(input);
+  if (!parsed.success) {
+    const issue = parsed.error.issues[0];
+    return { ok: false, message: issue?.path.includes('label') ? 'Chaque lien doit avoir un libellé (80 caractères au plus).' : 'Certains liens sont incomplets : vérifiez les libellés et les pages choisies.' };
+  }
+  const data = parsed.data;
+  await prisma.siteSetting.upsert({ where: { key: 'navigation' }, update: { value: data as Prisma.InputJsonValue, updatedBy: session.user.id }, create: { key: 'navigation', value: data as Prisma.InputJsonValue, updatedBy: session.user.id } });
+  await recordAudit(session, 'settings', 'reglages', 'navigation', LABELS.navigation);
+  invalidatePublicSite();
+  return { ok: true, message: 'Enregistré : les modifications sont en ligne.' };
+}
