@@ -110,6 +110,14 @@
   .asp-site footer[data-ft-m] [data-ft-btn] { display: flex !important; justify-content: center !important; margin-top: 28px !important; padding: 16px !important; }
   .asp-site [data-small-text] { font-size: 0.78rem !important; }
 }
+/* Lisibilité de la maquette : les très petits textes grossissent sur tablette et mobile. */
+@media (max-width: 1040px) {
+  .asp-site [class*='text-[length:.68rem]'], .asp-site [class*='text-[length:.66rem]'], .asp-site [class*='text-[length:.65rem]'] { font-size: .75rem !important; }
+  .asp-site [class*='text-[length:.72rem]'], .asp-site [class*='text-[length:.7rem]'] { font-size: .78rem !important; }
+}
+@media (max-width: 560px) {
+  .asp-site [class*='text-[length:.78rem]'], .asp-site [class*='text-[length:.76rem]'], .asp-site [class*='text-[length:.75rem]'] { font-size: .84rem !important; }
+}
 @media (min-width: 641px) and (max-width: 1040px) {
   .asp-site main h1 { font-size: clamp(2.4rem, 6vw, 3.4rem) !important; }
   .asp-site [data-mob-card] { aspect-ratio: 4/5 !important; }
@@ -124,6 +132,8 @@
   .asp-site [data-cta-band] a, .asp-site [data-cta-band] button { width: 100%; justify-content: center; min-height: 52px; }
   /* Titres de section uniquement : les petits intertitres (étiquettes, cartes) gardent leur taille, comme les h3 de la maquette. */
   .asp-site h2:not([class*='text-[length:.']):not([class*='text-[length:1.']), .asp-site h2[data-h2-mob] { font-size: clamp(1.45rem, 6.4vw, 1.9rem) !important; }
+  /* Titre placé dans un span (fiches services) : il hérite de la taille mobile du h2, comme dans la maquette. */
+  .asp-site h2 > [data-h2-inherit] { font-size: inherit !important; }
   .asp-site h1, .asp-site main h1 { font-size: clamp(1.9rem, 8.4vw, 2.5rem) !important; line-height: 1.08 !important; }
   .asp-site [data-mob-card] { aspect-ratio: 4/3 !important; }
   .asp-site [data-split-min] { min-height: 0 !important; }
@@ -136,7 +146,7 @@
   .asp-site section[data-hero-home] { padding-top: 128px !important; }
   .asp-site [data-hero-text] { display: flex; flex-direction: column; padding: 16px 0 24px !important; }
   .asp-site [data-hero-text] h1 { font-size: 1.8rem !important; line-height: 1.1 !important; margin-top: 10px !important; }
-  .asp-site [data-hero-text] > p:not([data-hero-eyebrow]) { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin-top: 12px !important; font-size: 0.98rem !important; line-height: 1.6 !important; }
+  .asp-site [data-hero-text] > p:not([data-hero-eyebrow]) { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin-top: 12px !important; font-size: 1.08rem !important; line-height: 1.6 !important; }
   .asp-site [data-hero-cta] { order: 3; margin-top: 18px !important; gap: 10px !important; }
   .asp-site [data-hero-cta] > a:first-child, .asp-site [data-hero-cta] > a[href^="tel"] { width: 100%; justify-content: center; min-height: 50px; display: flex !important; }
   .asp-site [data-hero-cta] > [data-hero-more] { display: none !important; }

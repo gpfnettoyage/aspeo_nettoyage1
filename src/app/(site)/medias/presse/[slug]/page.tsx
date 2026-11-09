@@ -88,7 +88,7 @@ export default async function PressArticlePage({ params }: Props) {
                     <div className="relative aspect-[16/9] bg-[color:#dfe7f2]">{o.image && <Image src={o.image} alt="" fill sizes="400px" className="object-cover" />}</div>
                     <div className="p-[18px_20px_22px]">
                       <div className="text-[length:.78rem] tracking-[.08em] uppercase text-[color:var(--asp-accent-ink)] font-bold">{[o.media, o.dateLabel || formatDate(o.publishedAt)].filter(Boolean).join(' · ')}</div>
-                      <h3 className="font-heading font-bold text-[length:1.05rem] text-navy leading-[1.35] m-[8px_0_0]">{o.title}</h3>
+                      <h3 className="font-heading font-bold text-[length:1.02rem] text-navy leading-[1.35] m-[8px_0_0]">{o.title}</h3>
                     </div>
                   </Link>
                 </li>

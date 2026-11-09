@@ -131,7 +131,7 @@ export default function QuoteForm({ directions, initialDirection = '', initialPr
             {FREQUENCIES.map((f) => {
               const on = frequency === f;
               return (
-                <button key={f} type="button" role="radio" aria-checked={on} onClick={() => { setFrequency(f); setClientError(''); }} className="p-[12px_22px] font-heading font-bold text-[length:.9rem] cursor-pointer"
+                <button key={f} type="button" role="radio" aria-checked={on} onClick={() => { setFrequency(f); setClientError(''); }} className="p-[12px_22px] font-heading font-bold text-[length:.92rem] cursor-pointer"
                   style={{ border: `1px solid ${on ? 'var(--asp-accent)' : '#d7dee8'}`, background: on ? 'var(--asp-accent)' : '#fff', color: on ? '#fff' : '#06226D' }}>
                   {f}
                 </button>

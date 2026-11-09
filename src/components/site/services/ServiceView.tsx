@@ -146,7 +146,7 @@ export default function ServiceView({ service, related, articles, testimonial, c
             <div className="max-w-[900px] flex flex-col gap-[40px]">
               {c.longform!.map((b) => (
                 <div key={b.title}>
-                  <H2Bar className="mb-[14px]"><span className="text-[length:clamp(1.25rem,2.2vw,1.6rem)]">{b.title}</span></H2Bar>
+                  <H2Bar className="mb-[14px]"><span data-h2-inherit="" className="text-[length:clamp(1.25rem,2.2vw,1.6rem)]">{b.title}</span></H2Bar>
                   <p className="text-[length:1.02rem] leading-[1.85] text-[color:#42505f] m-0">{b.text}</p>
                 </div>
               ))}
