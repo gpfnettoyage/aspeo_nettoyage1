@@ -71,7 +71,7 @@ export default async function ZonesPage() {
           ))}
           <div className="flex flex-wrap items-center justify-between gap-[16px_28px] bg-[color:#EAF1FB] p-[clamp(22px,3vw,32px)]">
             <div className="max-w-[640px]">
-              <h2 className="font-heading font-extrabold text-[length:1.3rem] text-navy m-[0_0_6px]">{c.t('other.title')}</h2>
+              <h2 data-h2-mob="" className="font-heading font-extrabold text-[length:1.3rem] text-navy m-[0_0_6px]">{c.t('other.title')}</h2>
               <p className="text-[length:.98rem] leading-[1.6] text-[color:#42505f] m-0">{c.t('other.text')}</p>
             </div>
             <Link href="/contact" className="bg-[color:var(--asp-accent)] text-white p-[15px_26px] min-h-[48px] font-heading font-bold text-[length:.95rem] no-underline inline-flex items-center">Demander un devis →</Link>

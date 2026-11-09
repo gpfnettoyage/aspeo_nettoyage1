@@ -39,6 +39,7 @@ export default async function ContactPage({ searchParams }: Props) {
         eyebrow={c.t('hero.eyebrow')}
         title={c.t('hero.title')}
         text={c.t('hero.text')}
+        textClassName="m-[18px_0_0] text-[length:clamp(1.05rem,1.5vw,1.22rem)] leading-[1.6] text-[color:rgba(255,255,255,.9)] max-w-[640px]"
         image={c.t('hero.image')}
         imageAlt="Bureaux ASPEO à Panissières"
         actions={<a className="inline-flex items-center gap-[10px] bg-[color:rgba(255,255,255,.12)] [border:1.5px_solid_rgba(255,255,255,.6)] text-white no-underline p-[16px_26px] font-heading font-bold text-[length:.98rem]" href={`tel:${company.phoneIntl}`}>{company.phone}</a>}
@@ -66,14 +67,14 @@ export default async function ContactPage({ searchParams }: Props) {
             <div className="bg-navy text-white p-[28px_26px]" data-dark="">
               <h2 className="font-heading font-bold text-[length:1.15rem] m-[0_0_18px]">Nous contacter</h2>
               <dl className="m-0 flex flex-col gap-[16px]">
-                <div><dt className="text-[length:.78rem] text-[color:rgba(255,255,255,.6)] uppercase tracking-[.08em] mb-[4px]">Téléphone</dt><dd className="m-0"><a className="text-white no-underline font-heading font-bold text-[length:1.05rem]" href={`tel:${company.phoneIntl}`}>{company.phone}</a></dd></div>
-                <div><dt className="text-[length:.78rem] text-[color:rgba(255,255,255,.6)] uppercase tracking-[.08em] mb-[4px]">Email</dt><dd className="m-0"><a className="text-white no-underline font-semibold" href={`mailto:${company.email}`}>{company.email}</a></dd></div>
-                <div><dt className="text-[length:.78rem] text-[color:rgba(255,255,255,.6)] uppercase tracking-[.08em] mb-[4px]">Adresse</dt><dd className="m-0 text-[color:rgba(255,255,255,.9)] leading-[1.5]">{company.street}<br />{company.postalCode} {company.city}, France</dd></div>
+                <div><dt className="text-[length:.78rem] text-[color:rgba(255,255,255,.55)] uppercase tracking-[.08em] mb-[3px]">Téléphone</dt><dd className="m-0"><a className="text-white no-underline font-heading font-bold text-[length:1.05rem]" href={`tel:${company.phoneIntl}`}>{company.phone}</a></dd></div>
+                <div><dt className="text-[length:.78rem] text-[color:rgba(255,255,255,.55)] uppercase tracking-[.08em] mb-[3px]">Email</dt><dd className="m-0"><a className="text-white no-underline font-semibold" href={`mailto:${company.email}`}>{company.email}</a></dd></div>
+                <div><dt className="text-[length:.78rem] text-[color:rgba(255,255,255,.55)] uppercase tracking-[.08em] mb-[3px]">Adresse</dt><dd className="m-0 text-[color:rgba(255,255,255,.9)] leading-[1.5]">{company.street}<br />{company.postalCode} {company.city}, France</dd></div>
               </dl>
             </div>
             <div className="shadow-[0_4px_20px_-8px_rgba(15,23,42,.14)] p-[28px_26px]">
               <h2 className="font-heading font-bold text-[length:1.05rem] text-navy m-[0_0_14px]">Nos horaires</h2>
-              <dl className="m-0 flex flex-col gap-[8px] text-[length:.92rem] text-[color:#42505f]">
+              <dl className="m-0 flex flex-col gap-[8px] text-[length:.92rem] text-[color:#4a5568]">
                 {company.hours.map((h) => <div key={h.days} className="flex justify-between gap-[12px]"><dt>{h.days}</dt><dd className="m-0 text-navy font-semibold text-right">{h.value}</dd></div>)}
               </dl>
             </div>

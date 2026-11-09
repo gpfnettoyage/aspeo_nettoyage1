@@ -2,6 +2,7 @@ import { z } from 'zod';
 import { slugify } from '@/utils/slugify';
 
 const UNSAFE_SINGLE_LINE_CHARS =
+  // eslint-disable-next-line no-control-regex -- Ces caractères de contrôle sont volontairement refusés.
   /[<>\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/u;
 const LETTER_OR_NUMBER = /[\p{L}\p{N}]/u;
 

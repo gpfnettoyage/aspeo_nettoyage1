@@ -12,10 +12,12 @@ interface Props {
   aside?: ReactNode;
   crumbs?: Crumb[];
   titleClassName?: string;
+  /** Classes du texte d'introduction (la page Contact de la maquette utilise une taille légèrement inférieure). */
+  textClassName?: string;
 }
 
 /** Bandeau de page sur photo avec dégradé bleu (pages Services, activités, fiches…). */
-export default function PageHero({ eyebrow, title, text, image, imageAlt = '', actions, aside, crumbs, titleClassName }: Props) {
+export default function PageHero({ eyebrow, title, text, image, imageAlt = '', actions, aside, crumbs, titleClassName, textClassName }: Props) {
   return (
     <section className="relative overflow-hidden text-white min-h-[clamp(420px,52vh,540px)] flex flex-col" data-dark="">
       <div className="absolute inset-0 bg-navy" aria-hidden="true" />
@@ -29,7 +31,7 @@ export default function PageHero({ eyebrow, title, text, image, imageAlt = '', a
             <span className="font-heading font-bold text-[length:.82rem] tracking-[.16em] uppercase">{eyebrow}</span>
           </div>
           <h1 className={titleClassName ?? 'font-heading font-extrabold text-[length:clamp(2.6rem,5.2vw,4.8rem)] leading-[1.02] tracking-[-.02em] m-[16px_0_0] max-w-[820px]'}>{title}</h1>
-          {text && <p className="m-[20px_0_0] text-[length:clamp(1.05rem,1.5vw,1.24rem)] leading-[1.6] text-[color:rgba(255,255,255,.9)] max-w-[640px]">{text}</p>}
+          {text && <p className={textClassName ?? 'm-[20px_0_0] text-[length:clamp(1.05rem,1.5vw,1.24rem)] leading-[1.6] text-[color:rgba(255,255,255,.9)] max-w-[640px]'}>{text}</p>}
           {actions && <div className="flex flex-wrap gap-[14px] m-[28px_0_0]">{actions}</div>}
         </div>
         {aside}

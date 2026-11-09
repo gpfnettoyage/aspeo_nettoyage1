@@ -69,7 +69,7 @@ export default function LeadsBoard({ kind, rows, columns, can, openId }: Props) 
       <div className="mb-4 flex flex-wrap gap-2" role="tablist" aria-label="Filtrer par statut">
         {TABS.filter(([k]) => k === 'ALL' || counts[k] || k !== 'SPAM').map(([k, l]) => (
           <button key={k} type="button" role="tab" aria-selected={tab === k} onClick={() => setTab(k)}
-            className={`rounded-full border px-3 py-[5px] text-[13px] ${tab === k ? 'border-[#06226D] bg-[#06226D] text-white' : 'border-gray-200 bg-white text-zinc-700 hover:bg-zinc-50'}`}>
+            className={`rounded-full border px-3 py-1.5 text-[13px] font-medium ${tab === k ? 'border-[#06226D] bg-[#06226D] text-white' : 'border-gray-200 bg-white text-zinc-700 hover:bg-zinc-50'}`}>
             {l} ({counts[k]})
           </button>
         ))}

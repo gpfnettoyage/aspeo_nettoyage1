@@ -167,7 +167,7 @@ export default async function AccountsPage() {
         <section className="p-[clamp(56px,8vw,96px)_0] bg-white">
           <Container className="grid grid-cols-[minmax(0,1fr)]">
             <div className="flex items-center gap-[14px] mb-[24px]"><Bar /><h2 className="font-heading font-extrabold text-[length:clamp(1.4rem,2.4vw,1.9rem)] tracking-[-.015em] text-navy m-0">Questions fréquentes</h2></div>
-            <Disclosure variant="list" items={faq.map((f) => ({ title: f.question, content: <p className="m-0">{f.answer}</p> }))} />
+            <Disclosure variant="qa" items={faq.map((f) => ({ title: f.question, content: <p className="m-0">{f.answer}</p> }))} />
           </Container>
         </section>
       )}

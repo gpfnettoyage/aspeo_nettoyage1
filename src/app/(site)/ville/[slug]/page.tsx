@@ -16,7 +16,7 @@ import { urls } from '@/lib/site/urls';
 type Props = { params: Promise<{ slug: string }> };
 
 const Bar = () => <span className="w-[4px] self-stretch bg-[color:var(--asp-accent)] flex-none min-h-[24px]" aria-hidden="true" />;
-const H2 = ({ children }: { children: React.ReactNode }) => <h2 className="font-heading font-extrabold text-[length:clamp(1.35rem,2.4vw,1.85rem)] tracking-[-.015em] text-navy m-0">{children}</h2>;
+const H2 = ({ children }: { children: React.ReactNode }) => <h2 className="font-heading font-extrabold text-[length:clamp(1.4rem,2.4vw,1.9rem)] tracking-[-.015em] text-navy m-0">{children}</h2>;
 type Faq = { question: string; answer: string };
 const cityFaq = (v: { faq: unknown }): Faq[] => (Array.isArray(v.faq) ? (v.faq as Faq[]).filter((f) => f?.question && f?.answer) : []);
 
@@ -156,7 +156,7 @@ export default async function CityPage({ params }: Props) {
         <section className="p-[clamp(48px,7vw,80px)_0] bg-white">
           <Container className="grid grid-cols-[minmax(0,1fr)]">
             <div className="flex items-center gap-[14px] mb-[24px]"><Bar /><H2>Questions fréquentes à {v.name}</H2></div>
-            <Disclosure variant="list" items={faq.map((f) => ({ title: f.question, content: <p className="m-0">{f.answer}</p> }))} />
+            <Disclosure variant="qa" items={faq.map((f) => ({ title: f.question, content: <p className="m-0">{f.answer}</p> }))} />
           </Container>
         </section>
       )}

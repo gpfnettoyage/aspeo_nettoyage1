@@ -38,6 +38,7 @@ Ce document décrit, dans l'ordre, ce qu'il faut faire pour mettre en ligne la r
 | `SMTP_USER`, `SMTP_PASS` | `OVH_EMAIL_USER` / `OVH_EMAIL_PASS` | Compte d'envoi (si différent du compte de sécurité) |
 | `MAIL_FROM` | `SMTP_USER` | Adresse d'expéditeur affichée |
 | `FORM_TOKEN_SECRET` | `BETTER_AUTH_SECRET` | Signature des jetons anti-spam des formulaires |
+| `FILES_ENCRYPTION_KEY` | clé dérivée de `BETTER_AUTH_SECRET` | **Recommandée.** Clé de chiffrement des CV et photos de demandes (32 octets : `openssl rand -hex 32`). La définir **avant** la mise en ligne et la conserver dans un coffre : sans elle, les fichiers chiffrés sont illisibles. Sans cette variable, la clé est dérivée de `BETTER_AUTH_SECRET`, qui ne doit alors plus jamais changer. |
 | `TURNSTILE_SECRET_KEY` **et** `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | — | Cloudflare Turnstile (anti-robot). Actif uniquement si **les deux** sont définies. Ajouter le domaine dans le tableau de bord Cloudflare. *Non testé en conditions réelles : l'hôte Cloudflare n'était pas accessible depuis l'environnement de développement.* |
 
 Les destinataires des notifications (devis, candidatures) se règlent dans l'admin : **Réglages → Chiffres & notifications**.
@@ -83,6 +84,21 @@ Après l'import :
 
 ---
 
+## 4 bis. Fichiers confidentiels (CV, photos des demandes)
+
+Les CV et les photos jointes aux demandes de devis sont **chiffrés** (AES-256-GCM) avant d'être déposés sur Vercel Blob, sous un nom aléatoire. Ils ne sont lisibles que par la route `/api/admin/files/…`, après vérification de la session administrateur et de la permission « demandes ». Le panel et les e-mails internes n'affichent que cette route ; l'adresse réelle du fichier sur Blob n'est jamais exposée. Les images publiques du site (bibliothèque, services) restent publiques, comme sur l'ancien site.
+
+- Définir `FILES_ENCRYPTION_KEY` (voir section 2) **avant** la mise en ligne, et la sauvegarder dans un coffre.
+- Le magasin Vercel Blob existant convient : aucun nouveau magasin ni changement de réglage Blob n'est nécessaire.
+- Transition : si des fichiers confidentiels ont déjà été déposés en clair (version de test ou préproduction ayant reçu de vraies demandes), lancer :
+
+```bash
+npx tsx --conditions=react-server scripts/secure-private-files.ts           # simulation : liste ce qui serait chiffré
+npx tsx --conditions=react-server scripts/secure-private-files.ts --apply   # chiffre, met à jour la base, retire l'original en clair
+```
+
+Le script peut être relancé sans risque. Il liste aussi les fichiers du dossier privé rattachés à aucune demande, sans jamais les supprimer.
+
 ## 5. Déploiement et vérifications
 
 1. Déployer la branche en préproduction (`npm run build` doit passer).
@@ -125,3 +141,20 @@ Les données publiques sont mises en cache et invalidées à chaque enregistreme
 
 - Le code : redéployer le déploiement Vercel précédent (« Promote to Production »).
 - La base : les migrations n'ayant rien supprimé, l'ancien site fonctionne avec la nouvelle structure ; en cas de besoin, restaurer la sauvegarde de l'étape 1.
+
+## 8. Sécurité : dépendances et points à arbitrer
+
+État au 9 novembre 2026 (`npm audit --omit=dev`, après mise à jour de Next.js 16.4.5, sharp 0.35.5 et undici 6.29.1) : 27 alertes restantes, toutes qualifiées **non exploitables à l'exécution** sur ce site.
+
+| Paquet(s) | Raison |
+|---|---|
+| `prisma`, `@prisma/dev`, `@prisma/config`, `hono`, `@hono/node-server`, `chevrotain`, `lodash`, `effect`, `defu`, `deepmerge-ts`, `valibot` | Outillage en ligne de commande de Prisma (serveur local `prisma dev`), utilisé au build, jamais exposé en production. |
+| `vitest`, `@vitest/mocker`, `vite`, `esbuild`, `picomatch`, `source-map-js`, `postcss-selector-parser`, `baseline-browser-mapping` | Outils de test et de build (dépendances de développement). |
+| `kysely`, `mysql2` | Adaptateurs de base de données de better-auth non utilisés (le site passe par Prisma/PostgreSQL). |
+| `better-auth` 1.4 | Les failles listées concernent OAuth, OIDC, liens magiques, OTP par e-mail, organisations et autorisation d'appareil : modules non utilisés (connexion e-mail + mot de passe et `twoFactor` uniquement). La suppression d'un utilisateur supprime ses sessions (cascade en base). **Recommandé** : passer à better-auth 1.7 lors d'une prochaine maintenance (nécessite `--legacy-peer-deps` à cause d'une dépendance optionnelle SvelteKit, puis un test complet de la connexion, de la double authentification et de la vérification d'appareil). |
+| `nodemailer` 7 | Injections via `envelope.size` et le nom du transport : options jamais fournies par le site. Correctif en version majeure (10.x) à prévoir lors d'une maintenance. |
+| `zod` 3 | Consommation mémoire sur des collections très volumineuses ; la taille des envois est déjà bornée. Correctif = migration vers zod 4 (chantier à part). |
+
+### Point à arbitrer : double authentification des administrateurs
+
+Le mécanisme historique (inchangé) impose la configuration de la double authentification aux rôles élevés **par une redirection après la connexion** : la session est ouverte, puis l'utilisateur est envoyé vers `Sécurité`. Un administrateur sans double authentification peut ensuite naviguer dans le panel. Avant la mise en ligne, vérifier que tous les comptes administrateurs de production ont activé la double authentification (page `Utilisateurs`). Un blocage strict côté serveur peut être ajouté si ASPEO le souhaite.

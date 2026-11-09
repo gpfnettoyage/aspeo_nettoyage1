@@ -8,10 +8,12 @@ interface Item { title: string; content: ReactNode }
  * Liste dépliable accessible (FAQ, « Détails des services »).
  * `variant="faq"` : cartes séparées avec pictogramme carré bleu ; `variant="list"` : lignes jointives.
  */
-export default function Disclosure({ items, variant = 'faq', defaultOpen = null }: { items: Item[]; variant?: 'faq' | 'list'; defaultOpen?: number | null }) {
+export default function Disclosure({ items, variant = 'faq', defaultOpen = null }: { items: Item[]; variant?: 'faq' | 'list' | 'qa'; defaultOpen?: number | null }) {
   const [open, setOpen] = useState<number | null>(defaultOpen);
   const uid = useId();
-  if (variant === 'list') {
+  if (variant === 'list' || variant === 'qa') {
+    // « list » : détail des prestations ; « qa » : FAQ Grands Comptes et villes (rembourrage et taille de la maquette).
+    const qa = variant === 'qa';
     return (
       <div className="flex flex-col gap-[1px] bg-[color:#eef2f7] [border:1px_solid_#eef2f7]">
         {items.map((it, i) => {
@@ -19,12 +21,12 @@ export default function Disclosure({ items, variant = 'faq', defaultOpen = null 
           return (
             <div key={i} className="bg-white">
               <h3 className="m-0">
-                <button type="button" aria-expanded={isOpen} aria-controls={`${uid}-${i}`} onClick={() => setOpen(isOpen ? null : i)} className="w-full text-left bg-transparent border-none p-[16px_18px] flex items-center justify-between gap-[12px] cursor-pointer font-heading font-bold text-[length:.94rem] text-navy">
+                <button type="button" aria-expanded={isOpen} aria-controls={`${uid}-${i}`} onClick={() => setOpen(isOpen ? null : i)} className={`w-full text-left bg-transparent border-none flex items-center justify-between gap-[12px] cursor-pointer font-heading font-bold text-navy ${qa ? 'p-[18px_20px] text-[length:.96rem]' : 'p-[16px_18px] text-[length:.94rem]'}`}>
                   <span>{it.title}</span>
                   <span className="flex-none text-[color:var(--asp-accent-ink)] text-[length:1.1rem] font-bold" aria-hidden="true">{isOpen ? '−' : '+'}</span>
                 </button>
               </h3>
-              <div id={`${uid}-${i}`} hidden={!isOpen} className="m-0 p-[0_18px_18px] text-[length:.92rem] leading-[1.6] text-[color:#42505f]">{it.content}</div>
+              <div id={`${uid}-${i}`} hidden={!isOpen} className={`m-0 text-[length:.92rem] text-[color:#42505f] ${qa ? 'p-[0_20px_18px] leading-[1.65]' : 'p-[0_18px_18px] leading-[1.6]'}`}>{it.content}</div>
             </div>
           );
         })}

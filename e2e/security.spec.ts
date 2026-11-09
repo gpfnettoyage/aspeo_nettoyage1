@@ -132,12 +132,13 @@ test.describe('Input Validation', () => {
 });
 
 test.describe('Session Security', () => {
-  test('should handle logout endpoint', async ({ page }) => {
-    // Navigate to signout endpoint
-    const response = await page.goto('/api/auth/signout');
-
-    // Should get a response (redirect or success)
-    expect(response).not.toBeNull();
+  test('should handle logout endpoint', async ({ request, baseURL }) => {
+    const response = await request.post('/api/auth/sign-out', {
+      headers: { Origin: baseURL! },
+      data: {},
+    });
+    expect(response.status()).toBe(200);
+    expect(await response.json()).toEqual({ success: true });
   });
 
   test('should protect admin routes without session', async ({ page }) => {
@@ -151,9 +152,10 @@ test.describe('Session Security', () => {
 test.describe('CSRF Protection', () => {
   test('should reject foreign origin POST requests', async ({ request }) => {
     // Attempt to make a POST request with foreign origin
-    const response = await request.post('/api/auth/signin/credentials', {
+    const response = await request.post('/api/auth/sign-in/email', {
       headers: {
         'Origin': 'https://evil-site.com',
+        'Sec-Fetch-Site': 'cross-site',
         'Content-Type': 'application/json',
       },
       data: {
@@ -162,9 +164,8 @@ test.describe('CSRF Protection', () => {
       },
     });
 
-    // Should be rejected or handled appropriately
-    // 400, 401, 403, 404, 405 are all acceptable responses
-    expect([400, 401, 403, 404, 405, 500]).toContain(response.status());
+    expect(response.status()).toBe(403);
+    expect(await response.json()).toMatchObject({ code: 'INVALID_ORIGIN' });
   });
 
   test('login form should use POST method', async ({ page }) => {

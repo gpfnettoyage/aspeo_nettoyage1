@@ -1,6 +1,7 @@
 import 'server-only';
 import type { JobApplication, Job, QuoteRequest } from '@prisma/client';
 import type { LeadRow } from '@/components/admin/LeadsBoard';
+import { privateHref } from '@/lib/storage/files';
 
 const when = (d: Date) => d.toLocaleString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Paris' }).replace(' à ', ' · ');
 const CLIENT: Record<string, string> = { particulier: 'Particulier', professionnel: 'Professionnel', entreprise: 'Entreprise', collectivite: 'Collectivité', bailleur: 'Bailleur', syndic: 'Syndic' };
@@ -24,7 +25,7 @@ export function quoteRows(rows: QuoteRequest[]): LeadRow[] {
         { k: 'Notification', v: r.emailSent ? 'E-mail envoyé' : 'E-mail non envoyé (SMTP)' },
         { k: 'Consentement', v: when(r.consentAt) },
       ],
-      files: files.map((f) => ({ url: f.url!, name: f.name ?? 'photo', image: true })),
+      files: files.map((f) => ({ url: privateHref(f.url!), name: f.name ?? 'photo', image: true })),
     };
   });
 }
@@ -34,6 +35,6 @@ export function applicationRows(rows: (JobApplication & { job: Pick<Job, 'title'
     id: r.id, date: when(r.createdAt), name: `${r.firstName} ${r.lastName}`, org: r.city ?? '', email: r.email, phone: r.phone,
     need: r.job?.title ?? 'Candidature spontanée', needSub: '', frequency: '', status: r.status, notes: '', message: r.message ?? '',
     details: [{ k: 'Poste', v: r.job?.title ?? 'Candidature spontanée' }, ...(r.city ? [{ k: 'Ville', v: r.city }] : []), { k: 'Consentement', v: when(r.consentAt) }],
-    files: r.cvUrl ? [{ url: r.cvUrl, name: r.cvName ?? 'CV', image: isImage(r.cvUrl) }] : [],
+    files: r.cvUrl ? [{ url: privateHref(r.cvUrl), name: r.cvName ?? 'CV', image: isImage(r.cvName ?? r.cvUrl) }] : [],
   }));
 }

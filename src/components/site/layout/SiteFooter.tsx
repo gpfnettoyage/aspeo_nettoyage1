@@ -9,7 +9,9 @@ interface FooterProps {
 }
 
 const deskLink = 'text-left p-[8px_0] m-[-6px_0] text-[color:rgba(255,255,255,.62)] font-body text-[length:.9rem] no-underline [transition:color_.2s] hover:text-white';
-const mobLink = 'text-left p-[10px_0] min-h-[44px] text-white font-body text-[length:1.05rem] no-underline flex items-center';
+// Taille séparée : les liens de services du pied de page mobile sont en 1,02 rem dans la maquette.
+const mobLinkBase = 'text-left p-[10px_0] min-h-[44px] text-white font-body no-underline flex items-center';
+const mobLink = `${mobLinkBase} text-[length:1.05rem]`;
 const h3Desk = 'font-heading font-extrabold text-[length:.9rem] tracking-[.08em] uppercase text-white m-[0_0_18px]';
 const h3Mob = 'font-heading font-extrabold text-[length:1.3rem] tracking-[.02em] uppercase text-white m-[0_0_22px] leading-[1.2]';
 
@@ -111,7 +113,7 @@ export default function SiteFooter({ settings, services }: FooterProps) {
             {services.map((s) => (
               <li key={s.href} className="flex items-center gap-[12px]">
                 <span className="w-[4px] h-[4px] rounded-full bg-white flex-none" aria-hidden="true" />
-                <Link href={s.href} className={`${mobLink} text-[length:1.02rem] leading-[1.35]`}>{s.title}</Link>
+                <Link href={s.href} className={`${mobLinkBase} text-[length:1.02rem] leading-[1.35]`}>{s.title}</Link>
               </li>
             ))}
           </ul>

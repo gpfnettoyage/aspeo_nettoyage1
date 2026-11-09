@@ -6,8 +6,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type { ComponentProps, ReactNode } from 'react';
+import { extendTailwindMerge } from 'tailwind-merge';
 
-const cx = (...c: (string | false | null | undefined)[]) => c.filter(Boolean).join(' ');
+/** Assemble les classes ; une classe passée par `className` remplace réellement celle du composant (taille, rembourrage…). */
+// Les tailles de police du site sont des valeurs arbitraires sans interligne : une taille ne doit pas annuler un `leading-*`.
+const twMerge = extendTailwindMerge({ override: { conflictingClassGroups: { 'font-size': [] } } });
+const cx = (...c: (string | false | null | undefined)[]) => twMerge(c.filter(Boolean).join(' '));
 
 /** Conteneur centré 1280 px avec gouttières fluides. */
 export function Container({ children, className, wide = false, ...rest }: { children: ReactNode; className?: string; wide?: boolean } & ComponentProps<'div'>) {
