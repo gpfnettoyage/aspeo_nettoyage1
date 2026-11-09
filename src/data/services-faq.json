@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "question": "Quels types de services de nettoyage proposez-vous ?",
+    "answer": "Nous proposons une large gamme de services de nettoyage, incluant le nettoyage de transport, le lavage de vitres, le nettoyage de piscines, le nettoyage de façades, toitures et terrasses, le nettoyage de tapis et canapés, le nettoyage de locaux commerciaux, le nettoyage de fin de chantier, le nettoyage après décès, le nettoyage après sinistre, le nettoyage de logements insalubres et le nettoyage industriel."
+  },
+  {
+    "id": 2,
+    "question": "Utilisez-vous des produits respectueux de l'environnement ?",
+    "answer": "Oui, chez Aspeo, nous privilégions l'utilisation de produits écologiques et biodégradables pour minimiser notre impact sur l'environnement tout en garantissant un nettoyage efficace et de qualité."
+  },
+  {
+    "id": 3,
+    "question": "Comment se déroule une prestation de nettoyage ?",
+    "answer": "Nous commençons par évaluer vos besoins lors d'un premier contact. Ensuite, nous établissons un devis personnalisé. Une fois le devis accepté, nous planifions l'intervention selon vos disponibilités. Nos équipes interviennent ensuite avec le matériel et les produits adaptés pour réaliser un nettoyage de qualité."
+  },
+  {
+    "id": 4,
+    "question": "Quel est le coût d'une prestation de nettoyage ?",
+    "answer": "Les tarifs varient en fonction du type de service, de la surface à nettoyer et des spécificités de votre demande. Nous vous invitons à nous contacter pour obtenir un devis personnalisé et gratuit."
+  },
+  {
+    "id": 5,
+    "question": "Quelle zone géographique couvrez-vous ?",
+    "answer": "Notre zone d'intervention principale couvre les départements de la Loire (42) et du Rhône (69). Cette proximité nous permet d'accompagner les entreprises avec une grande réactivité et la même exigence de qualité."
+  },
+  {
+    "id": 6,
+    "question": "Proposez-vous des interventions d'urgence ?",
+    "answer": "Oui, nous proposons des interventions d'urgence 24h/24 et 7j/7 pour les situations exceptionnelles comme les sinistres, inondations ou autres urgences nécessitant un nettoyage immédiat."
+  }
+]

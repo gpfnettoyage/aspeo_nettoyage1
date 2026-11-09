@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "type": "Interview TV",
+    "title": "Interview sur BFM Business",
+    "media": "BFM Business",
+    "date": "2024-01-22",
+    "description": "L'avenir du nettoyage professionnel et des services aux entreprises",
+    "url": "https://www.bfmtv.com"
+  },
+  {
+    "id": 2,
+    "type": "Article de presse",
+    "title": "Article dans Les Échos : \"Aspeo, l'excellence au service de la propreté\"",
+    "media": "Les Échos",
+    "date": "2024-01-15",
+    "description": "Portrait d'entreprise et innovation dans le secteur du nettoyage",
+    "url": "https://www.lesechos.fr"
+  },
+  {
+    "id": 3,
+    "type": "Podcast",
+    "title": "Podcast : Entrepreneurs d'Aujourd'hui",
+    "media": "Radio France",
+    "date": "2024-01-09",
+    "description": "Rencontre avec l'équipe Aspeo sur l'innovation dans la propreté",
+    "url": "https://www.radiofrance.fr"
+  }
+]

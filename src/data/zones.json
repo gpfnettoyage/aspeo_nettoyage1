@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "city": "Montbrison",
+    "department": "Loire",
+    "code": "42"
+  },
+  {
+    "id": 2,
+    "city": "Andrézieux-Bouthéon",
+    "department": "Loire",
+    "code": "42"
+  },
+  {
+    "id": 3,
+    "city": "Feurs",
+    "department": "Loire",
+    "code": "42"
+  },
+  {
+    "id": 4,
+    "city": "Saint-Just-Saint-Rambert",
+    "department": "Loire",
+    "code": "42"
+  },
+  {
+    "id": 5,
+    "city": "Saint-Symphorien-sur-Coise",
+    "department": "Rhône",
+    "code": "69"
+  },
+  {
+    "id": 6,
+    "city": "Craponne",
+    "department": "Rhône",
+    "code": "69"
+  },
+  {
+    "id": 7,
+    "city": "Vaugneray",
+    "department": "Rhône",
+    "code": "69"
+  },
+  {
+    "id": 8,
+    "city": "Brindas",
+    "department": "Rhône",
+    "code": "69"
+  }
+]
+

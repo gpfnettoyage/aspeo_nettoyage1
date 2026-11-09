@@ -1,0 +1,187 @@
+export const metadata = {
+  id: 0, // IMPORTANT: Remplacer par un ID unique (nombre suivant disponible)
+  slug: 'mon-slug-url', // IMPORTANT: Doit correspondre EXACTEMENT au nom du fichier (sans .mdx)
+  title: 'Titre de mon actualité - Exemple complet',
+  excerpt: 'Résumé court de l\'actualité en 2-3 phrases maximum. Ce texte apparaît dans les listes, les aperçus et les métadonnées SEO.',
+  image: '/img/actu/mon-slug-url/hero.webp', // Image principale - IMPORTANT: Créer le dossier /img/actu/mon-slug-url/
+  date: '2026-01-07', // Format: AAAA-MM-JJ - obligatoire (sera automatiquement converti en ISO 8601 avec fuseau horaire pour le JSON-LD)
+  dateModified: '2026-01-10', // Format: AAAA-MM-JJ - optionnel (date de dernière modification, par défaut = date)
+  category: 'Innovation', // Optionnel - Exemples: Innovation, Entreprise, Environnement, Services, Certifications
+  tags: ['Tag1', 'Tag2', 'Tag3'], // Optionnel - Liste de mots-clés pour le référencement
+  // FAQ optionnelle - Apparaît dans un accordéon stylisé après le contenu
+  faq: [
+    {
+      question: 'Première question fréquente ?',
+      answer: 'Réponse détaillée à la première question. Soyez clair et précis pour aider vos lecteurs.'
+    },
+    {
+      question: 'Deuxième question importante ?',
+      answer: 'Une autre réponse complète qui apporte de la valeur à vos visiteurs.'
+    },
+    {
+      question: 'Troisième question courante ?',
+      answer: 'Dernière réponse pour compléter votre section FAQ.'
+    }
+  ],
+  // CTA (Call-to-Action) optionnel - Apparaît dans une carte mise en évidence
+  cta: {
+    title: 'Titre accrocheur pour votre appel à l\'action',
+    description: 'Description courte et persuasive qui incite le visiteur à cliquer (1-2 phrases maximum).',
+    buttonText: 'Texte du bouton',
+    buttonLink: '/contact#contact-form' // Lien interne ou externe
+  }
+}
+
+Votre contenu commence ici. Vous pouvez utiliser **du texte en gras** pour mettre en évidence les éléments importants.
+
+Ce template montre **toutes les fonctionnalités MDX** disponibles pour créer des actualités riches et engageantes.
+
+---
+
+## Titre de section principale
+
+Écrivez vos paragraphes normalement. Chaque paragraphe est séparé par une ligne vide pour une meilleure lisibilité.
+
+Vous pouvez créer des **sous-titres** et structurer votre contenu facilement avec différents niveaux de titres.
+
+### Sous-titre de niveau 3
+
+Structurez votre contenu de manière claire et professionnelle.
+
+## Listes à puces
+
+Ajoutez des listes à puces pour énumérer des éléments :
+
+- **Premier point important** : Description du premier point avec détails
+- **Deuxième point clé** : Autre information essentielle à retenir
+- **Troisième élément** : Encore une information pertinente
+- **Quatrième aspect** : Complétez votre liste selon vos besoins
+
+## Liste numérotée
+
+Pour présenter des étapes ou un processus séquentiel :
+
+1. **Première étape** : Description détaillée de la première action à effectuer
+2. **Deuxième étape** : Continuez votre explication avec des détails précis
+3. **Troisième étape** : Poursuivez le processus logiquement
+4. **Conclusion** : Finalisez avec le résultat attendu
+
+## Ajouter des images dans le contenu
+
+Vous pouvez insérer des images n'importe où dans votre contenu avec la syntaxe Markdown standard :
+
+![Description de votre image](/img/actu/mon-image-1.webp)
+
+**Astuce** : Les images sont automatiquement optimisées et responsives !
+
+## Tableaux de données
+
+Créez des tableaux pour présenter des informations structurées :
+
+| Fonctionnalité | Description | Avantage |
+|----------------|-------------|----------|
+| **Titre en gras** | Explication détaillée | Bénéfice principal |
+| **MDX natif** | Markdown + JSX combinés | Flexibilité maximale |
+| **Images** | Optimisation automatique | Performance optimale |
+| **SEO** | Métadonnées complètes | Visibilité Google |
+
+### Tableau avec données chiffrées
+
+| Indicateur | Avant | Après | Amélioration |
+|------------|-------|-------|--------------|
+| **Performance** | 50% | 95% | +45% |
+| **Satisfaction** | 70% | 98% | +28% |
+| **Efficacité** | 60% | 90% | +30% |
+
+## Citations et témoignages
+
+Utilisez les citations pour mettre en valeur des témoignages ou des faits importants :
+
+> "Cette fonctionnalité a transformé notre manière de travailler. Les résultats sont impressionnants !" - **Client satisfait**
+
+> **Le saviez-vous ?** Vous pouvez mettre du texte en gras dans les citations pour attirer l'attention sur les points clés.
+
+## Séparateurs visuels
+
+Utilisez des lignes horizontales pour séparer les sections :
+
+---
+
+## Liens hypertextes
+
+Vous pouvez créer des liens facilement avec la syntaxe Markdown standard :
+
+```markdown
+[Texte du lien](/chemin-de-la-page)
+```
+
+### Liens internes
+
+Pour créer un lien vers une autre page de votre site :
+
+```markdown
+Découvrez nos [services de nettoyage](/proprete-services) ou [contactez-nous](/contact).
+```
+
+**Exemple dans le texte** : Nous proposons un [service de nettoyage 100% écologique](/proprete-services) adapté à vos besoins.
+
+### Liens externes
+
+Pour créer un lien vers un site externe :
+
+```markdown
+Consultez notre page [LinkedIn](https://www.linkedin.com/company/aspeo_nettoyage/) pour plus d'informations.
+```
+
+Les liens externes s'ouvrent automatiquement dans un nouvel onglet.
+
+### Style des liens
+
+Les liens sont automatiquement stylisés avec :
+- **Couleur primaire** pour une visibilité optimale
+- **Soulignement élégant** qui devient plus prononcé au survol
+- **Animation fluide** lors du passage de la souris
+- **Accessibilité optimale** conforme aux normes web
+
+## Formatage du texte
+
+- **Texte en gras** : Pour les éléments importants
+- *Texte en italique* : Pour les nuances ou emphases légères
+- `Code ou texte technique` : Pour les termes techniques
+
+## Combinaisons avancées
+
+### Liste avec sous-éléments
+
+- **Objectif principal**
+  - Sous-objectif 1 : Détail important
+  - Sous-objectif 2 : Autre détail
+  - Sous-objectif 3 : Complément d'information
+
+### Contenu mixte
+
+Vous pouvez combiner texte, listes, tableaux et images pour créer un contenu riche et engageant.
+
+![Deuxième image d'exemple](/img/actu/mon-slug-url/image-2.webp)
+
+## Bonnes pratiques
+
+1. **Utilisez des titres clairs** : Structurez votre contenu avec des titres H2 (##) et H3 (###)
+2. **Ajoutez des visuels** : Les images rendent le contenu plus attractif
+3. **Créez des listes** : Facilitez la lecture avec des puces ou numéros
+4. **Mettez en gras** : Soulignez les points clés pour la lecture rapide
+5. **Maintenez un ton professionnel** : Évitez les emojis pour garder un style professionnel
+6. **Ajoutez des tableaux** : Présentez les données de manière claire
+7. **Incluez des citations** : Valorisez les témoignages et faits marquants
+
+---
+
+## Section finale
+
+N'oubliez pas que si vous avez ajouté une **FAQ** et un **CTA** dans les métadonnées, ils apparaîtront automatiquement après votre contenu dans un design professionnel et optimisé !
+
+**Conseil final** : Relisez toujours votre contenu avant publication et vérifiez que :
+- Le slug correspond au nom du fichier
+- L'ID est unique
+- Les images existent dans le dossier public
+- Les apostrophes sont échappées dans les métadonnées JavaScript (`\'`)

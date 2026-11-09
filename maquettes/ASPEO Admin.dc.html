@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#fff}
+a{color:#06226D}
+a:hover{color:#C74700}
+button,input,select,textarea{font-family:inherit}
+</style>
+</helmet>
+<div style="min-height:100vh;background:#fff;color:#0a0a0a;font-family:ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;font-size:14px">
+
+  <header style="position:fixed;top:0;left:0;right:0;height:56px;background:#fff;border-bottom:1px solid #e5e7eb;display:flex;align-items:center;gap:12px;padding:0 16px;z-index:40">
+    <sc-if value="{{ isNarrow }}"><button onClick="{{ toggleNav }}" aria-label="Ouvrir le menu" style="width:36px;height:36px;border:1px solid #e5e7eb;border-radius:6px;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button></sc-if>
+    <div role="img" aria-label="ASPEO" style="height:34px;width:130px;background:url('{{ logoColor }}') left center/contain no-repeat"></div>
+    <span style="color:#6b7280;font-size:13px;border-left:1px solid #e5e7eb;padding-left:12px">Administration</span>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:10px">
+      <div style="width:32px;height:32px;border-radius:50%;background:#06226D;color:#fff;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center">AA</div>
+      <div style="line-height:1.2"><div style="font-size:13.5px;font-weight:600">Admin ASPEO</div><div style="font-size:12px;color:#6b7280">SUPER_ADMIN</div></div>
+    </div>
+  </header>
+
+  <sc-if value="{{ showOverlay }}"><div onClick="{{ toggleNav }}" style="position:fixed;inset:56px 0 0 0;background:rgba(0,0,0,.35);z-index:29"></div></sc-if>
+
+  <sc-if value="{{ showSidebar }}" hint-placeholder-val="{{ true }}">
+    <aside style="position:fixed;top:56px;left:0;bottom:0;width:256px;background:#fafafa;border-right:1px solid #e5e7eb;overflow-y:auto;z-index:30;display:flex;flex-direction:column">
+      <sc-for list="{{ navGroups }}" as="g" hint-placeholder-count="4">
+        <div style="padding:12px 8px 2px">
+          <div style="font-size:12px;color:#6b7280;font-weight:500;padding:0 10px 6px">{{ g.label }}</div>
+          <div style="display:flex;flex-direction:column;gap:1px">
+            <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="3">
+              <button onClick="{{ it.go }}" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border:none;border-radius:6px;background:{{ it.bg }};color:#0a0a0a;font-weight:{{ it.fw }};font-size:14px;cursor:pointer;text-align:left" style-hover="background:#efeff1">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="{{ it.icon }}"></path></svg>
+                <span style="flex:1;min-width:0">{{ it.label }}</span>
+                <sc-if value="{{ it.isNew }}"><span style="font-size:10.5px;font-weight:600;color:#06226D;background:#e6ecf8;border-radius:4px;padding:1px 6px">Nouveau</span></sc-if>
+                <sc-if value="{{ it.hasCount }}"><span style="min-width:20px;height:20px;border-radius:999px;background:#FF5C00;color:#fff;font-size:11.5px;font-weight:700;display:flex;align-items:center;justify-content:center;padding:0 6px">{{ it.count }}</span></sc-if>
+              </button>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+      <div style="margin-top:auto;border-top:1px solid #e5e7eb;padding:8px;display:flex;flex-direction:column;gap:1px">
+        <a href="Refonte Aspeo.dc.html" target="_blank" style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:6px;color:#0a0a0a;text-decoration:none;font-size:14px" style-hover="background:#efeff1;color:#0a0a0a"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5H5V6h5"></path></svg>Voir le site</a>
+        <button onClick="{{ logout }}" style="display:flex;align-items:center;gap:10px;padding:8px 10px;border:none;border-radius:6px;background:none;color:#dc2626;font-size:14px;cursor:pointer;text-align:left" style-hover="background:#fef2f2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4h4v16h-4M10 17l5-5-5-5M15 12H3"></path></svg>Déconnexion</button>
+      </div>
+    </aside>
+  </sc-if>
+
+  <main style="padding-top:56px;margin-left:{{ mainMl }};min-width:0">
+    <div style="position:sticky;top:56px;z-index:10;background:#fff;border-bottom:1px solid #e5e7eb;padding:10px clamp(16px,3vw,32px);display:flex;align-items:center;gap:12px;flex-wrap:wrap;min-height:60px">
+      <div style="flex:1 1 240px;min-width:0">
+        <sc-if value="{{ hasCrumb }}"><button onClick="{{ crumbGo }}" style="border:none;background:none;padding:0;color:#6b7280;font-size:12.5px;cursor:pointer;margin-bottom:2px" style-hover="color:#06226D">← {{ crumbLabel }}</button></sc-if>
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+          <h1 style="font-size:18px;font-weight:600;margin:0;line-height:1.3">{{ title }}</h1>
+          <sc-if value="{{ hasTitleBadge }}"><span style="font-size:12px;font-weight:500;border-radius:999px;padding:2px 9px;background:{{ titleBadge.bg }};color:{{ titleBadge.fg }}">{{ titleBadge.label }}</span></sc-if>
+        </div>
+        <sc-if value="{{ isEditor }}"><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12.5px;color:#6b7280;margin-top:2px"><span>{{ ed.pubMeta }}</span><sc-if value="{{ ed.canUnpublish }}"><span>·</span><button onClick="{{ ed.unpublish }}" style="border:none;background:none;padding:0;color:#6b7280;font-size:12.5px;cursor:pointer;text-decoration:underline">Dépublier</button></sc-if></div></sc-if>
+      </div>
+      <sc-if value="{{ isEditor }}">
+        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+          <sc-if value="{{ ed.canDelete }}"><button onClick="{{ ed.askDelete }}" style="border:none;background:none;color:#dc2626;border-radius:6px;padding:8px 10px;font-size:14px;cursor:pointer" style-hover="background:#fef2f2">Supprimer</button></sc-if>
+          <button onClick="{{ ed.saveDraft }}" style="background:#fff;color:#0a0a0a;border:1px solid #e5e7eb;border-radius:6px;padding:8px 14px;font-size:14px;font-weight:500;cursor:pointer" style-hover="background:#f4f4f5">Enregistrer le brouillon</button>
+          <button onClick="{{ ed.publish }}" style="background:#06226D;color:#fff;border:1px solid #06226D;border-radius:6px;padding:8px 16px;font-size:14px;font-weight:500;cursor:pointer" style-hover="background:#0a2f8f">Publier</button>
+        </div>
+      </sc-if>
+      <sc-if value="{{ hasAdd }}"><button onClick="{{ addAction }}" style="display:inline-flex;align-items:center;gap:6px;background:#06226D;color:#fff;border:1px solid #06226D;border-radius:6px;padding:8px 14px;font-size:14px;font-weight:500;cursor:pointer" style-hover="background:#0a2f8f">+ {{ addLabel }}</button></sc-if>
+    </div>
+
+    <div style="padding:clamp(16px,3vw,32px)">
+      <sc-if value="{{ hasDesc }}"><p style="margin:0 0 20px;font-size:14px;color:#6b7280;max-width:760px;line-height:1.5">{{ desc }}</p></sc-if>
+
+      <!-- DASHBOARD -->
+      <sc-if value="{{ isDashboard }}" hint-placeholder-val="{{ true }}">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:16px;margin-bottom:24px">
+          <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+            <button onClick="{{ s.go }}" style="text-align:left;border:1px solid #e5e7eb;border-radius:8px;background:#fff;padding:16px;cursor:pointer" style-hover="border-color:#c9d6ea;background:#fafcff">
+              <div style="font-size:13px;color:#6b7280">{{ s.label }}</div>
+              <div style="font-size:28px;font-weight:700;margin-top:6px;color:{{ s.color }}">{{ s.value }}</div>
+              <div style="font-size:12.5px;color:#6b7280;margin-top:2px">{{ s.hint }}</div>
+            </button>
+          </sc-for>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:16px">
+          <section style="border:1px solid #e5e7eb;border-radius:8px;background:#fff">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid #f0f0f1"><h2 style="margin:0;font-size:15px;font-weight:600">Demandes de devis récentes</h2><button onClick="{{ goLeads }}" style="border:none;background:none;color:#06226D;font-size:13px;font-weight:500;cursor:pointer">Tout voir →</button></div>
+            <sc-for list="{{ dashLeads }}" as="l" hint-placeholder-count="4">
+              <button onClick="{{ l.open }}" style="width:100%;display:flex;align-items:center;gap:12px;padding:12px 16px;border:none;border-bottom:1px solid #f4f4f5;background:#fff;cursor:pointer;text-align:left" style-hover="background:#fafafa">
+                <div style="flex:1;min-width:0"><div style="font-weight:500">{{ l.nom }}</div><div style="font-size:12.5px;color:#6b7280;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ l.presta }} · {{ l.date }}</div></div>
+                <span style="font-size:12px;font-weight:500;border-radius:999px;padding:2px 9px;background:{{ l.badge.bg }};color:{{ l.badge.fg }};white-space:nowrap">{{ l.badge.label }}</span>
+              </button>
+            </sc-for>
+          </section>
+          <section style="border:1px solid #e5e7eb;border-radius:8px;background:#fff">
+            <div style="padding:14px 16px;border-bottom:1px solid #f0f0f1"><h2 style="margin:0;font-size:15px;font-weight:600">Dernières modifications</h2></div>
+            <sc-for list="{{ activity }}" as="a" hint-placeholder-count="4">
+              <div style="display:flex;gap:12px;padding:12px 16px;border-bottom:1px solid #f4f4f5">
+                <div style="width:28px;height:28px;border-radius:50%;background:#f4f4f5;color:#3f3f46;font-size:11px;font-weight:600;display:flex;align-items:center;justify-content:center;flex:none">{{ a.ini }}</div>
+                <div style="flex:1;min-width:0;font-size:13.5px;line-height:1.45"><strong style="font-weight:600">{{ a.who }}</strong> {{ a.what }} <strong style="font-weight:500;color:#06226D">{{ a.obj }}</strong><div style="font-size:12px;color:#6b7280">{{ a.when }}</div></div>
+              </div>
+            </sc-for>
+          </section>
+          <section style="border:1px solid #e5e7eb;border-radius:8px;background:#fff;padding:16px">
+            <h2 style="margin:0 0 12px;font-size:15px;font-weight:600">Raccourcis</h2>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <sc-for list="{{ shortcuts }}" as="sc" hint-placeholder-count="4">
+                <button onClick="{{ sc.go }}" style="display:flex;align-items:center;justify-content:space-between;gap:8px;border:1px solid #e5e7eb;background:#fff;border-radius:6px;padding:10px 12px;font-size:14px;cursor:pointer;text-align:left" style-hover="background:#f4f4f5">{{ sc.label }}<span style="color:#6b7280">→</span></button>
+              </sc-for>
+            </div>
+          </section>
+        </div>
+      </sc-if>
+
+      <!-- PAGES -->
+      <sc-if value="{{ isPages }}">
+        <div style="display:flex;flex-direction:column;gap:24px">
+        <sc-for list="{{ pageGroups }}" as="pgp" hint-placeholder-count="3">
+        <section>
+        <h2 style="margin:0 0 10px;font-size:13px;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:.06em">{{ pgp.label }}</h2>
+        <div style="border:1px solid #e5e7eb;border-radius:8px;overflow-x:auto">
+          <table style="width:100%;border-collapse:collapse;min-width:620px">
+            <thead><tr>
+              <th style="text-align:left;padding:10px 14px;font-weight:500;color:#6b7280;font-size:13px;border-bottom:1px solid #e5e7eb;background:#fafafa">Page</th>
+              <th style="text-align:left;padding:10px 14px;font-weight:500;color:#6b7280;font-size:13px;border-bottom:1px solid #e5e7eb;background:#fafafa">Statut</th>
+              <th style="text-align:left;padding:10px 14px;font-weight:500;color:#6b7280;font-size:13px;border-bottom:1px solid #e5e7eb;background:#fafafa">Mis à jour</th>
+              <th style="width:1%;border-bottom:1px solid #e5e7eb;background:#fafafa"></th>
+            </tr></thead>
+            <tbody>
+              <sc-for list="{{ pgp.rows }}" as="r" hint-placeholder-count="4">
+                <tr onClick="{{ r.open }}" style="cursor:pointer" style-hover="background:#fafafa">
+                  <td style="padding:10px 14px;border-bottom:1px solid #f0f0f1"><div style="display:flex;align-items:center;gap:12px"><div style="width:64px;height:40px;border-radius:4px;flex:none;background:#eef2f7 url('{{ r.thumb }}') center/cover no-repeat;border:1px solid #e5e7eb"></div><div><div style="font-weight:500">{{ r.title }}</div><div style="font-size:12.5px;color:#6b7280;margin-top:2px">{{ r.url }} · {{ r.sections }}</div></div></div></td>
+                  <td style="padding:12px 14px;border-bottom:1px solid #f0f0f1"><span style="font-size:12px;font-weight:500;border-radius:999px;padding:2px 9px;background:{{ r.badge.bg }};color:{{ r.badge.fg }};white-space:nowrap">{{ r.badge.label }}</span></td>
+                  <td style="padding:12px 14px;border-bottom:1px solid #f0f0f1;color:#6b7280;font-size:13px;white-space:nowrap">{{ r.upd }}</td>
+                  <td style="padding:8px 14px;border-bottom:1px solid #f0f0f1;white-space:nowrap;text-align:right"><div style="display:inline-flex;gap:4px"><button onClick="{{ r.edit }}" style="border:1px solid #e5e7eb;background:#fff;color:#0a0a0a;border-radius:6px;padding:5px 10px;font-size:12.5px;font-weight:500;cursor:pointer;white-space:nowrap" style-hover="background:#f4f4f5">Modifier</button><button onClick="{{ r.toggle }}" style="border:1px solid #e5e7eb;background:#fff;color:#0a0a0a;border-radius:6px;padding:5px 10px;font-size:12.5px;font-weight:500;cursor:pointer;white-space:nowrap" style-hover="background:#f4f4f5">{{ r.toggleLabel }}</button><sc-if value="{{ r.canDelete }}"><button onClick="{{ r.del }}" style="border:1px solid #e5e7eb;background:#fff;color:#0a0a0a;border-radius:6px;padding:5px 10px;font-size:12.5px;font-weight:500;cursor:pointer;white-space:nowrap;color:#dc2626;border-color:#fecaca" style-hover="background:#fef2f2">Supprimer</button></sc-if></div></td>
+                </tr>
+              </sc-for>
+            </tbody>
+          </table>
+        </div>
+        </section>
+        </sc-for>
+        </div>
+      </sc-if>
+
+      <!-- EDITOR (pages + contenus) -->
+      <sc-if value="{{ isEditor }}">
+        <div role="tablist" style="display:flex;align-items:center;gap:4px 12px;flex-wrap:wrap;border-bottom:1px solid #e5e7eb;margin:-8px 0 20px">
+          <div style="display:flex;gap:2px;overflow-x:auto">
+            <sc-for list="{{ edTabs }}" as="t" hint-placeholder-count="3"><button role="tab" aria-selected="{{ t.on }}" onClick="{{ t.pick }}" style="display:inline-flex;align-items:center;gap:6px;border:none;background:none;padding:11px 12px;font-size:14px;font-weight:500;color:{{ t.fg }};border-bottom:2px solid {{ t.line }};margin-bottom:-1px;cursor:pointer;white-space:nowrap">{{ t.label }}<sc-if value="{{ t.hasCount }}"><span style="font-size:11.5px;font-weight:600;background:#f4f4f5;color:#3f3f46;border-radius:999px;padding:1px 7px">{{ t.count }}</span></sc-if></button></sc-for>
+          </div>
+          <sc-if value="{{ isContentTab }}">
+            <div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;padding:6px 0">
+              <div style="display:inline-flex;border:1px solid #e5e7eb;border-radius:6px;padding:2px;gap:2px;background:#fafafa"><sc-for list="{{ edModes }}" as="t" hint-placeholder-count="2"><button onClick="{{ t.pick }}" aria-pressed="{{ t.on }}" style="border:none;border-radius:4px;padding:6px 11px;background:{{ t.bg }};color:{{ t.fg }};font-size:13px;font-weight:500;cursor:pointer;box-shadow:{{ t.shadow }};white-space:nowrap">{{ t.label }}</button></sc-for></div>
+              <sc-if value="{{ showPreview }}"><div style="display:inline-flex;border:1px solid #e5e7eb;border-radius:6px;padding:2px;gap:2px;background:#fafafa"><sc-for list="{{ devModes }}" as="t" hint-placeholder-count="2"><button onClick="{{ t.pick }}" aria-pressed="{{ t.on }}" style="border:none;border-radius:4px;padding:6px 11px;background:{{ t.bg }};color:{{ t.fg }};font-size:13px;font-weight:500;cursor:pointer;box-shadow:{{ t.shadow }};white-space:nowrap">{{ t.label }}</button></sc-for></div></sc-if>
+            </div>
+          </sc-if>
+        </div>
+
+        <sc-if value="{{ isContentTab }}" hint-placeholder-val="{{ true }}">
+          <sc-if value="{{ ed.hasNotice }}"><div style="border:1px solid #dbe5f4;background:#f5f8fd;border-radius:8px;padding:12px 14px;font-size:13.5px;color:#06226D;line-height:1.5;margin-bottom:16px">{{ ed.notice }}</div></sc-if>
+          <div style="display:grid;grid-template-columns:{{ edSplit }};gap:20px;align-items:start">
+            <sc-if value="{{ showForm }}" hint-placeholder-val="{{ true }}"><div style="display:flex;flex-direction:column;gap:14px;min-width:0">
+            <sc-for list="{{ ed.groups }}" as="g" hint-placeholder-count="3">
+              <section style="border:1px solid #e5e7eb;border-radius:8px;background:#fff;overflow:hidden">
+                <button onClick="{{ g.toggle }}" aria-expanded="{{ g.open }}" style="width:100%;display:flex;align-items:center;gap:12px;padding:14px 16px;background:#fff;border:none;cursor:pointer;text-align:left" style-hover="background:#fafafa">
+                  <span style="width:26px;height:26px;border-radius:6px;background:#f4f4f5;color:#3f3f46;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center;flex:none">{{ g.n }}</span>
+                  <span style="flex:1;min-width:0"><span style="display:block;font-weight:600;font-size:15px">{{ g.title }}</span><span style="display:block;font-size:13px;color:#6b7280;margin-top:2px">{{ g.hint }}</span></span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;transform:{{ g.rot }};transition:transform .15s"><path d="M6 9l6 6 6-6"></path></svg>
+                </button>
+                <sc-if value="{{ g.open }}">
+                  <div style="padding:16px 16px 20px;display:flex;flex-direction:column;gap:18px;border-top:1px solid #f0f0f1">
+                    <sc-for list="{{ g.fields }}" as="f" hint-placeholder-count="2">
+                      <dc-import name="AdminField" f="{{ f }}" hint-size="100%,64px"></dc-import>
+                    </sc-for>
+                  </div>
+                </sc-if>
+              </section>
+            </sc-for>
+          </div></sc-if>
+            <sc-if value="{{ showPreview }}">
+              <div style="position:{{ pvPos }};top:132px;min-width:0">
+                <div style="border:1px solid #e5e7eb;border-radius:8px;background:#eef0f3;overflow:hidden">
+                  <div style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border-bottom:1px solid #e5e7eb">
+                    <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;flex:none"></span>
+                    <span style="font-size:12.5px;font-weight:600;white-space:nowrap">Aperçu en direct</span>
+                    <span style="font-size:12px;color:#6b7280;margin-left:auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ ed.seoUrl }}</span>
+                  </div>
+                  <div style="max-height:calc(100vh - 200px);overflow-y:auto;padding:14px">
+                    <div style="max-width:{{ pvW }};margin:0 auto;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.1);color:#06226D">
+                      <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid #eef2f7;background:#fff">
+                        <div style="height:24px;width:100px;background:url('{{ logoColor }}') left center/contain no-repeat"></div>
+                        <div style="margin-left:auto;display:flex;gap:12px;align-items:center">
+                          <sc-if value="{{ pvDesktop }}"><span style="font-size:10.5px;font-weight:600;color:#06226D">Propreté &amp; Services</span><span style="font-size:10.5px;font-weight:600;color:#06226D">Notre histoire</span><span style="font-size:10.5px;font-weight:600;color:#06226D">Médias</span></sc-if>
+                          <span style="background:#FF5C00;color:#fff;font-size:10px;font-weight:700;padding:5px 9px;white-space:nowrap">Devis gratuit</span>
+                        </div>
+                      </div>
+                      <sc-for list="{{ ed.pv }}" as="s" hint-placeholder-count="3">
+                        <div onClick="{{ s.focus }}" title="Modifier cette section" style="position:relative;cursor:pointer;box-shadow:{{ s.ring }}">
+                          <sc-if value="{{ s.isOpen }}"><span style="position:absolute;top:8px;right:8px;z-index:3;background:#FF5C00;color:#fff;font-size:10.5px;font-weight:700;padding:3px 8px;border-radius:4px">En cours de modification</span></sc-if>
+
+                          <sc-if value="{{ s.isHero }}">
+                            <div style="position:relative;min-height:{{ pvHeroH }};background:#06226D url('{{ s.img }}') center/cover no-repeat;color:#fff;display:flex;align-items:center">
+                              <div style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(6,34,109,.9) 0%,rgba(6,34,109,.7) 55%,rgba(6,34,109,.42) 100%)"></div>
+                              <div style="position:relative;padding:28px 22px;max-width:560px">
+                                <sc-if value="{{ s.hasKicker }}"><div style="display:flex;align-items:center;gap:8px;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase"><span style="width:18px;height:2px;background:#FF5C00;display:block"></span>{{ s.kicker }}</div></sc-if>
+                                <div style="font-weight:800;font-size:{{ pvH1 }};line-height:1.08;margin-top:10px;letter-spacing:-.01em">{{ s.titre }}</div>
+                                <sc-if value="{{ s.hasSous }}"><div style="font-size:13px;line-height:1.55;margin-top:10px;opacity:.92">{{ s.sous }}</div></sc-if>
+                              </div>
+                            </div>
+                          </sc-if>
+
+                          <sc-if value="{{ s.isMosaic }}">
+                            <div style="display:grid;grid-template-columns:{{ pvMosCols }};gap:18px;padding:26px 20px;align-items:center;background:#fff">
+                              <div>
+                                <sc-if value="{{ s.hasKicker }}"><div style="display:flex;align-items:center;gap:8px;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#06226D"><span style="width:18px;height:2px;background:#FF5C00;display:block"></span>{{ s.kicker }}</div></sc-if>
+                                <div style="font-weight:800;font-size:{{ pvH1 }};line-height:1.08;margin-top:10px;color:#06226D;letter-spacing:-.01em">{{ s.titre }}</div>
+                                <sc-if value="{{ s.hasSous }}"><div style="font-size:13px;line-height:1.55;margin-top:10px;color:#42505f">{{ s.sous }}</div></sc-if>
+                                <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px">
+                                  <sc-if value="{{ s.hasBtn }}"><span style="background:#FF5C00;color:#fff;font-weight:700;font-size:11.5px;padding:9px 13px">{{ s.btn }} →</span></sc-if>
+                                  <span style="border:1.5px solid #06226D;color:#06226D;font-weight:700;font-size:11.5px;padding:8px 12px">Appeler le {{ pvTel }}</span>
+                                </div>
+                              </div>
+                              <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+                                <sc-for list="{{ s.images }}" as="im" hint-placeholder-count="4"><div style="aspect-ratio:1/1;background:#eef2f7 url('{{ im }}') center/cover no-repeat"></div></sc-for>
+                              </div>
+                            </div>
+                          </sc-if>
+
+                          <sc-if value="{{ s.isBlock }}">
+                            <div style="padding:26px 22px;background:{{ s.bg }}">
+                              <sc-if value="{{ s.hasKicker }}"><div style="font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#C74700;margin-bottom:6px">{{ s.kicker }}</div></sc-if>
+                              <sc-if value="{{ s.hasTitle }}"><div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><span style="width:3px;align-self:stretch;min-height:18px;background:#FF5C00;display:block"></span><div style="font-weight:800;font-size:19px;line-height:1.2;color:#06226D">{{ s.titre }}</div></div></sc-if>
+                              <sc-if value="{{ s.hasMeta }}"><div style="font-size:11.5px;color:#5b6878;margin-bottom:10px">{{ s.meta }}</div></sc-if>
+                              <sc-for list="{{ s.paras }}" as="p" hint-placeholder-count="1"><div style="margin-bottom:10px"><sc-if value="{{ p.hasH }}"><div style="font-weight:700;font-size:13px;color:#06226D;margin-bottom:3px">{{ p.h }}</div></sc-if><div style="font-size:12.5px;line-height:1.6;color:#42505f;white-space:pre-line">{{ p.t }}</div></div></sc-for>
+                              <sc-if value="{{ s.hasCards }}"><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-top:6px"><sc-for list="{{ s.cards }}" as="c" hint-placeholder-count="2"><div style="background:#fff;border:1px solid #dbe5f4;padding:10px 12px"><div style="font-weight:700;font-size:12.5px;color:#06226D">{{ c.a }}</div><div style="font-size:11.5px;color:#42505f;margin-top:3px;line-height:1.45">{{ c.b }}</div></div></sc-for></div></sc-if>
+                              <sc-if value="{{ s.hasImages }}"><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:6px;margin-top:10px"><sc-for list="{{ s.images }}" as="im" hint-placeholder-count="2"><div style="aspect-ratio:4/3;background:#eef2f7 url('{{ im }}') center/cover no-repeat"></div></sc-for></div></sc-if>
+                              <sc-if value="{{ s.hasTags }}"><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:10px"><sc-for list="{{ s.tags }}" as="t" hint-placeholder-count="2"><span style="font-size:11px;border:1px solid #c9d6ea;color:#06226D;padding:3px 8px">{{ t }}</span></sc-for></div></sc-if>
+                              <sc-if value="{{ s.hasBtn }}"><div style="display:inline-block;margin-top:12px;background:#FF5C00;color:#fff;font-weight:700;font-size:11.5px;padding:9px 13px">{{ s.btn }} →</div></sc-if>
+                              <sc-if value="{{ s.isEmpty }}"><div style="font-size:12px;color:#9aa5b1;font-style:italic">Section vide : elle ne s’affichera pas sur le site.</div></sc-if>
+                            </div>
+                          </sc-if>
+                        </div>
+                      </sc-for>
+                      <div style="background:#06226D;color:#fff;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
+                        <div style="height:20px;width:90px;background:url('{{ logoWhite }}') left center/contain no-repeat"></div>
+                        <span style="font-size:10.5px;opacity:.85">{{ pvFooter }}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p style="margin:8px 2px 0;font-size:12px;color:#6b7280;line-height:1.45">Cliquez sur une section de l’aperçu pour l’ouvrir dans le formulaire. Aperçu simplifié : le rendu final reprend la maquette du site.</p>
+              </div>
+            </sc-if>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isImagesTab }}">
+          <p style="margin:0 0 16px;font-size:14px;color:#6b7280;max-width:720px;line-height:1.5">Toutes les images de {{ ed.whatLabel }}, section par section. Cliquez sur « Changer l’image » pour en choisir une dans la bibliothèque.</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:14px">
+            <sc-for list="{{ ed.imageFields }}" as="im" hint-placeholder-count="4">
+              <div style="border:1px solid #e5e7eb;border-radius:8px;padding:14px;background:#fff;display:flex;flex-direction:column;gap:10px">
+                <span style="align-self:flex-start;font-size:11.5px;font-weight:600;color:#3f3f46;background:#f4f4f5;border-radius:4px;padding:2px 8px">{{ im.section }}</span>
+                <dc-import name="AdminField" f="{{ im.f }}" hint-size="100%,110px"></dc-import>
+              </div>
+            </sc-for>
+          </div>
+          <sc-if value="{{ ed.noImages }}"><div style="border:1px dashed #d4d4d8;border-radius:8px;padding:32px;text-align:center;color:#6b7280">Aucune image sur cette page.</div></sc-if>
+        </sc-if>
+
+        <sc-if value="{{ isSeoTab }}">
+          <div style="max-width:680px">
+            <section style="border:1px solid #e5e7eb;border-radius:8px;padding:16px;background:#fff;display:flex;flex-direction:column;gap:14px">
+                <h2 style="margin:0;font-size:15px;font-weight:600">Référencement Google</h2><p style="margin:-6px 0 0;font-size:13px;color:#6b7280;line-height:1.5">Ce que Google affiche dans ses résultats pour cette page.</p>
+                <sc-for list="{{ ed.seoFields }}" as="f" hint-placeholder-count="2">
+                  <dc-import name="AdminField" f="{{ f }}" hint-size="100%,64px"></dc-import>
+                </sc-for>
+                <div style="border:1px solid #e5e7eb;border-radius:8px;padding:12px;background:#fafafa">
+                  <div style="font-size:11.5px;color:#6b7280;margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em">Aperçu dans Google</div>
+                  <div style="font-size:12.5px;color:#202124;word-break:break-all">{{ ed.seoUrl }}</div>
+                  <div style="font-size:17px;color:#1a0dab;line-height:1.3;margin-top:2px">{{ ed.seoTitle }}</div>
+                  <div style="font-size:13px;color:#4d5156;line-height:1.45;margin-top:4px">{{ ed.seoDesc }}</div>
+                </div>
+              </section>
+          </div>
+        </sc-if>
+      </sc-if>
+
+      <!-- COLLECTION -->
+      <sc-if value="{{ isCollection }}">
+        <sc-if value="{{ coll.hasDemo }}"><div style="border:1px solid #fde68a;background:#fffbeb;border-radius:8px;padding:12px 14px;font-size:13.5px;color:#92400e;line-height:1.5;margin-bottom:14px">Les éléments marqués « Exemple » sont des contenus de démonstration de la maquette. Remplacez-les par vos vrais contenus ou supprimez-les avant la mise en ligne.</div></sc-if>
+        <sc-if value="{{ coll.hasNotice }}"><div style="border:1px solid #dbe5f4;background:#f5f8fd;border-radius:8px;padding:12px 14px;font-size:13.5px;color:#06226D;line-height:1.5;margin-bottom:14px">{{ coll.notice }}</div></sc-if>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;align-items:center">
+          <input type="search" value="{{ collQuery }}" onInput="{{ setCollQuery }}" placeholder="{{ coll.searchPh }}" aria-label="Rechercher" style="flex:1 1 220px;max-width:320px;padding:8px 10px;border:1px solid #e5e7eb;border-radius:6px;font-size:14px;outline:none" style-focus="border-color:#06226D;box-shadow:0 0 0 3px rgba(6,34,109,.14)">
+          <div style="display:inline-flex;border:1px solid #e5e7eb;border-radius:6px;padding:2px;gap:2px;background:#fafafa">
+            <sc-for list="{{ collTabs }}" as="t" hint-placeholder-count="3"><button onClick="{{ t.pick }}" style="border:none;border-radius:4px;padding:6px 10px;background:{{ t.bg }};color:{{ t.fg }};font-size:13px;font-weight:500;cursor:pointer;box-shadow:{{ t.shadow }}">{{ t.label }}</button></sc-for>
+          </div>
+          <span style="margin-left:auto;font-size:13px;color:#6b7280">{{ collCount }}</span>
+        </div>
+        <div style="border:1px solid #e5e7eb;border-radius:8px;overflow-x:auto">
+          <table style="width:100%;border-collapse:collapse;min-width:860px">
+            <thead><tr>
+              <sc-for list="{{ coll.cols }}" as="c" hint-placeholder-count="3"><th style="text-align:left;padding:10px 14px;font-weight:500;color:#6b7280;font-size:13px;border-bottom:1px solid #e5e7eb;background:#fafafa">{{ c }}</th></sc-for>
+              <th style="text-align:left;padding:10px 14px;font-weight:500;color:#6b7280;font-size:13px;border-bottom:1px solid #e5e7eb;background:#fafafa">Statut</th>
+              <th style="text-align:left;padding:10px 14px;font-weight:500;color:#6b7280;font-size:13px;border-bottom:1px solid #e5e7eb;background:#fafafa">Mis à jour</th>
+              <th style="width:1%;border-bottom:1px solid #e5e7eb;background:#fafafa"></th>
+            </tr></thead>
+            <tbody>
+              <sc-for list="{{ collRows }}" as="r" hint-placeholder-count="5">
+                <tr onClick="{{ r.open }}" style="cursor:pointer" style-hover="background:#fafafa">
+                  <td style="padding:12px 14px;border-bottom:1px solid #f0f0f1;max-width:380px"><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span style="font-weight:500">{{ r.title }}</span><sc-if value="{{ r.demo }}"><span style="font-size:11px;font-weight:600;color:#92400e;background:#fef3c7;border-radius:4px;padding:1px 6px">Exemple</span></sc-if></div></td>
+                  <sc-for list="{{ r.cells }}" as="cell" hint-placeholder-count="2"><td style="padding:12px 14px;border-bottom:1px solid #f0f0f1;color:#3f3f46;font-size:13.5px">{{ cell }}</td></sc-for>
+                  <td style="padding:12px 14px;border-bottom:1px solid #f0f0f1"><span style="font-size:12px;font-weight:500;border-radius:999px;padding:2px 9px;background:{{ r.badge.bg }};color:{{ r.badge.fg }};white-space:nowrap">{{ r.badge.label }}</span></td>
+                  <td style="padding:12px 14px;border-bottom:1px solid #f0f0f1;color:#6b7280;font-size:13px;white-space:nowrap">{{ r.upd }}</td>
+                  <td style="padding:8px 14px;border-bottom:1px solid #f0f0f1;white-space:nowrap;text-align:right"><div style="display:inline-flex;gap:4px"><button onClick="{{ r.edit }}" style="border:1px solid #e5e7eb;background:#fff;color:#0a0a0a;border-radius:6px;padding:5px 10px;font-size:12.5px;font-weight:500;cursor:pointer;white-space:nowrap" style-hover="background:#f4f4f5">Modifier</button><button onClick="{{ r.toggle }}" style="border:1px solid #e5e7eb;background:#fff;color:#0a0a0a;border-radius:6px;padding:5px 10px;font-size:12.5px;font-weight:500;cursor:pointer;white-space:nowrap" style-hover="background:#f4f4f5">{{ r.toggleLabel }}</button><sc-if value="{{ r.canDelete }}"><button onClick="{{ r.del }}" style="border:1px solid #e5e7eb;background:#fff;color:#0a0a0a;border-radius:6px;padding:5px 10px;font-size:12.5px;font-weight:500;cursor:pointer;white-space:nowrap;color:#dc2626;border-color:#fecaca" style-hover="background:#fef2f2">Supprimer</button></sc-if></div></td>
+                </tr>
+              </sc-for>
+            </tbody>
+          </table>
+          <sc-if value="{{ collEmpty }}"><div style="padding:40px 16px;text-align:center;color:#6b7280">Aucun résultat.</div></sc-if>
+        </div>
+      </sc-if>
+
+      <!-- SETTINGS -->
+      <sc-if value="{{ isSettings }}">
+        <div style="display:grid;grid-template-columns:{{ chromeCols }};gap:24px;align-items:start"><div style="min-width:0">
+        <sc-if value="{{ showSetTabs }}"><div style="display:flex;gap:4px;border-bottom:1px solid #e5e7eb;margin-bottom:20px;overflow-x:auto">
+          <sc-for list="{{ setTabs }}" as="t" hint-placeholder-count="5"><button onClick="{{ t.pick }}" style="border:none;background:none;padding:10px 12px;font-size:14px;font-weight:500;color:{{ t.fg }};border-bottom:2px solid {{ t.line }};margin-bottom:-1px;cursor:pointer;white-space:nowrap">{{ t.label }}</button></sc-for>
+        </div></sc-if>
+        <div style="max-width:760px;display:flex;flex-direction:column;gap:16px">
+          <sc-if value="{{ setHasNotice }}"><div style="border:1px solid #dbe5f4;background:#f5f8fd;border-radius:8px;padding:12px 14px;font-size:13.5px;color:#06226D;line-height:1.5">{{ setNotice }}</div></sc-if>
+          <section style="border:1px solid #e5e7eb;border-radius:8px;padding:20px;background:#fff;display:flex;flex-direction:column;gap:18px">
+            <sc-for list="{{ setFields }}" as="f" hint-placeholder-count="4"><dc-import name="AdminField" f="{{ f }}" hint-size="100%,64px"></dc-import></sc-for>
+          </section>
+          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+            <button onClick="{{ saveSettings }}" style="background:#06226D;color:#fff;border:1px solid #06226D;border-radius:6px;padding:9px 16px;font-size:14px;font-weight:500;cursor:pointer" style-hover="background:#0a2f8f">Enregistrer et publier</button>
+            <sc-if value="{{ setDirty }}"><span style="font-size:13px;color:#c2410c">Modifications non enregistrées</span></sc-if>
+          </div>
+        </div>
+      </div>
+        <div style="position:{{ pvPos2 }};top:132px;min-width:0">
+          <div style="border:1px solid #e5e7eb;border-radius:8px;background:#eef0f3;overflow:hidden">
+            <div style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border-bottom:1px solid #e5e7eb"><span style="width:8px;height:8px;border-radius:50%;background:#22c55e"></span><span style="font-size:12.5px;font-weight:600">Aperçu en direct</span><span style="font-size:12px;color:#6b7280;margin-left:auto">En-tête et pied de page</span></div>
+            <div style="padding:14px"><div style="background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.1);color:#06226D">
+              <div style="background:#06226D;color:#fff;display:flex;flex-wrap:wrap;gap:12px;padding:6px 14px;font-size:10.5px;font-weight:600"><sc-for list="{{ chrome.top }}" as="t" hint-placeholder-count="2"><span>{{ t }}</span></sc-for></div>
+              <div style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid #eef2f7;flex-wrap:wrap">
+                <div style="height:26px;width:104px;background:url('{{ logoColor }}') left center/contain no-repeat"></div>
+                <div style="display:flex;flex-wrap:wrap;gap:10px;margin-left:auto;align-items:center"><sc-for list="{{ chrome.main }}" as="m" hint-placeholder-count="4"><span style="font-size:10.5px;font-weight:600">{{ m }}</span></sc-for><span style="background:#FF5C00;color:#fff;font-size:10px;font-weight:700;padding:5px 9px">Demander un devis</span></div>
+              </div>
+              <div style="padding:34px 16px;background:#f5f8fd;color:#9aa5b1;font-size:11.5px;text-align:center">Contenu de la page</div>
+              <div style="background:#06226D;color:#fff;padding:18px 16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:14px;font-size:10.5px;line-height:1.55">
+                <div><div style="height:22px;width:96px;background:url('{{ logoWhite }}') left center/contain no-repeat;margin-bottom:8px"></div><div style="opacity:.85">{{ chrome.addr }}</div><div style="font-weight:700;margin-top:4px">{{ chrome.tel }}</div><div style="opacity:.85">{{ chrome.email }}</div></div>
+                <div><div style="font-weight:700;margin-bottom:4px">Horaires</div><sc-for list="{{ chrome.hours }}" as="o" hint-placeholder-count="2"><div style="opacity:.85">{{ o.a }} : {{ o.b }}</div></sc-for></div>
+                <div><div style="font-weight:700;margin-bottom:4px">Liens</div><sc-for list="{{ chrome.footer }}" as="f" hint-placeholder-count="3"><div style="opacity:.85">{{ f }}</div></sc-for></div>
+              </div>
+              <div style="background:#051c5b;color:rgba(255,255,255,.75);padding:8px 16px;font-size:10px;display:flex;gap:10px;flex-wrap:wrap"><sc-for list="{{ chrome.socials }}" as="s" hint-placeholder-count="3"><span>{{ s }}</span></sc-for></div>
+            </div></div>
+          </div>
+        </div>
+        </div>
+      </sc-if>
+
+      <!-- MENU -->
+      <sc-if value="{{ isMenu }}">
+        <div style="display:grid;grid-template-columns:{{ chromeCols }};gap:24px;align-items:start"><div style="min-width:0">
+        <div style="display:flex;flex-direction:column;gap:16px;max-width:980px">
+          <sc-for list="{{ menuBlocks }}" as="b" hint-placeholder-count="3">
+            <section style="border:1px solid #e5e7eb;border-radius:8px;background:#fff;overflow:hidden">
+              <div style="padding:14px 16px;border-bottom:1px solid #f0f0f1"><h2 style="margin:0;font-size:15px;font-weight:600">{{ b.title }}</h2><p style="margin:3px 0 0;font-size:13px;color:#6b7280">{{ b.hint }}</p></div>
+              <div style="overflow-x:auto">
+                <sc-for list="{{ b.rows }}" as="r" hint-placeholder-count="4">
+                  <div style="display:grid;grid-template-columns:64px minmax(140px,1fr) minmax(160px,1.2fr) 118px 34px;gap:10px;align-items:center;padding:10px 16px;border-bottom:1px solid #f4f4f5;min-width:640px">
+                    <div style="display:flex;gap:2px">
+                      <button onClick="{{ r.up }}" aria-label="Monter" style="width:28px;height:28px;border:1px solid #e5e7eb;border-radius:6px;background:#fff;cursor:pointer;opacity:{{ r.upOp }}">↑</button>
+                      <button onClick="{{ r.down }}" aria-label="Descendre" style="width:28px;height:28px;border:1px solid #e5e7eb;border-radius:6px;background:#fff;cursor:pointer;opacity:{{ r.downOp }}">↓</button>
+                    </div>
+                    <input type="text" value="{{ r.label }}" onInput="{{ r.onLabel }}" aria-label="Libellé" style="width:100%;padding:7px 10px;border:1px solid #e5e7eb;border-radius:6px;font-size:14px;outline:none" style-focus="border-color:#06226D">
+                    <div style="min-width:0">
+                      <select value="{{ r.link }}" onChange="{{ r.onLink }}" aria-label="Lien" style="width:100%;padding:7px 10px;border:1px solid #e5e7eb;border-radius:6px;font-size:14px;background:#fff">
+                        <sc-for list="{{ linkOptions }}" as="o" hint-placeholder-count="4"><option value="{{ o.value }}">{{ o.label }}</option></sc-for>
+                      </select>
+                      <sc-if value="{{ r.hasSub }}"><div style="font-size:12px;color:#6b7280;margin-top:3px">{{ r.sub }}</div></sc-if>
+                    </div>
+                    <button onClick="{{ r.toggleVis }}" role="switch" aria-checked="{{ r.vis }}" style="display:inline-flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;font-size:13px;color:#3f3f46;padding:0"><span style="position:relative;width:34px;height:20px;border-radius:999px;background:{{ r.swBg }};flex:none"><span style="position:absolute;top:2px;left:{{ r.knob }};width:16px;height:16px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.25)"></span></span>{{ r.visLabel }}</button>
+                    <button onClick="{{ r.remove }}" aria-label="Supprimer le lien" style="width:34px;height:34px;border:none;background:none;border-radius:6px;color:#6b7280;font-size:18px;cursor:pointer" style-hover="background:#fef2f2;color:#dc2626">×</button>
+                  </div>
+                </sc-for>
+              </div>
+              <div style="padding:12px 16px"><button onClick="{{ b.add }}" style="border:1px dashed #d4d4d8;background:#fff;color:#3f3f46;border-radius:6px;padding:6px 12px;font-size:13px;cursor:pointer" style-hover="border-color:#06226D;color:#06226D">+ Ajouter un lien</button></div>
+            </section>
+          </sc-for>
+          <div><button onClick="{{ saveMenu }}" style="background:#06226D;color:#fff;border:1px solid #06226D;border-radius:6px;padding:9px 16px;font-size:14px;font-weight:500;cursor:pointer" style-hover="background:#0a2f8f">Enregistrer et publier</button></div>
+        </div>
+      </div>
+        <div style="position:{{ pvPos2 }};top:132px;min-width:0">
+          <div style="border:1px solid #e5e7eb;border-radius:8px;background:#eef0f3;overflow:hidden">
+            <div style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border-bottom:1px solid #e5e7eb"><span style="width:8px;height:8px;border-radius:50%;background:#22c55e"></span><span style="font-size:12.5px;font-weight:600">Aperçu en direct</span><span style="font-size:12px;color:#6b7280;margin-left:auto">En-tête et pied de page</span></div>
+            <div style="padding:14px"><div style="background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.1);color:#06226D">
+              <div style="background:#06226D;color:#fff;display:flex;flex-wrap:wrap;gap:12px;padding:6px 14px;font-size:10.5px;font-weight:600"><sc-for list="{{ chrome.top }}" as="t" hint-placeholder-count="2"><span>{{ t }}</span></sc-for></div>
+              <div style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid #eef2f7;flex-wrap:wrap">
+                <div style="height:26px;width:104px;background:url('{{ logoColor }}') left center/contain no-repeat"></div>
+                <div style="display:flex;flex-wrap:wrap;gap:10px;margin-left:auto;align-items:center"><sc-for list="{{ chrome.main }}" as="m" hint-placeholder-count="4"><span style="font-size:10.5px;font-weight:600">{{ m }}</span></sc-for><span style="background:#FF5C00;color:#fff;font-size:10px;font-weight:700;padding:5px 9px">Demander un devis</span></div>
+              </div>
+              <div style="padding:34px 16px;background:#f5f8fd;color:#9aa5b1;font-size:11.5px;text-align:center">Contenu de la page</div>
+              <div style="background:#06226D;color:#fff;padding:18px 16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:14px;font-size:10.5px;line-height:1.55">
+                <div><div style="height:22px;width:96px;background:url('{{ logoWhite }}') left center/contain no-repeat;margin-bottom:8px"></div><div style="opacity:.85">{{ chrome.addr }}</div><div style="font-weight:700;margin-top:4px">{{ chrome.tel }}</div><div style="opacity:.85">{{ chrome.email }}</div></div>
+                <div><div style="font-weight:700;margin-bottom:4px">Horaires</div><sc-for list="{{ chrome.hours }}" as="o" hint-placeholder-count="2"><div style="opacity:.85">{{ o.a }} : {{ o.b }}</div></sc-for></div>
+                <div><div style="font-weight:700;margin-bottom:4px">Liens</div><sc-for list="{{ chrome.footer }}" as="f" hint-placeholder-count="3"><div style="opacity:.85">{{ f }}</div></sc-for></div>
+              </div>
+              <div style="background:#051c5b;color:rgba(255,255,255,.75);padding:8px 16px;font-size:10px;display:flex;gap:10px;flex-wrap:wrap"><sc-for list="{{ chrome.socials }}" as="s" hint-placeholder-count="3"><span>{{ s }}</span></sc-for></div>
+            </div></div>
+          </div>
+        </div>
+        </div>
+      </sc-if>
+
+      <!-- SEO -->
+      <sc-if value="{{ isSeo }}">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:16px;margin-bottom:20px">
+          <sc-for list="{{ seoSummary }}" as="s" hint-placeholder-count="3">
+            <div style="border:1px solid #e5e7eb;border-radius:8px;padding:16px;background:#fff"><div style="font-size:13px;color:#6b7280">{{ s.label }}</div><div style="font-size:26px;font-weight:700;margin-top:4px;color:{{ s.color }}">{{ s.value }}</div></div>
+          </sc-for>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px">
+          <div style="display:inline-flex;border:1px solid #e5e7eb;border-radius:6px;padding:2px;gap:2px;background:#fafafa">
+            <sc-for list="{{ seoTabs }}" as="t" hint-placeholder-count="4"><button onClick="{{ t.pick }}" style="border:none;border-radius:4px;padding:6px 10px;background:{{ t.bg }};color:{{ t.fg }};font-size:13px;font-weight:500;cursor:pointer;box-shadow:{{ t.shadow }}">{{ t.label }}</button></sc-for>
+          </div>
+        </div>
+        <div style="border:1px solid #e5e7eb;border-radius:8px;overflow-x:auto;margin-bottom:24px">
+          <table style="width:100%;border-collapse:collapse;min-width:760px">
+            <thead><tr>
+              <th style="text-align:left;padding:10px 14px;font-weight:500;color:#6b7280;font-size:13px;border-bottom:1px solid #e5e7eb;background:#fafafa">Page</th>
+              <th style="text-align:left;padding:10px 14px;font-weight:500;color:#6b7280;font-size:13px;border-bottom:1px solid #e5e7eb;background:#fafafa">Titre Google</th>
+              <th style="text-align:left;padding:10px 14px;font-weight:500;color:#6b7280;font-size:13px;border-bottom:1px solid #e5e7eb;background:#fafafa">Description</th>
+              <th style="width:100px;border-bottom:1px solid #e5e7eb;background:#fafafa"></th>
+            </tr></thead>
+            <tbody>
+              <sc-for list="{{ seoRows }}" as="r" hint-placeholder-count="6">
+                <tr>
+                  <td style="padding:12px 14px;border-bottom:1px solid #f0f0f1"><div style="font-weight:500">{{ r.name }}</div><div style="font-size:12px;color:#6b7280;margin-top:2px">{{ r.type }} · {{ r.url }}</div></td>
+                  <td style="padding:12px 14px;border-bottom:1px solid #f0f0f1;max-width:340px"><div style="font-size:13px;color:#3f3f46;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.t }}</div><span style="display:inline-block;margin-top:4px;font-size:11.5px;font-weight:500;border-radius:999px;padding:1px 8px;background:{{ r.tb.bg }};color:{{ r.tb.fg }}">{{ r.tb.label }}</span></td>
+                  <td style="padding:12px 14px;border-bottom:1px solid #f0f0f1"><span style="font-size:11.5px;font-weight:500;border-radius:999px;padding:1px 8px;background:{{ r.db.bg }};color:{{ r.db.fg }};white-space:nowrap">{{ r.db.label }}</span></td>
+                  <td style="padding:12px 14px;border-bottom:1px solid #f0f0f1;text-align:right"><button onClick="{{ r.edit }}" style="border:1px solid #e5e7eb;border-radius:6px;padding:6px 12px;font-size:13px;font-weight:500;background:#fff;cursor:pointer" style-hover="background:#f4f4f5">Modifier</button></td>
+                </tr>
+              </sc-for>
+            </tbody>
+          </table>
+        </div>
+        <section style="border:1px solid #e5e7eb;border-radius:8px;padding:20px;background:#fff;display:flex;flex-direction:column;gap:18px;max-width:760px">
+          <h2 style="margin:0;font-size:15px;font-weight:600">Réglages généraux</h2>
+          <sc-for list="{{ seoGlobal }}" as="f" hint-placeholder-count="2"><dc-import name="AdminField" f="{{ f }}" hint-size="100%,64px"></dc-import></sc-for>
+          <p style="margin:0;font-size:13px;color:#6b7280;line-height:1.5">La page de recherche du site n’est jamais indexée. Le plan du site (sitemap.xml) est mis à jour automatiquement à chaque publication.</p>
+        </section>
+      </sc-if>
+
+      <!-- IMAGES -->
+      <sc-if value="{{ isImages }}">
+        <div style="display:grid;grid-template-columns:{{ imgCols }};gap:24px;align-items:start">
+          <div style="min-width:0">
+            <button onClick="{{ uploadImg }}" style="width:100%;border:1.5px dashed #d4d4d8;border-radius:8px;background:#fafafa;padding:26px 16px;text-align:center;cursor:pointer;color:#3f3f46;margin-bottom:16px" style-hover="border-color:#06226D;background:#f5f8fd">
+              <div style="font-weight:600;font-size:15px">Glissez vos images ici ou cliquez pour importer</div>
+              <div style="font-size:13px;color:#6b7280;margin-top:4px">JPG, PNG ou WebP · 5 Mo maximum</div>
+            </button>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px">
+              <sc-for list="{{ imgFolders }}" as="t" hint-placeholder-count="5"><button onClick="{{ t.pick }}" style="border:1px solid {{ t.border }};background:{{ t.bg }};color:{{ t.fg }};border-radius:999px;padding:5px 12px;font-size:13px;cursor:pointer">{{ t.label }}</button></sc-for>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px">
+              <sc-for list="{{ imgList }}" as="im" hint-placeholder-count="8">
+                <button onClick="{{ im.select }}" style="text-align:left;border:1px solid {{ im.border }};box-shadow:{{ im.ring }};border-radius:8px;background:#fff;padding:0;overflow:hidden;cursor:pointer">
+                  <div style="aspect-ratio:4/3;background-color:{{ im.bg }};background-image:url('{{ im.url }}');background-position:center;background-size:{{ im.fit }};background-repeat:no-repeat;background-origin:content-box;padding:{{ im.pad }}"></div>
+                  <div style="padding:8px 10px"><div style="font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ im.name }}</div><div style="font-size:12px;color:{{ im.altColor }};margin-top:2px">{{ im.altLabel }}</div></div>
+                </button>
+              </sc-for>
+            </div>
+          </div>
+          <sc-if value="{{ hasImgSel }}">
+            <aside style="border:1px solid #e5e7eb;border-radius:8px;padding:16px;background:#fff;display:flex;flex-direction:column;gap:14px;position:{{ asidePos }};top:132px">
+              <div style="width:100%;aspect-ratio:4/3;border-radius:6px;background-color:{{ imgSel.bg }};background-image:url('{{ imgSel.url }}');background-position:center;background-size:{{ imgSel.fit }};background-repeat:no-repeat;background-origin:content-box;padding:{{ imgSel.pad }}"></div>
+              <div><div style="font-weight:600;word-break:break-all">{{ imgSel.name }}</div><div style="font-size:12.5px;color:#6b7280;margin-top:2px">Dossier : {{ imgSel.folder }}</div></div>
+              <sc-for list="{{ imgSelFields }}" as="f" hint-placeholder-count="2"><dc-import name="AdminField" f="{{ f }}" hint-size="100%,64px"></dc-import></sc-for>
+              <div>
+                <div style="font-size:13px;font-weight:500;margin-bottom:6px">Utilisée sur</div>
+                <div style="display:flex;flex-wrap:wrap;gap:6px"><sc-for list="{{ imgSel.used }}" as="u" hint-placeholder-count="2"><span style="font-size:12.5px;background:#f4f4f5;border-radius:999px;padding:3px 10px;color:#3f3f46">{{ u }}</span></sc-for></div>
+              </div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap">
+                <button onClick="{{ saveImg }}" style="background:#06226D;color:#fff;border:1px solid #06226D;border-radius:6px;padding:8px 14px;font-size:13.5px;font-weight:500;cursor:pointer" style-hover="background:#0a2f8f">Enregistrer</button>
+                <button onClick="{{ copyImg }}" style="background:#fff;border:1px solid #e5e7eb;border-radius:6px;padding:8px 12px;font-size:13.5px;cursor:pointer" style-hover="background:#f4f4f5">Copier l’URL</button>
+              </div>
+            </aside>
+          </sc-if>
+        </div>
+      </sc-if>
+
+      <!-- LEADS -->
+      <sc-if value="{{ isLeads }}">
+        <div style="border:1px solid #fde68a;background:#fffbeb;border-radius:8px;padding:12px 14px;font-size:13.5px;color:#92400e;line-height:1.5;margin-bottom:14px">Demandes d’exemple : les vraies demandes arriveront ici dès que le formulaire de contact sera branché.</div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px">
+          <sc-for list="{{ leadTabs }}" as="t" hint-placeholder-count="5"><button onClick="{{ t.pick }}" style="border:1px solid {{ t.border }};background:{{ t.bg }};color:{{ t.fg }};border-radius:999px;padding:6px 12px;font-size:13px;font-weight:500;cursor:pointer">{{ t.label }}</button></sc-for>
+        </div>
+        <div style="border:1px solid #e5e7eb;border-radius:8px;overflow-x:auto">
+          <table style="width:100%;border-collapse:collapse;min-width:760px">
+            <thead><tr>
+              <th style="text-align:left;padding:10px 14px;font-weight:500;color:#6b7280;font-size:13px;border-bottom:1px solid #e5e7eb;background:#fafafa">Reçue le</th>
+              <th style="text-align:left;padding:10px 14px;font-weight:500;color:#6b7280;font-size:13px;border-bottom:1px solid #e5e7eb;background:#fafafa">Contact</th>
+              <th style="text-align:left;padding:10px 14px;font-weight:500;color:#6b7280;font-size:13px;border-bottom:1px solid #e5e7eb;background:#fafafa">Besoin</th>
+              <th style="text-align:left;padding:10px 14px;font-weight:500;color:#6b7280;font-size:13px;border-bottom:1px solid #e5e7eb;background:#fafafa">Fréquence</th>
+              <th style="text-align:left;padding:10px 14px;font-weight:500;color:#6b7280;font-size:13px;border-bottom:1px solid #e5e7eb;background:#fafafa">Photos</th>
+              <th style="text-align:left;padding:10px 14px;font-weight:500;color:#6b7280;font-size:13px;border-bottom:1px solid #e5e7eb;background:#fafafa">Statut</th>
+            </tr></thead>
+            <tbody>
+              <sc-for list="{{ leadRows }}" as="l" hint-placeholder-count="5">
+                <tr onClick="{{ l.open }}" style="cursor:pointer" style-hover="background:#fafafa">
+                  <td style="padding:12px 14px;border-bottom:1px solid #f0f0f1;color:#6b7280;font-size:13px;white-space:nowrap">{{ l.date }}</td>
+                  <td style="padding:12px 14px;border-bottom:1px solid #f0f0f1"><div style="font-weight:500">{{ l.nom }}</div><div style="font-size:12.5px;color:#6b7280">{{ l.orgLabel }}</div></td>
+                  <td style="padding:12px 14px;border-bottom:1px solid #f0f0f1;max-width:300px"><div style="font-size:13.5px">{{ l.presta }}</div><div style="font-size:12.5px;color:#6b7280">{{ l.type }}</div></td>
+                  <td style="padding:12px 14px;border-bottom:1px solid #f0f0f1;font-size:13.5px;color:#3f3f46">{{ l.freq }}</td>
+                  <td style="padding:12px 14px;border-bottom:1px solid #f0f0f1;font-size:13.5px;color:#3f3f46">{{ l.photosLabel }}</td>
+                  <td style="padding:12px 14px;border-bottom:1px solid #f0f0f1"><span style="font-size:12px;font-weight:500;border-radius:999px;padding:2px 9px;background:{{ l.badge.bg }};color:{{ l.badge.fg }};white-space:nowrap">{{ l.badge.label }}</span></td>
+                </tr>
+              </sc-for>
+            </tbody>
+          </table>
+          <sc-if value="{{ leadEmpty }}"><div style="padding:40px 16px;text-align:center;color:#6b7280">Aucune demande dans cette catégorie.</div></sc-if>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isExisting }}">
+        <div style="border:1px solid #e5e7eb;border-radius:8px;padding:24px;background:#fff;max-width:640px">
+          <h2 style="margin:0 0 8px;font-size:16px;font-weight:600">Écran existant, inchangé</h2>
+          <p style="margin:0;font-size:14px;color:#6b7280;line-height:1.55">{{ existingText }}</p>
+        </div>
+      </sc-if>
+    </div>
+  </main>
+
+  <!-- IMAGE PICKER -->
+  <sc-if value="{{ hasPicker }}">
+    <div style="position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:60;display:flex;align-items:center;justify-content:center;padding:16px">
+      <div role="dialog" aria-label="Choisir une image" style="background:#fff;border-radius:10px;width:min(880px,100%);max-height:86vh;display:flex;flex-direction:column;overflow:hidden">
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid #e5e7eb"><h2 style="margin:0;font-size:16px;font-weight:600">Choisir une image</h2><button onClick="{{ closePicker }}" aria-label="Fermer" style="width:32px;height:32px;border:none;background:none;border-radius:6px;font-size:20px;cursor:pointer" style-hover="background:#f4f4f5">×</button></div>
+        <div style="padding:16px;overflow-y:auto">
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px">
+            <sc-for list="{{ pickerList }}" as="im" hint-placeholder-count="8">
+              <button onClick="{{ im.pick }}" style="text-align:left;border:1px solid #e5e7eb;border-radius:8px;background:#fff;padding:0;overflow:hidden;cursor:pointer" style-hover="border-color:#06226D;box-shadow:0 0 0 2px #06226D">
+                <div style="aspect-ratio:4/3;background-color:{{ im.bg }};background-image:url('{{ im.url }}');background-position:center;background-size:{{ im.fit }};background-repeat:no-repeat;background-origin:content-box;padding:{{ im.pad }}"></div>
+                <div style="padding:7px 9px;font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ im.name }}</div>
+              </button>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- LEAD DRAWER -->
+  <sc-if value="{{ hasLead }}">
+    <div onClick="{{ closeLead }}" style="position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:55"></div>
+    <aside role="dialog" aria-label="Demande de devis" style="position:fixed;top:0;right:0;bottom:0;width:min(500px,100%);background:#fff;z-index:56;box-shadow:-10px 0 30px rgba(0,0,0,.12);display:flex;flex-direction:column">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:16px 18px;border-bottom:1px solid #e5e7eb">
+        <div><div style="font-size:17px;font-weight:600">{{ lead.nom }}</div><div style="font-size:13px;color:#6b7280;margin-top:2px">{{ lead.orgLabel }} · {{ lead.date }}</div></div>
+        <button onClick="{{ closeLead }}" aria-label="Fermer" style="width:32px;height:32px;border:none;background:none;border-radius:6px;font-size:20px;cursor:pointer" style-hover="background:#f4f4f5">×</button>
+      </div>
+      <div style="flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:18px">
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <a href="{{ lead.telHref }}" style="display:inline-flex;align-items:center;gap:6px;background:#06226D;color:#fff;border-radius:6px;padding:8px 14px;font-size:14px;font-weight:500;text-decoration:none">Appeler {{ lead.tel }}</a>
+          <a href="{{ lead.mailHref }}" style="display:inline-flex;align-items:center;gap:6px;border:1px solid #e5e7eb;color:#0a0a0a;border-radius:6px;padding:8px 14px;font-size:14px;font-weight:500;text-decoration:none">Répondre par e-mail</a>
+        </div>
+        <div style="display:grid;grid-template-columns:120px minmax(0,1fr);gap:8px 12px;font-size:13.5px">
+          <span style="color:#6b7280">E-mail</span><span style="word-break:break-all">{{ lead.email }}</span>
+          <span style="color:#6b7280">Type de besoin</span><span>{{ lead.type }}</span>
+          <span style="color:#6b7280">Prestation</span><span>{{ lead.presta }}</span>
+          <span style="color:#6b7280">Fréquence</span><span>{{ lead.freq }}</span>
+        </div>
+        <div>
+          <div style="font-size:13px;font-weight:600;margin-bottom:6px">Message</div>
+          <p style="margin:0;background:#fafafa;border:1px solid #f0f0f1;border-radius:8px;padding:12px 14px;font-size:14px;line-height:1.6;color:#27272a">{{ lead.msg }}</p>
+        </div>
+        <div>
+          <div style="font-size:13px;font-weight:600;margin-bottom:6px">Photos jointes</div>
+          <sc-if value="{{ lead.hasPhotos }}"><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px"><sc-for list="{{ lead.photos }}" as="p" hint-placeholder-count="2"><div style="aspect-ratio:1/1;border-radius:6px;background:#f4f4f5 url('{{ p }}') center/cover no-repeat"></div></sc-for></div></sc-if>
+          <sc-if value="{{ lead.noPhotos }}"><p style="margin:0;font-size:13.5px;color:#6b7280">Aucune photo envoyée.</p></sc-if>
+        </div>
+        <div style="border-top:1px solid #f0f0f1;padding-top:16px;display:flex;flex-direction:column;gap:16px">
+          <sc-for list="{{ leadFields }}" as="f" hint-placeholder-count="2"><dc-import name="AdminField" f="{{ f }}" hint-size="100%,64px"></dc-import></sc-for>
+        </div>
+      </div>
+      <div style="padding:14px 18px;border-top:1px solid #e5e7eb;display:flex;justify-content:flex-end;gap:8px">
+        <button onClick="{{ closeLead }}" style="background:#fff;border:1px solid #e5e7eb;border-radius:6px;padding:8px 14px;font-size:14px;cursor:pointer">Fermer</button>
+        <button onClick="{{ saveLead }}" style="background:#06226D;color:#fff;border:1px solid #06226D;border-radius:6px;padding:8px 14px;font-size:14px;font-weight:500;cursor:pointer" style-hover="background:#0a2f8f">Enregistrer</button>
+      </div>
+    </aside>
+  </sc-if>
+
+  <!-- SEO DRAWER -->
+  <sc-if value="{{ hasSeoEdit }}">
+    <div onClick="{{ closeSeo }}" style="position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:55"></div>
+    <aside role="dialog" aria-label="Modifier le référencement" style="position:fixed;top:0;right:0;bottom:0;width:min(460px,100%);background:#fff;z-index:56;box-shadow:-10px 0 30px rgba(0,0,0,.12);display:flex;flex-direction:column">
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:1px solid #e5e7eb"><div><div style="font-size:16px;font-weight:600">{{ seoEd.name }}</div><div style="font-size:12.5px;color:#6b7280">{{ seoEd.url }}</div></div><button onClick="{{ closeSeo }}" aria-label="Fermer" style="width:32px;height:32px;border:none;background:none;border-radius:6px;font-size:20px;cursor:pointer" style-hover="background:#f4f4f5">×</button></div>
+      <div style="flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:16px">
+        <sc-for list="{{ seoEd.fields }}" as="f" hint-placeholder-count="2"><dc-import name="AdminField" f="{{ f }}" hint-size="100%,64px"></dc-import></sc-for>
+        <div style="border:1px solid #e5e7eb;border-radius:8px;padding:12px;background:#fafafa">
+          <div style="font-size:11.5px;color:#6b7280;margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em">Aperçu dans Google</div>
+          <div style="font-size:12.5px;color:#202124">{{ seoEd.fullUrl }}</div>
+          <div style="font-size:17px;color:#1a0dab;line-height:1.3;margin-top:2px">{{ seoEd.title }}</div>
+          <div style="font-size:13px;color:#4d5156;line-height:1.45;margin-top:4px">{{ seoEd.desc }}</div>
+        </div>
+      </div>
+      <div style="padding:14px 18px;border-top:1px solid #e5e7eb;display:flex;justify-content:flex-end;gap:8px">
+        <button onClick="{{ closeSeo }}" style="background:#fff;border:1px solid #e5e7eb;border-radius:6px;padding:8px 14px;font-size:14px;cursor:pointer">Annuler</button>
+        <button onClick="{{ saveSeo }}" style="background:#06226D;color:#fff;border:1px solid #06226D;border-radius:6px;padding:8px 14px;font-size:14px;font-weight:500;cursor:pointer" style-hover="background:#0a2f8f">Enregistrer et publier</button>
+      </div>
+    </aside>
+  </sc-if>
+
+  <!-- CONFIRM DELETE -->
+  <sc-if value="{{ hasConfirm }}">
+    <div style="position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:70;display:flex;align-items:center;justify-content:center;padding:16px">
+      <div role="alertdialog" aria-label="Confirmer la suppression" style="background:#fff;border-radius:10px;width:min(440px,100%);padding:22px">
+        <h2 style="margin:0 0 8px;font-size:17px;font-weight:600">Confirmer la suppression</h2>
+        <p style="margin:0 0 20px;font-size:14px;color:#6b7280;line-height:1.5">Cette action est irréversible. « {{ confirmTitle }} » sera définitivement supprimé du site.</p>
+        <div style="display:flex;justify-content:flex-end;gap:8px">
+          <button onClick="{{ cancelDelete }}" style="background:#fff;border:1px solid #e5e7eb;border-radius:6px;padding:8px 14px;font-size:14px;cursor:pointer">Annuler</button>
+          <button onClick="{{ doDelete }}" style="background:#dc2626;color:#fff;border:1px solid #dc2626;border-radius:6px;padding:8px 14px;font-size:14px;font-weight:500;cursor:pointer" style-hover="background:#b91c1c">Supprimer</button>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ hasToast }}">
+    <div role="status" style="position:fixed;right:20px;bottom:20px;z-index:80;background:#0a0a0a;color:#fff;border-radius:8px;padding:12px 16px;font-size:14px;box-shadow:0 10px 30px rgba(0,0,0,.2);max-width:min(420px,calc(100% - 40px))">{{ toast }}</div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { view:'dashboard', coll:null, itemId:null, pageKey:null, openSec:{}, vals:{}, dirty:{}, statusOv:{}, pubAt:{}, toast:'', leadId:null, leadStatus:{}, leadTab:'Toutes', picker:null, imgSel:null, imgFolder:'Tous', navOpen:false, menus:null, seoEdit:null, seoTab:'Toutes', collQuery:'', collTab:'Tous', setTab:'entreprise', extra:{}, deleted:{}, confirm:false, vw:1280 };
+
+  componentDidMount(){ this._r=()=>this.setState({vw:window.innerWidth}); this._r(); window.addEventListener('resize',this._r); }
+  componentWillUnmount(){ window.removeEventListener('resize',this._r); clearTimeout(this._t); }
+  say(m){ clearTimeout(this._t); this.setState({toast:m}); this._t=setTimeout(()=>this.setState({toast:''}),2800); }
+  go(view,x={}){ this.setState({view,navOpen:false,collQuery:'',collTab:'Tous',edTab:'content',...x}); try{ window.scrollTo(0,0); }catch(e){} }
+  slug(s){ return String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''); }
+
+  B = 'https://gerrrw8pnhgmo9jz.public.blob.vercel-storage.com/services/';
+  images = [
+    { id:'i1', name:'aspeo-equipes.webp', url:this.B+'general/aspeo-equipes-1774184227905.webp', folder:'Équipe', alt:'Équipe ASPEO en tenue de travail', used:['Accueil','Notre histoire'] },
+    { id:'i2', name:'client-aspeo-heureux.webp', url:this.B+'general/client-aspeo-heureux-1774184258981.webp', folder:'Pages', alt:'Cliente satisfaite après une intervention', used:['Avis clients'] },
+    { id:'i3', name:'nettoyage-vitre-duo.webp', url:this.B+'lavage-de-vitres/deux-personne-nettoyage-vitre-1774184290601.webp', folder:'Services', alt:'', used:['Lavage de vitres','Accueil'] },
+    { id:'i4', name:'nettoyage-commercial.webp', url:this.B+'nettoyage-de-surfaces-commerciales/nettoyage-commercial-aspeo-1774184261980.webp', folder:'Services', alt:'Agent ASPEO nettoyant le sol d’un magasin', used:['Surfaces commerciales'] },
+    { id:'i5', name:'surfaces-commerciales.webp', url:this.B+'nettoyage-de-surfaces-commerciales/nettoyage-surfaces-commerciales-1774184310522.webp', folder:'Services', alt:'', used:['Andrézieux-Bouthéon'] },
+    { id:'i6', name:'base-de-vie-autoroute.webp', url:this.B+'entretien-de-bases-de-vie-infrastructures/base-de-vie-chantier-autoroute-loire-42-installations-temporaires-1782829995112-c5a7ed1b.webp', folder:'Réalisations', alt:'Base de vie de chantier autoroutier dans la Loire', used:['Bases de vie','Grands Comptes'] },
+    { id:'i7', name:'fin-de-chantier.webp', url:this.B+'nettoyage-de-fin-de-chantier/portrait-ingenieurs-pendant-heures-travail-chantier-1774184278385.webp', folder:'Services', alt:'', used:['Fin de chantier','Tarare'] },
+    { id:'i8', name:'equipe-tertiaire.webp', url:this.B+'nettoyage-de-bureaux-sieges-sociaux/equipe-aspeo-nettoyage-tertiaire-stfoylargentiere-1774252402514-924eee13.webp', folder:'Équipe', alt:'Équipe ASPEO dans des bureaux', used:['Bureaux & sièges sociaux'] },
+    { id:'i9', name:'nettoyage-exterieur.webp', url:this.B+'nettoyage-exterieur/nettoyage-exterieur-entreprise-1774184271441.webp', folder:'Services', alt:'Nettoyage haute pression d’une cour d’entreprise', used:['Nettoyage extérieur'] },
+    { id:'i10', name:'avant-apres-salle-de-bain.webp', url:this.B+'nettoyage-de-logements-insalubres/avant-apres-nettoyage-salle-de-bain-insalubre-desinfection-remise-en-etat-aspeo--1774273068506-75107f6d.webp', folder:'Réalisations', alt:'Salle de bain avant et après remise en état', used:['Logements insalubres'] },
+    { id:'i11', name:'bureaux-propres.webp', url:'./nettoyage-pro-bureaux-1774184251402-mr1qkpwj.webp', folder:'Pages', alt:'Open space propre après le passage des équipes', used:['Accueil'] },
+    { id:'i12', name:'bureaux-aspeo.webp', url:'./bureaux-aspeo-mr6r4fwr.webp', folder:'Pages', alt:'', used:['Notre histoire'] },
+    { id:'i13', name:'logo-aspeo-couleur.svg', url:'assets/logo-aspeo-couleur.svg', folder:'Logos', alt:'Logo ASPEO', used:['En-tête du site'] },
+    { id:'i14', name:'logo-aspeo-blanc.svg', url:'assets/logo-aspeo-blanc.svg', folder:'Logos', alt:'Logo ASPEO blanc', used:['Pied de page'] },
+    { id:'i15', name:'aspeo-icone.svg', url:'assets/aspeo-icone.svg', folder:'Logos', alt:'Icône ASPEO', used:['Onglet du navigateur'] }
+  ];
+  svcList = [
+    ['Nettoyage de Bureaux & Sièges Sociaux','nettoyage-de-bureaux-sieges-sociaux','Nettoyage professionnel'],
+    ['Nettoyage de Surfaces Commerciales','nettoyage-de-surfaces-commerciales','Nettoyage professionnel'],
+    ['Nettoyage Industriel','nettoyage-industriel-usine','Nettoyage professionnel'],
+    ['Nettoyage Hôtellerie & Restauration','nettoyage-hotellerie-restauration','Nettoyage professionnel'],
+    ['Nettoyage Événementiel','nettoyage-evenementiel','Nettoyage professionnel'],
+    ['Lavage de Vitres','lavage-de-vitres','Extérieur & chantier'],
+    ['Nettoyage de Panneaux Photovoltaïques','nettoyage-de-panneaux-photovoltaiques','Extérieur & chantier'],
+    ['Nettoyage de Fin de Chantier','nettoyage-de-fin-de-chantier','Extérieur & chantier'],
+    ['Nettoyage de Bases de Vie','nettoyage-bases-de-vie-infrastructures','Extérieur & chantier'],
+    ['Nettoyage Extérieur','nettoyage-exterieur','Extérieur & chantier'],
+    ['Nettoyage Syndrome de Diogène','nettoyage-syndrome-de-diogene','Interventions spécialisées'],
+    ['Nettoyage de Logements Insalubres','nettoyage-de-logements-insalubres','Interventions spécialisées'],
+    ['Remise en État','remise-en-etat','Autres services'],
+    ['Traitement des Odeurs','traitement-des-odeurs','Autres services'],
+    ['Traitement des Moisissures','traitement-moisissures','Autres services'],
+    ['Débarras & Encombrants','debarras-maison-appartement-encombrants','Autres services']
+  ];
+  villesData = [
+    ['Panissières','Secteur central','Siège social'],['Feurs','Secteur central','15 min'],['Chazelles-sur-Lyon','Monts du Lyonnais','15 min'],
+    ['Montbrison','Plaine du Forez','35 min'],['Andrézieux-Bouthéon','Plaine du Forez','35 min'],['Veauche','Plaine du Forez','30 min'],
+    ['Saint-Just-Saint-Rambert','Plaine du Forez','40 min'],['Saint-Symphorien-sur-Coise','Monts du Lyonnais','30 min'],['Tarare','Ouest lyonnais / Beaujolais','25 min'],
+    ['L’Arbresle','Ouest lyonnais / Beaujolais','35 min'],['Tassin-la-Demi-Lune','Ouest lyonnais / Beaujolais','45 min'],['Saint-Étienne','Agglomération stéphanoise','45 min']
+  ];
+  leads = [
+    { id:'l1', date:'30 oct. 2026 · 09:42', nom:'Claire Dumas', org:'Mairie (exemple)', tel:'06 12 34 56 78', email:'c.dumas@exemple.fr', type:'Nettoyage Professionnel', presta:'Nettoyage de Bureaux & Sièges Sociaux', freq:'Régulière', photos:[], status:'Nouveau', msg:'Bonjour, nous cherchons un prestataire pour l’entretien de nos locaux administratifs (environ 400 m²), trois passages par semaine. Pouvez-vous nous proposer une visite ?' },
+    { id:'l2', date:'29 oct. 2026 · 18:05', nom:'Julien Marchand', org:'', tel:'06 98 76 54 32', email:'julien.m@exemple.fr', type:'Interventions Spécialisées', presta:'Nettoyage Syndrome de Diogène', freq:'Ponctuelle', photos:['i10','i12','i11'], status:'Nouveau', msg:'L’appartement de mon oncle à Montbrison est très encombré. Nous aimerions être accompagnés, avec discrétion.' },
+    { id:'l3', date:'29 oct. 2026 · 11:20', nom:'Thomas Roux', org:'Entreprise du BTP (exemple)', tel:'06 45 67 89 01', email:'t.roux@exemple.fr', type:'Nettoyage Professionnel', presta:'Nettoyage de Fin de Chantier', freq:'Ponctuelle', photos:['i7','i6'], status:'Nouveau', msg:'Réception d’un bâtiment de bureaux de 800 m² prévue mi-novembre à Andrézieux-Bouthéon.' },
+    { id:'l4', date:'27 oct. 2026 · 15:48', nom:'Sophie Girard', org:'', tel:'06 11 22 33 44', email:'s.girard@exemple.fr', type:'À définir ensemble', presta:'À définir ensemble', freq:'À définir ensemble', photos:['i12'], status:'En cours', msg:'Une forte odeur persiste dans la maison que nous venons d’acheter, nous ne savons pas d’où elle vient.' },
+    { id:'l5', date:'24 oct. 2026 · 10:02', nom:'Marc Lefèvre', org:'Hôtel (exemple)', tel:'06 55 66 77 88', email:'m.lefevre@exemple.fr', type:'Nettoyage Professionnel', presta:'Nettoyage Hôtellerie & Restauration', freq:'Régulière', photos:[], status:'Devis envoyé', msg:'Entretien des parties communes et du restaurant, 7 jours sur 7.' },
+    { id:'l6', date:'18 oct. 2026 · 16:30', nom:'Pierre Vial', org:'', tel:'06 99 88 77 66', email:'p.vial@exemple.fr', type:'Autres Services', presta:'Débarras & Encombrants', freq:'Ponctuelle', photos:['i9','i5','i3','i4'], status:'Clôturé', msg:'Débarras d’une cave et d’un garage à Panissières.' }
+  ];
+
+  cfg(){ if(this._cfg) return this._cfg;
+    const T=(k,l,d='',x={})=>({k,l,t:'text',d,...x}), X=(k,l,d='',x={})=>({k,l,t:'textarea',d,...x}), RT=(k,l,d='',x={})=>({k,l,t:'rich',d,...x});
+    const SEL=(k,l,o,d,x={})=>({k,l,t:'select',o,d:d===undefined?o[0]:d,...x}), CH=(k,l,o,d=[],x={})=>({k,l,t:'chips',o,d,...x});
+    const TG=(k,l,d=false,x={})=>({k,l,t:'toggle',d,...x}), IM=(k,l,d='',x={})=>({k,l,t:'image',d,...x}), PR=(k,l,pa,pb,d=[],x={})=>({k,l,t:'pairs',pa,pb,d,...x});
+    const I=id=>this.images.find(x=>x.id===id).url;
+    const svcNames=this.svcList.map(s=>s[0]), villeNames=this.villesData.map(v=>v[0]);
+    const hero=(kicker,titre,sous,img)=>({title:'Haut de page', hint:'Surtitre, titre principal, sous-titre et image', fields:[T('kicker','Surtitre',kicker,{max:60}), T('titre','Titre principal (H1)',titre,{max:90,req:true,h:'Un seul titre principal par page. Il doit annoncer clairement le sujet de la page.'}), X('sous','Sous-titre',sous,{max:220}), IM('img','Image de fond',img)]});
+    const cta=(titre,texte,btn)=>({title:'Bandeau final', hint:'Appel à l’action en bas de page', fields:[T('titre','Titre',titre,{max:80}), X('texte','Texte',texte,{max:240}), T('btn','Texte du bouton',btn,{max:30,h:'Le bouton mène au formulaire de devis. Le numéro de téléphone vient des Informations de l’entreprise.'})]});
+    const realTitles=['Entretien quotidien d’un siège social de 1 200 m²','Remise en état d’un logement après syndrome de Diogène','Nettoyage de fin de chantier d’un bâtiment tertiaire','Entretien d’une base de vie autoroutière','Lavage des vitrines d’une galerie commerciale','Nettoyage de panneaux photovoltaïques agricoles'];
+    const faqQ=['Le devis est-il gratuit ?','Intervenez-vous en urgence ?','Quelle zone couvrez-vous ?','Vos produits sont-ils écologiques ?','Pouvez-vous intervenir hors des heures d’ouverture ?','Fournissez-vous les documents pour un appel d’offres ?'];
+    const pages=[
+      {key:'accueil',title:'Accueil',url:'/',status:'Publié',upd:'29 oct. 2026',seoT:'Nettoyage professionnel Loire & Rhône | ASPEO',seoD:'Nettoyage de bureaux, commerces, sites industriels et chantiers, interventions Diogène et logements insalubres en Loire et Rhône. Devis gratuit après visite.'},
+      {key:'histoire',title:'Notre histoire',url:'/a-propos',status:'Publié',upd:'27 oct. 2026',seoT:'Notre histoire : nettoyage à Panissières | ASPEO',seoD:'Créée à Panissières, ASPEO accompagne entreprises, collectivités et particuliers de la Loire et du Rhône, avec des équipes formées en interne.'},
+      {key:'services',title:'Propreté & Services',url:'/proprete-services',status:'Publié',upd:'24 oct. 2026',seoT:'Nos services de nettoyage en Loire et Rhône | ASPEO',seoD:'Entretien de bureaux, commerces, industrie, chantiers, vitrerie et interventions spécialisées : découvrez toutes les prestations ASPEO.'},
+      {key:'grands-comptes',title:'Grands Comptes & Marchés Publics',url:'/grands-comptes',status:'Brouillon',upd:'22 oct. 2026',seoT:'Grands comptes et marchés publics | ASPEO',seoD:'Un interlocuteur unique pour vos sites multiples, collectivités et appels d’offres : dossier administratif complet et reporting régulier.'},
+      {key:'zones',title:'Zones d’intervention',url:'/zones-intervention',status:'Publié',upd:'20 oct. 2026',seoT:'Zones d’intervention Loire & Rhône | ASPEO',seoD:'Plaine du Forez, Monts du Lyonnais, Roannais, Saint-Étienne et ouest lyonnais : les communes où ASPEO intervient.'},
+      {key:'avis',title:'Avis clients',url:'/avis',status:'Publié',upd:'18 oct. 2026',seoT:'Avis clients nettoyage Loire & Rhône | ASPEO',seoD:'Les avis de nos clients entreprises, collectivités et particuliers.'},
+      {key:'medias',grp:'Médias',title:'Médias',url:'/medias',status:'Publié',upd:'15 oct. 2026',seoT:'Conseils et actualités propreté | ASPEO',seoD:''},
+      {key:'presse',grp:'Médias',title:'Presse',url:'/presse',status:'Publié',upd:'15 oct. 2026',seoT:'Espace presse | ASPEO, nettoyage professionnel Loire & Rhône',seoD:'Retombées presse, communiqués et kit média d’ASPEO, entreprise de nettoyage professionnel basée à Panissières (Loire). Contact presse dédié.'},
+      {key:'rejoindre',title:'Nous rejoindre',url:'/nous-rejoindre',status:'Publié',upd:'12 oct. 2026',seoT:'Offres d’emploi agent de propreté Loire | ASPEO',seoD:'Rejoignez les équipes ASPEO : agents de propreté, interventions spécialisées, chefs d’équipe.'},
+      {key:'contact',title:'Contact',url:'/contact',status:'Publié',upd:'10 oct. 2026',seoT:'Contact et devis gratuit | ASPEO Nettoyage',seoD:'Décrivez votre besoin : nous vous rappelons rapidement et le devis gratuit est envoyé sous 24h après la visite.'},
+      {key:'mentions',title:'Mentions légales',url:'/mentions-legales',status:'Publié',upd:'1 oct. 2026',legal:true,seoT:'Mentions légales | ASPEO',seoD:'Mentions légales du site ASPEO : éditeur, hébergeur, siège social à Panissières (Loire), propriété intellectuelle et contact.'},
+      {key:'confidentialite',title:'Politique de confidentialité',url:'/politique-de-confidentialite',status:'Publié',upd:'1 oct. 2026',legal:true,seoT:'Politique de confidentialité | ASPEO',seoD:'Comment ASPEO collecte, utilise et protège vos données personnelles transmises via le formulaire de devis.'},
+      {key:'cgu',title:'Conditions générales d’utilisation',url:'/conditions-generales-d-utilisation',status:'Publié',upd:'1 oct. 2026',legal:true,seoT:'Conditions générales d’utilisation | ASPEO',seoD:'Conditions générales d’utilisation du site ASPEO : accès au site, responsabilités, liens externes et droit applicable.'},
+      {key:'cookies',title:'Politique des cookies',url:'/politique-des-cookies',status:'Publié',upd:'1 oct. 2026',legal:true,seoT:'Politique des cookies | ASPEO',seoD:'Cookies utilisés sur le site ASPEO, finalités, durée de conservation et moyens de gérer vos préférences.'}
+    ];
+    const sections={
+      accueil:[
+        {title:'Haut de page', hint:'Titre, boutons et mosaïque d’images', fields:[T('kicker','Surtitre','Entreprises · Collectivités · Bailleurs · Particuliers',{max:60}), T('titre','Titre principal (H1)','Nettoyage professionnel et interventions spécialisées en Loire et Rhône',{max:90,req:true}), X('sous','Sous-titre','Entretien de bureaux et de sites industriels, bases de vie de chantier, remise en état, syndrome de Diogène : un interlocuteur unique, de la visite au devis.',{max:220}), T('btn1','Bouton principal','Demander un devis gratuit',{max:30,h:'Le bouton « Appeler » utilise le numéro des Informations de l’entreprise.'}), IM('m1','Mosaïque · image 1',I('i11')), IM('m2','Mosaïque · image 2',I('i8')), IM('m3','Mosaïque · image 3',I('i6')), IM('m4','Mosaïque · image 4',I('i3'))]},
+        {title:'Nos missions', hint:'Deux cartes : nettoyage professionnel et interventions spécialisées', fields:[T('titre','Titre','Nos missions'), X('intro','Introduction','Depuis Panissières, nos équipes entretiennent chaque jour les locaux des entreprises et des collectivités, et interviennent sur les situations délicates avec discrétion.',{rows:3}), T('c1t','Carte 1 · titre','Nettoyage professionnel'), X('c1x','Carte 1 · texte','Bureaux, commerces, industrie, hôtellerie-restauration, chantiers et vitrerie.'), IM('c1i','Carte 1 · image',I('i8')), T('c2t','Carte 2 · titre','Interventions spécialisées'), X('c2x','Carte 2 · texte','Syndrome de Diogène, logements insalubres, remise en état.'), IM('c2i','Carte 2 · image',I('i10'))]},
+        {title:'Réalisation à la une', hint:'Choisie parmi vos réalisations', fields:[SEL('real','Réalisation affichée',realTitles,undefined,{h:'Le contenu de la réalisation se modifie dans « Réalisations ».'})]},
+        {title:'Ils nous font confiance', hint:'Logos clients et avis', fields:[T('titre','Titre','Ils nous font confiance'), CH('logos','Logos clients affichés',['Logo client 1','Logo client 2','Logo client 3','Logo client 4'],[],{h:'Les logos s’importent dans la Bibliothèque d’images, dossier « Logos ». N’affichez que les clients qui ont donné leur accord. La note Google vient des Informations de l’entreprise.'})]},
+        {title:'Pourquoi choisir ASPEO ?', hint:'Texte et 4 photos', fields:[T('titre','Titre','Pourquoi choisir ASPEO ?'), RT('texte','Texte','Une seule équipe, formée en interne, qui connaît vos locaux et vos contraintes. Un interlocuteur qui vous répond, des contrôles réguliers et des produits écolabellisés.'), IM('p1','Photo 1',I('i1')), IM('p2','Photo 2',I('i4')), IM('p3','Photo 3',I('i9')), IM('p4','Photo 4',I('i2'))]},
+        {title:'Comment ça se passe', hint:'Les 3 étapes de la demande', fields:[T('titre','Titre','Comment ça se passe'), X('intro','Introduction','Trois étapes, un seul interlocuteur, du premier appel jusqu’au suivi de votre contrat.',{rows:2}), PR('etapes','Étapes','Titre de l’étape','Description',[['Vous nous contactez','Par téléphone ou via le formulaire, vous nous décrivez vos locaux ou la situation.'],['Visite et devis','Nous évaluons sur place, puis vous recevez un devis gratuit sous 24h après la visite.'],['Intervention et suivi','Une équipe formée intervient à la date convenue, avec un contrôle qualité.']],{h:'Les délais doivent correspondre aux Engagements (Informations de l’entreprise).'})]},
+        {title:'Zone d’intervention', hint:'Texte et villes mises en avant', fields:[T('titre','Titre','De Panissières à Lyon'), X('texte','Texte','Plaine du Forez, Monts du Lyonnais, Roannais, agglomérations de Saint-Étienne et de Lyon.',{rows:3}), CH('villes','Villes mises en avant',villeNames,villeNames.slice(0,6))]},
+        {title:'Nos dernières actualités', hint:'Les articles les plus récents', fields:[T('titre','Titre','Nos dernières actualités'), SEL('nb','Nombre d’articles affichés',['3','6'])]},
+        cta('Un besoin de propreté ? Parlons-en.','Décrivez-nous votre besoin : nous vous rappelons rapidement pour organiser la visite.','Demander un devis gratuit')
+      ],
+      histoire:[
+        hero('Notre histoire','Une entreprise de propreté née à Panissières','Créée en 2024, ASPEO accompagne entreprises, collectivités et particuliers de la Loire et du Rhône.',I('i12')),
+        {title:'Le récit', hint:'L’histoire de l’entreprise', fields:[T('titre','Titre','D’une équipe locale à un partenaire de confiance'), RT('texte','Texte','ASPEO a été créée à Panissières…',{rows:12,h:'À valider : n’indiquez que des faits réels.'})]},
+        {title:'Chronologie', hint:'Les grandes étapes', fields:[PR('chrono','Étapes','Année','Événement',[['2024','Création d’ASPEO à Panissières'],['2025','Premiers contrats d’entretien de bureaux et de sites industriels'],['2026','Développement des interventions sur chantiers et bases de vie']],{h:'Dates et faits réels uniquement.'})]},
+        {title:'Nos engagements', hint:'Trois engagements et leur preuve', fields:[PR('valeurs','Engagements','Engagement','Preuve concrète',[['Discrétion','Véhicules sans marquage sur demande, aucune information partagée.'],['Ponctualité','Chaque passage est tracé sur une fiche de contrôle.'],['Produits écologiques','Fiches produits transmises sur demande.']])]},
+        {title:'L’équipe', hint:'Noms et rôles', fields:[PR('equipe','Membres','Nom','Rôle',[['Prénom Nom','Dirigeant'],['Prénom Nom','Responsable d’exploitation'],['Prénom Nom','Chargé(e) de clientèle']],{h:'Les photos se choisissent dans la Bibliothèque d’images, dossier « Équipe ».'})]},
+        cta('Écrivons la suite ensemble','Un projet, une question ? Notre équipe vous répond.','Nous contacter')
+      ],
+      'grands-comptes':[
+        hero('Grands Comptes & Marchés Publics','Un prestataire unique pour vos sites et vos marchés','Enseignes, collectivités, industriels et entreprises du BTP : un cadre clair, un interlocuteur dédié.',I('i6')),
+        {title:'Introduction', hint:'Présentation de l’offre', fields:[RT('texte','Texte','ASPEO répond aux appels d’offres et aux demandes de référencement fournisseur…',{rows:8})]},
+        {title:'Secteurs accompagnés', hint:'Cinq secteurs', fields:[PR('secteurs','Secteurs','Secteur','Description',[['Réseaux commerciaux','Enseignes multi-sites et surfaces de vente.'],['Collectivités','Mairies, bâtiments publics, MAPA.'],['Industrie','Ateliers, entrepôts, quais.'],['Hôtellerie & restauration','Établissements multi-sites.'],['BTP & infrastructures','Bases de vie et fin de chantier.']])]},
+        {title:'Pièces du dossier', hint:'Documents fournis sur demande', fields:[PR('pieces','Pièces','Pièce','Détail',[['Extrait Kbis','De moins de 3 mois.'],['Attestation URSSAF','Renouvelée tous les 6 mois.'],['Assurance RC Pro','Attestation en cours de validité.'],['Mémoire technique','Adapté à votre cahier des charges.']],{h:'Vérifiez que vous pouvez fournir chaque pièce listée.'})]},
+        {title:'FAQ', hint:'Questions affichées sur cette page', fields:[CH('faq','Questions affichées',faqQ,[faqQ[5],faqQ[0]],{h:'Le texte des questions se modifie dans « FAQ ».'})]},
+        cta('Un marché ou un appel d’offres à l’étude ?','Envoyez-nous votre cahier des charges : nous revenons vers vous avec une proposition adaptée.','Nous contacter')
+      ],
+      contact:[
+        hero('Contact','Contactez-nous et obtenez votre devis','Décrivez votre besoin en quelques mots, nous vous rappelons rapidement.',I('i2')),
+        {title:'Formulaire', hint:'Textes autour du formulaire', fields:[T('titre','Titre du formulaire','Décrivez votre besoin'), X('merci','Message affiché après l’envoi','Merci ! Notre équipe vous recontacte rapidement pour organiser la visite et votre devis.',{rows:2}), T('dest','E-mail qui reçoit les demandes','contact@aspeo.fr',{h:'Les demandes arrivent aussi dans « Demandes de devis ».'})]},
+        {title:'Après votre demande', hint:'Les 3 étapes affichées sous le formulaire', fields:[PR('steps','Étapes','Étape','Détail',[['Nous vous rappelons rapidement','pour préciser votre besoin.'],['Nous planifions une visite','si nécessaire.'],['Vous recevez votre devis','gratuit, sous 24h après la visite.']])]}
+      ],
+      rejoindre:[
+        hero('Nous rejoindre','Rejoignez les équipes ASPEO','Des postes en CDI, une formation en interne et une équipe à taille humaine.',I('i1')),
+        {title:'Pourquoi nous rejoindre', hint:'Arguments employeur', fields:[PR('args','Arguments','Titre','Texte',[['Formation en interne','Chaque agent est formé sur le terrain.'],['Horaires adaptés','Plannings construits avec vous.']])]},
+        {title:'Offres d’emploi', hint:'Liste des postes', fields:[T('titre','Titre de la liste','Nos offres d’emploi',{h:'Les offres se gèrent dans « Offres d’emploi ».'})]}
+      ]
+    };
+    const generic=(p)=>[hero(p.title,p.title,'',I('i11')),{title:'Introduction', hint:'Texte d’introduction', fields:[RT('texte','Texte','')]},cta('Un besoin de propreté ?','Décrivez-nous votre besoin.','Demander un devis gratuit')];
+    const legal=(p)=>[{title:'Contenu de la page', hint:'Texte juridique', fields:[RT('texte','Contenu','',{rows:16}), T('maj','Date de mise à jour','1er octobre 2026')]}];
+    pages.forEach(p=>{ if(!sections[p.key]) sections[p.key]= p.legal ? legal(p) : generic(p); });
+    const genericFor=generic;
+
+    const it=(id,title,cells,status,upd,v={},demo=false)=>({id,title,cells,status,upd,v,demo});
+    const cats=[...new Set(this.svcList.map(s=>s[2]))];
+    const catImg={'Nettoyage professionnel':I('i8'),'Extérieur & chantier':I('i7'),'Interventions spécialisées':I('i10'),'Autres services':I('i9')};
+    const catAcc={'Nettoyage professionnel':'Un entretien régulier, assuré par une équipe titulaire de votre site.','Extérieur & chantier':'Le matériel et la méthode adaptés à chaque support, sur devis clair.','Interventions spécialisées':'Une intervention discrète et sans jugement, avec un interlocuteur unique.','Autres services':'Une prestation ponctuelle, chiffrée après visite.'};
+    const colls={
+      services:{label:'Services', single:'un service', titleKey:'titre', seo:true, urlPrefix:'/proprete-services/', icon:'M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9zM14 3v6h6', searchPh:'Rechercher un service…', cols:['Service','Catégorie'], notice:'Les blocs laissés vides ne s’affichent pas sur la page du service.',
+        items:this.svcList.map((s,i)=>it('s'+(i+1),s[0],[s[2]],'Publié',(28-i)+' oct. 2026',{slug:s[1],cat:s[2],img:catImg[s[2]],accroche:catAcc[s[2]],delai:'Devis gratuit sous 24h après la visite',inclus:[['Visite technique','Évaluation des surfaces et des contraintes'],['Produits écolabellisés','Fournis par ASPEO']],faq:[['Le devis est-il gratuit ?','Oui, gratuit et sans engagement, envoyé sous 24h après la visite.']]})),
+        groups:[
+          {title:'Haut de page', hint:'Nom, catégorie, accroche et image', fields:[T('titre','Nom du service','',{req:true,max:80}), T('slug','URL du service','',{h:'Ne modifiez pas l’URL d’un service déjà publié : il perdrait son référencement.'}), SEL('cat','Catégorie',cats), X('accroche','Accroche','',{max:220}), IM('img','Image du haut de page')]},
+          {title:'Pour qui ?', hint:'Les profils concernés', fields:[PR('pourqui','Profils','Profil','Précision')]},
+          {title:'Ce qui est inclus', hint:'Le détail de la prestation', fields:[PR('inclus','Prestations incluses','Prestation','Détail')]},
+          {title:'Non inclus', hint:'Ce qui n’est pas compris', fields:[PR('noninclus','Éléments non inclus','Élément','Précision',[],{h:'Évite les malentendus sur le devis.'})]},
+          {title:'Délais', hint:'Délais réalistes', fields:[T('delai','Délais affichés','',{h:'Doit rester cohérent avec les Engagements (Informations de l’entreprise).'})]},
+          {title:'Déroulement', hint:'Les étapes de l’intervention', fields:[PR('etapes','Étapes','Étape','Description')]},
+          {title:'Tarifs', hint:'Formules ou fourchettes de prix', fields:[PR('tarifs','Formules','Formule','Prix ou fourchette',[],{h:'Laissez vide pour afficher « Sur devis ».'})]},
+          {title:'FAQ du service', hint:'Questions propres à ce service', fields:[PR('faq','Questions','Question','Réponse')]},
+          {title:'Photos', hint:'Galerie du service', fields:[IM('photo1','Photo 1'), IM('photo2','Photo 2'), IM('photo3','Photo 3')]}
+        ]},
+      categories:{label:'Catégories', single:'une catégorie', titleKey:'nom', seo:true, urlPrefix:'/proprete-services/', icon:'M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z', searchPh:'Rechercher une catégorie…', cols:['Catégorie','Services'],
+        items:cats.map((c,i)=>it('c'+(i+1),c,[this.svcList.filter(s=>s[2]===c).length+' services'],'Publié','20 oct. 2026',{slug:this.slug(c),ordre:String(i),img:catImg[c],intro:catAcc[c]})),
+        groups:[
+          {title:'Catégorie', hint:'Nom, URL et ordre', fields:[T('nom','Nom','',{req:true,max:60}), T('slug','URL','',{h:'Ne modifiez pas l’URL d’une catégorie déjà publiée.'}), T('ordre','Ordre d’affichage','0',{h:'0 = en premier.'})]},
+          {title:'Page de la catégorie', hint:'Introduction et image', fields:[X('intro','Texte d’introduction','',{rows:4}), RT('description','Description détaillée','',{rows:6}), IM('img','Image du haut de page')]}
+        ]},
+      villes:{label:'Pages villes', single:'une ville', titleKey:'nom', seo:true, urlPrefix:'/ville/', icon:'M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z', searchPh:'Rechercher une ville…', cols:['Ville','Secteur','Trajet depuis Panissières'], notice:'Le temps de trajet est indicatif : ce n’est pas un délai d’intervention.',
+        items:this.villesData.map((v,i)=>it('v'+(i+1),v[0],[v[1],v[2]],i===10?'Brouillon':'Publié',(20-i)+' oct. 2026',{secteur:v[1],trajet:v[2],img:I(['i11','i5','i7','i8','i4','i9'][i%6]),accroche:i<7?'Une équipe basée à proximité, qui connaît le tissu local de '+v[0]+'.':''})),
+        groups:[
+          {title:'Identité', hint:'Nom, secteur et trajet', fields:[T('nom','Nom de la commune','',{req:true}), SEL('secteur','Secteur',['Secteur central','Plaine du Forez','Monts du Lyonnais','Ouest lyonnais / Beaujolais','Roannais','Agglomération stéphanoise']), T('trajet','Temps de trajet depuis Panissières','',{h:'Indicatif. N’affichez pas de délai d’intervention garanti.'})]},
+          {title:'Haut de page', hint:'Image et accroche locale', fields:[IM('img','Image du haut de page'), X('accroche','Accroche locale','',{max:200,h:'Une phrase propre à la commune : contexte local, type de clientèle, particularité réelle.'})]},
+          {title:'Contenu local', hint:'Textes propres à la commune', fields:[RT('tissu','Le tissu local'), X('pourquoi','Pourquoi ASPEO ici','',{rows:4}), X('pratique','Infos pratiques (accès, stationnement…)','',{rows:3})]},
+          {title:'Exemple de chantier', hint:'Facultatif', fields:[T('caseT','Titre'), X('caseX','Description','',{rows:4}), TG('caseOk','Chantier réel vérifié',false,{onT:'Oui, chantier réel : afficher le bloc',offT:'Non : le bloc n’est pas affiché'})]},
+          {title:'Liens', hint:'Communes voisines et services', fields:[CH('voisines','Communes voisines',villeNames), CH('svcs','Services mis en avant',svcNames)]}
+        ]},
+      realisations:{label:'Réalisations', single:'une réalisation', titleKey:'titre', seo:true, urlPrefix:'/realisations/', icon:'M4 8h3l2-3h6l2 3h3v11H4zM12 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6z', searchPh:'Rechercher une réalisation…', cols:['Réalisation','Service','Commune'],
+        items:[
+          it('r1',realTitles[0],['Bureaux & sièges sociaux','Montbrison'],'Publié','28 oct. 2026',{svc:svcNames[0],commune:'Montbrison',img:I('i8'),facts:[['Surface','1 200 m²'],['Fréquence','5 jours sur 7']]},true),
+          it('r2',realTitles[1],['Syndrome de Diogène','Secteur de Feurs'],'Publié','21 oct. 2026',{svc:svcNames[10],commune:'Secteur de Feurs',anon:true,img:I('i10')},true),
+          it('r3',realTitles[2],['Fin de chantier','Andrézieux-Bouthéon'],'Publié','14 oct. 2026',{svc:svcNames[7],commune:'Andrézieux-Bouthéon',img:I('i7')},true),
+          it('r4',realTitles[3],['Bases de vie','Loire'],'Brouillon','10 oct. 2026',{svc:svcNames[8],commune:'Loire',img:I('i6')},true),
+          it('r5',realTitles[4],['Lavage de vitres','Saint-Étienne'],'Publié','2 oct. 2026',{svc:svcNames[5],commune:'Saint-Étienne',img:I('i3')},true),
+          it('r6',realTitles[5],['Panneaux photovoltaïques','Chazelles-sur-Lyon'],'Publié','26 sept. 2026',{svc:svcNames[6],commune:'Chazelles-sur-Lyon',img:I('i9')},true)
+        ],
+        groups:[
+          {title:'Présentation', hint:'Titre, service, commune et client', fields:[T('titre','Titre','',{req:true,max:90}), SEL('svc','Service concerné',svcNames), T('commune','Commune'), T('client','Client'), TG('anon','Anonymiser le client',true,{onT:'Oui : nom et adresse masqués',offT:'Non : le nom du client est affiché',h:'Gardez-le activé pour les interventions sensibles ou si le client n’a pas donné son accord.'})]},
+          {title:'Le chantier', hint:'Besoin, contraintes, intervention, résultat', fields:[X('contexte','Le besoin initial','',{rows:3}), X('contraintes','Les contraintes','',{rows:3}), X('intervention','Notre intervention','',{rows:4}), X('resultat','Le résultat','',{rows:3})]},
+          {title:'Chiffres clés', hint:'Surface, durée, fréquence…', fields:[PR('facts','Chiffres','Libellé','Valeur',[],{h:'Uniquement des chiffres réels et vérifiables.'})]},
+          {title:'Photos', hint:'Photo principale, avant / après', fields:[IM('img','Photo principale'), IM('avant','Photo avant (facultatif)'), IM('apres','Photo après (facultatif)'), T('legende','Légende des photos'), TG('photosOk','Photos autorisées par le client',false,{onT:'Oui',offT:'Non : photos non publiées'})]}
+        ]},
+      articles:{label:'Articles Médias', single:'un article', titleKey:'titre', seo:true, urlPrefix:'/', icon:'M4 5h13v14H6a2 2 0 0 1-2-2zM17 9h3v8a2 2 0 0 1-2 2M8 9h5M8 13h5', searchPh:'Rechercher un article…', cols:['Article','Catégorie','Date'],
+        items:[
+          it('a1','Humidité : les signes à repérer avant qu’il ne soit trop tard',['Autres services','12 janv. 2026'],'Publié','12 janv. 2026',{cat:'Autres services',date:'12 janv. 2026',img:I('i10')},true),
+          it('a2','Syndrome de Diogène : comment accompagner un proche',['Interventions spécialisées','4 déc. 2025'],'Publié','4 déc. 2025',{cat:'Interventions spécialisées',date:'4 déc. 2025',img:I('i12')},true),
+          it('a3','Bureaux : à quelle fréquence faire nettoyer vos locaux ?',['Nettoyage professionnel','18 nov. 2025'],'Publié','18 nov. 2025',{cat:'Nettoyage professionnel',date:'18 nov. 2025',img:I('i8')},true),
+          it('a4','Fin de chantier : préparer la réception des travaux',['Nettoyage professionnel','—'],'Brouillon','29 oct. 2026',{cat:'Nettoyage professionnel',img:I('i7')},true)
+        ],
+        groups:[
+          {title:'Article', hint:'Titre, URL, catégorie, image', fields:[T('titre','Titre','',{req:true,max:90}), T('slug','URL de l’article','',{h:'Ne modifiez pas l’URL d’un article déjà publié : il perdrait son référencement.'}), SEL('cat','Catégorie',['Nettoyage professionnel','Interventions spécialisées','Autres services','Conseils']), T('date','Date de publication'), IM('img','Image principale'), X('extrait','Extrait','',{max:160,rows:3,h:'Affiché sur la liste des articles.'})]},
+          {title:'Contenu', hint:'Texte de l’article', fields:[RT('contenu','Texte','',{rows:14})]},
+          {title:'Liens', hint:'Services liés en bas d’article', fields:[CH('svcs','Services liés',svcNames)]}
+        ]},
+      presse:{label:'Presse', single:'une parution', titleKey:'titre', seo:true, urlPrefix:'/presse/', icon:'M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3zM5 11a7 7 0 0 0 14 0M12 18v3', searchPh:'Rechercher une parution…', cols:['Parution','Média','Date'],
+        items:[
+          it('p1','La jeune entreprise de propreté qui recrute à Panissières',['Quotidien régional','sept. 2026'],'Publié','30 sept. 2026',{media:'Quotidien régional',date:'sept. 2026'},true),
+          it('p2','Diogène : ces équipes qui redonnent un logement digne',['Télévision régionale','juin 2026'],'Publié','12 juin 2026',{media:'Télévision régionale',type:'Reportage TV',date:'juin 2026'},true),
+          it('p3','Entreprendre dans les Monts du Lyonnais',['Radio locale','mars 2026'],'Brouillon','8 mars 2026',{media:'Radio locale',type:'Radio',date:'mars 2026'},true)
+        ],
+        groups:[
+          {title:'Parution', hint:'Titre, média, date et lien', fields:[T('titre','Titre','',{req:true,max:100}), T('media','Nom du média'), SEL('type','Type',['Article','Reportage TV','Radio','Interview']), T('date','Date'), T('lien','Lien vers la parution','',{p:'https://…'}), IM('img','Visuel ou logo du média')]},
+          {title:'Résumé', hint:'Résumé et texte complet', fields:[X('extrait','Résumé','',{max:200,rows:3}), RT('contenu','Texte complet (facultatif)','',{rows:8})]}
+        ]},
+      avis:{label:'Avis clients', single:'un avis', titleKey:'auteur', seo:false, icon:'M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z', searchPh:'Rechercher un avis…', cols:['Auteur','Activité · commune','Note','Source'], notice:'Copiez les avis tels qu’ils ont été publiés : ne modifiez ni le texte, ni l’activité ou la commune de l’auteur.',
+        items:[
+          it('o1','Hervé Aguero',['Particulier · Montbrison','5/5','Google'],'Publié','2 oct. 2026',{activite:'Particulier · Montbrison',source:'Google'}),
+          it('o2','Alix Bourdon',['Bureaux · Saint-Étienne','5/5','Google'],'Publié','20 sept. 2026',{activite:'Bureaux · Saint-Étienne',source:'Google'}),
+          it('o3','Kévin Aubry',['Restaurant · Vaugneray','5/5','Google'],'Publié','8 juin 2024',{activite:'Restaurant · Vaugneray',source:'Google',date:'8 juin 2024'}),
+          it('o4','Émile Prevot',['Commerce','5/5','Google'],'Publié','14 mai 2024',{activite:'Commerce',source:'Google'})
+        ],
+        groups:[
+          {title:'Avis', hint:'Auteur, note et texte', fields:[T('auteur','Nom affiché','',{req:true}), T('activite','Activité · commune','',{h:'Uniquement si l’auteur l’indique lui-même.'}), SEL('note','Note',['5','4','3','2','1']), T('date','Date de l’avis'), X('texte','Texte de l’avis','',{rows:5,h:'Copiez le texte tel quel.'})]},
+          {title:'Source', hint:'Origine de l’avis', fields:[SEL('source','Source',['Google','Facebook','Saisi manuellement']), T('lien','Lien vers l’avis original','',{p:'https://…'}), TG('verifie','Avis vérifié sur la plateforme source',false)]},
+          {title:'Affichage', hint:'Où afficher cet avis', fields:[CH('pages','Afficher sur',['Accueil','Page Avis clients',...svcNames],['Page Avis clients'])]}
+        ]},
+      emplois:{label:'Offres d’emploi', single:'une offre', titleKey:'poste', seo:true, urlPrefix:'/nous-rejoindre/', icon:'M4 8h16v11H4zM9 8V5h6v3M4 13h16', searchPh:'Rechercher une offre…', cols:['Poste','Contrat','Lieu'],
+        items:[
+          it('e1','Agent(e) de propreté · bureaux',['CDI · temps partiel','Saint-Étienne'],'Publié','25 oct. 2026',{contrat:'CDI',temps:'Temps partiel',lieu:'Saint-Étienne'},true),
+          it('e2','Agent(e) d’intervention spécialisée',['CDI · temps plein','Panissières'],'Publié','19 oct. 2026',{contrat:'CDI',lieu:'Panissières'},true),
+          it('e3','Chef(fe) d’équipe propreté',['CDI · temps plein','Loire'],'Brouillon','11 oct. 2026',{contrat:'CDI',lieu:'Loire'},true)
+        ],
+        groups:[
+          {title:'Le poste', hint:'Intitulé, contrat, lieu', fields:[T('poste','Intitulé du poste','',{req:true,max:80}), SEL('contrat','Type de contrat',['CDI','CDD','Intérim','Alternance','Stage']), SEL('temps','Temps de travail',['Temps plein','Temps partiel']), T('lieu','Lieu'), T('horaires','Horaires'), T('salaire','Rémunération (facultatif)')]},
+          {title:'Description', hint:'Missions, profil, avantages', fields:[RT('missions','Missions','',{rows:8}), X('profil','Profil recherché','',{rows:4}), X('avantages','Avantages','',{rows:3})]},
+          {title:'Candidature', hint:'Réception des candidatures', fields:[T('email','E-mail qui reçoit les candidatures','contact@aspeo.fr'), TG('ouvert','Offre ouverte aux candidatures',true,{onT:'Oui',offT:'Non : offre pourvue'})]}
+        ]},
+      faq:{label:'FAQ', single:'une question', titleKey:'question', seo:false, icon:'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.7M12 17h.01', searchPh:'Rechercher une question…', cols:['Question','Affichée sur'], notice:'Une réponse ne doit jamais contredire les Engagements (Informations de l’entreprise > Engagements).',
+        items:faqQ.map((q,i)=>it('f'+(i+1),q,[['Accueil, Contact','Accueil','Pages villes','Accueil','Nettoyage professionnel','Grands Comptes'][i]],'Publié','15 oct. 2026',{reponse:['Oui, le devis est gratuit et sans engagement. Il est envoyé sous 24h après la visite.','Notre astreinte est joignable 7j/7 pour les situations qui l’exigent.','Plaine du Forez, Monts du Lyonnais, Roannais, Saint-Étienne et ouest lyonnais.','Nous privilégions des produits écolabellisés, fiches transmises sur demande.','Oui, nous intervenons en dehors de vos horaires d’ouverture.','Oui : Kbis, attestations, assurance et mémoire technique sur demande.'][i]})),
+        groups:[
+          {title:'Question', hint:'Question et réponse', fields:[T('question','Question','',{req:true,max:120}), X('reponse','Réponse','',{rows:5})]},
+          {title:'Affichage', hint:'Pages où la question apparaît', fields:[CH('pages','Afficher sur',['Accueil','Contact','Grands Comptes','Nettoyage professionnel','Interventions spécialisées','Toutes les pages services','Pages villes']), T('ordre','Ordre d’affichage','1')]}
+        ]}
+    };
+    const settings={
+      identite:{label:'Logo & identité', notice:'Le logo et les icônes sont repris automatiquement sur toutes les pages du site.', fields:[IM('logoColor','Logo couleur · en-tête du site','assets/logo-aspeo-couleur.svg',{h:'SVG ou PNG à fond transparent, affiché sur fond blanc.'}), IM('logoWhite','Logo blanc · pied de page','assets/logo-aspeo-blanc.svg',{h:'Affiché sur le fond bleu du pied de page.'}), IM('icon','Icône du site · onglet du navigateur','assets/aspeo-icone.svg',{h:'Format carré, 512 × 512 px minimum.'}), IM('og','Image de partage · réseaux sociaux',I('i1'),{h:'Image affichée quand une page est partagée. Format conseillé : 1200 × 630 px.'})]},
+      entreprise:{label:'Entreprise & coordonnées', fields:[T('nom','Nom de l’entreprise','ASPEO'), T('siret','SIRET','',{p:'À compléter'}), T('adresse','Adresse','43 Rue de la République'), T('cp','Code postal','42360'), T('ville','Ville','Panissières'), T('tel','Téléphone','04 28 53 00 02',{h:'Repris dans l’en-tête, les boutons « Appeler », le pied de page et la fiche Google.'}), T('email','E-mail','contact@aspeo.fr'), X('zone','Zone desservie','Plaine du Forez, Monts du Lyonnais, Roannais, agglomérations de Saint-Étienne et de Lyon',{rows:2})]},
+      horaires:{label:'Horaires', fields:[PR('horaires','Horaires d’ouverture','Jours','Horaires',[['Lundi – Jeudi','7h30 – 12h00 / 13h00 – 18h30'],['Vendredi','8h00 – 16h00'],['Samedi – Dimanche','Fermé']],{h:'Affichés sur la page Contact, dans le pied de page et transmis à Google.'})]},
+      reseaux:{label:'Réseaux & avis Google', fields:[T('fb','Facebook','https://www.facebook.com/aspeonettoyage'), T('ig','Instagram','https://www.instagram.com/aspeo_nettoyage'), T('li','LinkedIn','https://www.linkedin.com/company/aspeo_nettoyage/'), T('gmb','Fiche Google','',{p:'https://g.page/…'}), T('gavis','Lien pour laisser un avis Google','',{p:'https://g.page/r/…/review',h:'Utilisé par les boutons « Laissez-nous un avis ».'}), T('gnote','Note Google affichée','5,0'), T('gnb','Nombre d’avis Google','22',{h:'À mettre à jour, ou automatiquement si la fiche Google est reliée.'})]},
+      chiffres:{label:'Chiffres clés', fields:[PR('chiffres','Chiffres clés','Valeur','Libellé',[['150+','clients accompagnés'],['100 %','de clients satisfaits'],['2024','année de création']],{h:'Affichés sur l’accueil. N’indiquez que des chiffres que vous pouvez justifier.'})]},
+      engagements:{label:'Engagements', notice:'Ces textes sont repris automatiquement sur l’accueil, les pages services, la FAQ et le formulaire de contact : une seule modification met tout le site à jour.', fields:[T('devis','Délai du devis','Devis gratuit sous 24h après la visite',{max:60}), T('rappel','Rappel après une demande','Nous vous rappelons rapidement',{max:60}), TG('urgence','Afficher les urgences 7j/7',true,{onT:'Oui',offT:'Non'}), T('urgenceTxt','Texte urgences','Urgences 7j/7',{max:40}), X('urgencePerim','Périmètre des urgences','Situations délicates : Diogène, logements insalubres, remise en état urgente.',{rows:2})]}
+    };
+    const seoGlobal=[TG('index','Autoriser Google à indexer le site',true,{onT:'Oui',offT:'Non : site masqué de Google'})];
+    this._cfg={pages,sections,colls,settings,seoGlobal,svcNames,genericFor};
+    return this._cfg;
+  }
+
+  defaultMenus(){ const r=(label,link,sub='')=>({id:Math.random().toString(36).slice(2,8),label,link,sub,vis:true}); return {
+    main:[r('Accueil','/'),r('Propreté & Services','/proprete-services','Sous-menu généré depuis les catégories et services publiés'),r('Notre histoire','/a-propos'),r('Médias','/medias','Sous-menu : Articles, Presse, Réalisations'),r('Contact','/contact')],
+    top:[r('Nous rejoindre','/nous-rejoindre'),r('Grands Comptes','/grands-comptes'),r('Téléphone','tel','Numéro des Informations de l’entreprise')],
+    footer:[r('Notre histoire','/a-propos'),r('Grands Comptes','/grands-comptes'),r('Nous rejoindre','/nous-rejoindre'),r('Avis clients','/avis'),r('Mentions légales','/mentions-legales'),r('Confidentialité','/politique-de-confidentialite'),r('CGU','/conditions-generales-d-utilisation'),r('Cookies','/politique-des-cookies')]
+  }; }
+
+  renderVals(){
+    const S=this.state, C=this.cfg(), narrow=S.vw<960, view=S.view;
+    const BADGE={pub:{label:'Publié',bg:'#dcfce7',fg:'#15803d'},draft:{label:'Brouillon',bg:'#f4f4f5',fg:'#3f3f46'},nonpub:{label:'Modifications non publiées',bg:'#ffedd5',fg:'#c2410c'}};
+    const LB={'Nouveau':{label:'Nouveau',bg:'#ffedd5',fg:'#c2410c'},'En cours':{label:'En cours',bg:'#dbeafe',fg:'#1d4ed8'},'Devis envoyé':{label:'Devis envoyé',bg:'#ede9fe',fg:'#6d28d9'},'Clôturé':{label:'Clôturé',bg:'#f4f4f5',fg:'#3f3f46'}};
+    const stKey=(dk,base)=>{ const st=S.statusOv[dk]||base; if(st==='Publié'&&S.dirty[dk]) return 'nonpub'; return st==='Publié'?'pub':'draft'; };
+    const imgById=id=>this.images.find(x=>x.id===id);
+
+    const field=(prefix,f,defs,dk)=>{
+      const key=prefix+'.'+f.k; const base=(defs&&defs[f.k]!==undefined)?defs[f.k]:f.d; const v=(key in S.vals)?S.vals[key]:base;
+      const put=nv=>this.setState(s=>({vals:{...s.vals,[key]:nv},dirty:{...s.dirty,[dk]:true}}));
+      const str=typeof v==='string'?v:''; const arr=Array.isArray(v)?v:[]; const len=str.length;
+      return { label:f.l, req:!!f.req, help:f.h||'', hasHelp:!!f.h, placeholder:f.p||'',
+        isText:f.t==='text', isTextarea:f.t==='textarea', isRich:f.t==='rich', isSelect:f.t==='select', isChips:f.t==='chips', isToggle:f.t==='toggle', isImage:f.t==='image', isPairs:f.t==='pairs',
+        rows:f.rows||(f.t==='rich'?8:3), value:str, onInput:e=>put(e.target.value),
+        hasCounter:!!f.max, counter:len+' / '+f.max, counterColor:(f.max&&len>f.max)?'#c2410c':'#6b7280',
+        options:(f.o||[]).map(o=>({label:o,value:o})),
+        chips:f.t==='chips'?(f.o||[]).map(o=>{ const on=arr.includes(o); return {label:o,bg:on?'#06226D':'#fff',fg:on?'#fff':'#3f3f46',border:on?'#06226D':'#e5e7eb',toggle:()=>put(on?arr.filter(x=>x!==o):[...arr,o])}; }):[],
+        on:!!v, swBg:v?'#06226D':'#d4d4d8', knob:v?'18px':'2px', flip:()=>put(!v), toggleLabel:v?(f.onT||'Oui'):(f.offT||'Non'),
+        imgUrl:(f.t==='image'&&str)?str:'data:,', thumbFit:/\.svg$|logo|icon/i.test(str+f.k)?'contain':'cover', thumbPad:/\.svg$|logo|icon/i.test(str+f.k)?'10px':'0', thumbBg:(/blanc|white/i.test(str)||f.k==='logoWhite')?'#06226D':'#f4f4f5', hasImg:f.t==='image'&&!!str, pickLabel:str?'Changer l’image':'Choisir une image', pickImage:()=>this.setState({picker:{key,dk}}), clearImage:()=>put(''),
+        pairs:f.t==='pairs'?arr.map((r,i)=>({a:r[0]||'',b:r[1]||'',onA:e=>{ const n=arr.map(x=>[...x]); n[i][0]=e.target.value; put(n); },onB:e=>{ const n=arr.map(x=>[...x]); n[i][1]=e.target.value; put(n); },remove:()=>put(arr.filter((_,j)=>j!==i))})):[],
+        addPair:()=>put([...arr,['','']]), pairA:f.pa||'', pairB:f.pb||'' };
+    };
+    const valOf=(key,def)=>(key in S.vals)?S.vals[key]:def;
+    const collItems=ck=>[...C.colls[ck].items,...(S.extra[ck]||[])].filter(x=>!S.deleted[ck+':'+x.id]);
+    const titleOf=(ck,x)=>{ const k='coll:'+ck+':'+x.id+'.'+C.colls[ck].titleKey; const v=S.vals[k]; return v ? v : (x.title||'Sans titre'); };
+    const lenB=(len,max)=> len===0 ? {label:'Manquant',bg:'#fee2e2',fg:'#b91c1c'} : len>max ? {label:len+' car. · trop long',bg:'#ffedd5',fg:'#c2410c'} : {label:len+' car.',bg:'#dcfce7',fg:'#15803d'};
+
+    const publish=(dk,label)=>()=>{ this.setState(s=>({statusOv:{...s.statusOv,[dk]:'Publié'},dirty:{...s.dirty,[dk]:false},pubAt:{...s.pubAt,[dk]:'à l’instant'}})); this.say('« '+label+' » est publié sur le site.'); };
+    const saveDraft=(dk)=>()=>{ this.say('Brouillon enregistré. Il n’est pas encore visible sur le site.'); };
+    const unpublish=(dk,label)=>()=>{ this.setState(s=>({statusOv:{...s.statusOv,[dk]:'Brouillon'}})); this.say('« '+label+' » n’est plus visible sur le site.'); };
+
+    // NAV
+    const counts={ leads:this.leads.filter(l=>(S.leadStatus[l.id]||l.status)==='Nouveau').length };
+    const curNav= view==='collection'||view==='item' ? 'coll:'+S.coll : view==='pageEdit' ? 'pages' : (view==='settings'&&S.setTab==='identite') ? 'identite' : view;
+    const ni=(id,label,icon,go,isNew,count)=>({id,label,icon,go,isNew:false,hasCount:!!count,count:count||0,bg:curNav===id?'#ececee':'transparent',fw:curNav===id?600:400});
+    const toColl=ck=>()=>this.go('collection',{coll:ck});
+    const navGroups=[
+      {label:'Général', items:[ni('dashboard','Tableau de bord','M3 3h7v9H3zM14 3h7v5h-7zM14 12h7v9h-7zM3 16h7v5H3z',()=>this.go('dashboard')), ni('leads','Demandes de devis','M3 13l3-8h12l3 8v6H3zM3 13h5l1 3h6l1-3h5',()=>this.go('leads'),false,counts.leads)]},
+      {label:'Site web', items:[ni('pages','Pages','M3 4h18v16H3zM3 9h18M9 9v11',()=>this.go('pages')), ni('coll:services','Services',C.colls.services.icon,toColl('services')), ni('coll:categories','Catégories',C.colls.categories.icon,toColl('categories')), ni('coll:villes',C.colls.villes.label,C.colls.villes.icon,toColl('villes'))]},
+      {label:'Contenus', items:['realisations','articles','presse','avis','emplois','faq'].map(ck=>ni('coll:'+ck,C.colls[ck].label,C.colls[ck].icon,toColl(ck)))},
+      {label:'Réglages', items:[ni('identite','Logo & identité','M4 5h16v14H4zM8 15l3-3 2 2 3-4 2 5',()=>this.go('settings',{setTab:'identite'})), ni('settings','Informations de l’entreprise','M4 21V5l8-2v18M12 7l8 3v11M8 9h.01M8 13h.01M8 17h.01M16 13h.01M16 17h.01',()=>this.go('settings',{setTab:'entreprise'})), ni('menu','Menu & pied de page','M4 6h16M4 12h16M4 18h10',()=>this.go('menu')), ni('seo','Référencement','M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM20 20l-4-4',()=>this.go('seo')), ni('images','Bibliothèque d’images','M4 5h16v14H4zM4 16l4-4 3 3 4-5 5 6M9 10a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z',()=>this.go('images'))]},
+      {label:'Administration', items:[ni('security','Sécurité','M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z',()=>this.go('security')), ni('users','Utilisateurs','M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21c0-3.9 3.1-7 7-7s7 3.1 7 7M16 3.5a4 4 0 0 1 0 7.5M22 21c0-3-1.8-5.6-4.5-6.6',()=>this.go('users'))]}
+    ];
+
+    let title='', desc='', hasCrumb=false, crumbLabel='', crumbGo=null, hasAdd=false, addLabel='', addAction=null, titleBadge=null;
+    let ed=null, coll=null, collRows=[], collTabs=[], collCount='';
+
+    // EDITOR builder
+    const buildEditor=({dk,groups,defs,prefix,base,upd,seo,canDelete,delObj,single,notice,firstOnly,label,kind,pageKey,itemTitle,collLabel,titleKey})=>{
+      const st=stKey(dk,base);
+      const g2=groups.map((g,i)=>{ const ok=dk+':'+i; const open=(ok in S.openSec)?S.openSec[ok]:(firstOnly?i===0:true); return {n:i+1,title:g.title,hint:g.hint||'',open,rot:open?'rotate(180deg)':'none',toggle:()=>this.setState(s=>({openSec:{...s.openSec,[ok]:!open}})),fields:g.fields.map(f=>field(prefix(i),f,defs,dk))}; });
+      let seoFields=[], seoTitle='', seoDesc='', seoUrl='';
+      if(seo){ const sp='seo:'+dk; seoFields=[field(sp,{k:'t',l:'Titre pour Google',t:'text',d:seo.t,max:60},{},dk), field(sp,{k:'d',l:'Description pour Google',t:'textarea',d:seo.d,max:160,rows:3},{},dk)]; seoTitle=valOf(sp+'.t',seo.t)||'(titre manquant)'; seoDesc=valOf(sp+'.d',seo.d)||'(description manquante : Google affichera un extrait de la page)'; seoUrl='www.aspeo.fr'+seo.url; }
+
+      const raw=groups.map((g,i)=>g.fields.map(f=>{ const key=prefix(i)+'.'+f.k; const b=(defs&&defs[f.k]!==undefined)?defs[f.k]:f.d; return {f,v:(key in S.vals)?S.vals[key]:b}; }));
+      const SKIP=['slug','lien','email','ordre','gnb','dest','siret','date'];
+      const BASE={isHero:false,isMosaic:false,isBlock:false,titre:'',kicker:'',hasKicker:false,sous:'',hasSous:false,img:'data:,',btn:'',hasBtn:false,images:[],paras:[],cards:[],tags:[],meta:'',hasMeta:false,hasTitle:false,hasImages:false,hasCards:false,hasTags:false,isEmpty:false};
+      const byL=list=>k=>{ const x=list.find(z=>z.f.k===k); return x&&typeof x.v==='string'?x.v:''; };
+      const block=(gi,title,list)=>{ const by=byL(list);
+        const paras=list.filter(z=>(z.f.t==='textarea'||z.f.t==='rich')&&z.v&&!SKIP.includes(z.f.k)).map(z=>({hasH:kind==='item',h:z.f.l,t:z.v}));
+        const images=list.filter(z=>z.f.t==='image'&&z.v).map(z=>z.v).slice(0,4);
+        const cards=list.filter(z=>z.f.t==='pairs').flatMap(z=>(z.v||[]).filter(r=>r[0]||r[1]).map(r=>({a:r[0]||'',b:r[1]||''})));
+        const tags=list.filter(z=>z.f.t==='chips').flatMap(z=>z.v||[]);
+        const meta=list.filter(z=>z.f.t==='select'||(z.f.t==='text'&&!['titre','kicker','question','nom','poste','auteur','legende'].includes(z.f.k)&&!/^btn|^c\dt$/.test(z.f.k)&&!SKIP.includes(z.f.k))).map(z=>z.v).filter(Boolean).join(' · ');
+        const btn=(list.find(z=>/^btn/.test(z.f.k))||{}).v||'';
+        const titre=by('titre')||by('question')||title; const kicker=by('kicker');
+        const isEmpty=!paras.length&&!images.length&&!cards.length&&!tags.length&&!meta&&!btn;
+        return {...BASE,gi,isBlock:true,titre,hasTitle:!!titre,kicker,hasKicker:!!kicker,meta,hasMeta:!!meta,paras,images,hasImages:!!images.length,cards,hasCards:!!cards.length,tags,hasTags:!!tags.length,btn,hasBtn:!!btn,isEmpty};
+      };
+      let pv=[];
+      if(kind==='page'){
+        pv=raw.map((list,i)=>{ const by=byL(list);
+          if(i===0&&pageKey==='accueil') return {...BASE,gi:0,isMosaic:true,titre:by('titre'),kicker:by('kicker'),hasKicker:!!by('kicker'),sous:by('sous'),hasSous:!!by('sous'),btn:by('btn1'),hasBtn:!!by('btn1'),images:['m1','m2','m3','m4'].map(by).filter(Boolean)};
+          if(i===0&&list.some(z=>z.f.k==='img')) return {...BASE,gi:0,isHero:true,titre:by('titre'),kicker:by('kicker'),hasKicker:!!by('kicker'),sous:by('sous'),hasSous:!!by('sous'),img:by('img')||'data:,'};
+          return block(i,groups[i].title,list); });
+      } else {
+        const flat=raw.flat(); const fby=byL(flat); const heroKeys=['img','accroche','extrait',titleKey];
+        const sous=fby('accroche')||fby('extrait');
+        pv=[{...BASE,gi:0,isHero:true,titre:itemTitle||'Sans titre',kicker:collLabel||'',hasKicker:!!collLabel,sous,hasSous:!!sous,img:fby('img')||'data:,'}];
+        raw.forEach((list,i)=>{ const l2=list.filter(z=>!heroKeys.includes(z.f.k)&&z.f.t!=='toggle'); if(!l2.length) return; const b=block(i,groups[i].title,l2); if(!b.isEmpty) pv.push(b); });
+      }
+      let alt=0;
+      pv=pv.map(s=>{ const open=!!(g2[s.gi]&&g2[s.gi].open); const bg=s.isBlock?((alt++)%2?'#f5f8fd':'#fff'):'#fff'; return {...s,bg,isOpen:open,ring:open?'inset 0 0 0 2px #FF5C00':'none',focus:()=>this.setState(st=>({openSec:{...st.openSec,[dk+':'+s.gi]:true},edMode:st.edMode==='preview'?'form':st.edMode}))}; });
+      const imageFields=groups.flatMap((g,i)=>g.fields.filter(f=>f.t==='image').map(f=>({section:(i+1)+'. '+g.title,f:field(prefix(i),f,defs,dk)})));
+      return { groups:g2, pv, imageFields, noImages:!imageFields.length, whatLabel:kind==='page'?'cette page':'ce contenu', badge:BADGE[st], pubMeta: S.pubAt[dk]?'Dernière publication : '+S.pubAt[dk]:(st==='draft'?'Jamais publié · modifié le '+upd:'Dernière publication : '+upd), publish:publish(dk,label), saveDraft:saveDraft(dk), preview:()=>this.setState({edMode:'preview',edTab:'content'}), canUnpublish:st!=='draft', unpublish:unpublish(dk,label),
+        hasSeo:!!seo, seoFields, seoTitle, seoDesc, seoUrl, canDelete:!!canDelete, single:single||'', askDelete:()=>this.setState({confirm:delObj}), hasNotice:!!notice, notice:notice||'' };
+    };
+
+    if(view==='dashboard'){ title='Dashboard'; }
+    if(view==='pages'){ title='Pages'; desc='Modifiez les textes et les images de chaque page. La mise en page reste fixe : rien ne peut être cassé.'; hasAdd=true; addLabel='Ajouter une page'; addAction=()=>{ const key='np'+Date.now(); this.setState(s=>({extraPages:[...(s.extraPages||[]),{key,title:'Nouvelle page',url:'/nouvelle-page',status:'Brouillon',upd:'à l’instant',seoT:'',seoD:'',custom:true}]})); this.go('pageEdit',{pageKey:key}); }; }
+    if(view==='pageEdit'){
+      const p=[...C.pages,...(S.extraPages||[])].find(x=>x.key===S.pageKey)||C.pages[0]; const dk='page:'+p.key;
+      title=p.title; hasCrumb=true; crumbLabel='Pages'; crumbGo=()=>this.go('pages');
+      ed=buildEditor({dk,groups:C.sections[p.key]||C.genericFor(p),canDelete:p.key!=='accueil',delObj:{kind:'page',key:p.key,title:p.title},defs:{},prefix:i=>dk+'.s'+i,base:p.status,upd:p.upd,seo:{t:p.seoT,d:p.seoD,url:p.url},single:'',notice:'Chaque section correspond à un bloc de la page. Modifiez les textes et les images, puis cliquez sur « Publier ».',firstOnly:true,label:p.title,kind:'page',pageKey:p.key});
+      titleBadge=ed.badge;
+    }
+    if(view==='collection'){
+      const c=C.colls[S.coll]; title=c.label; hasAdd=true; addLabel='Ajouter '+c.single;
+      addAction=()=>{ const id='n'+Date.now(); const cells=c.cols.slice(1).map(()=>'—'); this.setState(s=>({extra:{...s.extra,[S.coll]:[...(s.extra[S.coll]||[]),{id,title:'',cells,status:'Brouillon',upd:'à l’instant',v:{},demo:false}]}})); this.go('item',{coll:S.coll,itemId:id}); };
+      const q=this.slug(S.collQuery);
+      const all=collItems(S.coll).map(x=>{ const dk='coll:'+S.coll+':'+x.id; const st=stKey(dk,x.status); return {x,dk,st}; });
+      const rows=all.filter(r=>(S.collTab==='Tous'||(S.collTab==='Publiés'?r.st!=='draft':r.st==='draft'))&&(!q||this.slug(titleOf(S.coll,r.x)+' '+r.x.cells.join(' ')).includes(q)));
+      const ck=S.coll; collRows=rows.map(r=>{ const t=titleOf(ck,r.x); const stop=e=>{ e&&e.stopPropagation&&e.stopPropagation(); }; return {title:t,cells:r.x.cells,demo:!!r.x.demo,badge:BADGE[r.st],upd:r.x.upd,open:()=>this.go('item',{coll:ck,itemId:r.x.id}),edit:e=>{ stop(e); this.go('item',{coll:ck,itemId:r.x.id}); },toggleLabel:r.st==='draft'?'Publier':'Dépublier',toggle:e=>{ stop(e); (r.st==='draft'?publish:unpublish)(r.dk,t)(); },canDelete:true,del:e=>{ stop(e); this.setState({confirm:{kind:'coll',ck,id:r.x.id,title:t}}); }}; });
+      collTabs=['Tous','Publiés','Brouillons'].map(t=>{ const on=S.collTab===t; return {label:t,pick:()=>this.setState({collTab:t}),bg:on?'#fff':'transparent',fg:on?'#0a0a0a':'#6b7280',shadow:on?'0 1px 2px rgba(0,0,0,.08)':'none'}; });
+      collCount=rows.length+' sur '+all.length;
+      coll={cols:c.cols,searchPh:c.searchPh,hasDemo:c.items.some(x=>x.demo),hasNotice:!!c.notice,notice:c.notice||''};
+    }
+    const confirmTitle=S.confirm?S.confirm.title:'';
+    if(view==='item'){
+      const c=C.colls[S.coll]; const x=collItems(S.coll).find(i=>i.id===S.itemId)||collItems(S.coll)[0]; const dk='coll:'+S.coll+':'+x.id;
+      const t=titleOf(S.coll,x); title=x.title||S.vals[dk+'.'+c.titleKey]?t:'Nouveau · '+c.label; hasCrumb=true; crumbLabel=c.label; crumbGo=()=>this.go('collection',{coll:S.coll});
+      const defs={[c.titleKey]:x.title,slug:this.slug(x.title),...x.v};
+      const seoT=(t&&t!=='Sans titre'?t:'')+(S.coll==='villes'?'':'')+(t?' | ASPEO':'');
+      ed=buildEditor({dk,groups:c.groups,defs,prefix:()=>dk,base:x.status,upd:x.upd,seo:c.seo?{t:S.coll==='villes'?'Nettoyage à '+t+' | ASPEO':seoT,d:x.v.accroche||x.v.extrait||'',url:(c.urlPrefix||'/')+this.slug(t)}:null,canDelete:true,single:c.single,notice:x.demo?'Contenu d’exemple de la maquette : remplacez-le par un contenu réel ou supprimez-le.':'',firstOnly:false,label:t,delObj:{kind:'coll',ck:S.coll,id:x.id,title:t},kind:'item',itemTitle:t,collLabel:c.label,titleKey:c.titleKey});
+      titleBadge=ed.badge;
+    }
+
+    // SETTINGS
+    const tab=C.settings[S.setTab];
+    const setFields= view==='settings' ? tab.fields.map(f=>field('settings.'+S.setTab,f,{},'settings')) : [];
+    const setTabs=Object.keys(C.settings).filter(k=>k!=='identite').map(k=>({label:C.settings[k].label,pick:()=>this.setState({setTab:k}),fg:S.setTab===k?'#0a0a0a':'#6b7280',line:S.setTab===k?'#06226D':'transparent'}));
+    if(view==='settings'){ if(S.setTab==='identite'){ title='Logo & identité'; desc='Logos, icône et image de partage du site.'; } else { title='Informations de l’entreprise'; desc='Coordonnées, horaires, réseaux, chiffres et engagements : saisis une seule fois, repris partout sur le site.'; } }
+
+    // MENU
+    const menus=S.menus||this.defaultMenus();
+    const setMenus=fn=>this.setState(s=>({menus:fn(JSON.parse(JSON.stringify(s.menus||this.defaultMenus())))}));
+    const mkRows=bk=>menus[bk].map((r,i,a)=>({label:r.label,link:r.link,hasSub:!!r.sub,sub:r.sub,vis:r.vis,swBg:r.vis?'#06226D':'#d4d4d8',knob:r.vis?'16px':'2px',visLabel:r.vis?'Affiché':'Masqué',upOp:i===0?.35:1,downOp:i===a.length-1?.35:1,
+      onLabel:e=>{ const v=e.target.value; setMenus(m=>{ m[bk][i].label=v; return m; }); }, onLink:e=>{ const v=e.target.value; setMenus(m=>{ m[bk][i].link=v; return m; }); },
+      toggleVis:()=>setMenus(m=>{ m[bk][i].vis=!m[bk][i].vis; return m; }), remove:()=>setMenus(m=>{ m[bk].splice(i,1); return m; }),
+      up:()=>{ if(i>0) setMenus(m=>{ const t=m[bk][i]; m[bk][i]=m[bk][i-1]; m[bk][i-1]=t; return m; }); }, down:()=>{ if(i<a.length-1) setMenus(m=>{ const t=m[bk][i]; m[bk][i]=m[bk][i+1]; m[bk][i+1]=t; return m; }); } }));
+    const addRow=bk=>()=>setMenus(m=>{ m[bk].push({id:Math.random().toString(36).slice(2,8),label:'Nouveau lien',link:'/',sub:'',vis:true}); return m; });
+    const menuBlocks=[{title:'Menu principal',hint:'Liens affichés dans la barre de navigation. Le bouton « Demander un devis » est toujours affiché.',rows:mkRows('main'),add:addRow('main')},{title:'Barre du haut',hint:'Petite barre au-dessus du menu principal.',rows:mkRows('top'),add:addRow('top')},{title:'Pied de page',hint:'La colonne « Nos services » est générée automatiquement depuis les services publiés.',rows:mkRows('footer'),add:addRow('footer')}];
+    const linkOptions=[...C.pages.map(p=>({label:p.title+' ('+p.url+')',value:p.url})),{label:'Réalisations (/realisations)',value:'/realisations'},{label:'Téléphone (numéro de l’entreprise)',value:'tel'}];
+    if(view==='menu'){ title='Menu & pied de page'; desc='Renommez, réordonnez ou masquez les liens de navigation.'; }
+
+    // SEO
+    const seoAll=[
+      ...C.pages.map(p=>({dk:'page:'+p.key,name:p.title,type:'Page',url:p.url,t:p.seoT,d:p.seoD})),
+      ...this.svcList.map((s,i)=>({dk:'svc:'+s[1],name:s[0],type:'Service',url:'/proprete-services/'+s[1],t:s[0]+(s[0].length>44?'':' — Loire & Rhône')+' | ASPEO',d:i%5===3?'':s[0]+' en Loire et Rhône, devis gratuit sous 24h après la visite.'})),
+      ...collItems('villes').map(x=>({dk:'coll:villes:'+x.id,name:titleOf('villes',x),type:'Ville',url:'/ville/'+this.slug(titleOf('villes',x)),t:'Nettoyage à '+titleOf('villes',x)+' | ASPEO',d:x.v.accroche||''}))
+    ].map(r=>{ const t=valOf('seo:'+r.dk+'.t',r.t)||'', d=valOf('seo:'+r.dk+'.d',r.d)||''; const tb=lenB(t.length,60), db=lenB(d.length,160); const ok=t.length>0&&t.length<=60&&d.length>0&&d.length<=160; const miss=!t.length||!d.length; return {...r,t:t||'—',tb,db,ok,miss,edit:()=>this.setState({seoEdit:r})}; });
+    const seoRows=seoAll.filter(r=>S.seoTab==='Toutes'||(S.seoTab==='À corriger'?!r.ok:(S.seoTab==='Pages'?r.type==='Page':(S.seoTab==='Services'?r.type==='Service':r.type==='Ville'))));
+    const seoSummary=[{label:'Pages correctes',value:String(seoAll.filter(r=>r.ok).length),color:'#15803d'},{label:'Trop longues',value:String(seoAll.filter(r=>!r.ok&&!r.miss).length),color:'#c2410c'},{label:'Informations manquantes',value:String(seoAll.filter(r=>r.miss).length),color:'#b91c1c'}];
+    const seoTabs=['Toutes','À corriger','Pages','Services','Villes'].map(t=>{ const on=S.seoTab===t; return {label:t,pick:()=>this.setState({seoTab:t}),bg:on?'#fff':'transparent',fg:on?'#0a0a0a':'#6b7280',shadow:on?'0 1px 2px rgba(0,0,0,.08)':'none'}; });
+    const seoGlobal= view==='seo' ? C.seoGlobal.map(f=>field('seoGlobal',f,{},'seoGlobal')) : [];
+    let seoEd=null;
+    if(S.seoEdit){ const r=S.seoEdit; const sp='seo:'+r.dk; seoEd={name:r.name,url:r.url,fullUrl:'www.aspeo.fr'+r.url,fields:[field(sp,{k:'t',l:'Titre pour Google',t:'text',d:r.t==='—'?'':r.t,max:60,h:'50 à 60 caractères : le service, la zone, puis « | ASPEO ».'},{},r.dk), field(sp,{k:'d',l:'Description pour Google',t:'textarea',d:r.d,max:160,rows:4,h:'120 à 160 caractères : ce que la page apporte, et une incitation à cliquer.'},{},r.dk)],title:valOf(sp+'.t',r.t==='—'?'':r.t)||'(titre manquant)',desc:valOf(sp+'.d',r.d)||'(description manquante)'}; }
+    if(view==='seo'){ title='Référencement (SEO)'; desc='Titre et description affichés dans Google pour chaque page du site. Un titre ne doit pas dépasser 60 caractères, une description 160.'; }
+
+    // IMAGES
+    const altOf=im=>valOf('img:'+im.id+'.alt',im.alt);
+    const folders=['Tous','Pages','Services','Réalisations','Équipe','Logos'];
+    const imgFolders=folders.map(f=>{ const on=S.imgFolder===f; return {label:f,pick:()=>this.setState({imgFolder:f}),bg:on?'#06226D':'#fff',fg:on?'#fff':'#3f3f46',border:on?'#06226D':'#e5e7eb'}; });
+    const look=im=>{ const lg=/\.svg$/i.test(im.url); return {fit:lg?'contain':'cover',pad:lg?'14px':'0',bg:/blanc/i.test(im.url)?'#06226D':'#f4f4f5'}; };
+    const imgList=this.images.filter(im=>S.imgFolder==='Tous'||im.folder===S.imgFolder).map(im=>{ const a=altOf(im); const on=S.imgSel===im.id; return {...im,...look(im),select:()=>this.setState({imgSel:im.id}),border:on?'#06226D':'#e5e7eb',ring:on?'0 0 0 2px #06226D':'none',altLabel:a?'Texte alternatif ✓':'Texte alternatif manquant',altColor:a?'#15803d':'#c2410c'}; });
+    const sel=S.imgSel?imgById(S.imgSel):null;
+    const imgSelFields=sel?[field('img:'+sel.id,{k:'alt',l:'Texte alternatif',t:'text',d:sel.alt,max:125,h:'Décrit l’image pour Google et les personnes malvoyantes.'},{},'img:'+sel.id), field('img:'+sel.id,{k:'legende',l:'Légende (facultatif)',t:'text',d:''},{},'img:'+sel.id), field('img:'+sel.id,{k:'folder',l:'Dossier',t:'select',o:folders.slice(1),d:sel.folder},{},'img:'+sel.id)]:[];
+    if(view==='images'){ title='Bibliothèque d’images'; desc='Toutes les images du site. Ajoutez un texte alternatif à chacune : c’est utile pour Google et pour l’accessibilité.'; }
+    const pickerList=this.images.map(im=>({...im,...look(im),pick:()=>{ const p=S.picker; this.setState(s=>({vals:{...s.vals,[p.key]:im.url},dirty:{...s.dirty,[p.dk]:true},picker:null})); }}));
+
+    // LEADS
+    const leadSt=l=>S.leadStatus[l.id]||l.status;
+    const mapLead=l=>({...l,orgLabel:l.org||'Particulier',badge:LB[leadSt(l)],photosLabel:l.photos.length?l.photos.length+' photo'+(l.photos.length>1?'s':''):'—',open:()=>this.setState({leadId:l.id,view:view==='dashboard'?'dashboard':view})});
+    const leadTabs=['Toutes','Nouveau','En cours','Devis envoyé','Clôturé'].map(t=>{ const n=t==='Toutes'?this.leads.length:this.leads.filter(l=>leadSt(l)===t).length; const on=S.leadTab===t; return {label:(t==='Nouveau'?'Nouvelles':t==='Clôturé'?'Clôturées':t)+' ('+n+')',pick:()=>this.setState({leadTab:t}),bg:on?'#06226D':'#fff',fg:on?'#fff':'#3f3f46',border:on?'#06226D':'#e5e7eb'}; });
+    const leadRows=this.leads.filter(l=>S.leadTab==='Toutes'||leadSt(l)===S.leadTab).map(mapLead);
+    let lead=null, leadFields=[];
+    if(S.leadId){ const l=this.leads.find(x=>x.id===S.leadId); lead={...mapLead(l),telHref:'tel:'+l.tel.replace(/\s/g,''),mailHref:'mailto:'+l.email,hasPhotos:l.photos.length>0,noPhotos:l.photos.length===0,photos:l.photos.map(id=>imgById(id).url)};
+      leadFields=[{...field('lead:'+l.id,{k:'status',l:'Statut de la demande',t:'select',o:['Nouveau','En cours','Devis envoyé','Clôturé'],d:leadSt(l)},{},'lead:'+l.id),onInput:e=>{ const v=e.target.value; this.setState(s=>({leadStatus:{...s.leadStatus,[l.id]:v}})); },value:leadSt(l)}, field('lead:'+l.id,{k:'note',l:'Note interne',t:'textarea',d:'',rows:3,p:'Visible uniquement dans l’administration',h:'Ex. : visite prévue le…, devis n°…'},{},'lead:'+l.id)]; }
+    if(view==='leads'){ title='Demandes de devis'; desc='Toutes les demandes envoyées depuis le formulaire du site, avec leurs photos.'; }
+
+    // EXISTING
+    const svcRows=this.svcList.map(s=>({title:s[0],slug:s[1],cat:s[2]}));
+    const cats=[...new Set(this.svcList.map(s=>s[2]))];
+    if(view==='services'){ title='Services'; hasAdd=true; addLabel='Nouveau service'; addAction=()=>this.say('Écran existant : création d’un service (ServiceForm).'); }
+    let existingText='';
+    if(view==='categories'){ title='Catégories'; existingText='Gestion des catégories de services (CategoriesTable, CategoryForm) : '+cats.join(', ')+'. Aucun changement.'; }
+    if(view==='security'){ title='Sécurité'; existingText='Tableau de bord sécurité, double authentification, appareils de confiance et sessions actives : écrans existants, aucun changement.'; }
+    if(view==='users'){ title='Utilisateurs'; existingText='Liste des utilisateurs et rôles (SUPER_ADMIN, ADMIN, EDITOR, VIEWER) : écran existant, aucun changement. Tous les rôles d’administration peuvent modifier les nouveaux contenus ; VIEWER reste en lecture seule.'; }
+
+    // DASHBOARD
+    const draftCount=C.pages.filter(p=>stKey('page:'+p.key,p.status)!=='pub').length+['villes','realisations','articles','presse','emplois'].reduce((n,ck)=>n+collItems(ck).filter(x=>stKey('coll:'+ck+':'+x.id,x.status)!=='pub').length,0);
+    const missingAlt=this.images.filter(im=>!altOf(im)).length;
+    const stats=[
+      {label:'Demandes à traiter',value:String(counts.leads),hint:'nouvelles demandes de devis',color:'#c2410c',go:()=>this.go('leads',{leadTab:'Nouveau'})},
+      {label:'En attente de publication',value:String(draftCount),hint:'brouillons et modifications',color:'#0a0a0a',go:()=>this.go('pages')},
+      {label:'Référencement à corriger',value:String(seoAll.filter(r=>!r.ok).length),hint:'titres ou descriptions',color:'#0a0a0a',go:()=>this.go('seo',{seoTab:'À corriger'})},
+      {label:'Images sans texte alternatif',value:String(missingAlt),hint:'à compléter',color:'#0a0a0a',go:()=>this.go('images')}
+    ];
+    const activity=[{ini:'AA',who:'Admin ASPEO',what:'a publié la page',obj:'Accueil',when:'il y a 2 h'},{ini:'ED',who:'Éditeur',what:'a modifié la ville',obj:'Feurs',when:'hier'},{ini:'AA',who:'Admin ASPEO',what:'a ajouté la réalisation',obj:'Siège social de 1 200 m²',when:'il y a 3 jours'},{ini:'ED',who:'Éditeur',what:'a mis à jour',obj:'Informations de l’entreprise',when:'il y a 5 jours'}];
+    const shortcuts=[{label:'Modifier la page d’accueil',go:()=>this.go('pageEdit',{pageKey:'accueil'})},{label:'Ajouter une réalisation',go:()=>this.go('collection',{coll:'realisations'})},{label:'Publier un article',go:()=>this.go('collection',{coll:'articles'})},{label:'Mettre à jour les horaires',go:()=>this.go('settings',{setTab:'horaires'})}];
+
+    const secOf=p=>C.sections[p.key]||C.genericFor(p);
+    const thumbOf=p=>{ const secs=secOf(p); const f=secs[0].fields.find(x=>x.t==='image'); if(!f) return 'data:,'; return valOf('page:'+p.key+'.s0.'+f.k,f.d)||'data:,'; };
+    const pageRow=p=>({title:p.custom?(valOf('page:'+p.key+'.s0.titre','')||p.title):p.title, edit:e=>{ e&&e.stopPropagation&&e.stopPropagation(); this.go('pageEdit',{pageKey:p.key}); }, toggleLabel:stKey('page:'+p.key,p.status)==='draft'?'Publier':'Dépublier', toggle:e=>{ e&&e.stopPropagation&&e.stopPropagation(); (stKey('page:'+p.key,p.status)==='draft'?publish:unpublish)('page:'+p.key,p.title)(); }, canDelete:p.key!=='accueil', del:e=>{ e&&e.stopPropagation&&e.stopPropagation(); this.setState({confirm:{kind:'page',key:p.key,title:p.title}}); },url:p.url,thumb:thumbOf(p),sections:secOf(p).length+' section'+(secOf(p).length>1?'s':''),badge:BADGE[stKey('page:'+p.key,p.status)],upd:S.pubAt['page:'+p.key]?'à l’instant':p.upd,open:()=>this.go('pageEdit',{pageKey:p.key})});
+    const allPages=[...C.pages,...(S.extraPages||[])].filter(p=>!(S.deletedPages||{})[p.key]);
+    const pageGroups=[{label:'Pages principales',rows:allPages.filter(p=>!p.legal&&!p.grp).map(pageRow)},{label:'Médias',rows:allPages.filter(p=>p.grp==='Médias').map(pageRow)},{label:'Pages légales',rows:allPages.filter(p=>p.legal).map(pageRow)}].filter(g=>g.rows.length);
+
+    const isEditor=view==='pageEdit'||view==='item';
+    const sv=(k,d)=>valOf('settings.'+k,d);
+    const visL=bk=>menus[bk].filter(r=>r.vis).map(r=>r.link==='tel'?sv('entreprise.tel','04 28 53 00 02'):r.label);
+    const chrome={top:visL('top'),main:visL('main'),footer:visL('footer'),tel:sv('entreprise.tel','04 28 53 00 02'),email:sv('entreprise.email','contact@aspeo.fr'),addr:sv('entreprise.adresse','43 Rue de la République')+', '+sv('entreprise.cp','42360')+' '+sv('entreprise.ville','Panissières'),hours:(sv('horaires.horaires',C.settings.horaires.fields[0].d)||[]).map(r=>({a:r[0],b:r[1]})),socials:[['Facebook','reseaux.fb'],['Instagram','reseaux.ig'],['LinkedIn','reseaux.li']].filter(([l,k])=>sv(k,(C.settings.reseaux.fields.find(f=>'reseaux.'+f.k===k)||{}).d)).map(([l])=>l)};
+    const wide=S.vw>=1400; let mode=S.edMode||(wide?'both':'form'); if(!wide&&mode==='both') mode='form';
+    const dev=S.device||'desktop'; const compact=mode==='both'||dev==='mobile';
+    const seg=(cur,k,label,pick)=>{ const on=cur===k; return {label,on,pick,bg:on?'#fff':'transparent',fg:on?'#0a0a0a':'#6b7280',shadow:on?'0 1px 2px rgba(0,0,0,.08)':'none'}; };
+    const edModes=(wide?[['form','Formulaire'],['both','Côte à côte'],['preview','Aperçu']]:[['form','Formulaire'],['preview','Aperçu']]).map(([k,l])=>seg(mode,k,l,()=>this.setState({edMode:k})));
+    const devModes=[['desktop','Ordinateur'],['mobile','Mobile']].map(([k,l])=>seg(dev,k,l,()=>this.setState({device:k})));
+    const tel=valOf('settings.entreprise.tel','04 28 53 00 02');
+    const edTab=S.edTab||'content';
+    const edTabs=ed?[['content','Contenu'],['images','Images',ed.imageFields.length],...(ed.hasSeo?[['seo','Référencement Google']]:[])].map(([k,l,n])=>{ const on=edTab===k; return {label:l,on,hasCount:n!==undefined,count:n||0,pick:()=>this.setState({edTab:k}),fg:on?'#0a0a0a':'#6b7280',line:on?'#06226D':'transparent'}; }):[];
+    return {
+      isNarrow:narrow, showSidebar:!narrow||S.navOpen, showOverlay:narrow&&S.navOpen, toggleNav:()=>this.setState(s=>({navOpen:!s.navOpen})), mainMl:narrow?'0':'256px',
+      navGroups, logout:()=>this.say('Déconnexion (action existante logoutAction).'),
+      title, desc, hasDesc:!!desc, hasCrumb, crumbLabel, crumbGo, hasAdd, addLabel, addAction, hasTitleBadge:!!titleBadge, titleBadge:titleBadge||BADGE.draft,
+      isDashboard:view==='dashboard', stats, activity, shortcuts, dashLeads:this.leads.slice(0,4).map(mapLead), goLeads:()=>this.go('leads'),
+      isPages:view==='pages', pageGroups,
+      chrome, chromeCols:S.vw>=1280?'minmax(0,1fr) minmax(320px,440px)':'minmax(0,1fr)', pvPos2:S.vw>=1280?'sticky':'static',
+      isEditor, edTabs, isContentTab:edTab==='content', isImagesTab:edTab==='images', isSeoTab:edTab==='seo', showSetTabs:S.setTab!=='identite', logoColor:valOf('settings.identite.logoColor','assets/logo-aspeo-couleur.svg')||'assets/logo-aspeo-couleur.svg', logoWhite:valOf('settings.identite.logoWhite','assets/logo-aspeo-blanc.svg')||'assets/logo-aspeo-blanc.svg', ed:ed||{groups:[],pv:[],imageFields:[],badge:BADGE.draft,seoFields:[]}, edModes, devModes, showForm:mode!=='preview', showPreview:mode!=='form', edSplit:mode==='both'?'minmax(0,1fr) minmax(0,1fr)':'minmax(0,1fr)', pvPos:(mode==='both'&&!narrow)?'sticky':'static', pvW:dev==='mobile'?'390px':'100%', pvDesktop:!compact, pvH1:compact?'21px':'30px', pvHeroH:compact?'200px':'280px', pvMosCols:compact?'1fr':'1.1fr 1fr', pvTel:tel, pvFooter:valOf('settings.entreprise.adresse','43 Rue de la République')+', '+valOf('settings.entreprise.cp','42360')+' '+valOf('settings.entreprise.ville','Panissières')+' · '+tel, edCols:narrow?'minmax(0,1fr)':'minmax(0,1fr) 320px', asidePos:narrow?'static':'sticky',
+      isCollection:view==='collection', coll:coll||{cols:[]}, collRows, collTabs, collCount, collEmpty:view==='collection'&&collRows.length===0, collQuery:S.collQuery, setCollQuery:e=>this.setState({collQuery:e.target.value}),
+      isSettings:view==='settings', setTabs, setFields, setHasNotice:!!tab.notice, setNotice:tab.notice||'', setDirty:!!S.dirty.settings, saveSettings:()=>{ this.setState(s=>({dirty:{...s.dirty,settings:false}})); this.say('Informations enregistrées et mises à jour sur tout le site.'); },
+      isMenu:view==='menu', menuBlocks, linkOptions, saveMenu:()=>this.say('Menu enregistré et publié.'),
+      isSeo:view==='seo', seoRows, seoSummary, seoTabs, seoGlobal, hasSeoEdit:!!seoEd, seoEd:seoEd||{fields:[]}, closeSeo:()=>this.setState({seoEdit:null}), saveSeo:()=>{ this.setState({seoEdit:null}); this.say('Référencement enregistré et publié.'); },
+      isImages:view==='images', imgFolders, imgList, hasImgSel:!!sel, imgSel:sel?{...sel,...look(sel)}:{used:[]}, imgSelFields, imgCols:(narrow||!sel)?'minmax(0,1fr)':'minmax(0,1fr) 320px', uploadImg:()=>this.say('Import d’images : à brancher sur le stockage du site.'), saveImg:()=>this.say('Image enregistrée.'), copyImg:()=>{ try{ navigator.clipboard.writeText(sel.url); }catch(e){} this.say('URL copiée.'); },
+      hasPicker:!!S.picker, pickerList, closePicker:()=>this.setState({picker:null}),
+      isLeads:view==='leads', leadTabs, leadRows, leadEmpty:view==='leads'&&leadRows.length===0, hasLead:!!lead, lead:lead||{photos:[]}, leadFields, closeLead:()=>this.setState({leadId:null}), saveLead:()=>{ this.setState({leadId:null}); this.say('Demande mise à jour.'); },
+      isServices:view==='services', svcRows, isExisting:['categories','security','users'].includes(view), existingText,
+      hasConfirm:!!S.confirm, confirmTitle, cancelDelete:()=>this.setState({confirm:false}), doDelete:()=>{ const c=S.confirm; if(c.kind==='page'){ this.setState(s=>({confirm:false,deletedPages:{...(s.deletedPages||{}),[c.key]:true}})); this.go('pages'); } else { this.setState(s=>({confirm:false,deleted:{...s.deleted,[c.ck+':'+c.id]:true}})); this.go('collection',{coll:c.ck}); } this.say('« '+c.title+' » a été supprimé.'); },
+      hasToast:!!S.toast, toast:S.toast
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+{
+  "name": "ASPEO Nettoyage",
+  "admin": {
+    "basePath": "/gp8x2k4m",
+    "cookiePrefix": "aspeo",
+    "publicPaths": [
+      "/gp8x2k4m/login",
+      "/gp8x2k4m/forgot-password",
+      "/gp8x2k4m/reset-password"
+    ],
+    "maxCallbackUrlLength": 200
+  },
+  "fullName": "ASPEO Nettoyage",
+  "address": {
+    "street": "43 Rue de la République",
+    "zipCode": "42360",
+    "city": "Panissières",
+    "department": "Loire",
+    "departmentCode": "42",
+    "full": "43 Rue de la République, 42360 Panissières",
+    "region": "Auvergne-Rhône-Alpes",
+    "country": "FR"
+  },
+  "phone": "04 28 53 00 02",
+  "phoneValue": "+33428530002",
+  "email": "contact@aspeo.fr",
+  "website": "https://www.aspeo.fr",
+  "socials": {
+    "facebook": "https://www.facebook.com/aspeonettoyage",
+    "instagram": "https://www.instagram.com/aspeo_nettoyage",
+    "linkedin": "https://www.linkedin.com/company/aspeo_nettoyage/",
+    "googleBusiness": "https://maps.app.goo.gl/ZxZqwfi7CzU3zBnB6"
+  },
+  "hours": {
+    "week": "7h30-12h00 • 13h00-18h30",
+    "friday": "8h00-16h00",
+    "weekend": "Fermé",
+    "weekMorningOpen": "07:30",
+    "weekMorningClose": "12:00",
+    "weekAfternoonOpen": "13:00",
+    "weekAfternoonClose": "18:30",
+    "fridayOpen": "08:00",
+    "fridayClose": "16:00"
+  },
+  "legal": {
+    "name": "ASPEO",
+    "form": "SAS",
+    "capital": "1000 euros",
+    "rcs": "Saint-Etienne",
+    "siret": "930990965",
+    "tva": "FR12930990965",
+    "publicationDirector": "Hamon Théo"
+  },
+  "geo": {
+    "latitude": 45.70634633777296,
+    "longitude": 4.343792836277721
+  },
+  "areaServed": [
+    {
+      "@type": "AdministrativeArea",
+      "name": "Loire (42)",
+      "sameAs": "https://fr.wikipedia.org/wiki/Loire_(d%C3%A9partement)"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Rhône (69)",
+      "sameAs": "https://fr.wikipedia.org/wiki/Rh%C3%B4ne_(d%C3%A9partement)"
+    },
+    {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": 45.70634633777296,
+        "longitude": 4.343792836277721
+      },
+      "geoRadius": 80000
+    }
+  ]
+}

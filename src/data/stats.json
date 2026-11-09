@@ -1,0 +1,32 @@
+{
+  "clients": {
+    "count": 150,
+    "label": "Clients satisfaits",
+    "description": "Secteurs variés"
+  },
+  "satisfaction": {
+    "rate": 100,
+    "label": "Satisfaction",
+    "description": "Taux de recommandation"
+  },
+  "experience": {
+    "years": 4,
+    "label": "Années d'expérience",
+    "description": "Expertise reconnue"
+  },
+  "response": {
+    "time": "24h",
+    "label": "Délai de réponse",
+    "description": "Réponse garantie"
+  },
+  "emergency": {
+    "availability": "24/7",
+    "label": "Urgence",
+    "description": "Intervention rapide"
+  },
+  "rating": {
+    "value": "5/5",
+    "label": "Note moyenne",
+    "description": "Avis clients vérifiés"
+  }
+}

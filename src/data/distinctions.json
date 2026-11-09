@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Prix de l'Innovation 2024",
+    "organization": "Fédération des Services",
+    "date": "2024-01-06",
+    "description": "Récompense pour l'innovation dans les services de nettoyage"
+  },
+  {
+    "id": 2,
+    "title": "Trophée de la Qualité Client",
+    "organization": "Association Qualité France",
+    "date": "2024-01-11",
+    "description": "Excellence dans la relation et la satisfaction client"
+  },
+  {
+    "id": 3,
+    "title": "Label RSE Exemplaire",
+    "organization": "Ministère de l'Économie",
+    "date": "2024-12-12",
+    "description": "Reconnaissance de l'engagement environnemental et social"
+  }
+]

@@ -1,0 +1,31 @@
+[
+  {
+    "id": 1,
+    "title": "Communiqué de presse - Certification ISO 14001",
+    "description": "Aspeo obtient la certification ISO 14001 pour son engagement environnemental",
+    "date": "2024-01-20",
+    "category": "Certifications",
+    "pdfUrl": "/documents/presse/communique-certification-iso-14001.pdf"
+  },
+  {
+    "id": 2,
+    "title": "Communiqué de presse - Expansion régionale 2024",
+    "description": "Aspeo annonce son expansion sur le territoire français avec l'ouverture de nouvelles agences",
+    "date": "2024-02-15",
+    "category": "Expansion",
+    "pdfUrl": "/documents/presse/communique-expansion-2024.pdf"
+  },
+  {
+    "id": 3,
+    "title": "Communiqué de presse - Partenariat stratégique",
+    "description": "Aspeo signe un partenariat avec des leaders de l'innovation pour développer de nouvelles solutions",
+    "date": "2024-03-10",
+    "category": "Partenariats",
+    "pdfUrl": "/documents/presse/communique-partenariat-innovation.pdf"
+  }
+]
+
+
+
+
+
