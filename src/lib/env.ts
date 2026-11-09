@@ -31,6 +31,10 @@ const serverEnvSchema = z.object({
   // Must be at least 32 characters to prevent brute-force attacks
   CRON_SECRET: z.string().min(32, 'CRON_SECRET must be at least 32 characters for security').optional(),
 
+  // Chiffrement des fichiers confidentiels (CV, photos de demandes) : 32 octets en hexadécimal (64 caractères) ou base64.
+  // Facultatif : à défaut, une clé est dérivée de BETTER_AUTH_SECRET (voir src/lib/storage/private-crypto.ts).
+  FILES_ENCRYPTION_KEY: z.string().refine((v) => /^[0-9a-f]{64}$/i.test(v) || Buffer.from(v, 'base64').length === 32, 'FILES_ENCRYPTION_KEY must be 32 bytes (64 hex characters or base64)').optional(),
+
   // Node environment (optional, defaults to development)
   NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
 });
@@ -66,6 +70,7 @@ function validateEnv() {
   const serverResult = serverEnvSchema.safeParse({
     DATABASE_URL: process.env.DATABASE_URL,
     BETTER_AUTH_SECRET: process.env.BETTER_AUTH_SECRET,
+    FILES_ENCRYPTION_KEY: process.env.FILES_ENCRYPTION_KEY || undefined,
     OVH_EMAIL_USER: process.env.OVH_EMAIL_USER,
     OVH_EMAIL_PASS: process.env.OVH_EMAIL_PASS,
     KV_REST_API_URL: process.env.KV_REST_API_URL,

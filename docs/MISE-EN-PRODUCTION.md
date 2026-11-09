@@ -38,6 +38,7 @@ Ce document décrit, dans l'ordre, ce qu'il faut faire pour mettre en ligne la r
 | `SMTP_USER`, `SMTP_PASS` | `OVH_EMAIL_USER` / `OVH_EMAIL_PASS` | Compte d'envoi (si différent du compte de sécurité) |
 | `MAIL_FROM` | `SMTP_USER` | Adresse d'expéditeur affichée |
 | `FORM_TOKEN_SECRET` | `BETTER_AUTH_SECRET` | Signature des jetons anti-spam des formulaires |
+| `FILES_ENCRYPTION_KEY` | clé dérivée de `BETTER_AUTH_SECRET` | **Recommandée.** Clé de chiffrement des CV et photos de demandes (32 octets : `openssl rand -hex 32`). La définir **avant** la mise en ligne et la conserver dans un coffre : sans elle, les fichiers chiffrés sont illisibles. Sans cette variable, la clé est dérivée de `BETTER_AUTH_SECRET`, qui ne doit alors plus jamais changer. |
 | `TURNSTILE_SECRET_KEY` **et** `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | — | Cloudflare Turnstile (anti-robot). Actif uniquement si **les deux** sont définies. Ajouter le domaine dans le tableau de bord Cloudflare. *Non testé en conditions réelles : l'hôte Cloudflare n'était pas accessible depuis l'environnement de développement.* |
 
 Les destinataires des notifications (devis, candidatures) se règlent dans l'admin : **Réglages → Chiffres & notifications**.
@@ -82,6 +83,21 @@ Après l'import :
 - compléter les textes alternatifs signalés.
 
 ---
+
+## 4 bis. Fichiers confidentiels (CV, photos des demandes)
+
+Les CV et les photos jointes aux demandes de devis sont **chiffrés** (AES-256-GCM) avant d'être déposés sur Vercel Blob, sous un nom aléatoire. Ils ne sont lisibles que par la route `/api/admin/files/…`, après vérification de la session administrateur et de la permission « demandes ». Le panel et les e-mails internes n'affichent que cette route ; l'adresse réelle du fichier sur Blob n'est jamais exposée. Les images publiques du site (bibliothèque, services) restent publiques, comme sur l'ancien site.
+
+- Définir `FILES_ENCRYPTION_KEY` (voir section 2) **avant** la mise en ligne, et la sauvegarder dans un coffre.
+- Le magasin Vercel Blob existant convient : aucun nouveau magasin ni changement de réglage Blob n'est nécessaire.
+- Transition : si des fichiers confidentiels ont déjà été déposés en clair (version de test ou préproduction ayant reçu de vraies demandes), lancer :
+
+```bash
+npx tsx --conditions=react-server scripts/secure-private-files.ts           # simulation : liste ce qui serait chiffré
+npx tsx --conditions=react-server scripts/secure-private-files.ts --apply   # chiffre, met à jour la base, retire l'original en clair
+```
+
+Le script peut être relancé sans risque. Il liste aussi les fichiers du dossier privé rattachés à aucune demande, sans jamais les supprimer.
 
 ## 5. Déploiement et vérifications
 
