@@ -141,3 +141,20 @@ Les données publiques sont mises en cache et invalidées à chaque enregistreme
 
 - Le code : redéployer le déploiement Vercel précédent (« Promote to Production »).
 - La base : les migrations n'ayant rien supprimé, l'ancien site fonctionne avec la nouvelle structure ; en cas de besoin, restaurer la sauvegarde de l'étape 1.
+
+## 8. Sécurité : dépendances et points à arbitrer
+
+État au 9 novembre 2026 (`npm audit --omit=dev`, après mise à jour de Next.js 16.4.5, sharp 0.35.5 et undici 6.29.1) : 27 alertes restantes, toutes qualifiées **non exploitables à l'exécution** sur ce site.
+
+| Paquet(s) | Raison |
+|---|---|
+| `prisma`, `@prisma/dev`, `@prisma/config`, `hono`, `@hono/node-server`, `chevrotain`, `lodash`, `effect`, `defu`, `deepmerge-ts`, `valibot` | Outillage en ligne de commande de Prisma (serveur local `prisma dev`), utilisé au build, jamais exposé en production. |
+| `vitest`, `@vitest/mocker`, `vite`, `esbuild`, `picomatch`, `source-map-js`, `postcss-selector-parser`, `baseline-browser-mapping` | Outils de test et de build (dépendances de développement). |
+| `kysely`, `mysql2` | Adaptateurs de base de données de better-auth non utilisés (le site passe par Prisma/PostgreSQL). |
+| `better-auth` 1.4 | Les failles listées concernent OAuth, OIDC, liens magiques, OTP par e-mail, organisations et autorisation d'appareil : modules non utilisés (connexion e-mail + mot de passe et `twoFactor` uniquement). La suppression d'un utilisateur supprime ses sessions (cascade en base). **Recommandé** : passer à better-auth 1.7 lors d'une prochaine maintenance (nécessite `--legacy-peer-deps` à cause d'une dépendance optionnelle SvelteKit, puis un test complet de la connexion, de la double authentification et de la vérification d'appareil). |
+| `nodemailer` 7 | Injections via `envelope.size` et le nom du transport : options jamais fournies par le site. Correctif en version majeure (10.x) à prévoir lors d'une maintenance. |
+| `zod` 3 | Consommation mémoire sur des collections très volumineuses ; la taille des envois est déjà bornée. Correctif = migration vers zod 4 (chantier à part). |
+
+### Point à arbitrer : double authentification des administrateurs
+
+Le mécanisme historique (inchangé) impose la configuration de la double authentification aux rôles élevés **par une redirection après la connexion** : la session est ouverte, puis l'utilisateur est envoyé vers `Sécurité`. Un administrateur sans double authentification peut ensuite naviguer dans le panel. Avant la mise en ligne, vérifier que tous les comptes administrateurs de production ont activé la double authentification (page `Utilisateurs`). Un blocage strict côté serveur peut être ajouté si ASPEO le souhaite.
