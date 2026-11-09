@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useSyncExternalStore } from 'react';
 import {
   ResizablePanelGroup,
   ResizablePanel,
@@ -21,15 +21,16 @@ export default function ServiceEditorLayout({
   formContent,
   previewContent,
 }: ServiceEditorLayoutProps) {
-  const [isDesktop, setIsDesktop] = useState<boolean | undefined>(undefined);
-
-  useEffect(() => {
-    const mql = window.matchMedia(`(min-width: ${DESKTOP_BREAKPOINT}px)`);
-    const onChange = () => setIsDesktop(mql.matches);
-    mql.addEventListener('change', onChange);
-    setIsDesktop(mql.matches);
-    return () => mql.removeEventListener('change', onChange);
-  }, []);
+  // undefined côté serveur (rien n'est rendu avant l'hydratation), puis largeur réelle de la fenêtre.
+  const isDesktop = useSyncExternalStore<boolean | undefined>(
+    (onChange) => {
+      const mql = window.matchMedia(`(min-width: ${DESKTOP_BREAKPOINT}px)`);
+      mql.addEventListener('change', onChange);
+      return () => mql.removeEventListener('change', onChange);
+    },
+    () => window.matchMedia(`(min-width: ${DESKTOP_BREAKPOINT}px)`).matches,
+    () => undefined,
+  );
 
   // SSR / Loading - avoid hydration mismatch
   if (isDesktop === undefined) {

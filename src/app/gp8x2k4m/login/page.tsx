@@ -44,11 +44,14 @@ function LoginForm() {
   // Type-safe access to state
   const typedState = state as LoginState | null;
 
-  // Reset states when form state changes (user submits form again)
-  useEffect(() => {
+  // Reset states when form state changes (user submits form again).
+  // Fait pendant le rendu (et non dans un effet) : même comportement, sans rendu en cascade.
+  const [lastState, setLastState] = useState(typedState);
+  if (typedState !== lastState) {
+    setLastState(typedState);
     setForcedFormReturn(false);
     setTwoFactorAfterDevice(false);
-  }, [typedState]);
+  }
 
   // Handle redirects in effect (side effects that should happen once)
   useEffect(() => {

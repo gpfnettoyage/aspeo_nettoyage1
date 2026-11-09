@@ -23,7 +23,8 @@ export const maxDuration = 60; // Allow up to 60 seconds for cleanup
 export async function GET(request: NextRequest) {
   // Verify the request is from Vercel Cron (security)
   const authHeader = request.headers.get('authorization');
-  if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
+  const secret = process.env.CRON_SECRET;
+  if (!secret || authHeader !== `Bearer ${secret}`) {
     console.error('[CRON] Unauthorized cleanup attempt');
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }

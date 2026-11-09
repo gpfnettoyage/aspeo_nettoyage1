@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [main, master, dev]
+    branches: [main, master, dev, claude/aspeo-site-development-b6vvog]
   pull_request:
-    branches: [main, master, dev]
+    branches: [main, master, dev, claude/aspeo-site-development-b6vvog]
 
 env:
   # Dummy values for build/test - real values are in Vercel
@@ -176,7 +176,6 @@ jobs:
 
       - name: Type check
         run: npx tsc --noEmit
-        continue-on-error: true  # Type errors from node_modules
 
   lint:
     name: Lint
@@ -196,4 +195,4 @@ jobs:
         run: npm ci
 
       - name: Run ESLint
-        run: npx eslint . --max-warnings=0 || true
+        run: npm run lint -- --max-warnings=0
